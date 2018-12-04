@@ -7,10 +7,10 @@
  *
  ****************************/
 
-/*Style direct children only
-Achieved by ">" character. Does not stack*/
+/*Adjacent selector picks element next to selected element, picking here, the p after the h2*/
 
-#prequel-content > p{
-    color: red;
+/*adjacent is "+"*/
+
+#all-articles h2 + p{
+    color: antiquewhite;
 }
-
