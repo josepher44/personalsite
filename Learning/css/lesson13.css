@@ -8,18 +8,12 @@
 
 /*All h1 headers in the header div tag
  */
-body{
-    color:red;
-}
 
-div{
-    color:blue;
-}
-
+/*Important tag is hard override. Should not be used in final production*/
 p{
-    color: green;
+    color: red !important ;
 }
 
-@keyframes spin{
-    
+#main-content p{
+    colr: green;
 }

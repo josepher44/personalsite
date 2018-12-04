@@ -1,0 +1,31 @@
+/*****************************
+ *
+ * Author: Joe Gallagher
+ * Date: 12.03.2018
+ * CSS file in support of tuturials found here:
+ * https://www.youtube.com/watch?v=I9XRrlOOazo&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT
+ *
+ ****************************/
+
+/* 
+ * Descendant selectors
+ * select all tags of x type within id or class
+ */
+
+#prequel-content p{
+    color: red;
+}
+
+/* To get to meme, can do:*/
+#meme p{
+    
+}
+/*Will get all memes, regardless of prequel or not*/
+
+/* or */
+
+#prequel-content #meme p{
+    color: blue;
+}
+
+/* gets all memes, but only in main content. Ignores sequel memes, as should be the case.
