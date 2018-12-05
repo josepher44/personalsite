@@ -9,6 +9,11 @@
 
 /* Universal selector is *, just like bash or gitignore
 
+ * Hard overrides everything in children, including browser defaults
+* shouldn't use body{} as replacement
+
+* Used for "CSS reset" to strip out certain elements of browser default or template
+
 */
 
 *{

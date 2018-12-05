@@ -1,0 +1,20 @@
+/*****************************
+ *
+ * Author: Joe Gallagher
+ * Date: 12.05.2018
+ * CSS file in support of tuturials found here:
+ * https://www.youtube.com/watch?v=I9XRrlOOazo&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT
+ *
+ ****************************/
+
+/*Font-family is used for general font specification. Searches user's computer for exact font, if not, falls back to a default in the general class of the font*/
+
+/*Prioritized list of fonts, in a "stack"*/
+
+/*Cannot transmit font via CSS, should use web-safe fonts*/
+
+/*Other options for when known that font won't be there, later*/
+
+article h2, article p{
+    font-family: arial, helvetica, sans-serif;
+}
