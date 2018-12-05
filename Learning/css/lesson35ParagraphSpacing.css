@@ -13,9 +13,5 @@ less than 1 em will result in overlap
 */
 
 p{
-    color: red;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    word-spacing: 0.1em;
-    line-height: 1.1em;
+    margin-bottom: 32px;
 }
