@@ -28,20 +28,9 @@
  * p i:first-child would be first i child of each p element
  */
 
-li:nth-child(11), li:nth-child(1){
-    font-weight: bold;
-}
+/*Nth of type gets nth child of type given, skipping elements not of its type.
+ * This would matter if articles were interrupted by something else*/
 
-li:nth-child(even){
-    background-color: aliceblue;
-}
-
-li:nth-child(odd){
-    background-color: azure;
-}
-
-/*Can also achieve the above with formulas. Formulas can be arbitrarily complex*/
-
-li:nth-child(2n+1){
-    color: green;
+article:nth-of-type(2n+1){
+    background-color: beige;
 }
