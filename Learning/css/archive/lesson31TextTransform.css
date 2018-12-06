@@ -7,18 +7,7 @@
  *
  ****************************/
 
-/*Colors come in two types, color, and background*/
-
-#header h1{
-    color: chocolate;
-}
-
-/*Can also do hex codes*/
-
-h2{
-    color: #5631F3;
-}
-
-#all-articles{
-    background-color:beige;
+/*Text Transforms chance capitalization properties*/
+p{
+    text-transform: capitalize;
 }

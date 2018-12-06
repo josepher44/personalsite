@@ -1,0 +1,33 @@
+/*****************************
+ *
+ * Author: Joe Gallagher
+ * Date: 12.05.2018
+ * CSS file in support of tutorials found here:
+ * https://www.youtube.com/watch?v=I9XRrlOOazo&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT
+ *
+ ****************************/
+
+/*Multiple images and associated properties can be specified with comma deliminators
+*/
+
+body{
+    background: #eee;
+}
+
+#main-content{
+    background: #fff;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 2px;
+}
+
+#banner{
+    background-color: #606060;
+    width: 100%;
+    height: 600px;
+    background-image: url(https://mk0spaceflightnoa02a.kinstacdn.com/wp-content/uploads/2018/05/banerdt_2-326x245.jpg),url(https://i.imgur.com/2fW05S0.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, top left;
+    background-size: 300px, 100%;
+}

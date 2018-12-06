@@ -1,0 +1,35 @@
+/*****************************
+ *
+ * Author: Joe Gallagher
+ * Date: 12.05.2018
+ * CSS file in support of tutorials found here:
+ * https://www.youtube.com/watch?v=I9XRrlOOazo&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT
+ *
+ ****************************/
+
+/*Background can be color, or image. Image requires specifying by url*/
+/*Background-size used to stretch or repeat background image*/
+
+/*Also shorthand forms*/
+
+/* background: url(#) no-repeat top-center;
+
+
+body{
+    background: #eee;
+}
+
+#main-content{
+    background: #fff;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 2px;
+}
+
+.static-width{
+    width: 300px;
+    height: 300px;
+    background-image: url(https://static1.squarespace.com/static/58393163bebafb6551265dd9/583932e357bf42f996cea64b/5a13b20a71c10bfdba637d24/1511547378161/windows_xp_bliss-wide.jpg);
+    background-size: cover;
+}
