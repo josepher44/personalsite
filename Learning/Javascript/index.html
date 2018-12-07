@@ -5,11 +5,25 @@
     <head>
         <meta charset="utf-8">
         <title>Hello, very specific subset of the world! Specifically, Joe!</title>
+        
+        <!-Sometimes can go in head if script is asynchronous->
     </head>
     <body>
+       
+       <h1>JS for Beginners</h1>
+       <div id="allthestuff">
+           
+           <p>Pixels! Formed into characters! Formed into words! Formed into sentances!</p>
+       </div>
+        
+        <!-Scripts can be put at bottom in script tags directly, but should only be used for small things->
         
         <script>
             alert("Hello, elements of world right in front of Joe's Lenovo P50, plus anyone stalking Joe on github!");
         </script>
+        
+        <!-Larger scripts should be put in external file->
+        
+        <script src="text.js"></script>
     </body>
 </html>
