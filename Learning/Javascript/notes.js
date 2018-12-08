@@ -76,13 +76,65 @@ console.log(myVar);
 //&&, ||, etc. are also as expected, as is ++, --
 //
 
-//While and for is same as C. for uses semicolon deliminator
+//While and for is same as C. for uses semicolon deliminator. No need to declare incrementor
 
 //Ok, meaty stuff. "getElementsBy____" is a common format. Can get tag name, class name, ID, etc, returns a list of element objects
 
 //Break and continue are same. Continue returns to top of loop and runs next iteration without running anything below, break breaks out of loop immediately
 
+//Index from zero
 
+//Lists can be indexed like arrays. list.length returns length
 
+var links = document.getElementsByTagName("a");
 
+for(i = 0; i < links.length; i++)
+{
+    //Concatenate number to link to give name
+    //Class name modifies HTML to give them a class
+    //Can use javascript to edit base HTML
+    links[i].className = "link-" + i;
+}
 
+//Functions, called functions, not methods
+//Declared with "function" keyword
+//Declaration syntax works as you'd expect
+
+//Custom functions can be called individually directly from console
+
+//Return is same as C
+
+function getAverage(a,b)
+{
+    var average = (a + b)/2;
+    console.log(average);
+    return average;
+}
+
+//Functions with bad argument format will return NaN
+//Extra arguments can be passed, will be ignored
+//Things like exceptions seem weak
+//No compilation or syntax validation
+
+//Variables at global level are defined on 0 level indent
+//Variables declared inside function
+//As usual, don't actually use global variables
+
+//Math object is used for advanced math functions, kinda like numpy
+
+console.log(Math.PI);
+
+//New thing! "with" changes scope down to argument within brackets. Would be amazing for getting rid of "consoleGUIModel.getConsoleGUIview.etc" chains!
+with(Math)
+{
+    console.log(floor(PI * 2));
+}
+
+//"floor" and "ceiling" round down and up, useful for hard-writing int datatype
+
+//isNaN() is a built-in function to evaluate the NaN-ness of things. Javascript tries its best to calvinball-score, but can only do so much (ie, multiplying 7* "7" works, 7*"7q" doesn't)
+
+//Strings work like C, can be '' or ""
+//Quotes can be overridden by using escape sequences, ie \'
+
+var myString = 'I\m a "correctly formatted" string';
