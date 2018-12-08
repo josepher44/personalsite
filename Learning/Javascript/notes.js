@@ -46,6 +46,43 @@ myVar="josepher";
 
 //Boolean() operator returns true on non-zero numbers, non-empty strings, etc.
 
+//If, else, else if work as you'd expect them to
+
+var year = "junior";
+
+if (year=="junior")
+{
+    myVar="Gallagher"
+
+}
+else if (year=="sophomore")
+{
+    myVar="Joseph"
+}
+else
+{
+    myVar="Joe"
+}
+
 console.log(myVar);
+
+/*
+ *Triple equal checks both type and value
+ *Double equal will return true on 5 == "5"
+ *Same with !==, not equal type or value
+ *All other operators are as expected
+ */
+
+//&&, ||, etc. are also as expected, as is ++, --
+//
+
+//While and for is same as C. for uses semicolon deliminator
+
+//Ok, meaty stuff. "getElementsBy____" is a common format. Can get tag name, class name, ID, etc, returns a list of element objects
+
+//Break and continue are same. Continue returns to top of loop and runs next iteration without running anything below, break breaks out of loop immediately
+
+
+
 
 
