@@ -1,36 +1,64 @@
 body{
+    position: relative;
     margin: 0px;
 }
 
 #page{
     margin: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #banner{
-    position: absolute;
     margin: 0px;
     width: 100%;
-    height: 20%;
+    height: 20vh;
     background-color: maroon;
+    animation-name: bannerFadeIn;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    z-index: 1;
 }
 
+
 #about{
-    position: absolute;
     margin: 0px;
     width: 100%;
-    height: 30%;
-    top: 20%;
+    height: 500px;
     background-color: purple;
+    display: block;
 }
 
 #sidebar{
-    position: fixed;
+    position: absolute;
     margin: 0px;
     width: 20%;
-    height: 100%;
+    height: 99vh;
     z-index: -1;
     background-color: teal;
     border: 0px;
-    border-
 }
 
+#content{
+    margin: 0px;
+    margin-left: 20%;
+    display: inline-block;
+    width: 80%;
+    height: 2500px;
+    background-color: aqua;
+}
+
+@keyframes bannerFadeIn {
+  0%   {background-color:white; height: 100vh}
+  25%  {background-color:maroon; height: 100vh}
+  35%  {background-color:maroon; height: 100vh}
+  100% {height: 20vh;}
+}
+
+@keyframes subBannerFadeIn {
+  0%   {background-color:white; height: 100%}
+  35%  {background-color:maroon; height: 100%}
+  45%  {background-color:maroon; height: 100%}
+  100% {height: 20%;}
+}
