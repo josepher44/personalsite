@@ -324,3 +324,10 @@ menu.appendChild(newA);
 
 //myForm = Document.forms.idOfForm gives shortcut to access form elements
 //myForm.name.value, returns name field
+
+//myForm.onSubmit handles form submission
+//
+
+//Javascript has tons of libraries -- animation, forms, video, etc.
+//Run in a seperate script tag in the html, then you can use it in subsequent scripts
+//Jquery allows better selectors
