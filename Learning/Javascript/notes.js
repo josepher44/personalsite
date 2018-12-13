@@ -260,7 +260,7 @@ var allContent = document.getElementsByClassName("content");
 //Can then use array notation to get specific element in, say, a list of divs
 
 //Id is unique, therefore element rather than elements
-document.getElementById("").;
+//document.getElementById("").;
 
 //Use .innerHTML to overwrite all internal HTML
 //Or, .textContent to overwrite the text only
@@ -268,3 +268,59 @@ document.getElementById("").;
 //GetAttribute() takes argument of attribute name, returns value
 //SetAttribute takes argument of 
 
+//className variable can be changed
+//Easiest way to change style is by writing inline style
+//element.setAttrubute("style", "Write CSS here")
+//Calling multiple times will overwrite, instead, can do semicolon delimination. 
+
+//Better is element.style.*CSS property*
+//Camel Case for javascript, hyphen for CSS
+
+//document.getElementById("").style.backgroundColor = "blue";
+
+//Elements can also be added or removed entirely from the DOM
+//Write to variable document.createElement("li")
+
+//Create first, then specify position with appendChild
+
+var newA = document.createElement("a")
+newA.innerHTML = "Item 6"
+var menu = document.getElementById("links");
+
+menu.appendChild(newA);
+
+//Also have insertBefore()
+
+//Removal is done from the parent tag
+//parent.removeChild(child), where child is a specific tag. Returns the element, can be stored in a variable, for reinsertion purposes if necissary
+
+//Event triggering, thing like onclick, etc. 
+//Can be tied to pretty much any user input or action like hovers
+
+//Set an onclick attribute to a tag, like a button
+//Done by "anonymous function"
+//tag.onclick = function(){
+//
+//    Code
+//};
+
+//Also can be done by event listeners
+
+//Switching between CSS cases can be done with #content, #content.open, and changing the class assignment in the javascript
+
+//Window onLoad event is triggered when page finishes loading. Allows scripts to be put in the header. 
+//Can close entire script in window.onload = function(){};
+
+//Better practice to use helper functions, like function setUpEvents(){},
+
+//then call setUpEvents() in window.onload;
+
+//Note: this is the CC design pattern, and Adobe pattern. Use this!
+
+//Two ways to do timing in Javascript, setTimeout, setInterval
+//setTimeout(function name, ms) calls after ms passes, once
+//setInterval calls repeatedly
+//Write setInterval to a variable and call clearInterval(var) to stop it
+
+//myForm = Document.forms.idOfForm gives shortcut to access form elements
+//myForm.name.value, returns name field
