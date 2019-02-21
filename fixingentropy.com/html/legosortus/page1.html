@@ -1,0 +1,695 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+        
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Documenting the development of a universal LEGO sorting machine">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                    <div class="column">
+                    <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+                        
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+                        
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+                       
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/legosortus.png"></div>
+                <p><em><strong>LEGOsortus:</strong> /, leɡō&rsquo;sȯrtəs/   Noun: 
+                    <br>A legendary device, extinct in the present day, of great fascination and utility to young children, which ends up being far too large for its own good. Somewhere, some guy is sparing no expense in probably ill-advised experiments aimed at bringing one to life. </em></p>
+                <p>
+                    It can’t be overstated enough the extent LEGO played in shaping me as an engineer. Most everything I’ve learned traces back in some way or another to getting that first tiny 
+                    <a class="popup" onclick="popup1()">race car set<span class="popuptext" id="popup1"><img class="popupimg" src="/images/slickracer.png"></span></a> at five years old. They became my primary creative outlet – even my old <a class="popup" onclick="popup7()">elementary school doodles<span class="popuptext" id="popup7"><img class="popupimg" src="/images/childhood.png"></span></a> are mostly sketches of what I’d be building when I got home. Planning out builds built my spatial, mechanical, and structural intuition. I was forced to learn rapid repair skills by “racing” LEGO cars around the house with my brother (and by “racing,” I mean “chucking them across the floor as hard as possible, often into walls or down flights of stairs”). I lusted hard after <a class="popup" onclick="popup3()">gigantic mechanical TECHNIC sets<span class="popuptext" id="popup3"><img class="popupimg" src="/images/controlcenterii.jpg"></span></a> I knew I was never going to have, wildly theorizing about their inner workings and intuiting the missing pieces of their structure from pictures in the LEGO catalog. 
+                </p>
+
+                <p>And of course, things got taken to another level when reading a summer camp catalog, I saw the coolest string of two words I’d ever seen put together “<a class="popup" onclick="popup4()">LEGO Robotics<span class="popuptext" id="popup4"><img class="popupimg" src="/images/rcx.png"></span></a>,” and my parents decided to utilize my excitement to bribe me into taking terribly boring typing lessons. That camp changed my life, and quickly started me down the path into <a href="https://www.firstinspires.org/robotics/fll" target="_blank">FIRST LEGO League</a>, where myself and my teammates spent six years working our way from last place  and designs which <a class="popup" onclick="popup8()">left much<span class="popuptext" id="popup8"><img class="popupimg" src="/images/citybad.jpeg"></span></a> <a class="popup" onclick="popup9()">to be desired<span class="popuptext" id="popup9"><img class="popupimg" src="/images/baroque.jpeg"></span></a>, to state champions and                     <a class="popup" onclick="popup10()">the most consistent robot in the world
+                        <span class="popuptext" id="popup10">        <iframe width="560" height="315" src="https://www.youtube.com/embed/sS18GBhOOyQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                    </a>. FLL taught me lessons in experimentation, analysis, prototyping, attention to detail, perseverance, and continuous improvement more effectively than FRC, engineering school, or anything since, not to mention bunches of actually applicable technical skills in hardware and software alike. In every single project I’ve taken on since, I’ve returned to the skills built and lessons learned from LEGO. Even today, it’s my go-to tool for quick prototypes  and proof of concept builds. </p>
+
+                <p>It figures, then, that LEGO would end up being directly responsible for the largest engineering challenge I’ve taken on to date.</p>
+
+                <p>This series of posts summarizes what has evolved from a simple plan to sell off some old toys, to development of a business and software platform built around doing so optimally and sustainably, into pushing this to the next level through wild plans for a machine every kid who has played with LEGO has dreamed of owning: a truly universal automated parts sorter. Not a <a class="popup" onclick="popup5()">novelty<span class="popuptext" id="popup5"><iframe width="560" height="315" src="https://www.youtube.com/embed/jego7nntfAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a> which will identify a few pre-canned parts and colors as a basic CV learning exercise, but a machine with real utility: sorting, labeling, and storing truly randomly mixed LEGO pieces as they actually exist in horrifically messy plastic bins around the world. Let’s look at how I’m turning this:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/mixedbulk.jpg"></div>
+
+                <p class="extratop">and this:</p> 
+                <div class=pageimgcontainer><img class="pageimg" src="/images/bricklink.PNG"></div>
+                <p class="extratop">into this:</p> 
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/divideddrawers.jpg"></div>
+
+                <p class="extratop">and this</p>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/database1.PNG"></div><p class="extratop">first by doing it like this</p> 
+                <div class=pageimgcontainer><img class="pageimg" src="/images/cups.jpg"></div>
+
+                <p class="extratop">but then using some of these things
+                </p>
+                
+                <div class=pageimgcontainer><video width="500" autoplay muted loop><source src="/images/idvidmini.mp4" type="video/mp4"></video></div>
+                
+                <div class=pageimgcontainer><video width="500" autoplay muted loop><source src="/images/feedlinkage.mp4" type="video/mp4"></video></div>
+                
+                <div class=pageimgcontainer><img class="pageimg" src="/images/wolframconvergance.png" style="width: 500px; height: auto"></div>
+                
+                                <div class=pageimgcontainer><img class="pageimg" src="/images/cycloids.png" style="width: 500px; height: auto"></div>
+
+                
+                <p class="extratop">to gradually morph it all into this.
+                </p>
+                
+            <div class="pageimgcontainer ultrawidebody"><div class="gm4html5_div_class" id="gm4html5_div_id">
+            <!-- Create the canvas element the game draws to -->
+            <canvas id="canvas" width="1000" height="686">
+               <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+                </div></div>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/fullrender.png"></div>
+
+                <p>Yeah, that last one is a bit of a leap. We'll get there, I hope. It's a bit of a journey, so I broke it into pieces:</p>
+
+                <a href="#part1"><h3>Part 1: Life and market circumstances which lead to the ownership of an undisclosed four figure number of plastic drawers</h3></a>
+                <a href="page2.html"><h3>Part 2: Laying basic software foundations to enable massive project scope creep</h3></a>
+                <a href="page3.html"><h3>Part 3: Avoiding terms of service violations by hanging out with internet-survivalists</h3></a>
+                <a href="page4.html"><h3>Part 4: Once you know everything there is to know about LEGO, what do you do about it?</h3></a>
+                <a href="page5.html"><h3>Part 5: If I'm going to be processing all these parts, I should probably have a better plan for storing them than the giant plastic tub of my youth, shouldn't I?</h3></a>
+                <a href="page6.html"><h3>Part 6: Manual sort methods, the engineering design process, and hardcore nostalgia for the FRC random screw pit of death</h3></a>
+                <a href="page7.html"><h3>Part 7: The curses of knowing software: the ability to actually act on those nagging thoughts of "wouldn't this be easier if..."</h3></a>
+                <a href="page8.html"><h3>Part 8: Designing a large and lucrative machine to automate away my job: how hard could it be? Answer: Very, and it's important to ponder exactly why if you don't want to be buried alive in stepper motors and sunfish</h3></a>
+                <a href="page9.html"><h3>Part 9: Solving the obvious problem: How to teach a computer to be the best obsessive internet LEGO purist out there</h3></a>
+                <a href="page10.html"><h3>Part 10: Solving the non-obvious problem: The mechanical difficulties of effectively replicating 70,000 dixie cups</h3></a>
+                <h3>Part 11: Beginnings of mechanical prototypes: Now only 1524x larger than the parts they handle!</h3>
+                <h3>Part 12: Practical next steps for borderline impractical objectives. Also, even more impractical objectives</h3>
+
+                <h1 id="part1">Background</h1>
+
+                <p>This all started a few years back, when I was beginning to feel the financial pains of an extended stay in engineering school, monopolization of personal time from putting a struggling FRC team on my back, and encountering an unfortunate reality of mechanical engineering: When you learn a bunch about hardware, you have a lot of ideas for hardware focused projects, and hardware has a nasty habit of being rather significantly less free than experimenting with software. Intrusive thoughts like “<em>you know, you should really own a <a href="https://www.tormach.com/pcnc-1100/" target="_blank">Tormach</a> ,</em>” and “<em>I wonder what percent of a functional lathe could be hacked together from old robot carcasses?</em>” became part of my daily life -- most of my projects around this time centered around solving problems for which perfectly good solutions can be purchased, but built on the embarrassingly cheap, such as the <a class="popup" onclick="popup11()">filament extruder<span class="popuptext" id="popup11"><img class="popupimg" src="/images/filament.jpg"></span></a>, <a class="popup" onclick="popup12()">6” Atlas Lathe tooling retrofit<span class="popuptext" id="popup12"><img class="popupimg" src="/images/lathe.jpg"></span></a>, and the ambitious mixed bag of a storage system built to support my FRC team, the spiritual predecessor of a number of aspects of this project. </p>
+
+                <p>Still, I was looking for easy ways to infuse some cash into my operation, and my eyes found the giant bin  I had slowly been accumulating LEGO in my entire life. It still saw use for small-scale prototypes, but not enough to justify the massive stockpile from the peak of my FLL days. A quick ebay search of “LEGO by the pound” turned up promising numbers, and I figured I’d be able to quickly reduce my LEGO supply and make some decent money doing so. </p>
+
+                <p>Fast forwards a couple years, lets look at the quantitative outcomes of that endeavor:</p>
+
+                <p><strong>DOLLARS:</strong> Lets call it close enough to breaking even</p>
+                <p><strong>LEGO BRICKS ON HAND: </strong>Approximately 400% growth</p>
+
+                <p>......</p>
+
+                <p>Oops. How did that happen? Both those numbers are going in the wrong direction.</p> 
+                <p>That doesn’t sound right at all.</p>
+                <p>Oh wait, one more small category I forgot to track:</p>
+                <p><strong>AMOUNT OF THINGS I KNOW ABOUT OBJECT ORIENTED DESIGN PATTERNS, HTML PARSING, NETWORK ANONYMITY, DATABASE STRUCTURES, MACHINE FRIENDLY AND HUMAN FRIENDLY DESIGN TRADEOFFS, LEAN MANUFACTURING, COMPONENT STORAGE, XML, WAREHOUSE DESIGN, DESIGN FOR LASER CUTTING, LABEL PRINTERS, DESIGN FOR ASSEMLABILITY, APIs, CANADIAN KNOCK-OFF BRANDS, UI DESIGN, THE UNITED STATES POSTAL SERVICE, EXTREMELY SUBTLE CHANGES LEGO MADE TO THEIR PRODUCT LINE IN THE 1970s, AUTOMATED PACKAGING, FLOW ANALYSIS, PROBABILITY, PICK-PLACE MACHINES, MECHANICAL VIBRATIONS, CREDIT CARD SCAMS, THE VARIOUS ECLECTIC MARKETS WHICH UTILIZE PRECISION SCALES, CHEMICAL REACTIONS, PHOTOGRAPHY, LIGHTING, SOFTWARE DOCUMENTATION, PUNNY SOFTWARE PACKAGE NAMES, MACHINE LEARNING, JEWLREY CLEANING, AMAZON ROBOTICS, TOOTHPICK QUALITY CONTROL PROCEDURES, HUMANOID ROBOTICS, ASAR SYSTEMS, VFFS SYSTEMS, ANALOG MECHANICAL COMPUTERS, VACUUM TABLE DESIGN, FUNNEL DESIGN, CONCRETE FORMING TECHNOLOGY, CYCLOIDAL GEARING, AUTOFOCUS, LINUX SERVERS, AND A BUNCH MORE I’LL REMEMBER RIGHT AFTER POSTING THIS:</strong> Still entirely too little, but there are fewer zeros in there now.</p>
+
+                <p class="extratop">Yeah, that sounds more like me</p>
+                <p>So how <em>did </em>all that happen?</p>
+                <p>Well, I found this thing called Bricklink, and subsequently got far, far too invested in the whole thing, working on and off on this project since then.</p>
+
+                <div class=pageimgcontainer><a href="http://www.bricklink.com" target="_blank"><img class="pageimg" src="/images/bricklink2.PNG"></a></div>
+
+                <p>Bricklink, for those who don’t know, is the go-to place for purchasing LEGO for the serious enthusiasts. It’s an online marketplace – anyone with LEGO to sell can make a store and have their surplus show up for sale on the main site; much like eBay, Bricklink only takes a small cut for providing the centralized service. Sellers range from individuals selling off their childhood collection, to warehouses operating full time and going through millions of bricks a year. You can find most any set on there dating back to the 60s, but where Bricklink really shines is in individual part sales. The community has laboriously <a href="https://www.bricklink.com/catalogTree.asp?itemType=P&itemBrand=1000" target="_blank">cataloged and categorized</a> every type of part ever produced by LEGO, and you can search for and purchase any of the 50,000 varieties; as singletons to get just the right hair for your minifig, or in quantities of 10s of thousands to 
+                    <a class="popup" onclick="popup6()">construct vast, monolithic structures 
+                        <span class="popuptext" id="popup6">        <iframe width="560" height="315" src="https://www.youtube.com/embed/nFD6m1_Eh6g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                    </a>
+                    well beyond the scale of what LEGO has deemed economically viable to produce their kits within. As of this writing, HALF A BILLION individual bricks and pieces are listed for sale across over 10,000 active stores around the world. It’s growing, too – when I started this project, that number was a mere 350 million. 
+                </p>
+
+                <p>Bricklink is, in many ways, a fun relic of an internet from days past. It was founded in the year 2000, predating many modern e-commerce sites, and in many ways it hasn’t changed very much. People were still figuring out how UIs are meant to work back then, and there are a lot of odd pages of questionable utility like a browse-by-calendar option, a forum where you must by default click to open each individual post to preserve that precious dial-up bandwidth, strange names for things like shipping confirmation emails from back when that was a novel concept, and far, far more static HTML than a website of its functionality and scope has any business using. Until very recently, it didn’t even have an option for on-site instant payment! Nevertheless, due to its sheer scale and centralization, it has and likely will remain the home of the AFOL (adult fan of LEGO) community for the foreseeable future. If you can’t piece together your order on Bricklink, you can’t do so anywhere. </p>
+
+                <p>One of these odder, yet highly useful features, is the <a href="https://www.bricklink.com/catalogPriceGuide.asp" target="_blank">price guide</a>. Click on a part, and you’ll be treated to a vast treasure trove of raw data which I’ve never seen publicly available on any similar site. Not only is every store selling the part readily listed, but data points on <em><strong>every single sale completed</strong></em> is readily available. Since the price per part is so low, often just a few cents for the most ubiquitous items typically purchased in quantities of 100 or more, stores looking to get a leg up on their competitors are typically undercutting each other by mere fractions of a penny. </p>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/priceguide.png"> </div>
+
+                <p class="caption"><em>To be clear, this image is for <strong>one type of part.</strong> There are about 70,000 pages like this</em></p>
+
+                <p>Trying to get a sense of whether it would be worth it to take the effort to sort my LEGO and list it piece by piece on Bricklink, I found that nearly every piece available in appreciable quantities had a few sellers at the top of the list <em>dramatically</em> undercutting the average going price, by 90% or more. It makes sense – with so many sellers people are bound to have varied pricing strategies, and there will be people interested in turning over their stock quickly and making a quick buck, even if they aren’t maximizing its value. Other stores are willing to be more patient. </p>
+
+                <p>Additionally, there is value added by being a larger seller. If you have a common piece for sale, but you also have 10,000 other varieties of part for sale, it is more likely that any given customer will find most or all of what they came to bricklink for from your store. They have the ease of ordering everything they need from one spot, and don’t have to pay a bunch of separate shipping fees. Likewise, if you have a vast quantity of a single type of part, you’re going to be able to attract customers building a gigantic project which uses that piece by the truckload, as few other stores can match your supply. In either case, you can afford to charge a premium, because you’ll be getting customers who won’t look twice at the lowest bidder to save a couple cents on one-off parts. </p>
+
+                <p>You can see this in the <a href="https://www.bricklink.com/catalogPG.asp?P=3001&colorID=11" target="_blank">price guide shown above</a>. All the cheapest purchases are for tiny quantities, because that was all the seller had available, and that was all the customer was interested in. Further down, you have people placing orders for 1000+ pieces, willing to pay a premium. If you scroll even further down the page, there was an order for 7000 pieces placed at twice the going rate! Not a bad way to make almost $2k! </p>
+
+                <p>This piqued the interest of the buried part of myself which in a previous life had spent far too many highly regrettable hours monopolizing resources and performing acts of broad scale market manipulation to <a href="https://www.reddit.com/r/woweconomy/" target="_blank">economically dominate various MMORPGs</a> in my youth. I clicked at some of the seriously underpriced stores to see if I could use them to combine with my own larger stock and resell to customers interested in paying top dollar for higher quantities. I figured that, best case, this could be a sustainable source of side-income – turning around individual parts and using them to build a larger store which could command higher prices.</p>
+
+                <p>However, I was disappointed to find that for all but the priciest parts, any gains for an individual part would be largely eaten away by shipping. If I could find more underpriced parts from the same store, it could be worth it, but there was no easy way to tell from a store’s page which parts are listed at market rate, and which are not. Makes sense: once you’re browsing an individual store, that store wants to keep you there, so Bricklink isn’t going to advertise “HEY! YOU COULD BE GETTING THIS PART 50% CHEAPER ELSEWHERE.” Oh well, nice thought, but not going to go anywhere.</p>
+
+                <p>Except that at the time I started poking around Bricklink, I had just recently completed my brutal yet rewarding <a href="http://web.cs.wpi.edu/~gpollice/cs3733_software_engineering.html" target="_blank">Software Engineering course</a> at WPI, and was itching to find a way to put my newfound confidence with <a href="https://github.com/josepher44/wpi-suite" target="_blank">large scale software project design</a> to work. </p>
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page2.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup18() {
+                var popup = document.getElementById("popup18");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup19() {
+                var popup = document.getElementById("popup19");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup20() {
+                var popup = document.getElementById("popup20");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup21() {
+                var popup = document.getElementById("popup21");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup22() {
+                var popup = document.getElementById("popup22");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup23() {
+                var popup = document.getElementById("popup23");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup24() {
+                var popup = document.getElementById("popup24");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup25() {
+                var popup = document.getElementById("popup25");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup26() {
+                var popup = document.getElementById("popup26");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup27() {
+                var popup = document.getElementById("popup27");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup28() {
+                var popup = document.getElementById("popup28");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup29() {
+                var popup = document.getElementById("popup29");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup30() {
+                var popup = document.getElementById("popup30");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup31() {
+                var popup = document.getElementById("popup31");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup32() {
+                var popup = document.getElementById("popup32");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup33() {
+                var popup = document.getElementById("popup33");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup34() {
+                var popup = document.getElementById("popup34");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup35() {
+                var popup = document.getElementById("popup35");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup36() {
+                var popup = document.getElementById("popup36");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup37() {
+                var popup = document.getElementById("popup37");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup38() {
+                var popup = document.getElementById("popup38");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup39() {
+                var popup = document.getElementById("popup39");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup40() {
+                var popup = document.getElementById("popup40");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup41() {
+                var popup = document.getElementById("popup41");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup42() {
+                var popup = document.getElementById("popup42");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup43() {
+                var popup = document.getElementById("popup43");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup44() {
+                var popup = document.getElementById("popup44");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup45() {
+                var popup = document.getElementById("popup45");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup46() {
+                var popup = document.getElementById("popup46");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup47() {
+                var popup = document.getElementById("popup47");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup48() {
+                var popup = document.getElementById("popup48");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup49() {
+                var popup = document.getElementById("popup49");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup50() {
+                var popup = document.getElementById("popup50");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+        </script>
+        
+        <!-- Run the game code -->
+        <script type="text/javascript" src="sim1/unscriptedsim.js?ZHDYB=129408506"></script>
+        <script>window.onload = GameMaker_Init;</script>
+    </body>
+
+</html>

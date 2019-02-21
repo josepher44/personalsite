@@ -1,0 +1,292 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Joe Gallagher's Engineering Portfolio">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                                        <div class="column">
+                    <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+                        
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+                        
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+                       
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>Data Accumulation, Storage, and Interpretation</h1>
+
+                <p>Data storage, likewise, leaves quite a lot to be desired in terms of technical elegance. The standard in the Bricklink/LEGO world is XML – it’s used in automatically uploading vast libraries of parts for sale to Bricklink, and as the basis of the .bsx file format I’ll get to when we reach the inventory management system. It’s also how Bricklink provides downloadable data about their catalog as a whole. So XML became a logical starting point – first giving my software the capability of parsing existing files, and then using it as a quick means to store the data I was scraping. Not the best way of doing this, but good enough to start quickly getting some real information out of this whole thing. </p>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/catalogpage.png"></div>
+
+                <p>Part data storage is the first task to be accomplished. While the initial reasoning for capturing these pages was to gain information about their valid colors, a whole host of useful information is contained here. Years of release are useful in extrapolating the likely age of a given collection of parts. Size is a good way to establish estimates for volumetric storage requirements, and both size and weight will be crucial datapoints for any kind of automated sorting (I&rsquo;ll get there, I promise!) Inconsistencies between the colors for sale, wanted, sold, known, or simply with available image often reveal interesting production oddities or rare variants which a simple look at known colors would hide. A series of complex relationship flags indicating the part&rsquo;s connection to similar or complimentary parts is often present. And the page provides direct links to inventory and price guide information.</p>
+                <p>As a result, it is not quite known all the ways which this data may be useful to me in the future. The raw HTML is therefore stored, in case parsing for a new piece of information needs to be added later. The HTML is stored within an XML file for each part, along with some information about the part&rsquo;s history of being scraped, for use in developing routines to periodically scrape the site without human intervention in the future.</p>
+                <p>However, raw HTML is a messy means to actually transmit data, not to mention much larger than is necessary. A typical part&rsquo;s page will end up around 100kb stored this way, a part with all useful data extracted, even in a fairly inefficient XML format, will barely cross 2kb. Therefore, rather than parsing HTML on the fly, the useful data is parsed out at time of scrape through a complex series of string manipulation methods. There is almost definitely a much better way to do this, using javascript style traversal of HTML DOM elements. At the time the first bits of this code was written, the extent of my HTML knowledge was basically &ldquo;All the parts of the website are in there <em>somewhere</em>, get digging!&rdquo; This consolidated data is stored in one master XML file, the part database. Below is what one part looks like stored in this format: </p>
+
+                <div class="codeblock">
+
+<p class="code">&lt;part id="3664pb10"&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;partnumber&gt;3664pb10&lt;/partnumber&gt;</p>
+<p class="code">&nbsp;&nbsp; &nbsp;&lt;date&gt;Thu Jul 06 14:07:02 EDT 2017&lt;/date&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;categoryid&gt;440&lt;/categoryid&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;categoryname&gt;Duplo, Brick, Decorated&lt;/categoryname&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;name&gt;Duplo, Brick 2 x 2 x 2 Curved Top with Life Preserver Pattern&lt;/name&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;firstyear&gt;1980&lt;/firstyear&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;lastyear&gt;1990&lt;/lastyear&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;weight&gt;9.5&lt;/weight&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;lengthstuds&gt;2.0&lt;/lengthstuds&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;widthstuds&gt;2.0&lt;/widthstuds&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;heightstuds&gt;2.0&lt;/heightstuds&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;lengthmill&gt;16&lt;/lengthmill&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;widthmill&gt;16&lt;/widthmill&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;heightmill&gt;19&lt;/heightmill&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;notes /&gt;</p>
+<p class="code">&nbsp; &nbsp;&nbsp;&lt;itemsforsale&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;colorforsale&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;color&gt;Yellow&lt;/color&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;count&gt;14&lt;/count&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/colorforsale&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;/itemsforsale&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;wantedlists&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;colorwanted&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;color&gt;Any Color&lt;/color&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;count&gt;3&lt;/count&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/colorwanted&gt;</p>
+<p class="code">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&lt;colorwanted&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;color&gt;Yellow&lt;/color&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;count&gt;2&lt;/count&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/colorwanted&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;/wantedlists&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;priceguides&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;colorpriceguide&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;color&gt;Yellow&lt;/color&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;count&gt;7&lt;/count&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/colorpriceguide&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;/priceguides&gt;</p>
+<p class="code">&nbsp;&nbsp; &nbsp;&lt;knowncolorsbl&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;knowncolorbl&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;color&gt;Yellow&lt;/color&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;count&gt;6&lt;/count&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/knowncolorbl&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;/knowncolorsbl&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;knowncolorsblmenu&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;color&gt;Yellow&lt;/color&gt;</p>
+<p class="code">&nbsp;&nbsp;&nbsp; &lt;/knowncolorsblmenu&gt;</p>
+<p class="code">&nbsp; &lt;/part&gt;</p>
+                </div>
+
+<p>The mechanism through which all this is done isn&rsquo;t ideal, and shows off another key lesson of this project: <em>Tremendous amounts of extraneous code can be generated by making effort to visualize incremental progress, or to take advantage of legacy features which don&rsquo;t need to exist.</em> The code which interprets the HTML is <em>littered</em> with intermediate steps which didn&rsquo;t need to be taken, which are subsequently unnecessarily utilized by the next step in the process, making them harder to remove. When you&rsquo;re writing something like this, it&rsquo;s important to have a clearly stated start and end format for your data, and even if you write it in an incremental manner, have a clear plan through which all intermediate steps can be cleaned up and removed once the functionality is in place. Otherwise, you end up with a lot of stray classes and helper functions with deceptively similar names, and when you need to reuse that functionality, it can be hard to follow how everything works. I&rsquo;m not going to flowchart out this one at the moment, because it really <em>should </em>be as simple as &ldquo;take HTML, extract data, append to master XML file,&rdquo; but it isn&rsquo;t even close to this right now.</p>
+<p>Right now, the code also needs a deep-cleaning to eliminate memory leaks, where vast amounts of part data remain in memory long after they are needed. Both the overall database, and the individual parts, can be culprits. This would be another reason to move towards a more formal database structure, to dramatically improve the ease with which individual bits of the database can be peeked at without loading the whole thing into memory. This may be done as part of a transition to a server application, likely ported to a language which provides more direct options for memory management like C++.</p>
+
+<br>
+
+<p>Remember when this series of posts was going to be about a universal LEGO part sortation automation solution? Yeah me too. We’ll get there, I promise. A lot of the stuff covered so far seems like…kind of small potatoes, compared to that. They weren’t small potatoes to me at the time they happened, they felt like insurmountable obstacles. This project has been a long journey made up of a continuous string of learning what the project demanded, even if my baseline knowledge on the topic at hand was zero. It’s worked so far, and I see no reason to slow down even as the objective difficulty climbs. But at every level, the tiny details are crucial, and what make or break a design, much more than the overall concepts. Short-changing the details in this design log short-changes what makes it all work.</p>
+
+<br>
+
+<p>Anyways, the end result of this all is, a clean and relatively concise reference for just about any piece of information you could want on a given part, including the original goal, the list of colors it is available in! The next step on developing the price guide analytic software which motivated this whole project would be to use this information to generate price guide URLs, and scrape that data in turn.</p>
+
+<p>Most of the data is quite straightforwards, but color deserves special focus. There are <em>several</em> conflicting sources of color data, which can indicate different things. Color data can be pulled from Items for Sale, Wanted Lists, Price Guides (parts that have actually sold), and "known colors" (data sourced from set inventories). Sometimes, oddball colors show up on one list and no others, as a result of somebody mis-identifying a part or color, or putting something on their "wanted list" which doesn't actually exist. Other times, these unusual colors are just indicitive of really rare parts, like LEGO prototypes, sometimes worth hundreds of dollars. The image pulldown menu is a 5th source, and will sometimes contain renderings, or actual photos, of colors that don't show up anywhere else but...might exist? There's no way to know Right now, I'm recording everything -- I'll have to do more work to make sense of it all later.</p>
+
+<p>In a further effort to reduce the load my software applies to Bricklink's servers, I started thinking properly about how often I would <em>really</em> need to access each page. The Catalog pages, for example, really don't change much at all, and there's even a <a href="https://www.bricklink.com/catalogReqList.asp?viewYear=2019&viewMonth=2" target="_blank">change log page</a> which can be easily monitored. No need to rescrape anything if it doesn't change. For price guides, the frequency varies dramatically with the part. Some rare and not particularly demanded parts will go months on end without new items being listed for sale, while others sell hundreds an hour. After an initial scrape, I planned to use this frequency data to develop a weighted priority list of pages to be scraped, corresponding to the anticipated rate of change.</p>
+<p>But by this point, other aspects of the project had developed to the point where this goal took a back seat. Other tremendously useful applications for this comprehensive dataset had emerged, and the priorities of the project began to <a class="popup" onclick="popup5()">pivot<span class="popuptext" id="popup5"><iframe width="560" height="315" src="https://www.youtube.com/embed/M1vfXoUNDYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a>.</p>
+
+
+
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page3.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page5.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+        </script>
+    </body>
+
+</html>

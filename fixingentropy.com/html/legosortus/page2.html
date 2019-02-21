@@ -1,0 +1,639 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Joe Gallagher's Engineering Portfolio">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                                        <div class="column">
+                    <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+                        
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+                        
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+                       
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>Beginnings of BLCrawler</h1>
+
+                <p>So I built two things. A webscraper, and a warehouse.</p>
+
+                <p>Let’s talk about the webscraper first.</p>
+
+                <p>The idea here was, I had an untapped source of cheap LEGO right in front of me: people trying to undercut the entire marketplace and get rid of their pieces as fast as possible. The problem was actually capturing this information and putting it to use. Knowing that one given part can be gotten for cheap from a given seller doesn’t do me much good, but systematically checking every single price guide for good deals from a seller? That’s getting somewhere. </p>
+
+                <p>Here’s the basics of how it gets set up:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/priceguideflow.png"></div>
+
+                <p>Now, it can get a lot more complex than this, and in reality, we’re scanning ~70,000 price guides rather than four. Specifically, the criteria for assessing whether an individual part is worth adding to an order, or whether an order as a whole is worthwhile, can get a lot more sophisticated. Just some of the factors you could look at include</p>
+                <ul>
+                    <li>Your current stock of the part</li><li>Overall scarcity</li>
+                    <li>Upwards or downwards pricing trends</li>
+                    <li>Status of the part as a potential loss leader</li>
+                    <li>Complex relationships such as set correlations shared between the part and others in your inventory</li>
+                </ul>
+
+                <p>And so on. Statistically optimizing this more would be really interesting, if I knew more about such things. But that’s the basic idea -- build an order starting with the best individual part deal, check what else of merit that same store has to offer, by combing through all the raw price guide data. If the overall order is worthwhile, place it, then continue on to the next best individual deal. </p>
+
+                <p>Simple, no?</p>
+
+                <p>Didn’t quite end up that way. </p>
+
+                <p>
+                    First, there was the matter of your author’s unusual, piecemeal, and largely irrelevant programming skillset, history, and approach. The long, strange, unfortunate journey I’ve experienced in learning software development, and more importantly, an accurate/constructive sense of self-awareness regarding my skills in software development and how best to improve them, will definitely be the subject of another post sometime. I think laying out that timeline will help me understand that whole mess better, and hopefully help others avoid some of my massive pitfalls in that area. But to make a long story short, if you had asked me to create something similar about two months prior, I would have either flat-out denied my ability to do so, and if pressed further to create something workable, would have jumped through tons of hoops to make something passable using <em><strong>woefully inappropriate </strong></em>tools and techniques, and made life much harder for myself while insisting that I should stick with doing things “the easy way” because I wasn’t good enough at software yet. It was a late start, but in a lot of ways, this was the first proper software project I built and “owned” from scratch with a somewhat-informed intention to do things right, and a lot of self-driven education happened along the way. As such, the core code and project timeline bare some of the scars which come with that territory, and it all happened very, very slowly. 
+                </p>
+
+                <p>I chose to do all development in Java, because frankly, my software engineering class project had been in Java, and it was what I was feeling comfortable with at the time for general-purpose desktop application development. Knowing what I know now, there are relatively few technical reasons why this was an especially good choice, and a few reasons for which it was an exceptionally poor one. The program’s functionality has since sprawled to the point where aspects make sense to branch off, and I will likely attempt to migrate these elements to C++ while doing so. But I’m getting ahead of myself – project for another time.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/console1.png"></div>
+
+                <p>The base program is centered around a console interface implemented in <a href="https://en.wikipedia.org/wiki/Swing_(Java)" target="_blank">Swing</a>, with a flagging system applied to all print statements allowing easy filtering of the vast number of action readouts and fatal null pointer exceptions alike during development. Initial plans featured a mixed console/GUI interface similar to AutoCAD, but these elements have been largely separated out, and a lot of the functionality should really be moved to a proper bash terminal…I miss my tab completion when using my own much more minimal implementation. The core structural elements of the program follow the model-view-controller design pattern, at least most of the time. Another choice largely driven by “that’s how we did it in Soft Eng,” without fully understanding why or how to build a MVC setup effectively. This time it’s a solid choice – the code just needs a deep-cleaning to ensure that it actually follows this design approach in all places.</p>
+
+                <p>
+                    Rather than directly through controller classes, most actions are initially triggered via an intermediate “command” structure, very loosely based on the <a href="https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599732-what-is-command-based-programming" target="_blank">command-based WPILib system</a> for Java in FRC. The primary motivation in using a command based approach here was to allow actions to stack up and queue. I figured that accessing Bricklink pages would take a non-trivial amount of time, and that they should be regularly spaced out, in order to not overwhelm Bricklink’s servers. Commands can be generated by either user actions or automatically through the program. Their actual action can be wildly varied, but they all implement a common interface allowing them to be predictably manipulated via a queue structure. When they reach the bottom of the queue, the “execute” method on the command is called, which then flags itself as finished once its associated actions return complete. Execution can also be externally force-stopped. Commands can also have delays and timeouts associated with them, which space out execution of a command from the previous command, or automatically force-stops a command if it overruns its prescribed run time respectively. Simple or urgent commands can also be flagged to bypass the queue structure entirely, and run immediately. 
+                </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/highlevelcommandflow.png"></div>
+
+<p class="extratop">And here’s a more detailed look at what is happening during each “tick” of the queue:</p> 
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/lowlevelcommandflow.png"></div>
+
+<p>Early development was quite slow going. One lingering after-effect of the aforementioned learning-programming journey was that during the early stages, the thought “y’know, since thousands of programs do this thing you need, someone’s probably written a library to do exactly that” crossed my mind with far less frequency than it should have. So all of the above: console, output filtering, input parsing, command structure, and periodic queue, were written from scratch. </p>
+
+<p>With the basic structure in place, the next challenge was to compile the list of pages to be scraped. Fortunately the URL format used can be easily derived from a part’s color code and part number, but the part numbering system used by Bricklink is…eclectic, to put it lightly. It’s a mixture of the standard LEGO numbering system, with various patchwork solutions laid on top of the many holes where LEGO doesn’t distinguish parts to the degree hobbyists do. Additionally, each part comes in only a fraction of the colors produced by LEGO – scraping all parts in all colors will return 404 errors on 95% of pages. </p>
+
+<p>I had a pretty complex way of approaching this problem, basically systematically browsing through the entire catalog the way a person would to discover every link to an individual part. Starting with the <a href="https://www.bricklink.com/catalogTree.asp?itemType=P&itemBrand=1000">index page</a>, the system would scrape the 1st page of the roughly 200 top level categories of parts. Each of these pages, subsequently, would display the 1st 50 items, with a “page 1 of x” indicator. The program would then generate a command to scape pages 2 through x for that category, so that all part links would be captured. Then the parts themselves would be scraped, to determine the colors they were produced in. Only then, would parts and colors be combined to generate the ~70,000 price guide URLs, to scrape the really useful data. </p>
+
+<p>I reached the point of having a testbed of this system working with only a few nagging bugs, using <a href="https://jsoup.org/">JSoup</a> to parse the HTML source for links of the target format. Near the end, I inadvertently discovered that all but the last two steps could be dramatically shortcut, thanks to a well-hidden “download catalog” link, providing a vast XML file listing every single valid part number. Oh well, learned some things about HTML parsing.</p>
+
+<p>The final major wrench in the plan was bricklink’s attitude towards having their website scraped like this. I figured that when the entire premise of a project relies on access to a service provider like Bricklink, it would be a good idea to learn about what actions that service provider are and aren’t okay with right from the get-go. This would then minimize the chances of something awful happening, like, say, getting ruthlessly banned from the service shortly before a major milestone/deadline <small>unlike certain people I know.</small></p>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/spiderpolicy.png"></div>
+
+<p class="extratop">Well, that’s pretty definitive. </p> 
+
+<p>But wait, they’ve got an API! Lets see what we can do over ther-</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/apipolicy.png"></div>
+
+<p class="extratop">oh.</p> 
+
+<p>That’s a smaller number than one usually sees attached to APIs. Usually you see “per minute” or “per second,” not “per day.” And according to the forums the API support email stopped responding to queries in 2015, the same year of the last entry to the API changelog. Not a good sign for active support, anyways. Gonna need a new plan.</p>
+
+<p>(For reference: refreshing each price guide once per day would constitute about 70,000 API calls. This number will drop – I’ll explain why later -- but it’s a good reference point to refer to)</p>
+
+<p>Now, I know from personal experience that these things…aren’t exactly strictly enforced (you’ll notice the policy was last updated more than a decade ago, and the robots.txt file referenced is now nowhere to be found) There are plenty of programs already out there which interact with bricklink, some of which I’ll be discussing, which are almost certainly hitting their site with orders of magnitude more requests than I ever will be, and I’m virtually certain they work via API key tied to your very publicly identified account. I also know from some of my JSoup tests that you can continuously call catalog pages for quite a long time and nothing bad will happen. Still, given that the end-game for this software is to sit on a server and operate uninterrupted for months on end, I figure that it’s best to cover my trail a little bit. I may have gone a bit overkill with this part, bear with me.</p>
+
+<p>Enter the Tor Network.</p>
+
+
+
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page1.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page3.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup18() {
+                var popup = document.getElementById("popup18");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup19() {
+                var popup = document.getElementById("popup19");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup20() {
+                var popup = document.getElementById("popup20");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup21() {
+                var popup = document.getElementById("popup21");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup22() {
+                var popup = document.getElementById("popup22");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup23() {
+                var popup = document.getElementById("popup23");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup24() {
+                var popup = document.getElementById("popup24");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup25() {
+                var popup = document.getElementById("popup25");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup26() {
+                var popup = document.getElementById("popup26");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup27() {
+                var popup = document.getElementById("popup27");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup28() {
+                var popup = document.getElementById("popup28");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup29() {
+                var popup = document.getElementById("popup29");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup30() {
+                var popup = document.getElementById("popup30");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup31() {
+                var popup = document.getElementById("popup31");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup32() {
+                var popup = document.getElementById("popup32");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup33() {
+                var popup = document.getElementById("popup33");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup34() {
+                var popup = document.getElementById("popup34");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup35() {
+                var popup = document.getElementById("popup35");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup36() {
+                var popup = document.getElementById("popup36");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup37() {
+                var popup = document.getElementById("popup37");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup38() {
+                var popup = document.getElementById("popup38");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup39() {
+                var popup = document.getElementById("popup39");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup40() {
+                var popup = document.getElementById("popup40");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup41() {
+                var popup = document.getElementById("popup41");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup42() {
+                var popup = document.getElementById("popup42");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup43() {
+                var popup = document.getElementById("popup43");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup44() {
+                var popup = document.getElementById("popup44");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup45() {
+                var popup = document.getElementById("popup45");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup46() {
+                var popup = document.getElementById("popup46");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup47() {
+                var popup = document.getElementById("popup47");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup48() {
+                var popup = document.getElementById("popup48");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup49() {
+                var popup = document.getElementById("popup49");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+                        function popup50() {
+                var popup = document.getElementById("popup50");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+        </script>
+    </body>
+
+</html>

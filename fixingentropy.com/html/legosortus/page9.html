@@ -1,0 +1,1254 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Documenting the life of a universal LEGO sorting machine">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                    <div class="column">
+                        <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>Computers: Worst. Students. Ever.</h1>
+
+                <p><em>This is going to be another one of those &ldquo;explain to myself concepts that I&rsquo;m supposed to know, so that I&rsquo;m sure I actually understand them&rdquo; sections. My knowledge on all of this was absolute zero at the start of this project. There are probably some extremely wrong things here. </em></p>
+                <p>I&rsquo;ve always enjoyed teaching, or at least, babbling endlessly about the pieces of knowledge I found interesting. Much of what I know about engineering came from putting myself in situations like FRC where I was forced to pretend that I knew what I was doing, and rapidly intuit logical explanations of things I barely understood myself. In particular, to really teach someone something effectively, you have to figure out how to distill it down to the core ideas, the things that <em>really matter</em>, providing genuine insight beyond just a bunch of data.</p>
+                <p>A story I&rsquo;ll always tell about this: During the &ldquo;no sleep allowed&rdquo; final push in FRC season, my job became that of human to-do list. I was the guy who had the mental checklist of all the tiny, tiny details that had slipped through the cracks, and needed to be taken care of in order to make the robot functional. Grabbing students the moment they became free, and assigning these tasks in rapid fire fashion. It was an incredible fast-paced process, which spread my attention dramatically &ndash; I&rsquo;d very often be having 4+ conversations at once, and had to get messages across as fast as possible.</p>
+
+                <p>During one of those moments, a freshman came up to me and asked me for a task. I glanced at the robot, and saw something like <a class="popup" onclick="popup1()">this<span class="popuptext" id="popup1"><img class="popupimg" src="/images/nocountersink.jpg"></span></a>: a couple of flat head screws installed into holes which had not been <a class="popup" onclick="popup3()">countersunk<span class="popuptext" id="popup3"><img class="popupimg" src="/images/countersink1.jpg"></span></a>. Probably my fault – I must have handed someone those screws and asked them to be installed, without explaining about their head shape and what a countersink is. These kinds of things happen, it’s no big deal, there’s no reason to expect people will magically know the purpose of these screws. So I waved my hand at the installed screws, and fatefully said “countersink those.”</p>
+
+                <p>10 minutes later, I came back to find these beauties, now permanently enthroned in the “wall of fame/shame:”</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/darrenhurtmyfeelings.jpg"></div>
+
+                <p>Well, the kid&rsquo;s good at following instructions, I guess.</p>
+                <p>This was <em>technically correct</em>, according to my direction. &ldquo;Those&rdquo; were &ldquo;countersunk.&rdquo; But instead of ending up with correctly installed screws, we simply ended up with a pain of a screw extraction problem, and a story the poor guy was never, ever allowed to forget. But ever since then, I&rsquo;ve tried to be more focused on conveying <em>intent</em> over <em>details</em>. Detail without intent leads to things being done without an understanding of their greater purpose, instead being done just because someone told you the steps to take. Finding the overall meaning and patterns in something, whether it be a machining process, or a stream of pixels, is more important than the actual specifics of any element itself, leads to the ability to intuit away uncertainty, and ultimately get the result you want.</p>
+                <p>Machine learning should therefore, in theory, be right up my alley, a nice natural extension of that way of thinking.</p>
+                <p>I&rsquo;m&hellip;getting there. Bear with me, as we dive into the technical details of building software for automatically identifying LEGO.</p>
+
+                <h3>Data types</h3>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/littledata.jpg"></div>
+
+                <p>This is the kind of image I&rsquo;ll be looking at when looking to pick up a mixed used lot. I have a vague sense that it will be worthwhile, based on the depth of the bin, the asking price, the expensive technic and boat hull pieces I can see. If I was really, really knowledgeable, I could probably accurately identify most of the parts visible on top, and maybe even the set that structure in the middle of is likely the remnants of, and intuit some more information about the lot.</p>
+                <p>But&hellip;there&rsquo;s no chance I can accurately determine the exact inventory or exact sale value of the lot. I have to take an educated guess. If I were to try to develop a complete list of parts present, I&rsquo;d simply get it wrong. I can&rsquo;t do it, and no algorithm could, because there&rsquo;s just not enough information to go on. This is a key point. Even the best algorithm design in the world can&rsquo;t accomplish its task if you don&rsquo;t give it adequate data.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excessivedata.jpg"></div>
+
+                <p>But you can&rsquo;t just say the opposite, and go &ldquo;okay, then if I give even a mediocre algorithm enough data, it will always find out what I want to find out.&rdquo; Here&rsquo;s the other side of the scale. This is an image of an individual LEGO stud, taken via electron microscope. It maps out the surface features down to the nanometer.</p>
+                <p>First off, this is clearly impractical. I&rsquo;m not about to go buy an electron microscope for this project. This image probably took ages to collect, and tons of power. It probably happened in a controlled lab environment, not suitable for shuttling parts through at a part per second.</p>
+                <p>The other, more practical problem with excessive data is, it gets computationally intense in a hurry, and even seemingly small comparisons can become prohibitive. Say, for example, you have 1000 images of two given pieces. You theorize that you can extract pixel-based &ldquo;features,&rdquo; of the form &ldquo;if pixel A is brighter than pixel B, that indicates that this is part #1 instead of part #2.&rdquo; Individual pixels are probably pretty meaningless, but a bunch in parallel could mean something. You then go to &ldquo;If A brighter than B <em>and</em> C brighter than D, that&rsquo;ll increase accuracy&rdquo; and so on. But at each stage, you have to check <em>every combination of pixels</em> against <em>every other combination of pixels</em>. It ends up growing exponentially, taking on this formula, if you want to check every combination against every other combination, where &ldquo;x&rdquo; is the image side length, in pixels.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/stepwiseeq.png"></div>
+
+                <p>Every pixel (x^2), compared to every other pixel (x^2-1). Perform that comparison, for every single possible feature. Even at just 16x16 images, the number of comparisons has scaled to over 10^203. That sounds a bit impractical.</p>
+                <p>Brute force approaches like this would theoretically return the most accurate results, but we can&rsquo;t actually use them. A lot of algorithms suffer from this problem, where the computational effort scales exponentially or worse with the volume of data being passed into them. So the problem isn&rsquo;t as simple as &ldquo;if we collect really, <em>really</em> good and detailed data, it will be easy.&rdquo; It will be easy, but we will also light our GPU on fire.</p>
+                <p>So clearly, there&rsquo;s such a thing as too little data, and too much data. There are definitely going to be cool tricks we can use to compensate for errors in either direction, but at the core, there should be a happy medium. <strong><em>How much data do we need? What types of data provide the greatest utility for the least cost?</em></strong></p>
+
+                <p>Well, let’s look at some data types that one might collect from LEGO, and what their strengths and weaknesses might be, keeping in mind all the <a href="page8.html">subtleties of the problem</a> we’re facing. </p>
+
+                <ul>
+                    <li><strong>Weight</strong>. Probably the single most efficient data type, in terms of utility versus impact on processing. In theory, every part of the same class should contain the same amount of plastic, and weigh exactly the same.
+                        <p>This obviously isn&rsquo;t quite accurate, nor is it enough to uniquely identify every single part. First of all, manufacturing tolerances are a thing, not only part-to-part tolerances, but year-to-year and decade-to-decade. Many LEGO pieces are functionally identical to those produced in the 1960s, but over the years LEGO has behind the scenes played with different density plastics, pigments and other small details which make a difference. Take for example the underside of these two <a class="popup" onclick="popup4()">green plates<span class="popuptext" id="popup4"><img class="popupimg" src="/images/notevenvariants.jpg"></span></a>. Even hardcore LEGO fans don&rsquo;t differentiate, but adding those little holes is probably saving LEGO millions in plastic cost per year. Unsurprisingly, the part on the right is 0.015g lighter than the older one on the left. Seemingly trivial, but this is actually quite a lot by LEGO standards. Many smaller parts reliably clock in with under 0.002 grams of variance measured across hundreds of instances. LEGO quality control is <strong><em>intense</em></strong>.</p>
+                        <p>You&rsquo;d think that weight couldn&rsquo;t ever be used for color identification, but you&rsquo;d be wrong! Different colors of the same part very often have statistically significant differences in weight, due to different pigmentation densities. Obviously this utility is limited, it&rsquo;s not going to be much use in differentiating the hundreds of minifig head variants. But it&rsquo;s not something that should be 100% written off either.</p>
+                        <p>The biggest shortcoming of weight from a functionality perspective is the potential for false positives. You could easily get a small assembly of parts through the machine which just <em>happens</em> to weigh exactly the same as a common part. It is also blind to certain kinds of part defects &ndash; damaged parts typically don&rsquo;t shed any material.</p>
+                        <p>But this blindness can also be a blessing. Weight can detect a lot of things that other approaches might have a really hard time with. Remember that example of <a class="popup" onclick="popup5()">parts hidden inside another part<span class="popuptext" id="popup5"><img class="popupimg" src="/images/container.jpg"></span></a>? This would be plain as day to a scale, while it might slip past a poorly placed camera. Bendy parts or other parts with continuously variable behavior shapes or stable orientations can be a challenge for visual techniques, but they&rsquo;ll always weigh the same. Megabloks? Please, first one I checked had 6% variance from its clone!</p>
+                        <p>So weight is sounding pretty great. Someday, for fun, I&rsquo;d be curious to try and see how accurate I can get a classification algorithm to run, solely on part mass. Who would have thought?</p>
+
+                        <p>The main problem with weight is the mechanical difficulty in measuring it. Weight is, in practice, measured by detecting the normal force with which a scale must push back on a part to keep it in static equilibrium. Normally, this just means it’s pushing back against the force of gravity. But there can be all sorts of sources of noise. Just try jumping hard onto your bathroom scale if you ever want a health scare! On a smaller scale (pun intended), the machine housing the scale is likely to have all kinds of sources of vibration and airflow, as things move about. This will in particular be the case if we attempt to weigh parts while they are in motion. </p>
+
+                        <p>Weight is therefore likely to demand a more controlled environment for accurate measurements. Gently setting a part on a scale, and letting it sit while the measurements normalize, would be ideal. However, this may be a difficult condition to provide. It means stopping the flow of parts for a second, meaning that the entire system would have to move to a <a class="popup" onclick="popup6()">discretely incremented feed
+                            <span class="popuptext" id="popup6">        <iframe width="560" height="315" src="https://www.youtube.com/embed/1sC2QynIs60?start=123" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </span>
+                            </a> where things move in “steps,” rather than a more <a class="popup" onclick="popup7()">continuous process
+                            <span class="popuptext" id="popup7">        <iframe width="560" height="315" src="https://www.youtube.com/embed/_pVhkgYUgo0?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </span>
+                            </a>. This makes the entire mechanical system much more difficult. 
+
+                        </p>
+
+                        <p>Additionally, typical precision scales have a relatively narrow range over which they’ll return accurate data. The largest parts would overwhelm a scale with enough resolution to accurately differentiate the small ones. So weight likely means multiple identification locations, and a rudimentary first order sort by size, which as has been discussed, is harder to do than it seems at first glance. </p>
+
+                        <p>In terms of actual cost in dollars, weight isn’t that bad. Right now, I have a 20g scale for this purpose, which measures down to a tolerance of 0.001g. Most parts seem to vary by a couple milligrams, so I’m not certain that jumping up to an 0.0001g scale would add any value. It certainly costs more – about $200 up from $20. And that puts you well within the territory of “shielding the scale from ambient airflow for accuracy.” At that point, I think it’s just introducing noise, but I wouldn’t mind trying to be sure. On the other end of the cost spectrum, there are <a class="popup" onclick="popup8()">strain gagues<span class="popuptext" id="popup8"><img class="popupimg" src="/images/straingague.jpg"></span></a>. I am not sure of the accuracy I can ultimately achieve with these, but I am highly intrigued not only by their low cost, but the ease with which they can be integrated into custom mechanisms. I’ll talk about these more when I get to the mechanical side. </p>
+                    </li>
+
+                    <li><strong>Rudimentary Visual Data</strong>. No cameras here. Looking at the &ldquo;low cost&rdquo; options, for the moment. Things like, simple color filters, IR banner sensors, and so on. These kinds of tools are actually pretty commonly used in a lot of those limited scope sorting machines I&rsquo;ve talked about. For example, <a class="popup" onclick="popup9()">this one
+                        <span class="popuptext" id="popup9">        <iframe width="560" height="315" src="https://www.youtube.com/embed/CuW73P5PanM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a> uses a simple color sensor to detect both the color and length of parts as they zoom past, performing all classification operations. <a class="popup" onclick="popup10()">This system
+                        <span class="popuptext" id="popup10">        <iframe width="560" height="315" src="https://www.youtube.com/embed/uCuQsNwX1QY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a> uses cameras for the actual classification, but an IR banner sensor to control the feed and ensure that parts are correctly position
+                        <p>The thing I worry about with these devices is how much variability there&rsquo;s going to be in the parts they&rsquo;re seeing. Most every application for these devices in identification relies on reliable and predictable orientation. Measuring the length of parts as they pass by, for example. Mechanically imposing this kind of regularization, for example, ensuring that the parts are oriented on a conveyor such that the &ldquo;long side&rdquo; is accurately measured seems to be more trouble than it&rsquo;s worth. I wouldn&rsquo;t even really know where to begin.</p>
+                        <p>This kind of thing may end up highly useful for part <em>tracking</em>. For example, controlling a conveyor based on the position of a part. Estimating the centrode of a part without the computational cost of a full camera. Or detecting a part as it passes through a gate, and reporting a jam if it is not seen as expected. In fact, banner sensors like this are going to be used <em>all over the place </em>for this kind of tracking. But at the moment, I don&rsquo;t see much utility for these kinds of tools in actual part identification, just due to how unstructured the problem is.</p>
+                    </li>
+                    <li><p><strong>Volume</strong>. Like weight, this is another property which should be highly &ldquo;regularized&rdquo; for every part, and provides a tremendous amount of information in a single datapoint. Volume can be measured using any number of tools, but the slickest way to do so is via Archimedes&rsquo; principle. Submerge a part in liquid, and measuring the level of displaced fluid, should return an accurate assessment of the part&rsquo;s volume. Mechanically, this could be done by placing the part on a flat surface, dropping a container which forms a seal with the floor over the part, filling it with fluid, and measuring the fluid level.&nbsp; The fluid can then be recycled and reused for the next part</p>
+                        <p>Also much like weight, volume measurements require controlled conditions and ample settling time. Probably even moreso. The fluid needs time to settle out so an accurate measurement can be achieved. I really don&rsquo;t have a great sense of the ultimate accuracy which can realistically be achieved, but by sense it that it could be very good, potentially even more accurate than weight. LEGO dimensional tolerances are<em> absurd</em>, and have varied less with time.</p>
+                        <p>Volume measurements have their own shortcomings and potential sources of inaccuracy. The fluid entering the container must be very precisely metered out. Something must be done to prevent parts from capturing air bubbles, which would throw off the measurement, perhaps a vibratory base. Certain parts, such as electronics, cannot be assessed this way, as the fluid would damage them.</p>
+                        <p>Oh and also:</p>
+
+
+
+                        <div class=pageimgcontainer><img class="pageimg" src="/images/float.jpg"></div>
+
+                        <p>Some LEGO pieces float. Oh well. This might be more trouble than it’s worth. </p>
+
+                        <p>The odds seem stacked against volume as a useful tool. I haven’t written it off entirely, but I don’t plan to use it in the LEGOSortus’ initial implementation. I would, however, consider its use in a “second opinion,” for getting a better handle on parts which have subtle internal geometries a camera might have trouble with. Probably not though. </p>
+
+                        <p>It’s like I said in the last post. When in doubt, call the aquarium. Not Jay.  </p>
+
+                    </li>
+
+                    <li><strong>Surface Geometry</strong>. I spent a lot of time on this one in the early goings of this project. Here, I&rsquo;m talking about any technique which maps the detailed physical contours of the part, using either direct contact or indirect measurement. The most relevant technique for doing this, by far, is with laser triangulation.
+
+                        <div class=pageimgcontainer><img class="pageimg" src="/images/triangulation.png"></div>
+
+                        <p>In laser triangulation, you bounce focused light off an object, where it is captured by a camera or sensor mounted at an angle. The position of the light relative to the sensor will vary based on the distance between the laser and the object. By performing a bit of trig, you can figure out the distance between the laser and the object.</p>
+                        <p>This is one of two forms of laser rangefinding. Sensors such as <a href="https://en.wikipedia.org/wiki/Lidar" target="_blank">LiDAR</a> work by measuring the time it takes a pulsed beam to reach an object and <a class="popup" onclick="popup12()">reflect back to a sensor
+                            <span class="popuptext" id="popup12">        <iframe width="560" height="315" src="https://www.youtube.com/embed/vCRrXQRvC_I?start=797" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </span>
+                            </a>, similar to a bat&rsquo;s echolocation, or an ultrasonic sensor. This is great for wide open, unstructured environments like autonomous vehicles, but the fine accuracy, particularly at close range, leaves much to be desired for precision applications. So triangulation finds a home in precision 3d scanning.</p>
+                        <p>Some sensors use simple laser points, but many project a line, allowing thousands of points to be scanned at a time. Others go even further and use a setup known as <a class="popup" onclick="popup13()">Structured Light Scanning<span class="popuptext" id="popup13"><img class="popupimg" src="/images/structuredlight.jpg"></span></a>, using projected patterns instead of lasers to capture an entire object in one shot. The most accurate sensors are <a class="popup" onclick="popup14()">touch probe replacement solutions
+                            <span class="popuptext" id="popup14">        <iframe width="560" height="315" src="https://www.youtube.com/embed/fHpJxy_qD88" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </span>
+                            </a>, built for precision quality control and part inspection applications. They can achieve <em>extreme</em> accuracy, down to thousandths of a millimeter.</p>
+                        <p>You can see why this could be handy for identifying LEGO.</p>
+                        <p>This is the technology which, without a doubt, produces the <em>most</em> useful data. It won&rsquo;t do color, but it will do just about everything else, by comparing deviations between the part on hand and a normalized point cloud representative of that class. Bent corner? It&rsquo;ll see that. Missing &ldquo;LEGO&rdquo; embossment on the studs from an off-brand part? It&rsquo;ll do that. Peeling sticker? Yup. Speck of dirt? Yeah, it&rsquo;ll probably catch that as well.</p>
+                        <p>However, the challenges which come with this approach are extreme.</p>
+                        <p>Most sensors have a surprisingly small range over which they operate effectively, often only a couple of inches. The longer range sensors aren&rsquo;t as accurate. This means that for best results, you can&rsquo;t just wave a part past the sensor. The specialized metrology setups are mounted on gantries, but those operate under the assumption that you already have a pretty good idea what you&rsquo;re scanning, and are just looking for minor defects. In fact, adapting a setup like that to a radically different problem may be difficult. The software is likely set up for inspection first and foremost, and may make accessing the raw point cloud data difficult. Even once you get there, figuring out how to begin to approach processing that cloud is a big difficulty.</p>
+                        <p>It&rsquo;s also slow, in particular if you&rsquo;re using the point-based sensors. At one point, I had a probably-extremely-impractical concept on the drawing board, featuring a rapidly spinning turntable with an array of point-sensors set up, to improve their efficiency, while still keeping the costs somewhat reasonable.</p>
+                        <p>Because that&rsquo;s the biggest problem of all. The expense.</p>
+                        <p>That Nikon laser probe? Yeah, that&rsquo;s in the mid five figure range.</p>
+                        <p>This is the &ldquo;just throw money at the problem until it solves itself&rdquo; solution. I have no doubts that it could add extreme utility to the system. I really sincerely hope that I never need it.</p>
+                    </li>
+
+
+
+                    <li><strong>Mechanical Sorting</strong>. We already talked about that one. Not depending on it. It may be useful for filtering out parts in a <em>very basic</em> way, for example, ensuring that a sensitive scale never sees a gigantic part. But that&rsquo;s about it. It can&rsquo;t be relied upon for any kind of absolute categorization, particularly in the smaller parts.</li>
+
+                    <li>
+                        <p><strong>Computer Vision</strong>. Which brings us to the obvious solution: Cameras.</p>
+                        <p>Cameras most closely approximate the way that a person would identify a part. Through visual techniques, predictable properties and features of a given object are identified, and a classification can be made based on what features are present and absent.</p>
+                        <p>Cameras are far and away the best option for color identification, and recognition of parts with complex patterns &ndash; in fact, they&rsquo;re really the only option. In fact, they should be able to, in theory, pick up on every single detail that a person can, because of how closely they parallel the manual process. They can collect data in an instant, with parts on the move.</p>
+                        <p>However, images are a tricky data format to work with. It is much harder to make a direct, 1:1 comparison between two images of the same part, and come to a reasonable conclusion, than it is to compare simple numeric data like weight, or even very complex but predictable data like a 3d point cloud. Multiple orientations of the same part can look dramatically different, in ways which are hard to predict. &nbsp;It is very hard to determine the difference between something trivial, like a piece of dust on a part, versus something crucial, like a hairline crack.</p>
+                        <p>Image collection is also subject to all sorts of noise and irregularity. Imagine building a dataset of 500 images of one part to identify it, then taking 500 images of a second part. It just happens that you bumped the camera when swapping out parts, and now it&rsquo;s skewed by a pixel or two relative to the background. Many algorithms are more likely to assign significance to this inconsequential shift, than to the actual important information. Imaging is also sensitive to shadows, lighting, and a whole host of other environmental variables.</p>
+                        <p>Also, the data quantity available from a single raw image is actually quite small, compared to the &ldquo;data set&rdquo; we use when we manually identify a part. We can pick up a part in our hand, rotating it over if we need to inspect features on the other side. We can zoom our focus in on tiny elements like a minifig&rsquo;s face. Single images can actually hide a lot of information, if they don&rsquo;t show all orientations of the part.</p>
+                        <p>But easily intuiting the &ldquo;true&rdquo; 3d shape from 2d images is tricky. It&rsquo;s easy for us to tell that these frames, put together, are an object rolling across the screen.</p>
+                        <p>But say that we gave our system a dataset containing a few discreet still images, orientations we happen to have seen this part in before, and then it gets an &ldquo;in between&rdquo; one.</p>
+
+
+                        <div class=pageimgcontainer><img class="pageimg" src="/images/offwithyourhead.png"></div>
+
+                        <div class=pageimgcontainer><img class="pageimg" src="/images/dancedancedancetilyourdead.png"></div>
+
+                        <p>How does it intuit that something &ldquo;in between&rdquo; these two images is the same part, instead of another printing which is shifted around? It&rsquo;s&hellip;tricky. We could just take <em>more images</em>, but then we&rsquo;re overwhelming ourselves with data quantity.</p>
+                        <p>So an overkill, brute-force camera solution, which uses ultra-high resolution video of the part rotating 360 degrees to capture every possible angle, and every tiny blemish in exacting detail, is definitely going to put us into that &ldquo;too much data to process realistically&rdquo; territory. We&rsquo;re going to need to be a lot smarter about it than that. Imaging seems vital to this task, and is going to be the primary technology of choice, but it is important to understand its shortcomings, and how other approaches may be usable in augmenting the images.</p>
+                    </li>
+
+                </ul>
+
+                <h3>Classical Computer Vision versus Machine Learning</h3>
+
+                <p>The logical way to start approaching a problem of such massive scale is to think about the kinds of more useful data you could extract from images. Things which contain less raw numeric information than a pixel-by-pixel array, but in reducing this information quantity, actually make themselves much more useful for comparing two different images.</p>
+                <p>For example, detecting the perimeter of a part. Looking at a part&rsquo;s edge pixel-by-pixel reveals a <a class="popup" onclick="popup15()">pretty noisy mess<span class="popuptext" id="popup15"><img class="popupimg" src="/images/edgenoise.jpg"></span></a>, which is obviously going to vary based on the lighting, exact angle of the part relative to the camera and light sources, and the whims of a butterfly on the other side of the planet flapping its wings. But if we can do something like this:</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/contours.png"></div>
+
+                <p>That&rsquo;s quite a bit more useful. Even though the image on the right contains less data, the data it does provide is more meaningful, and more directly comparable to other images. This example &ndash; edge detection, is just one of <em>many</em> useful things we can do, which falls under the purview of classical computer vision techniques. There are a number of libraries out there for detecting intuitive features and applying filters like this, and we can reduce it into something where we could program in a sequence for identifying a part. &ldquo;If you see 7 holes in a row, and then two more bent off at an angle, this is this specific part.&rdquo; Things like that.</p>
+                <p>However, when spread across 70,000 parts, manually programming in these features becomes simply impractical. There are simply too many, and many of them are much harder to describe. Take something like these parts:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/hoses.jpg"></div>
+
+                <p>&ldquo;Purple, with ridges, bent&hellip;some amount. And overall this long.&rdquo; How do you approach this? I don&rsquo;t really know. Project some sort of spline over them to measure overall length? Maybe? I can&rsquo;t come up with an easy way of describing these beyond &ldquo;I know one when I see one.&rdquo;</p>
+                <p>That&rsquo;s where machine learning comes in.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/mltweet.jpg"></div>
+
+                <p>Predictably, my introduction to the idea of machine learning came from LEGO. Actually, it came from this specific problem. As mentioned, novelty LEGO sorters made from LEGO which can handle a tiny fraction of the library of parts are not uncommon, I even retrofitted one of the stock projects from the <a class="popup" onclick="popup16()">base mindstorms set<span class="popuptext" id="popup16"><img class="popupimg" src="/images/badcandy.jpg"></span></a> to perform a two part sorting operation when I was little. Around the same time, I found a book of &ldquo;LEGO Mindstorms Masterpieces,&rdquo; which provided plenty of projects well beyond my capability and LEGO stock on hand that I could drool at endlessly. One of them was the &ldquo;learning brick sorter,&rdquo; a LEGO machine which sorted three colors of LEGO bricks with a robotic arm. But the trick was, it wasn&rsquo;t preprogrammed with certain color threshholds. Instead, it learned, by taking action, and asking for feedback from a human operator, building up a database of information about what color threshholds corresponded to what bins all by itself. My 10 year old mind was turned upside down by the idea that such things were possible, and driven by a desire to be unique and not just duplicate what I&rsquo;d seen I proceeded to completely fail at applying those concepts to dramatically more complex problems I didn&rsquo;t realize were dramatically more complex, such as navigation, making zero tangible progress as my formerly nimble FLL robots drunkenly spiraled about. I still thought the idea was super cool, but I figured I wasn&rsquo;t smart enough for machine learning yet, and that I&rsquo;d be able to do it better someday later. I never touched it again though. And, well, here we are.</p>
+                <p>And I wasn&rsquo;t wrong back then. Machine learning is really great for this type of problem. Rather than depending on manually programmed features for identifying parts, machine learning algorithms simply take a bunch of examples of the parts it&rsquo;s supposed to be identifying, and figure out what characteristics can be used to reliably identify them on its own. This is great because you don&rsquo;t have to think long and hard about what features identify specific parts, worry about &ldquo;forgetting&rdquo; a certain class of part, or even write any code tied to the specific geometry of your parts at all! All you have to do is take tons of pictures of your parts, and figure out the best algorithm to accurately extract the information that you need.</p>
+                <p>This is <em>incredibly</em> powerful. It is <em>especially</em> powerful for some of the more irregular parts. It means that instead of having to think about how to describe the identity of those hoses, I just take pictures. Ideally, it means that I should be able to show the computer images of <em>brand new pieces LEGO has only just come out with</em>, and the system will learn to adapt, with no added effort.</p>
+                <p>However, machine learning has some of its own problems when applied to challenges like this. First, it has very little capacity for common sense, and can do wildly illogical things, the kinds of things which could send a gigantic part down a tiny chute and cause things to clog up. Since it is learning everything about the world from scratch, it doesn&rsquo;t have any reference for what&rsquo;s &ldquo;normal.&rdquo;</p>
+                <p>Second, the process is computationally intense. As suggested above, the process of figuring out what features matter, at the end of the say, involves a heck of a lot of &ldquo;throw everything at the wall and see what sticks.&rdquo; The brute force computation involved in this process becomes time consuming, both for classifying specific parts, but especially for the &ldquo;training&rdquo; process, where tens of thousands of example images are flashed past the algorithm to shape its behavior. On large data sets with complex algorithms, training can easily take weeks. And increasing the quantity of data in the form of image resolution increases can up the computation time exponentially.</p>
+                <p>Third, most machine learning techniques, in particular some of the most powerful styles such as deep learning through neural networks, rely on a <em>tremendous</em> amount of labeled data. Accurate results simply can&rsquo;t be achieved by passing in a single image of a part, and asking the algorithm to intuit all the orientations it could have, all the ways lighting could hit it, all the ways the part could be unacceptably damaged. You need thousands of unique examples. And developing this labeled dataset from which you work is <em>monumentally </em>time consuming, if you&rsquo;re just doing it manually. I&rsquo;ve shown how slow the manual data entry process is already, now imagine if I had to add &ldquo;oh also, take a photo&rdquo; for every single part. I&rsquo;d be working below minimum wage for years, before I got enough information for the most powerful algorithms to really do their thing, years in which I&rsquo;d be uncertain if the problem was solvable at all, whether I was giving <em>enough</em> data for the parts to be identified, whether or not there would be a payoff at the end.</p>
+                <p>Machine learning is almost certainly going to be the bread and butter of whatever solution I come up with. However, I think it is very unlikely that things will be as simple as &ldquo;pick a good machine learning algorithm, plug in your data, let it do its thing, and you&rsquo;re done.&rdquo; Conventional CV processing techniques, and augmentation from some of the other potential data sources I mentioned above, are going to be vital. These techniques will help keep the machine learning in check, offering second opinions and sanity checks to reduce the chance of an incorrect output, and more accurately report uncertainty. Remember, sorting LEGO is like SAT scoring, except instead of &ldquo;correct: +1, no response: +0, wrong: -0.25,&rdquo; it&rsquo;s more like &ldquo;correct: +$0.10, no answer, -$cost of electricity, wrong: <strong><em>everything jams and you have to sacrifice your firstborn.</em></strong>&rdquo; This means that using multiple approaches in parallel, and demanding clear consensus before proceeding with a classification, is a really good way to generate the kind of uncertainty-reporting we&rsquo;re after.</p>
+                <p>These simpler approaches can also be used to help generate data for the machine learning process. If a certain part can be accurately and uniquely identified by weight 99% of the time, I can record images of that part, manually filter the few instances where weight alone gets the answer wrong, then feed all that labeled data to the machine learning algorithm, all while using the LEGOSortus for sorting and profit rather than dedicated training periods. They can also break down the scope of the machine learning approach&rsquo;s search space, improving its accuracy. I&rsquo;ll talk more about both these approaches later on.</p>
+                <p>I&rsquo;m by no means an expert, or even especially competent, with any of these things. Prior to the start of this project, the extent of my computer vision experience was a single robotics lab experience where I largely watched my lab partner fiddle with color masks until it worked while I developed force-sensing code, plus a few extremely shortlived attempts at following FRC vision tutorials before getting sucked away by the <strong><em>thousands of other things</em></strong> required to build a functional robot. My entire machine learning experience was a basic awareness of &ldquo;it&rsquo;s a thing that exists,&rdquo; plus those extremely tipsy FLL robots from a decade ago. In support of this endeavor, I decided to take and fail a college course in machine learning, which consisted of getting bludgeoned over the head with linear algebra, unlabeled abstract data sets, long exams, and funky mathematical notation day after day, with ultimately unfulfilled promises that we&rsquo;d solve a practical problem at the end of the course. In an utterly shocking turn of events, we never quite got there.</p>
+                <p>With this vast trove of theoretical and practical expertise, let&rsquo;s get into how to make this thing real!</p>
+
+                <h3>Identification Cells and Image Sanitation Techniques</h3>
+                <p>I started my process by looking into how other LEGO computer vision projects approached the problem. The best resource, by far, in terms of technical documentation of the process, and up there with the best overall system designs, is this build by Jacques Mattheij:</p>
+
+                <a href="https://jacquesmattheij.com/sorting-two-metric-tons-of-lego/" target="_blank">Jacques' blog, part 1</a>
+                <br>
+                <a href="https://jacquesmattheij.com/sorting-lego-the-software-side/" target="_blank">Jacques' blog, part 2</a>
+
+                <p>Jacques reports working his way through a bunch of more primitive classification technologies and finding the results unsatisfactory, before settling on a neural network design. He says that these alternate approaches seemed easier at first, but ended up with manually coding in thousands of individual features, a tedious and difficult process that I wanted to avoid. Jacques also appears to be a software-person, first and foremost, which meant that he approached the problem relatively confident he could solve the identification challenges, less certain about the mechanical sortation and feed aspects.</p>
+                <p>I&rsquo;m coming at this problem from an opposite place. I think I fully grasp how hard it&rsquo;s going to be from a mechanical point of view, but am fully confident that I can do that part. I had <strong><em>no clue</em></strong> whether I would be capable of building the software part, so I dove into trying to learn how, first by duplicating Jacques&rsquo; &ldquo;state of the art&rdquo; by jumping straight to the end of his process while addressing some concerns I have with his design, and without sinking resources I don&rsquo;t have into a hardware design I didn&rsquo;t know if I could build software to match. So I started where Jacques suggests starting, at the <a href="https://course.fast.ai" target="_blank">FastAI course and library</a>.</p>
+
+                <p>FastAI is an <em>excellent</em> resource. I&rsquo;ve learned a <em>ton</em> about deep learning, how it works, and where the challenges with it lie, and the <em>incredible</em> things which can be accomplished using shockingly simple code. It&rsquo;s helped correct some gross misconceptions about the computational requirements, mathematical background, and amount of doing-everything-from-scratch which my college Machine Learning course imparted on me. The &ldquo;top down learning approach,&rdquo; of getting into doing things without necessarily fully understanding how they work at first, is something you can genuinely learn from, and has been how I&rsquo;ve been doing things this whole project. The FastAI course, and in all likelihood the FastAI Pytorch wrapper library, are almost certainly going to be a part of the core backbone of my final design.</p>
+                <p>Unfortunately, I&rsquo;ve been completely unable to apply any of this knowledge to LEGO so far.</p>
+                <p>The problem is, the neural network approach featured exclusively in the FastAI material is geared toward solving problems with <em>lots</em> of uncertainty. They kick things right off by classifying different dog and cat breeds from regular, everyday images. It&rsquo;s <strong><em>super</em></strong> cool that this kind of problem can actually be solved, but for the most part, this advanced capacity is coming from an ability to more effectively leverage information in massive datasets. In fact, these techniques often perform much more poorly than conventional approaches if it doesn&rsquo;t have very much information to go on. As such, my early tests, just taking a handful of images on my desk, saving the images into the training dataset format, and seeing what happened in the FastAI example model, yielded random noise, no more effective at identifying parts than random guesses.</p>
+                <p>I didn&rsquo;t fully appreciate the powerful things that neural nets could do at the time in the face of variation and uncertainty, or the degree to which they depended on sheer quantities of data to do this. Remember, I was approaching this problem very much from a place of fear, driven by extreme doubt over whether this was <em>at all doable</em>. I don&rsquo;t enjoy designing from a place of fear, and constantly encourage others to never do it because it very often leads to bad decisions like this, but it definitely caught me this time. I had three choices of paths forwards to improve things:</p>
+                <ul>
+                    <li>Develop a better understanding of the inner workings of neural nets to build something better than the FastAI default</li>
+                    <li>Increase the quantity of data the neural nets had to work with</li>
+                    <li>Decrease the variation in the data I had</li>
+                </ul>
+                <p>The first one sounds dangerously close to &ldquo;become a subject matter expert in a field you know nothing about, on the off chance you can do something better than people who have studied this stuff their entire lives.&rdquo; I didn&rsquo;t fully appreciate how much the second could help the model &ndash; it mostly felt like adding more complications, and could serve to confuse the model rather than clarify things. So I made what in retrospect wasn&rsquo;t the best choice I could have made, and shifted my focus to making my images more predictable. Don&rsquo;t get me wrong, this <em>does</em> absolutely help improve the accuracy of any identification approach. It&rsquo;s just not the <em>only</em> thing that does, and it can make other things harder.</p>
+                <p>The idea here paralleled the concept of &ldquo;environmental control&rdquo; mentioned in the last part. By carefully controlling the conditions under which I was taking images of the parts, and taking active steps to minimize variation like random rotation or variable orientation, the variance between parts of the same ID should be reduced. If the variation is reduced, it should be easier to directly compare/contrast images, instead of building a system which intelligently reacts to that variability.</p>
+                <p>I also wanted a platform to answer some questions I had about the types of data I would need to collect. What kind of lighting worked best? How many views of a part did I need to determine its identity? Was weight important? What kind of camera worked best? And so on. Building a physical system would allow me to answer these questions. To learn more details about the problem.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/visioncell.jpg"></div>
+
+                <p>This is what I came up with for a first test model. It’s super rough around the edges, due both to design and an increcibly dull box cutter blade, but that’s a good thing at this stage. It does what it needs to do, and it cost zero dollars to put together, which is about all I had to spend. The structure is foam board held together with pins. But it hides a couple little tricks, beyond just a box with a camera on top. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/whiteleds.jpg"></div>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/backlightconstruction.jpg"></div>
+
+                <p>The base section consists of a homemade backlight. The foil reflects stray light back into the box, creating a diffuse, uniform bleeding of light through the floor. Something which is uniform yet slightly translucent is the ideal floor material, something like a thin white acrylic or Delrin. Right now…yeah it’s just paper, pulled tight. It’s very “grainy,” and shifts a bit when you put weight on it, but it largely works. It’s a prototype. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/unlightwhite.jpg"></div>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/litwhite.jpg"></div>
+
+                <p>The backlight is great for establishing a part&rsquo;s perimeter. You can see that white objects don&rsquo;t show up well on the background. Unfortunately, the sheer diversity of LEGO colors means it&rsquo;s very hard to use a greenscreen approach and pick a background color that <em>nothing</em> will bleed into. The backlight dominates the brightness in the image, with the part&rsquo;s silhouette forming very sharp contrast lines where part ends and backlight begins. Shadows are completely eliminated this way. Unfortunately, doing so wipes out the ability to identify the part&rsquo;s color. But now that you know where the part is, the color could be sampled from the pixels within the part&rsquo;s footprint.</p>
+                <p>To record images, I glued a small wood block with a hole for a tripod mount screw to the top of the box, to rigidly and reliably mount a camera there. Any kind of mounting which wobbles relative to the box would produce bad, variable results.</p>
+                <p>I also added lighting to the upper section of the box, where the geometry and white interior surfaces help keep as much light on the part as possible, and block out unwanted external light sources. This was done using RGB LEDs this time, on the theory that different lighting colors may be helpful in making the contrast between certain similar colors clear. For example, variable browns don&rsquo;t show up all that clearly under white light. But when illuminated in a greenish-yellow, the distinction is much more plainly visible. The lighting is, in theory, scattered via a <a class="popup" onclick="popup17()">diffusion cylinder design<span class="popuptext" id="popup17"><img class="popupimg" src="/images/diffuseschematic.png"></span></a>, which serves to minimize the presence of shadows. In practice&hellip;it&rsquo;s a lot more rough around the edges.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/diffusebuild.jpg"></div>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/browncomp.png"></div>
+
+                <p class="extratop">I can’t argue with the results though. It’s not half bad!</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/highresdiffuse.jpg"></div>
+
+                <p>Unfortunately, the actual process of taking images with the box leaves much to be desired, in large part due to not having an appropriate camera. The image taken above was done with a point-to-shoot, which like most consumer cameras, does all kinds of things to try to get you more reliable pictures without thinking about it. Like autofocus. Which…doesn’t always know quite what to make of a sterile environment like this box. Here is the next image in this sequence. Same camera, same conditions, same part.  </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/autofocusfail.jpg"></div>
+
+                <p>That&rsquo;s&hellip;non-ideal. The whole idea was to regularize these things.</p>
+                <p>And to make matters worse, I have no way of controlling this point-to-shoot via code. To collect my data, I&rsquo;d have to stand up by the top of the box, and physically press the shutter hundreds of times. The same autofocus and lack of remote control issues also apply to cell phone cameras.</p>
+                <p>The alternative, then became cheap external USB webcams. These at least could be plugged into the computer, but have their host of focus problems as well. They do things like auto-adjust brightness in response to different part colors, and have a fixed focal length optimized for video chatting, which leaves my parts a bit fuzzy around the edges. They have aggressive video compression which is on at all times, resulting in a lot of dancing pixels and random background noise. They aren&rsquo;t good at all, but they&rsquo;ve what I&rsquo;ve got to work with at the moment.</p>
+                <p>Cameras are something I need to learn much more about, as photography is never really something I got into. <a class="popup" onclick="popup18()">Machine vision cameras<span class="popuptext" id="popup18"><img class="popupimg" src="/images/machinevisioncam.jpg"></span></a> are a thing, a very, very, expensive thing. I don&rsquo;t fully understand how to make sense of all the specs, what matters to me, and what will get me, above all, <strong><em>consistency</em></strong> in the way the images are recorded. Like&hellip;I just want a no-frills solution that takes in what it sees in front of it, the same way each time&hellip;is that too much to ask for?</p>
+                <p>So image quality still leaves a lot to be desired. Another problem which prevented me from making use of the FastAI library effectively was part size. I built my vision cell to accommodate a pretty wide range of possible part sizes, to see if I could make a system handle so much variability. With the cameras I had on hand to work with, this meant fixed zoom, with no way to control this once the camera was mounted to the vision cell. For the large parts, this was relatively fine. But for the small parts, the parts only took up a tiny fraction of the entire imaged region. This meant that when the image was scaled down from the native camera resolution into something more reasonable to run a neural network on, my entire part was being represented by just a few pixels, and was considered insignificant compared to random background noise and fluctuation.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/brownsdata.png"></div>
+
+                <p class="caption"><em>Typical early dataset. Purposeful random variation in orientation and position were time-consuming to generate.</em></p>
+
+                <p>The plan to fix this was another step in the theme of image regularization, this time using software. The first step would be to crop these images, removing all needless background white space.</p>
+                <p>I spent a <em>lot</em> of time which we don&rsquo;t need to discuss in detail trying to build this myself from the ground up by iterating through the raw pixel arrays, because that&rsquo;s the kind of &ldquo;do everything yourself even if it kills you&rdquo; CS education I&rsquo;ve had. It didn&rsquo;t go well. It involved things like comparisons to an empty background image, first in large square regions averaged together to add tolerance for things like specks of dirt or camera shifts on features around the edges, but then recursively getting smaller until the part was surrounded when it got down to individual pixels, and then replacing the rest of the background with white, and then doing rotation via sort-of-gradient-descent, and&hellip;.yeah we don&rsquo;t need to talk about all that.</p>
+                <p>Long story short: I tried, I failed, I worked on other things for 6 months. Then I came back, and thought &ldquo;hey&hellip;OpenCV can <strong><em>probably</em></strong> do exactly that&hellip;&rdquo;</p>
+                <p>And so this happened!</p>
+
+                <div class=pageimgcontainer><video width="400" autoplay muted loop><source src="/images/opencvnormalizing2.mp4" type="video/mp4"></video></div>
+
+
+                <div class="codeblock">
+                    <p><span class="pykeyword">import</span> cv2 <span class="pykeyword">as</span> cv2<br>
+                        <span class="pykeyword">import</span> numpy <span class="pykeyword">as</span> np</p>
+                    <br>
+                    <p><span class="pykeyword">def</span> <span class="pymethod">show_webcam</span>(<span class="pyvalue">mirror</span>=<span class="pyvalue">False</span>):</p>
+
+                    <p style="margin-left: 40px"><span class="pyvalue"><span class="pycomment">#Capture video, repeat all actions continuously</span><br>
+                        cam = <span class="pyobject">cv2</span>.<span class="pymethod">VideoCapture</span>(<span class="pyvalue">1</span>)<br>
+                        <span class="pykeyword">while</span> <span class="pyvalue">True</span>:</span></p>
+                    <br>
+                    <p style="margin-left: 80px"><span class="pycomment">#Record image, crop to region at center, blur/greyscale for cleaner edges</span><br>
+                        ret_val, img = <span class="pyobject">cam</span>.<span class="pymethod">read</span>()<br>
+                        img = img[<span class="pyvalue">200</span>:<span class="pyvalue">400</span>, <span class="pyvalue">200</span>:<span class="pyvalue">400</span>]<br>
+                        blurred = <span class="pyobject">cv2</span>.<span class="pymethod">pyrMeanShiftFiltering</span>(img,<span class="pyvalue">31</span>,<span class="pyvalue">61</span>)<br>
+                        grayscaled = <span class="pyobject">cv2</span>.<span class="pymethod">cvtColor</span>(blurred,<span class="pyobject">cv2</span>.<span class="pyvalue">COLOR_BGR2GRAY</span>)</p><br>
+
+                    <p style="margin-left: 80px"><span class="pycomment">#Generate a binary threshhold image, then find and broaden edges for easy contour detection</span><br>
+                        thresh_type=<span class="pyobject">cv2</span>.ADAPTIVE_THRESH_GAUSSIAN_C<br>
+                        thresh = <span class="pyobject">cv2</span>.<span class="pymethod">adaptiveThreshold</span>(grayscaled, <span class="pyvalue">255</span>, thresh_type, <span class="pyobject">cv2</span>.<span class="pyvalue">THRESH_BINARY</span>, <span class="pyvalue">115</span>, <span class="pyvalue">5</span>)<br>
+                        edges = <span class="pyobject">cv2</span>.<span class="pymethod">Canny</span>(thresh,<span class="pyvalue">100</span>,<span class="pyvalue">200</span>)<br>
+                        kernel = <span class="pyobject">np</span>.<span class="pymethod">ones</span>((<span class="pyvalue">5</span>,<span class="pyvalue">5</span>), <span class="pyobject">np</span>.<span class="pyobject">uint8</span>)<br>
+                        img_dilation = <span class="pyobject">cv2</span>.<span class="pymethod">dilate</span>(edges, kernel, <span class="pyvalue">iterations</span>=<span class="pyvalue">1</span>)</p><br>
+
+                    <p style="margin-left: 80px"><span class="pycomment">#Compute contours from canny edgefinding image</span><br>
+                        contours, hierarchy = <span class="pyobject">cv2</span>.<span class="pymethod">findContours</span>(img_dilation, <span class="pyobject">cv2</span>.<span class="pyvalue">RETR_TREE</span>,<span class="pyobject">cv2</span>.<span class="pyvalue">CHAIN_APPROX_SIMPLE</span>)<br>
+                        <span class="pykeyword">print</span>(<span class="pydata">len</span>(contours))<br>
+                        <span class="pykeyword">try</span>:</p>
+                    <p style="margin-left: 120px"><span class="pycomment">#Process all of the below on the largest contour</span><br>
+                        cnt=contours[<span class="pyvalue">0</span>]</p><br>
+                    <p style="margin-left: 120px"><span class="pycomment">#Find and record the minimum bounding box</span><br>
+                        rect = <span class="pyobject">cv2</span>.<span class="pymethod">minAreaRect</span>(cnt)<br>
+                        box = <span class="pyobject">cv2</span>.<span class="pyobject">cv</span>.<span class="pymethod">BoxPoints</span>(rect)<br>
+                        box = <span class="pyobject">np</span>.<span class="pymethod">int0</span>(box)<br>
+                        <span class="pyobject">cv2</span>.<span class="pymethod">drawContours</span>(img,[box],<span class="pyvalue">0</span>,(<span class="pyvalue">0</span>,<span class="pyvalue">0</span>,<span class="pyvalue">255</span>),<span class="pyvalue">2</span>)</p>
+                    <br>
+                    <p style="margin-left: 120px"><span class="pycomment">#Extract angle/centerpoint from box, rotate about center by angle</span><br>
+                        center, size, theta = rect<br>
+                        center, size = <span class="pydata">tuple</span>(<span class="pydata">map</span>(int, center)), <span class="pydata">tuple</span>(<span class="pydata">map</span>(int, size))<br>
+                        M = <span class="pyobject">cv2</span>.<span class="pymethod">getRotationMatrix2D</span>( center, theta, <span class="pyvalue">1</span>)<br>
+                        dst = <span class="pyobject">cv2</span>.<span class="pymethod">warpAffine</span>(img, M, <span class="pyobject">img</span>.<span class="pyobject">shape</span>[:<span class="pyvalue">2</span>])</p><br>
+                    <p style="margin-left: 120px"><span class="pycomment">#Crop to final image size, scale for easy viewing</span><br>
+                        out = <span class="pyobject">cv2</span>.<span class="pymethod">getRectSubPix</span>(dst, size, center)<br>
+                        length, width = size<br>
+                        slength = length*<span class="pyvalue">3</span><br>
+                        swidth = width*<span class="pyvalue">3</span><br>
+                        outscale = <span class="pyobject">cv2</span>.<span class="pymethod">resize</span>(out, (slength,swidth))</p><br>
+                    <p style="margin-left: 120px"><span class="pycomment">#Show various stages of processing</span><br>
+                        <span class="pyobject">cv2</span>.<span class="pymethod">imshow</span>(<span class="pystring">'thresh'</span>, thresh)<br>
+                        <span class="pyobject">cv2</span>.<span class="pymethod">imshow</span>(<span class="pystring">'canny'</span>, edges)<br>
+                        <span class="pyobject">cv2</span>.<span class="pymethod">imshow</span>(<span class="pystring">'edges'</span>, img_dilation)<br>
+                        <span class="pyobject">cv2</span>.<span class="pymethod">imshow</span>(<span class="pystring">'original'</span>, img)<br>
+                        <span class="pyobject">cv2</span>.<span class="pymethod">imshow</span>(<span class="pystring">'croprotate'</span>, outscale)</p><br>
+                    <p style="margin-left: 80px"><span class="pykeyword">except</span>:</p>
+                    <p style="margin-left: 120px"><span class="pycomment"># Run in cases where no edges are found and attempting processing would cause exceptions</span><br>
+                        <span class="pykeyword">print</span>(<span class="pystring">"no object"</span>)</p><br>
+                    <p style="margin-left: 80px"><span class="pycomment">#Quit on escape</span><br>
+                        <span class="pykeyword">if</span> <span class="pyobject">cv2</span>.<span class="pymethod">waitKey</span>(<span class="pyvalue">1</span>) == <span class="pyvalue">27</span>:</p>
+                    <p style="margin-left: 120px"><span class="pykeyword">break</span></p>
+                    <p style="margin-left: 40px"><span class="pyobject">cv2</span>.<span class="pymethod">destroyAllWindows</span>()</p><br><br>
+
+                    <p><span class="pykeyword">def</span> <span class="pymethod">main</span>():</p>
+                    <p style="margin-left: 40px"><span class="pymethod">show_webcam</span>(<span class="pyvalue">mirror</span>=<span class="pyvalue">False</span>)</p><br>
+
+                    <p><span class="pykeyword">if</span> __name__ == <span class="pystring">'__main__'</span>:</p>
+                    <p style="margin-left: 40px"><span class="pymethod">main</span>()</p>
+
+                </div>
+
+                <p>Right now this works alright on dark colored parts, or with the backlight turned on. It works, but it&rsquo;s not&hellip;good. The binary mask needs some tweaking, and I&rsquo;m pretty sure my contour detection method is roundabout and way over the top &ndash; like how hard can it <em>really</em> be to detect contours on a <strong><em>binary image?</em></strong> Hard, apparently, the whole thing runs quite slow. I&rsquo;m not very good with this computer vision thing yet. What it <em>really</em> should be doing is a facsimile of the original plan, building a binary image based on pixels which deviate from the original image by some fixed percent, instead of inferring things from their absolute color. Not quite there yet.</p>
+                <p>I also want to see if I can do more to normalize the orientation. Most parts will gravitate towards four stable orientations.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/leafarray.png"></div>
+
+                <p>This could easily be reduced to two, by a line of code along these lines:</p>
+
+                <div class="codeblock">
+                    <p><span class="pykeyword">if</span> height > width:</p>
+                    <p style="margin-left: 40px">img = img.<span class="pymethod">rotate90</span>()</p>
+                </div>
+
+                <p>Figuring out how to go down from two orientations to one is a bit trickier. Still, I think I could get pretty good results from something like this, which assumes that for symmetrical parts, this doesn’t really matter at all, and asymmetrical parts will feature “more part” on one side of the image than others:</p>
+
+                <div class="codeblock">
+
+                    <p>A = <span class="pymethod">leftSum</span>(img) <span class="pycomment"> &nbsp&nbsp&nbsp&nbsp#sum of pixel values on left 50% of image</span><br>
+                        B = <span class="pymethod">rightSum</span>(img) <span class="pycomment">&nbsp&nbsp #sum of pixel values on right 50% of image</span><br>
+                        <span class="pykeyword">if</span> A > B: <span class="pycomment"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#if the left side is brighter than the right side</span></p>
+                    <p style="margin-left: 40px">img.<span class="pymethod">mirror</span>()</p>
+
+                </div>
+
+                <p>This could be applied both left to right, and also top to bottom, to deal with cases like this, where a part can mirror itself based on which way up it’s passed under the camera:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/liftarmmirror.png"></div>
+
+                <p>Back to the physical system design. Another key shortcoming is that it still only allows one image to be captured. I have no way of seeing the bottom or sides of a part, or getting any feel for it as a 3d shape. Actually, this is one of many shortcomings &ndash; I&rsquo;m going to have to build a new one at some point. The next iteration of the vision cell will be designed with the explicit goal of figuring out what utility can be gained from multiple cameras, once I figure out a good camera to be using for all this. Some features it will likely have:</p>
+                <ul>
+                    <li>Improved backlight floor material, for less irregularity, so that this can be used as originally intended.</li>
+                    <li>Arduino-powered lighting, and the ability for the software to rapidly &ldquo;strobe&rdquo; different lighting settings. That way, I can do things like, for example, extract the part footprint with the backlight turned on, then flick it off and take a full-color image, cropped to a region calculated from the backlight image.</li>
+                    <li><em>Much</em> higher intensity diffuse lighting. I&rsquo;m talking, camera flash level, blinding-to-look-at territory. It has become clear to me in testing that the best way to determine colors reliably is through raw quantity of lumens. <a href="http://diybookscanner.org/archivist/index.html" target="_blank">This project</a> has taught me a ton about lighting design for a similar application, and I will be incorporating many of its design features.</li>
+                    <li>A &ldquo;floating&rdquo; top section, allowing cameras to be placed at 360 degrees around the base, for side views, with the ability to selectively mask off certain sections of the perimeter to serve as a backdrop for these images.</li>
+                    <li>The ability to integrate a scale into the main vision cell directly. I need to figure out quire a bit more about how to approach this mechanically.</li>
+                    <li>Even further down the road, I really want to try six-sided imaging, to capture every angle of the part, including the bottom. The machine can definitely make useful classifications without this, but at the end, it may be crucial in damage detection. This means providing a clear bottom surface, which isn&rsquo;t a very good backgrop for the other images. I may be able to fix this via a &ldquo;shutter&rdquo; mechanism, which consists of a permanent transparent floor, directly on top of a moving opaque panel. Normally the panel would serve as a colored/potentially backlight backdrop, but it can be momentary swept away, allowing a camera mounted underneath everything to see through the floor to the bottom of the part.</li>
+                </ul>
+                <p>This is all advanced stuff though, which won&rsquo;t be useful to me until I&rsquo;ve gotten a lot of other things squared away first. Some of it may not end up being worth the effort. These concepts might be too much Blue Origin, not enough SpaceX. Too much thinking about how to comprehensively solve a problem out of respect for its difficulty, not enough plowing forwards and making physics do its thing.</p>
+
+                <h3>Taking Data Away, then Giving it Back</h3>
+
+                <p>Yet another problem with going right ahead and passing a bunch of images to a neural network is the sheer quantity of data. One would think that it&rsquo;s as simple as &ldquo;the more information you give the algorithm, the more it has to base its decisions on, therefore making it more accurate.&rdquo; Unfortunately, most machine learning techniques, and most algorithms in general, get much slower the more data is required to identify an object, sometimes exponentially so or worse. It can handle hundreds of thousands of images in a training set. But if it needs an ultra-high-resolution image for the actual classification algorithm, and needs to perform computations across a vast number of pixels, it will get overwhelmed. This means that passing in the kinds of ultra-high-resolution images which can pick up on these tiny details is going to make our program run prohibitively slowly, and require extreme computational resources, for potentially extremely marginal gains.</p>
+                <p>How do we solve this problem? Let&rsquo;s take this image:</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/2x4olduncropped.jpg"></div>
+
+                <p>A classic part: grey 2x4 plate, captured in 3264x2448 resolution. Easily identifiable. So much so, that I bet we can still figure out what it is with dramatically fewer pixels. Like, <em>dramatically</em> fewer pixels.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/2x4croppedold.jpg"></div>
+
+                <p>It’s not pretty, but the identifying features still definitely show up. The basic color, the presence of 8 evenly spaced studs. You couldn’t describe it in exacting detail, but you’re not going to mistake it for 99% of other LEGO parts. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/2x4cropped.jpg"></div>
+
+                <p>Same part, <em>slightly</em> different color. The identifying geometry is still clear, but the overall shade is clearly different. This seems like all the data we need!</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/2x4croppedmega.jpg"></div>
+
+                <p>And…oops, this one’s a Megablok. Can’t you tell? Yeah, me neither, without looking at the original resolution image. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/2x4megauncropped.jpg"></div>
+
+                <p>So we do need all this data after all, don&rsquo;t we? The lack of &ldquo;LEGO&rdquo; printed on the studs, and presence of those circular Megablok logos don&rsquo;t show up until much higher resolutions. Maybe there will be a balance where it&rsquo;s <em>kinda</em> visible, not large enough that a person could see it but that a machine learning algorithm with thousands of examples could <em>maybe</em> make sense of what looks like pixel noise to a person. But that seems kind of&hellip;on the edge. There&rsquo;s a better way.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/selectiveresolution.png"></div>
+
+                <p>This is the model I&rsquo;m planning to build around some of these parts with more subtle variations, which can only be seen at high resolution. Building a classifier which takes thousands of examples of <em>every single part</em> in <em>very high resolution</em> is going to be time-prohibitive to train. At low resolution, it could probably pick out the 2x4 brick from other pieces. But if I throw the Megablok in there as a separate class, the distinction is going to be on the level of random noise, and it won&rsquo;t be very accurate.</p>
+                <p>The better approach is, for the purposes of the main neural net, combine the two classes into one. Then, when a part is identified as &ldquo;2x4 plate &ndash; maybe LEGO, maybe Megablok,&rdquo; it can ask for more information. Building a database and training model around high resolution images isn&rsquo;t going to work, but fortunately, since we&rsquo;re classifying parts one at a time instead of across massive databases, we maintain easy access to the original, high resolution image of the part being classified right now. And we can extract high resolution &ldquo;snippets&rdquo; containing the information we need. Based on the high-level classification, the system will know where these snippets are &ndash; at the centroids of each stud. It can then pull out small windows of the original image, with less resolution reduction, at these locations:</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/legostud.jpg"></div>
+
+                <p>And clearly determine that one features &ldquo;LEGO&rdquo; and one does not, via a secondary neural network tuned specifically to telling LEGO studs from Mega studs, or something simpler like edge detection. You can even share this data across multiple parts. &ldquo;LEGO&rdquo; is embossed across <em>thousands</em> of studs, and doesn&rsquo;t look any different on a 2x4 plate versus on a 2x8.</p>
+                <p>And this doesn&rsquo;t just apply to treating resolution in a fuzzy manner. You can apply this two-level identification technique to all kinds of means of reducing raw information quantity at first, then focusing in on what matters. In particular, you can perform high level reduction of the search space through some very simple quantitative means, based in more conventional CV processing, or alternate sources of data.</p>
+
+                <h3>Other Instantaneous First Order Filtering and Sanity Check Techniques</h3>
+
+                <p>Compared to a lot of “classic” problems in ML-based image classification, there are actually quite a few things LEGO has going for it. For example, though the number of classes the algorithm must handle is very large, the level of variation within each of these classes is, on average, quite small. Say, for example, I took a series of images of the same part. If I manually told the program “here’s where the top left corner of the part is. Now, apply this pixel-by-pixel mask formed by the composite average of all images, and tell me by what percent this image deviates,” I’m probably going to get some pretty low numbers. All 2x2 yellow plates look pretty much the same. Unlike a dataset like MINST, where even though I could intuitively describe the elements of any given digit, I couldn’t conclusively write simple rules like “if this pixel is the tip of a ‘1’, then the pixel 10 below it should be brightly colored,” whereas with LEGO, I probably honestly could. Hard-and-fast rules like this are the kind of thing computers are good at. Of course, there are outliers like those pesky flexible hoses, but those are the exception. This property is more typical of problems solved using much more conventional computer vision techniques using tools like OpenCV primitives. If it weren’t for the massive class count, this might still be the right approach – I am aware of LEGO sort machines which sort a small subset of the library this way very successfully. These tools still may be useful to us.  </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/MNISTaverage.png"></div>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/imgnet.png"></div>
+
+                <p class="caption"><em>Examples of what’s technically referred to as “intra-class variability” in two classic machine learning data sets, MNIST and ImageNet. The MNIST image shows how the average of all instances of a given class is very “fuzzy.” The ImageNet images show two pairs of objects which share a class, but look completely different on a pixel-by-pixel basis</em></p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/leafgif.gif"></div>
+
+                <p><em>And for comparison, here&rsquo;s a gif of 9 <strong>physically separate</strong> parts of the same class, placed in the prototype vision cell in random orientations, normalized by the cropping algorithm. The variance is limited to a couple pixels noise in the bounding box</em></p>
+
+                <p>In particular, we have three metrics I can think of right off the top of my head which should be rock-solid, quantitative, consistent if slightly limited indicators: color, weight, and bounding box.&nbsp; All three of these rise the intriguing possibility of segmenting the search and identification approach into multiple networks working on a more manageable class count. And I&rsquo;m sure that with more computer vision knowledge, there will be dozens more such metrics. But let&rsquo;s dive into how one of these could work, as a first order filter, as a final classifier, or as a basic sanity check to your final result.</p>
+                <p>A picture with a bunch of blue in it is always going to be blue, there isn&rsquo;t going to be any case where the validation data will say &ldquo;ha ha! We fooled you! It was orange all along!&rdquo; Color can&rsquo;t be perfectly determined through simple pixel samples, as there will always be slight variation in the lighting, glare, and shadowing of the part, as well as perspective effects generated by differing position relative to the optics, but the imaging environment should be controlled enough to reliably return a color ID based on rather primitive techniques.</p>
+                <p>An average of the color in the image could be applied as the first step in the process, eliminating parts from consideration which are nowhere near the color seen. If the image has bunches of red in it, there&rsquo;s no point even looking at parts that don&rsquo;t share this characteristic. It could also be applied late in the sequence, after things have been narrowed down to a few dozen candidate classes. At this point, it would be reasonable to look up the RGB distribution of the composite average of all labeled images of all remaining candidate classes, and use a <a href="https://en.wikipedia.org/wiki/Nearest_centroid_classifier" target="_blank">nearest-centroid approach</a> to find the class whose composite average most closely matches the part currently being evaluated.</p>
+                <p>Finally, color could be used as a &ldquo;sanity check&rdquo; at the very, very end of the process. If a part is fully and confidently classified through other means, but quickly looking at the color shows that things don&rsquo;t match up to expectations even slightly, something has probably gone wrong. Basic color detection shouldn&rsquo;t necessarily <strong><em>overrule</em></strong> the more sophisticated classifier, but its objections should add a heck of a lot of doubt and uncertainty to the thing. Probably enough to reject the part as an inconclusive, uncertain classification. Again, reacting correctly to uncertainty and never getting parts &ldquo;wrong&rdquo; is more important than total success rate, even if it means an appreciable percent of parts get rejected as unknowns.</p>
+                <p>You can do the same thing with bounding box dimensions from the crop+normalization algorithm. This is where the backlight is really going to shine, as this removes shadows and ground effects which could add noise to the process. The idea here is, any given part in a given stable orientation should take up the same footprint each time. This information can definitely be useful as a first order or last order filter.</p>
+                <p>But bounding box is in particular important as a final sanity check because large parts misclassified as tiny ones are going to be routed down tiny passageways, and cause jams, which would in turn cause a massive backup, or physical damage to the machine, depending on how good a job you&rsquo;ve done at designing mechanical failsafes into the system. <a class="popup" onclick="popup19()">Here’s roughly what it looks like when you do that wrong
+                    <span class="popuptext" id="popup19">        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZUdew5gMbTg?start=188" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>. At <em>least</em> that bad &ndash; the LEGOSortus is definitely reaching Aardman-level mechanical complexity&hellip;</p>
+                <p>But if, even if your neural net is completely confident it sees something miniscule, your basic bounding box can say &ldquo;Hey! I don&rsquo;t know what this thing is, but I know that it&rsquo;s gigantic, and we probably should be careful.&rdquo; This saves your life, in those oddball cases where one part is ID&rsquo;d as another with great confidence, the kind of behavior even the best neural nets are prone to on occasion.</p>
+                <p>One could imagine that useful information like this could be pulled out of any number of fairly primitive, easily calculable characteristics about a part&rsquo;s image. Behavior under various color filters and masks. Perimeter. Area. More detailed, region-based color information. And so on.</p>
+                <p>We can also use less certain, probability-driven metrics to weight our identification. For example, an extremely common part should, at first at least, be given more leeway in identification. In the face of uncertainty between a part stocked by the hundred thousand, and a part that the whole of Bricklink has sold once in the last year, it&rsquo;s <em>probably</em> the first one. On the flip side, though, these extremely common parts, by virtue of being extremely common, are both going to quickly accumulate heaps of data, which will allow identification to become more nuanced, and will have a greater chance of being seen in a damaged</p>
+                <p>And then there&rsquo;s weight. Weight merits much more discussion, because both the potential benefits, and the cost of implementation, are much greater.</p>
+
+                <h3>To Weigh, or not To Weigh</h3>
+
+                <p>Whether or not weighing parts is going to be worth the added effort is one of the biggest open questions of this project. It can be incredibly powerful, and also could easily become the system&rsquo;s bottleneck. At the very least, it dramatically alters how you have to approach the mechanical design, which again using our software-first approach, means we need to come to some more conclusive answers to this question before we can really commit to a mechanical system. Let&rsquo;s look at the opportunities and challenges of bringing weight into the picture.</p>
+                <p>The obvious utility of weight is as a &ldquo;sanity check&rdquo; for any kind of computer vision solution. If the system returns nonsensical results, there&rsquo;s almost zero chance that that nonsensical result <em>just happens</em> to weigh exactly the same as the part it&rsquo;s looking at. Having this sanity check in place allows you to tune the CV program to take on the challenges that it&rsquo;s uniquely effective at, and tune it to pick out tiny defects you&rsquo;d never catch, rather than taking lots of effort to give the neural net anger management lessons to ensure it never, ever performing a virtual table-flip in response to just the wrong, irritating combination of dancing pixels.</p>
+                <p>But you can get even more use out of weight if you perform this sanity check before you begin, and use it to restrict the search space of your algorithm.</p>
+                <p>Imagine, again, the scope of challenge in building a single vision algorithm to accurately classify 70,000 pieces, filter out damaged parts, assemblies, parts-stuck-in-parts, peeling stickers and more. Actual technical challenges aside, using one algorithm for everything makes every single accomplishment you make somewhat fleeting.</p>
+                <p>Using machine learning techniques, retraining the entire model will take weeks, if not months. And because it&rsquo;s all one algorithm, the ability or lack thereof to identify a part could throw off everything. You may have been able to tell part A from B reliably for months, but adding part Z into the system just doesn&rsquo;t fit your model well, so the algorithm comes up with an attempted-best-fit which sacrifices your previously rock-solid abilities on parts A/B. It&rsquo;s not good.</p>
+                <p>Imagine for a second that the very first thing the LEGOSortus does is use a scale to divide things into &ldquo;light parts&rdquo; and &ldquo;heavy parts.&rdquo; You assume that the scale is going to do this job perfectly, because weight is such a simple quantitative metric, and it&rsquo;s not prone to the gross identification errors that computer vision can suffer from. Now, depending on if it&rsquo;s light or heavy, the part goes under one of two physically separate cameras. Since one camera only ever handles light parts, it doesn&rsquo;t know, or need to know, anything about heavy parts. The heavy part camera doesn&rsquo;t need to</p>
+                <p>Now, imagine that instead of two cameras, and two classifications based on weight, you have 7,000 cameras, and 7,000 classifications by weight. Every camera only needs to be able to identify 7 types of parts, plus filter out &ldquo;this might weigh the same as &ldquo;my parts,&rdquo; but it sure doesn&rsquo;t look like any of them to me.&rdquo; Changes elsewhere in the system don&rsquo;t affect those seven parts at all. Once they&rsquo;re dialed in, they&rsquo;re dialed in.</p>
+                <p>That sounds so much better! Let&rsquo;s do it that way!</p>
+                <p>In reality, you wouldn&rsquo;t have 7,000 different vision cells, and you wouldn&rsquo;t physically redirect the parts based on weight. Instead, you weigh the parts at or right before the camera, and use the weight to pick which of potentially thousands of trained models the camera data is going to be passed through. You may have <em>some</em> physically separate vision cells, but that&rsquo;s going to be driven by other factors I&rsquo;ll talk about in the mechanical parts.</p>
+                <p>Also, parts aren&rsquo;t going to evenly break down by weight this way, into clean categories. There may be hundreds of parts between 0.1 and 0.2 grams, and just one or even no parts between 20.1 and 20.2 grams. Additionally, you probably don&rsquo;t directly use weight as a clear-cut elimination filter. Instead, you&rsquo;d use a probabilistic model of some sort, building up a bell curve of &ldquo;part likelihood&rdquo; based on the reported weight. Manufacturing tolerances and other factors mean that for a given class of part, the weight will vary in a similar manner, so our model should reflect statements like &ldquo;It <em>probably</em> weights 0.453 grams, but it <em>could</em> weigh as much as 0.463&rdquo; with as much mathematical accuracy as possible.</p>
+                <p>This can be used as an excellent metric for weighting uncertainty in your classification. Have a part your vision algorithm wasn&rsquo;t 100% sure about, but the weight is dead on center? It&rsquo;s probably correct. Vision was uncertain, and weight is 2.5 standard deviations away from the norm? Don&rsquo;t take the chance.</p>
+                <p>So how useful is this going to actually be? Well that&rsquo;s going to depend on how accurately we can measure weight, and what the parts actually end up weighing. Let&rsquo;s look at some data:<a href="#_ftnref1" name="_ftn1"></a></p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/partmasshisto.png"></div>
+
+                <p>This histogram of part mass distribution gives a bit more insight into the matter. At the smallest weights, you have thousands of parts with very little variation. In fact, over 50% of the unique parts are under two grams! So how useful can weight really be, right?</p>
+                <p>Well, surprisingly useful. Here&rsquo;s that same chart, zoomed in, with its resolution significantly reduced, in a region near the right side:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/heavyhisto.png">
+
+                </div>
+
+
+                <p>If you can achieve measurements down to just a gram in precision, you can restrict the &ldquo;search space&rdquo; needed for your computer vision/machine learning approach, down from 70,000 parts to about 20! That&rsquo;s <strong><em>so much easier</em></strong>.</p>
+                <p>And if we can measure weight reliably within 0.01 grams, here&rsquo;s what it looks like at the more difficult lower range of weight, where you have a lot of parts very close to each other:</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/lowmasshighresolution.png">
+
+                </div>
+
+                <p>I believe the outliers here up to 1000+ are representative of minifig parts, printed tiles, and other parts which come in hundreds of printed varieties on the exact same molds. For most weight ranges, we can conclusively narrow things down to 200 or fewer parts by weight alone. This is pretty still pretty powerful. This is the best data I can get right now, because Bricklink records weight down to centigrams, but my own measurements suggest that statistically meaningful weight variation runs down to two or three milligrams, meaning that these categories could shrink by a factor of 3 to 5. In many cases this brings the class count for the vision process down to under 100, in some cases potentially allowing parts to be identified solely by weight, with the image now taking the role of sanity check. Wow!</p>
+                <p>However, if we can&rsquo;t achieve this resolution, the picture gets a lot worse:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/badresweight.png">
+
+                </div>
+
+
+                <p>Still useful, but now we&rsquo;re putting quite a bit of trust in the cameras. We can probably achieve much finer breakdowns via some of the primitive computer vision techniques I talked about above.</p>
+                <p>And unlike those techniques, adding weight measurement capacity comes at a cost.</p>
+                <p>The reason I&rsquo;m so uncertain about what resolution weight can be reliably measured at is because I am quite uncertain about the approach best used to incorporate weight into the system. Building a &ldquo;pause&rdquo; into the system, where the piece must sit and wait for a measurement to be taken, would likely be the most accurate approach, but this would mean making sure that every other mechanism, from start to finish, can start/stop the same way to accommodate this. This isn&rsquo;t trivial. This hard-caps the speed at which the system can run. This limits its capacity. These limits might not be worth the benefit delivered. Or more worryingly, it might live in a grey area.</p>
+                <p>The alternative is to keep things in motion at all times, and do your identification on the fly as the parts zip past on a conveyor belt. This is <em>so much easier to build</em>. It takes out an entire subsystem, replacing it with a camera mounted above a conveyor. It is also <em>so much faster</em>. You don&rsquo;t have to wait for parts to stop and settle. Your identification time is only limited by processing power. This is how industrial vision systems which process absurd quantities of things like grapes work. It would be <em>amazing</em> if I can just identify things quite literally &ldquo;on the fly&rdquo;                 <a class="popup" onclick="popup20()">like this
+                    <span class="popuptext" id="popup20">        <iframe width="560" height="315" src="https://www.youtube.com/embed/vbSww5SBqN4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>, or anything close to that.</p>
+                <p>Unfortunately, weighing things on a conveyor belt is <em>very hard</em>. Conveyor belts produce vibration, which generates noise. Conveyor belts also weigh a non-trivial amount &ndash; you can&rsquo;t just plop one onto a precision scale which measures zero to 20 grams without breaking it. I&rsquo;ll talk about mechanical specifics later, but in all likelihood, it means rigging something custom up pretty much from scratch. It&rsquo;s still a lot of effort.</p>
+                <p>So you can see where this all leaves me with a lot of questions.</p>
+                <p><strong><em>How accurately can I weigh parts within a vision cell?</em></strong></p>
+                <p><strong><em>How much does weighing parts with this accuracy help in processing?</em></strong></p>
+                <p><strong><em>How long does a part need to settle to get an accurate weight?</em></strong></p>
+                <p><strong><em>How much does integrating a scale force compromises in other aspects of the vision cell design?</em></strong></p>
+                <p><strong><em>How accurately can I weigh parts on a live conveyor?</em></strong></p>
+                <p><strong><em>How much does that accuracy help in identification?</em></strong></p>
+                <p><strong><em>How hard is it REALLY going to be to build a start-stop feed system?</em></strong></p>
+                <p><strong><em>How well do those ECE noise-filtering techniques you barely understand help in this situation? What about those other crazier ideas bouncing around your head right now for how to do this better?</em></strong></p>
+                <p><strong><em>If I can&rsquo;t get very good resolutions, is even a non-obtrusive weight system worth the design effort?</em></strong></p>
+                <p><strong><em>What if weight totally seems unnecessary after building a 30,000 part neural net on a half-scale prototype, and I commit to building a full scale machine with no weight capacity, and then I find out that jumping to 40,000, or 50,000, or 70,000 parts screws up everything and I totally did need weight data after all? And I now have literal millions of wasted data capture instances without the information the new system will need?</em></strong></p>
+                <p><strong><em>How can I design my process so that I&rsquo;d see that coming? What would be the warning signs?</em></strong></p>
+                <p><strong><em>What if I don&rsquo;t need weight 99.99% of the time, but that 0.01% is the time where it stops a catastrophic jam which completely destroys your machine while you&rsquo;re sleeping?</em></strong></p>
+                <p><strong><em>Are there easier ways than weight to prevent that from happening, ever?</em></strong></p>
+                <p><strong><em>IS WEIGHT WORTH IT?</em></strong></p>
+                <p>These are the kinds of questions that keep me up at night. I mean, aside from all the other more existential crisis-ish ones.                 <a class="popup" onclick="popup21()">Not your conundrums of philosophy, but practical problems.
+                    <span class="popuptext" id="popup21">        <iframe width="560" height="315" src="https://www.youtube.com/embed/SNgNBsCI4EA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a></p>
+                <p>To answer these questions, I really need to just build a real system. Figure out what kinds of parts would get confused. Figure out how different parts which have similar weight end up looking to the camera. Get some actual information about settling time and conveyor noise. So I&rsquo;ve been moving in that direction.</p>
+
+                <h3>Proof of Concept, and Consensus Protocols</h3>
+
+                <p>All of this data manipulation technique design and so on made me wonder &ldquo;how much benefit am I really gaining? Is this ever going to be worthwhile? How bad could a system implemented with minimum effort be? Will it be just random noise, or something actually useful to me?&rdquo; Especially because, even with everything I was doing, my tests showed that I was <em>still</em> going to need thousands of samples of each part to get a neural net to work right.</p>
+                <p>In most cases, this problem is solved by using pre-trained models, such as resnet. A pre trained model provides <em>low level</em> recognition capabilities for fairly primitive image elements, such as gradients and corners, on the theory that a new data set can leverage this information to figure out the <em>high level</em> neuron weights relatively quickly on relatively little data. I&rsquo;m not going to go into more detail for the moment, but the <a class="popup" onclick="popup22()">FastAI lessons
+                    <span class="popuptext" id="popup22">        <iframe width="560" height="315" src="https://www.youtube.com/embed/XfoYk_Z5AkI?start=4588" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>
+                    have great in-depth explanations of this idea. However, I was finding that it just wasn&rsquo;t holding true for the particularly structured images I had. Additionally, I was really struggling to figure out how to use these libraries in a real-time situation, rather than simply reporting classification on pre-existing datasets.</p>
+                <p>So to just get <em>something</em> off the ground, I went ahead and just built a simple proof of concept to do <em>some</em> real-time classifying using more primitive means to learn more about the problem, when I happened across SimpleCV.</p>
+                <p><a href="http://simplecv.org/">SimpleCV</a> is a nice little python library, which provides some handy wrappers for the more powerful OpenCV. These wrappers restrict the customization possibilities somewhat, but make it <em>dramatically</em> easier to hit the ground running and start accomplishing real things with computer vision in a short amount of time. And it even has a machine learning system built in! The Machine Learning functions are based around <a href="http://bennycheung.github.io/recognizing-snacks-using-simplecv" target="_blank">Orange</a>, which provides a number of fairly rudimentary classification algorithms, including Tree, K Nearest Neighbor, SVM, and Na&iuml;ve Bayes.</p>
+                <p>...I know what some of those words mean. Some of them. &ldquo;Tree,&rdquo; definitely know that one, at least. At least, the tall and green variety, anyways.</p>
+                <p>Nevertheless, not knowing what the words mean doesn&rsquo;t stop me from finding out more by blindly developing code written around them!</p>
+                <p>The code I wrote started out as a mashup of pieces from a <a href="http://bennycheung.github.io/recognizing-snacks-using-simplecv" target="_blank">snack classifier</a>, a <a href="http://jmgomez.me/a-fruit-image-classifier-with-python-and-simplecv/" target="_blank">fruit classifier</a>, and, most relevantly but in the end least helpfully, a <a href="https://www.robotshop.com/community/robots/show/lego-sorter" target="_blank">LEGO classifier</a>. It consists of two python scripts, one for manual collection of images, and one for performing machine learning training and classification in real-time. The image recorder script prompts the user for a part name or number, and then allows me to take and record an image under a classified directory structure with the click of a button. Most of the actual code deals with file name incrementing &ndash; pretty simple stuff. Still, it takes a while to input the data, since you need to jiggle the part between each photo to create a representative distribution of orientations.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/liftarmgrid.png">
+
+                </div>       
+
+                <p>(You can see how badly the current camera varies things like background just depending on its mood. It&rsquo;s not great)</p>
+                <p>The machine learning doesn&rsquo;t process the raw images pixel by pixel. Instead, the actual identification program starts out with <strong><em>feature extractors</em></strong>, tools contained within SimpleCV which pull out meaningful numeric data from the image in a vector format, so that multiple images can easily be quantitatively compared. At the moment, three feature extractors are in use:</p>
+                <ul>
+                    <li><strong>Edge Histogram</strong>, which creates an ordered list of the edge lengths and angles found in the image. This should carry rough approximations of the perimeter and physical shape of the part&rsquo;s overall form factor, and any interior details with a good degree of contrast</li>
+                    <li><strong>Hue Histogram<em>, </em></strong>which compares the overall quantity of various colors in the image, with no respect to their physical locations.</li>
+                    <li><strong>Morphology</strong>, which I understand extremely little about. I know that it filters the image into a black/white binary threshold, and processes some geometric data about the largest shape. From reading the source code, I know area, perimeter, and aspect ratio are all in there. Morphology has the largest impact on the program&rsquo;s effectiveness if it is removed, so I should probably learn more about it.</li>
+                </ul>
+                <p>The numeric data from each of these feature extractors, for every image in the dataset, is then passed into a machine learning algorithm as training data. Currently, I&rsquo;m not splitting the already-minimal data I have into training and testing sets, I&rsquo;m just using everything I&rsquo;ve got for training, and testing the result by placing additional parts under the camera in real time. I&rsquo;m not interested in using this machine to classify thousands of images in a database in one shot, I&rsquo;m interested in its utility for discrete cases.</p>
+                <p>Once the model is trained, the program simply runs a loop, repeatedly capturing an image, running the classifier, and reporting its best guess at what part is under the camera. Here&rsquo;s the initial result:</p>
+
+                <div class=pageimgcontainer><video width="400" autoplay muted loop><source src="/images/idvidmini.mp4" type="video/mp4"></video></div>
+
+
+                <p>Wow, that&rsquo;s actually pretty good! The nice thing about these algorithms operating on some very basic quantitative data extracted by computer vision algorithms, rather than trying to infer information from the raw pixels the way a neural net would, is that they do quite well on very minimal datasets, as far as machine learning techniques go. I can get meaningful results with 15 or fewer images per class, even with a lot of variability in the actual data set. These approaches aren&rsquo;t the most accurate in the world, and they&rsquo;ll show their limits as more parts are added, but it does a heck of a lot better than I thought it was going to.</p>
+                <p>This is still a <strong><em>very</em></strong> stripped down, quick-prototype implementation. It is doing basically none of the things I&rsquo;ve been talking about in this post. Despite SimpleCV being built on top of OpenCV, I haven&rsquo;t yet been able to get the crop+rotate code snippet above to talk to the SimpleCV machine learning classes without crashing regularly. Therefore, no intelligent cropping or reorienting is performed. Instead, raw images are used, and the raw data, as seen above, is largely built to showcase possible variation in the part&rsquo;s orientation. Only one stable position for each part is recorded &ndash; even doing something as simple as turning the pneumatic cylinder on its side causes the algorithm to freak out. Only one view is captured, with no weight data, or multiple lighting configurations. I&rsquo;ve shied away from some of the finer details that the cheap, out-of-focus webcam simply can&rsquo;t reliably see. The algorithm has to re-train itself every time the script is executed. And it runs in isolation, instead of tied into the greater database of parts I&rsquo;ve been working with elsewhere in the code, and the SimpleCV library makes it very difficult to change this, or even to build a basic GUI around the image processing program to give feedback on computed results.</p>
+                <p>Another major shortcoming of this implementation is that in pursuit of simplicity, all access to the inner workings of the classification process is largely stripped away. This means that there is <em>no way</em> to directly access the uncertainty that&rsquo;s so vital to correct operation. Uncertainty can be <em>intuited</em>, based on the fact that certain parts tend to &ldquo;flicker&rdquo; between two or more classifications, but for any given frame, the classifier is reporting its result with absolute confidence. Long term, that&rsquo;s unacceptable. To be clear, this is a shortcoming of the libraries and implementation, rather than the actual learning technique, so it&rsquo;s conceivable that I could get this data out in the future. But not right now.</p>
+                <p>For a while, the prototype was only using an SVM classifier, as that&rsquo;s what the LEGO code had reported the most success with. Upon trying other models, I found that the SVM model was overall very good, but some of the parts it struggled with, other models were able to nail every time. Conversely, there were some classes of parts which the SVM model was uniquely effective at. Some models were overall &ldquo;better&rdquo; than others, but really, it became clear that for different classes of part, each model took its own turn being the &ldquo;best.&rdquo;</p>
+                <p>To visualize this better, I started running all four models in parallel. Training time obviously went up, but they seemed to run live classification together just fine without any performance hit. In the video below, the classifications go, from top to bottom, SVM, KNN, Tree, Na&iuml;ve Bayes:</p>
+
+                <div class=pageimgcontainer><video width="400" autoplay muted loop><source src="/images/fourwayid2.mp4" type="video/mp4"></video></div>          
+                <p>This video isn't a "good run," selected after several takes. In fact, it's kind of a bad run, so you can see the kind of disagreement and instability the various classifiers can exhibit. Each algorithm definitely has their own “character.” I know very little about their underlying mathematical methodologies, but here are some of the observations I’ve made, on the individual algorithms, and the system as a whole: </p>    
+
+                <ul>
+                    <li>KNN is the most accurate during training, but the least accurate in testing, very often insisting on wrong, non-sensical results, and rarely providing unique insight. It seems to be overfitting.</li>
+                    <li>Na&iuml;ve Bayes is by <em>far</em> the most stable, and overall returns the highest accuracy in practice. However, this constant confidence means that when it is wrong, it rarely wavers in its wrongness. Tree has similar characteristics, but is more often incorrect in practice. Three algorithms in stable agreement, with Tree firmly disagreeing, is a common sight.</li>
+                    <li>However, I have also had certain parts whose presence in the dataset <em>completely</em> throws off Na&iuml;ve Bayes, gravitating towards it at every possible opportunity. In particular, large, dark-colored objects. You can see its tendency to incorrectly report &ldquo;wedge&rdquo; when in doubt above. If I take &ldquo;wedge&rdquo; out of the training set, it does much better.</li>
+                    <li>All algorithms, but in particular Tree and SVM, have certain parts that they&rsquo;re <em>really</em> good at, often reporting correct classifications with confidence in complete defiance of the other three algorithms.</li>
+                    <li>Certain classes of parts are confusing for certain algorithms. SVM really struggles with small or translucent parts. KNN has difficulties differentiating round objects from each other. Na&iuml;ve Bayes gets objects with the same basic footprint size confused. And so on.</li>
+                    <li>There is a roughly equal number of incorrect classifications which make you say &ldquo;okay I can see why it&rsquo;s getting confused,&rdquo; and classifications which generate a &ldquo;what are you thinking??&rdquo; reaction.</li>
+                    <li>The algorithms work best on black parts, across the board. I&rsquo;m guessing that this is because these return the most reliable edge histogram results.</li>
+                    <li>However, the system was next to useless with the backlight turned on. This is likely due to the introduction of noise from the paper base, which creates all kinds of <a class="popup" onclick="popup23()">dancing edges<span class="popuptext" id="popup23"><video class="popupimg" width="400" autoplay muted loop><source src="/images/dancingpixels.mp4" type="video/mp4"></video></span></a> under default edgefinding settings. Additionally, the webcam&rsquo;s auto-adjust to the brightness returns an image which doesn&rsquo;t black out the part quite as well as during early cell phone camera tests.</li>
+                    <li>Much like in one of the greatest so-bad-it&rsquo;s-good-due-to-terrible-physics-in-sci-fi movies of all time, one of the classes the system has the hardest time dealing with is <a class="popup" onclick="popup24()">empty space
+                        <span class="popuptext" id="popup24">        <iframe width="560" height="315" src="https://www.youtube.com/embed/6BGmQ21EekY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>. This is probably because the morphology feature is likely pretty nonsensical without a clear object to focus on. The crop/orient program is based on something similar and&hellip;well, it kinda crashes when there isn&rsquo;t an object in the field of view at the moment.</li>
+                    <li>The system was also next to useless if not operating on a tightly cropped region of the greater ID cell. Any croppings which kept portions of the walls in the field of view returned nonsensical results which gravitated strongly towards reporting the vision cell as empty.</li>
+                </ul>
+
+                <p>So the main takeaway is, I really need to learn more about what's actually going on behind the scenes in each of these, in order to make more sense of this list, and figure out what actions to take next.</p>
+                <p>But in the meantime, having all these algorithms working in parallel actually becomes a <em>great</em> way to report uncertainty! In testing, I have <em>never</em> seen all four models agree on an incorrect classification. A stable classification where all four models agree can therefore be considered &ldquo;correct.&rdquo; A classification with two or three models in complete agreement, while the others mostly agree but occasionally &ldquo;flicker&rdquo; over to an incorrect classification is almost always correct. Three models in agreement, with one confidently dissenting, is almost always correct. Anything else is dangerous territory, which a machine shouldn&rsquo;t act upon.</p>
+                <p>A simple approach would be to pick the most popular classification, but we can do better. One could put together a model which monitors two characteristics of each classifier&rsquo;s reports: the <strong><em>stability</em></strong> of the reported classifications, and the <strong><em>agreement</em></strong> with the other classifiers, weighting reports with high stability and agreement, and writing off unstable, isolated classifications as random noise. Pseuco-code would go like:</p>            
+
+                <div class="codeblock">
+                    <p>for each classifier c:<br>
+                        &nbsp&nbsp&nbsp&nbsp	t = time since classifier last changed its reported outcome<br>
+                        &nbsp&nbsp&nbsp&nbsp	increment t<br>
+                        &nbsp&nbsp&nbsp&nbsp	n = number of other classifiers which agree with c<br>
+                        &nbsp&nbsp&nbsp&nbsp	weight = t* scaling constant + n*scaling constant<br>
+                        &nbsp&nbsp&nbsp&nbsp	Classifications[n] = (identification, confidence)<br><br>
+                        Sum together the confidence levels of all classifications which share an identification<br>
+                        Sort summed classifications by confidence level<br><br>
+                        if Classifications[0].confidence > threshold<br>
+                        &nbsp&nbsp&nbsp&nbsp	Report classification[0]<br>
+                        else:<br>
+                        &nbsp&nbsp&nbsp&nbsp	Report uncertain/baby wheel
+                    </p>
+                </div>
+
+
+                <p>You could also weight your confidence based on the previous success with the reported classification. For example, the tree classifier has its shortcomings, but it is the only one which could identify the Megablok in the training set with any reliability. When the tree reports a Megablok, every other algorithm had better listen up and assume that the tree knows what it’s talking about, even if they all agree it’s probably a legitimate LEGO piece. So, if the tree classifier is reporting it’s a Megablok, it should be weighted heavily, even if it’s doing so in isolation, or occasionally flickers to something else. Likewise, a three-way agreement between the other algorithms should be taken less seriously, given their previous issues with incorrect classification based on this. These part-by-part weights can be determined via a test set of images, and then applied to future classifications being made in real time, by adding another weighted line of code:</p>
+                
+                <div class="codeblock"><p>pc = percent correct when reporting current class<br>
+weight = t* scaling constant + n*scaling constant + pc * scaling constant
+</p></div>
+
+<p>This isn&rsquo;t perfect though. You also want to take into account the tendency for false positives &ndash; what if tree was constantly incorrectly calling random objects Megabloks? Also, given how good tree usually is at Megabloks, it should probably also override cases where this is a minority opinion, or where it occasionally briefly flickers over to something else. In fact, this shows that &ldquo;increment a weight until something changes, then wipe it out&rdquo; isn&rsquo;t a great stability metric &ndash; we&rsquo;re looking for something more like a moving average.</p>
+<p>There are lots of ways you can play with this idea of consensus-building between different machine learning algorithms. You can do this with more sophisticated techniques built beyond the simpleCV library, and use these approaches to augment explicit reports of uncertainty from tools like neural nets. You can add more simplistic metrics into the mix as well &ndash; a lot of the &ldquo;sanity checking&rdquo; techniques I&rsquo;ve been talking about can be incorporated in similar ways, with similar weighting.</p>
+<p>I&rsquo;m sure people out there are doing similar things. I want to learn more about this. This is fun!</p>
+
+<h3>Using Rough Techniques to Enable More Sophisticated Techniques</h3>
+
+<p>As I mentioned, the nice thing about this prototype is that it does <em>not</em> rely on thousands of example images. This means that I can put it to real use in a very short amount of time.</p>
+<p>It also means that it is <em>incredibly</em> useful to me in building up a larger dataset to get the full potential out of more powerful techniques.</p>
+<p>Let&rsquo;s say that I get a machine made which feeds parts continuously through a vision cell. Let&rsquo;s say that I have it running my current algorithm, on a limited but non-trivial percentage of the LEGO library. Let&rsquo;s say that it&rsquo;s 80% accurate at this, based on a <em>very</em> minimal, hand-curated initial dataset.</p>
+<p>How do I go from this, to a dataset of tens of thousands of images more appropriate for more advanced tools? Well, I could run the same parts through the machine, over and over and over again. Tell the machine what it&rsquo;s about to get, then give it those parts. This would take a long time, before I can do anything useful.</p>
+<p>Or, I can use what I have right now to label the data automatically, while doing useful work, only correcting it when it is wrong.</p>
+<p>If I can identify parts with 80% accuracy, the machine is already tremendously useful to me! I can make it better, while leveraging its existing capabilities to help sort parts and earn money towards building out the mechanical systems. I can sit down to do a 1<sup>st</sup> order sort the way I&rsquo;ve been doing, except instead of throwing the parts into bins directly, I just shovel them into the machine. If it&rsquo;s right, it puts them where they belong. And, <em>every time it is right, it records another data point for that part, without me having to do anything at all</em>.</p>
+<p>If it&rsquo;s wrong, I let it know. If I do this right and keep the priority on reporting uncertainty using some of the techniques I&rsquo;ve talked about, the machine will have a pretty good idea when it&rsquo;s wrong or uncertain, and can ask me for feedback on the spot. If I have my IMSGUI program fully up and running, I can report the &ldquo;correct&rdquo; classification to the machine learning module easily, via text input, or voice control.</p>
+<p>What about expanding the machine to cover more parts? Again, it&rsquo;s better not to make a concentrated point to stop and do nothing but teach the machine new things. Instead, casually work them in.</p>
+<p>If you&rsquo;re doing a first order sort, and come across something you know the machine has never seen, or has trouble identifying, alert the machine what&rsquo;s coming down the line before it even reaches the cameras. It will record the data, and update its database. Have the machine echo back what it <em>thought</em> that the part was, in absence of your given label. Have it report to you when it &ldquo;feels&rdquo; it has sufficiently learned a specific part, so that you don&rsquo;t have to pick them out individually anymore, and can start just shoving handfuls at a time into the pipeline.</p>
+<p>I can get even more advanced. I won&rsquo;t be able to update the training of even the simpler models every single time I enter a part &ndash; they simply take too long to train. But remember how you can use multiple models in parallel to report uncertainty, or lack thereof? And how certain models return particularly reliable or unreliable data on specific parts without fail? I can update these consensus-generation weights <em>in real time</em>. SVM classifier mislabeled a notched cone as unnotched five times in a row? <strong><em>Stop paying attention to SVM when the other classifiers think it&rsquo;s a notched cone, then</em></strong>. Tweaking the way algorithm consensus works can be done at lightning pace, and will dramatically improve accuracy with every single part entered, without retraining anything.</p>
+<p>I can even add the neural net into the mix and see what it has to say, even if I don&rsquo;t expect it to be very good yet. Once it begins to match and then outpace the other approaches, the system will notice, and start paying more attention to it. This will likely happen quicker for some parts than for other. The system can handle that too.</p>
+<p>All of the simpler data types I&rsquo;ve discussed also provide <em>tremendous</em> utility in building a training dataset. Weight and color are known directly from the Bricklink database. Even if the machine has never seen a part before, it can pick out the most likely candidates from the Bricklink weight data, and the overall color of the part, proactively asking the user which one is &ldquo;correct,&rdquo; flashing images up on screen. In many cases, it may be able to conclusively and uniquely identify the part just based on this information. It then labels the raw images based on the user&rsquo;s feedback, and adds the full suite of information, including raw images and bounding box data, to the training database, without any manual &ldquo;teaching&rdquo; involved at all!</p>
+<p>Also, all those rules I&rsquo;ve talked about, about using bounding box and such for sanity checks? I don&rsquo;t have to uniquely program those for specific parts! Just tell the system &ldquo;no, you&rsquo;re wrong,&rdquo; and have it take a look around at this kind of thing. It should notice a bounding box three times larger than the average of the dataset for that part all on its own, and take note to pay attention next time. Couldn&rsquo;t identify a megablok? Tell it &ldquo;no, you&rsquo;re wrong,&rdquo; and click on the image on the spots where higher resolution would likely help it tell the difference. Use yet another level of machine learning feature recognition to determine &ldquo;that thing you just clicked on? That&rsquo;s a stud! I should check the LEGO vs. non-LEGO stud database.&rdquo; Next time that part is seen, it will know to check there automatically, consolidating the &ldquo;correct&rdquo; and &ldquo;wrong&rdquo; interpretation under one class.</p>
+<p>So instead of seeing data collection as something which takes weeks of concentrated effort, it can become something that just&hellip;happens, as you go about business as usual. As you sort parts, your data set only grows, and with that, its accuracy and utility.</p>
+<p>Building up enough data to reliably incorporate more advanced machine learning approaches is the obvious application, but there are others. For example, remember that theory about using probabilistic distributions to weight the influence of weight data? You can influence this process by real-world information about how each and every part varies, picking out parts which have particularly steady and particularly unstable mass distributions, and using the actual data points rather than a theoretical model to drive your predictions.</p>
+<p>I&rsquo;m absolutely just brainstorming/spitballing here. For a very, very long time, I let the challenges in collecting data hold this project back, figuring I&rsquo;d need to spend ages on it before I could do anything meaningful. Getting that prototype working opened the floodgates for ideas like this. There are <strong><em>so many ways</em></strong> that you can use the model within the manual process right from the get-go, and how you can maximize the impact that literally every part entered has on your accuracy.</p>
+<br>
+<h3>Final Thoughts</h3>
+<p>I&rsquo;ve gone into a lot of detail here, and made more progress in less time with less resources than I thought I would, but I still feel very, very worried about this problem.</p>
+<p>A lot of what I&rsquo;ve written feels more speculative than substantive, and represents research and intuition more than it does experimentation, accomplishment, and deep technical insight. A whole lot of it was a fancy way of saying &ldquo;Neural nets are super cool and I think they&rsquo;ll solve all my problems, but I don&rsquo;t know enough about them to say for sure. I know that I will need a lot of data, but I don&rsquo;t fully know how to get it yet.&rdquo; And it stayed pretty far away from the technical details of that implementation, because frankly, I don&rsquo;t understand those things very well.</p>
+<p>This all means I could still be in a spot where I am so ignorant of the technologies and techniques that I don&rsquo;t understand the difficulty of the task I&rsquo;ve set for myself. I still don&rsquo;t have the knowledge or skills to bring everything I&rsquo;ve talked about here to fruition.</p>
+<p>Just one example of a problem I don&rsquo;t have a clue how I&rsquo;m going to solve: damage detection. I&rsquo;ve been collecting a bag of damaged parts since the day I started this project, on the theory that they&rsquo;d be helpful in building a training dataset. But, the bag is very small. It represents only a tiny fraction of parts, and then, only a tiny fraction of the truly infinite number of ways a child could bite and deform each part. If I feed the machine these parts as examples of damage, it&rsquo;s going to assume that damaged parts <em>always</em> look like the ones I&rsquo;ve come across. I don&rsquo;t have a clue how to teach a machine to detect things it hasn&rsquo;t seen before like this. I don&rsquo;t have a clue about quite a lot of parts of this thing.</p>
+<p>And for me, that&rsquo;s all the reason to keep on pushing forwards with this thing.</p>
+<br>
+<p>I&rsquo;ve done a lot of engineering in my life in very low resource situations. I&rsquo;ve used an end-mill as an impromptu shaft, I&rsquo;ve led software teams of people who haven&rsquo;t coded a day in their lives, I&rsquo;ve done plenty of unspeakable structural things with zip ties, and once clamped a shaft collar over a gear&rsquo;s teeth, then drilled holes in the shaft collar, to mount an impeller I had torn out of a shop vac to a motor. I have done some <em>sketchy</em> things, and fallen flat on my face more times than I can count, because lack of resources definitely makes things harder.</p>
+<p>A lot of times in these situations, the response from the people working with has been to scale back expectations, and shy away from the problem being faced. Which is always a fine thing to do, to look hard at a problem, reconsider the reasons it hasn&rsquo;t been solved yet, and if the problem can be reshaped or approached from new angles, or broken into more manageable chunks.</p>
+<p>But I really, really take issue with this mentality, when it comes to a situation where <em>you</em> need to develop a solution which is essentially a recreation of someone else&rsquo;s solution, or applying something which already exists somewhere out in the world to a new problem which doesn&rsquo;t really demand technological leaps forwards, just intelligent adaptation of things that exist and have been done.</p>
+<p><em>&ldquo;Yes, that team did this thing, but we&rsquo;re not that team, and we can&rsquo;t, with what we know and have.&rdquo; </em></p>
+<p>I&rsquo;ve heard variants on that phrase more times than I can count, really, at the conclusion of a majority of my projects. And it drives me nuts. I know it shouldn&rsquo;t, but I find it really hard not to take these kinds of statements as self-defeating personal slights towards one&rsquo;s engineering abilities. When there&rsquo;s hard evidence out there that <em>someone</em> built an equivalent system, and <em>someone</em> acquired the resources required to do it, <em>someone</em> worked their way past that nagging issue you&rsquo;re having, <em>someone</em> did everything required to make the design you&rsquo;re chasing real&hellip;well, I&rsquo;m someone as well.</p>
+<p>If someone was able to go through every step, either I should be able to as well, or I&rsquo;m by definition selling my own capacity to improve and work through problems short. Because if you look at a problem from a broad scale, not just as a technical problem but as a problem of resource acquisition and self-education, where acquiring the tools needed to solve it is just another step in developing your solution&hellip;what else can you do? Either you blame yourself as somehow inherently unfit, or you&hellip;you just get to work, taking on whatever obstacles are preventing you from matching that someone out there doing what you&rsquo;d like to be doing, no matter what form those obstacles take.</p>
+<p>I don&rsquo;t feel like I have the resources I need to solve this problem right now, but that doesn&rsquo;t mean I&rsquo;m incapable of finding them. On the contrary, seeing and getting terribly intimidated by the vast treasure trove of amazing computer vision projects out there shouldn&rsquo;t push me away from the problem, it should encourage me to believe that keeping at it will lead to real, meaningful results. Like this, the best pure identification setup out there right now:</p>
+
+<iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/iym73pVI0fU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>People have solved this kind of problem. <em>I</em> personally haven&rsquo;t solved this problem, and have had a hard time figuring out how to solve it, but that&rsquo;s a reflection on my current skillset not necessarily matching up 100% with the challenges building a universal automated sorter poses, not the difficulty of the problem. Seeing the amazing things that other people have done with this kind of technology needs to be something that gives me direction towards developing new abilities and increasing my knowledge, not</p>
+<p>At the very least, it&rsquo;s enough faith that it&rsquo;s solvable, to believe I&rsquo;ll have it solved at some point, because thinking otherwise would be losing faith in my ability to do what others can do. Which means that as much as I need to do this first to keep with the software-first philosophy, and catch up with the people who have this part more figured out than I do, my mind keeps wandering to the <em>other</em> problem. The one which the few who have solved the identification problem have barely acknowledged, and which to my knowledge, nobody has properly taken on, certainly not in pursuit of automatically sorting LEGO. It&rsquo;s in many ways a much, much more difficult problem, but one I think I&rsquo;m a lot more well-positioned to be solving, once this project reaches that point.</p>
+<p>But it&rsquo;s the one where I&rsquo;m starting to venture into uncharted territory, of doing things that aren&rsquo;t quite like what anyone to my knowledge has done before, which makes it kind of exciting to me.</p>
+<p>The problem of, once you know which one of 70,000 possible pieces you have in front of you, <em>what on earth do you do with it next?</em></p>
+
+
+
+
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page8.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page10.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup18() {
+                var popup = document.getElementById("popup18");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup19() {
+                var popup = document.getElementById("popup19");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup20() {
+                var popup = document.getElementById("popup20");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup21() {
+                var popup = document.getElementById("popup21");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup22() {
+                var popup = document.getElementById("popup22");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup23() {
+                var popup = document.getElementById("popup23");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup24() {
+                var popup = document.getElementById("popup24");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup25() {
+                var popup = document.getElementById("popup25");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup26() {
+                var popup = document.getElementById("popup26");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup27() {
+                var popup = document.getElementById("popup27");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup28() {
+                var popup = document.getElementById("popup28");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup29() {
+                var popup = document.getElementById("popup29");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup30() {
+                var popup = document.getElementById("popup30");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup31() {
+                var popup = document.getElementById("popup31");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup32() {
+                var popup = document.getElementById("popup32");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup33() {
+                var popup = document.getElementById("popup33");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup34() {
+                var popup = document.getElementById("popup34");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup35() {
+                var popup = document.getElementById("popup35");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup36() {
+                var popup = document.getElementById("popup36");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup37() {
+                var popup = document.getElementById("popup37");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup38() {
+                var popup = document.getElementById("popup38");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup39() {
+                var popup = document.getElementById("popup39");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup40() {
+                var popup = document.getElementById("popup40");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup41() {
+                var popup = document.getElementById("popup41");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup42() {
+                var popup = document.getElementById("popup42");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup43() {
+                var popup = document.getElementById("popup43");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup44() {
+                var popup = document.getElementById("popup44");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup45() {
+                var popup = document.getElementById("popup45");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup46() {
+                var popup = document.getElementById("popup46");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup47() {
+                var popup = document.getElementById("popup47");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup48() {
+                var popup = document.getElementById("popup48");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup49() {
+                var popup = document.getElementById("popup49");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup50() {
+                var popup = document.getElementById("popup50");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup51() {
+                var popup = document.getElementById("popup51");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup52() {
+                var popup = document.getElementById("popup52");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup53() {
+                var popup = document.getElementById("popup53");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup54() {
+                var popup = document.getElementById("popup54");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup55() {
+                var popup = document.getElementById("popup55");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup56() {
+                var popup = document.getElementById("popup56");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup57() {
+                var popup = document.getElementById("popup57");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup58() {
+                var popup = document.getElementById("popup58");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup59() {
+                var popup = document.getElementById("popup59");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,646 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Joe Gallagher's Engineering Portfolio">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                    <div class="column">
+                    <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>Applying Band-aids to a Gaping Wound: Using Software to Make the Bad Parts Less Bad</h1>
+
+                <p>We're starting to get into the real "works in progress" region. Less drawers, more design speculation from here on out.</p>
+
+                <p>So, we&rsquo;ve established that there are a lot of problems. Some of them are quite challenging, and are going to demand some pretty radical solutions which will take a long time to create, which the remainder of the posts will focus on.</p>
+                <p>But, some of them really aren&rsquo;t so bad, and can be easily addressed with minor enhancements. The previous two parts looked in a good bit of detail how I optimized some of the processes, and hardware design, to improve the system&rsquo;s efficiency. Now, we&rsquo;re going to go back into the software,</p>
+                <p>What happened to the price guide purchasing stuff? Well, I did get this to the point where some small-scale tests could be run in isolation. What they revealed was that the numbers were promising, but that the best purchases were on a much grander scale than I had anticipated. Buying out stores with stock of 1000+ at 25% below market rate, or monopolizing the market on less common parts, ended up being much more efficient than the ludicrously underpriced singletons which first caught my eye. It&rsquo;s still a useful thing, but it was going to represent much more upfront financial investment than I was in a position to do to be useful. Also, at the end of the day, I&rsquo;m just one guy, and can only focus my attention in 3 or 4 directions at once, 5 on special occasions only (seriously, anyone who has seen me mentor FRC during CAD week bouncing between students/computers knows this is where I cap out and lose efficiency). The potential for profit from the mixed used parts, and numerous frustrating points of inefficiency, lead me to put fully developing the original plan on hold, and focusing on several ways I could make the used bulk process better. Addressing things like&hellip;</p>
+
+                <h3>Manually labeling the sizes of parts every time you see one is terrible and inefficient</h3>
+
+                <p>Right now, here&rsquo;s what happens:</p>
+                <p>I get this part</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/slope4.jpg"></div>
+
+                <p>I have about 10 in front of me. I put them in an empty drawer and scrunch them up near the front, finding out they take up about the volume of a 4 stud long division. I think this is a somewhat common part, so I call it a 6 instead. The part is two studs by two studs, so odd numbered sizes don&rsquo;t do me any good. So I enter in, &ldquo;r4e6m2,&rdquo; and go on my way, to the next part</p>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/slope3.jpg"></div>
+                <p>Same exact part, in a different color. Only this time, there&rsquo;s only one. It&rsquo;s a bit of an oddball color, and glancing down at the price guide numbers shown in brickstock confirms it&rsquo;s relatively rare. I&rsquo;ve already thought about its size today, but I have to think about it again. This time, I&rsquo;ll say &ldquo;r2e2m2,&rdquo; as I don&rsquo;t expect my quantities to grow much.</p>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/slope2.jpg"></div>
+                <p>Same part. But this time the price guide is throwing out some four figure numbers. I don&rsquo;t have time to calculate <em>exactly</em> how much more common this color is, but&hellip;it&rsquo;s more common, the fact that this kid had only one defies the odds a bit. I have to think about this shape <em>again</em>. I have to remind it, &ldquo;yes, you really <em>are</em> &ldquo;m2&rdquo; <em>again</em>.&rdquo;</p>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/slope1.jpg"></div>
+                <p>And the same thing, except it has a little keyboard printed on the front.</p>
+                <p>The first time, I had to think. I had to assess the part&rsquo;s size. But given this information, everything I did from there on <em>should</em> have been a simple calculation. Volume, times the price guide listed quantities, times some kind of scaling factor, to develop a reasonable estimate for allocated space. But instead, I&rsquo;m entering this same information each and every time. I&rsquo;d have to enter it again, even for <em>the exact same part and color</em>, if I sell them all, and then have to re-enter it again at a later date. This is terribly wasteful. There should be a way to take data entered for one part, transfer it to all other parts for which the information is relevant, and keep it there. Let&rsquo;s build that system!</p>
+                <p>I&rsquo;ve referred to the number &ldquo;about 70,000&rdquo; a lot. This is the number of classes of parts that Bricklink considers distinct, when you take into account colors which parts actually exist in. However, there are only about 53,000 actual distinct parts, if you don&rsquo;t consider color. This number can be even further reduced, if you ignore things like stickers or printed patterns &ndash; something like a minifig head comes in hundreds of varieties, but all take up the same space in a storage system. What you&rsquo;re really interested in, when it comes to assigning compartment sizes, are <em>unique molds</em>. If LEGO makes the part on the same injection mold, it should be considered identical, for the purposes of calculating size. There are only about 9,000 of these.</p>
+                <p>How can we find out this information? While it would definitely help, we don&rsquo;t need to physically image parts just yet. Bricklink&rsquo;s part numbering system does its best to track this information for us:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/bricklinknumbering.png"></div>
+
+                <p>It&rsquo;s a bit more complicated, but basically, everything after a &ldquo;p&rdquo; in the part number is indicative of printed patterns or stickers, not anything to do with the mold. So if we scrape through the collected part numbers, and apply this filter, we&rsquo;ll get an output close to what we&rsquo;re looking for.</p>
+                <p>Parts with a &ldquo;c&rdquo; in their part number are a bit harder. These represent &ldquo;assemblies,&rdquo; or small collections of theoretically distinct parts which are much more commonly sold as an assembled unit. Each assembly variant should be considered distinct for mold/storage purposes, as they will take up different sizes. This is most specifically challenging when it comes to minifigs. There are <em>thousands</em> of printed pattern torso varieties, each of which <em>usually</em> represents a printed torso, two arms, and two hands, but you&rsquo;ll sometimes see oddballs like a robotic claw in there, and the assembly numbering refers to the assembly ID <em>within that particular print variety</em>. &ldquo;C01&rdquo; <em>usually</em> refers to the standard, <a class="popup" onclick="popup1()">all-human assembly<span class="popuptext" id="popup1"><img class="popupimg" src="/images/minifignormal.png"></span></a>, but then you get exceptions like <a class="popup" onclick="popup3()">this<span class="popuptext" id="popup3"><img class="popupimg" src="/images/minifigclaw.png"></span></a>, a torso LEGO never felt the need to sell without the claw arm, so this is c01 as well.</p>
+                <p>For an approximation, I&rsquo;ll be checking the published Bricklink inventories of these assemblies, operating on the assumption that if a part features the same list of physical parts, they&rsquo;re <em>probably</em> being assembled the same way. As best I know, there aren&rsquo;t any oddball minifigs which wrap the claw-arm around the neck instead. So here&rsquo;s how the logic works, all put together. This is repeated on each part, with some additional code used to account for the format exception used in minifig parts. This flowchart repeats on each part number.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/moldflow.png"></div>
+
+                <p>Once all parts have been iterated through, an XML file is output, publishing the list of “master molds,” and the “submolds” which are geometrically identical. There is no significance to which part specifically is the master, it’s just the part with those dimensions that happened to come up first on the list. It’s just a convenient way to label each group, by using one specific part as “representative” of all its submolds. </p>
+
+                <div class="codeblock"><p>&lt;mold&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp; &lt;masterpart&gt;10&lt;/masterpart&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp; &lt;subparts&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10p01&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10p02&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10p03&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10p04&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10p05&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10px1&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10px2&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10px3&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10px4&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;part&gt;10px6&lt;/part&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp; &lt;/subparts&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp; &lt;verified&gt;false&lt;/verified&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp; &lt;smalldrawerempirical /&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp; &lt;dimslaves /&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&nbsp; &lt;dimmaster&gt;false&lt;/dimmaster&gt;</p>
+                    <p class="code">&nbsp; &lt;/mold&gt;</p>
+                </div>
+
+                <p>This part number interpretation comes from the community-sourced Bricklink catalog and is&hellip;not perfect, and in fact, one of the things I want to do before going any further is to build a GUI to manually verify this data, by simply displaying all images of parts it&rsquo;s considering consolidated under one mold in one shot, and asking for manual verification. False negatives are a minor inconvenience, but false positives could really mess things up, so I want to be sure to eliminate those from the start. The plan for this is to simply flash up the images of each part grouped under a mold, and have the user separate out any incorrect entries, updating the database accordingly.</p>
+                <p>Once this information is input, the next step is to figure out how to provide useful information about the packing properties of each mold. Unfortunately, as I discovered in my efforts to optimize very <a>odd shaped battery packs</a> for combat robots, even relatively trivial 2d &ldquo;packing problems&rdquo; are surprisingly tricky mathematical things, let alone complex 3d objects like LEGO. Unfortunately, different parts will package in very different ways, and be reliant on different geometric characteristics. Let&rsquo;s look at some example parts in drawers to see how funky this problem can be:</p>
+                <p>&nbsp;</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/2x4ordered.jpg"></div>
+
+                <p>These bricks are mostly dependent on the rectilinear geometry of the parts. The studs are approximated as solid – this drawer is two “layers” deep, but the parts are stacked with the studs opposite each other. You never interlock pieces in storage, or people will complain about you sending them worn parts. They also see a clear advantage from being ordered this way – here’s what that same drawer looks like with a random dump. I couldn’t get the drawer closed.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/2x4unordered.jpg"></div>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/LLiftarms.jpg"></div>
+
+                <p>A rectilinear approximation of these guys is useless. Clearly, they nest together far more efficiently than the others, due to the “L” shape. However, the best nests appear fairly randomized. Ordering these in a systematic fashion actively hurts their volumetric efficiency. Specifically quantifying how much space is saved through disorder is difficult though, due to its inherent randomness. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/OrderedTires.jpg"></div>
+
+                <p>The tires are better approximated via circles than rectangles. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/nesteddrawer.jpg"></div>
+
+                <p>These parts have a clearly defined optimal &ldquo;nesting behavior.&rdquo; The first part takes up a lot of volume. Subsequent parts take up less.</p>
+                <p>Ignoring all packaging optimization, the most pessimistic means of doing this would be an empirical measurement of the packing density when randomly dumped in a sufficiently larger compartment. Take this drawer for example:</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/lime1x1.jpg"></div>
+
+                <p>It&rsquo;s pretty clear that trying to optimize the packaging of these parts would be a futile waste of time. It&rsquo;s also clear that in a compartment an order of magnitude or larger than the part&rsquo;s maximum dimension, things &ldquo;average out.&rdquo; In other words, each cubic centimeter I add to the compartment, in any direction will have an identical impact on capacity, unlike some of the more structured examples of larger parts above, where the part&rsquo;s dimension is comparable to their compartment, and size increases may or may not help depending on how they interact with the specifics of the part&rsquo;s geometry. So this method is accurate, but relies on allocating room for a large quantity of parts.</p>
+                <p>I initially had plans to spend a lot of time with this, determining a &ldquo;best density calculation metric&rdquo; for each mold, and using it to calculate the expected volume of different variants for tiny or gigantic expected quantities. However, in light of the increasing investigation into full automation, the empirical count per unit volume approach seems best. Anything else depends on consciously ordering parts as they enter their container, which is a <em>huge</em> challenge for an automated system, and would <em>dramatically</em> increase the difficulty in making it real, for not much gain. So in all likelihood, each mold is going to simply be tagged with a worst-case rectilinear approximation for storage in small compartments (which will always estimate high), plus an empirical mixed density when in sufficiently large containers. I may also tag a size cutoff where one metric or the other should apply for specific parts, or figure out a generally applicable rule for this.</p>
+                <p>The end goal of all this is, eliminate the need to stop and scrunch parts up in a drawer to figure out how much room they&rsquo;re going to take up, and eliminate the need to enter r/e/m codes for every part I upload. This information should be stored permanently after it is entered once, and transfer over to as many relevant parts as possible.</p>
+
+                <h3>More Scraping: Images and the API</h3>
+
+                <p>Any kind of manual validation of molds would require the ability to actually look at the parts on hand. So my next big scraping project became scraping all the part images out of Bricklink. There are a <em>lot</em> of these, as they vary by color as well as part number.</p>
+                <p>The code for this was <em>much</em> cleaner than that&hellip;thing, I made last time around, to ensure that my traffic &ldquo;looked&rdquo; like people. Bricklink images get used in all kinds of 3<sup>rd</sup> party applications. I checked Brickstock&rsquo;s source code, and found that&hellip;yeah, they were just being pulled directly from Bricklink whenever the user needed them. Knowing that this works, and that I still had the extra layer of anonymity from Tor, I felt comfortable looking into how to do this properly, behind the scenes, via HTTP request, instead of piping everything through a browser to mimic a human user as much as possible.</p>
+                <p>The HTTP requests are made via the built-in Java net functions, which have quite a bit of functionality, including the ability to direct requests through a SOCKS port. So for image scraping, I still use Tor, and still recycle the connection every couple hundred requests, and I still launch several circuits in parallel, via the same distributor/module classes I used last time. But I don&rsquo;t actually launch Firefox/Selenium. The image HTTP requests simply happen in the background, at a <em>considerably</em> faster rate, recording the image data via a Java input stream. Scraping all the images only takes an hour or two.</p>
+                <p>I also had to contend with the fact that Bricklink is missing a <em>lot</em> of images, as the catalog is community-sourced. My approach for generating the list of requests, simply iterating through the part database XML, and for each part, pulling out the list of valid colors, was going to result in thousands of 404 responses. I decided it would be good to have reference to the list of missing images for future purposes, and set up my code to append every part/color combination with a missing image to a text file for this purpose. That way, I can re-try them periodically, without rescraping the tens of thousands of unchanging images I&rsquo;ve successfully recorded.</p>
+
+                <p>As I mentioned back in <a href="page4.html">part 4</a>, Bricklink doesn&rsquo;t really give straight answers about what colors each part is available in. There are five different lists from this information, all five of which often give conflicting results. Right now, I&rsquo;m just taking a position of &ldquo;if it shows up on <em>any list</em>, I&rsquo;ll give it a try.&rdquo; But I&rsquo;d like to make this more intelligent in the future.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/rawimages.png"></div>
+
+                <p>Once I get the images, I still have some work to do. The images often have a lot of white space around the part. And as you can see, they&rsquo;re very&hellip;nonstandardized. Some are zoomed completely different, some are renderings, some are photos. Even the same part can have very different images. This makes it harder to actually make use of the images in any program I develop.</p>
+                <p>To fix this, at least somewhat, a crop algorithm is used, to wipe out the excess white space so many images feature. This is probably running slower than it should, but it works. The way it&rsquo;s done is by iterating through the image pixel by pixel, via a nested &ldquo;for y 0-n, for x 0-n&rdquo; structure. Each column and row is evaluated for pixels which don&rsquo;t match the corner (background) color. If no such pixels are found, this column or row is considered insignificant, and the bounding box dimensions are incremented to exclude it. This really only works on clean-background renders. The image below visualizes a subset of this process, showing how the upper bound of a cropped image gets set. A more advanced crop algorithm built for working in the real world will become important for machine learning/automation later on.</p>
+
+
+                <div class=pageimgcontainer><img style="width: 300px; height: auto; image-rendering: pixelated;" class="pageimg" src="/images/roughcropalgo.gif"></div>
+
+                <p>In a small, &ldquo;it&rsquo;s stupid and slow and I know how to fix it, but haven&rsquo;t done it yet&rdquo; detail, this is currently run live every time an image is loaded, instead of just cropping the images in the database. So, yeah. It&rsquo;s slow right now. It will get less slow.</p>
+                <p>I also ended up building in the capacity for my program to talk to the Bricklink API. As mentioned, this is rate limited to an absurd degree which eliminates a lot of its potential utility to me, but it&rsquo;s still useful to have the ease of access in a stripped-down manner it provides to some features. Following the <a href="http://apidev.bricklink.com/redmine/projects/bricklink-api/wiki/Authorization" target="_blank">API authentication documentation</a> and getting something working together took <em>ages</em>. It&hellip;shouldn&rsquo;t be as complicated as it is. I don&rsquo;t fully understand why it works, but now I have this feature working as well. It&rsquo;ll definitely be useful moving forwards, for doing things like automatic updating of my store&rsquo;s inventory.</p>
+
+                <h3>Reading and writing BSX files</h3>
+
+                <p>Shifting gears, I also started looking at ways to work with data about the inventory of parts I had on hand. Brickstock uses a file format called .bsx, which is really a specifically formatted XML file. In order to do any kind of manipulation involving my actual inventory, the first step was to learn to read and write these files. Here’s what it looks like: </p>
+
+                <div class="codeblock">
+
+                    <p class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</p>
+                    <p class="code">&lt;!DOCTYPE BrickStockXML&gt;</p>
+                    <p class="code">&lt;BrickStockXML&gt;</p>
+                    <p class="code">&nbsp;&lt;Inventory&gt;</p>
+                    <p class="code">&nbsp; &lt;Item&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;ItemID&gt;3245b&lt;/ItemID&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;ItemTypeID&gt;P&lt;/ItemTypeID&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;ColorID&gt;85&lt;/ColorID&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;ItemName&gt;Brick 1 x 2 x 2 with Inside Axle Holder&lt;/ItemName&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;ItemTypeName&gt;Part&lt;/ItemTypeName&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;ColorName&gt;Dark Bluish Gray&lt;/ColorName&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;CategoryID&gt;5&lt;/CategoryID&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;CategoryName&gt;Brick&lt;/CategoryName&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;Status&gt;I&lt;/Status&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;Qty&gt;1&lt;/Qty&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;Price&gt;0.066&lt;/Price&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;Condition&gt;U&lt;/Condition&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;Remarks&gt;001-01-02&lt;/Remarks&gt;</p>
+                    <p class="code">&nbsp;&nbsp; &lt;LotID&gt;104464162&lt;/LotID&gt;</p>
+                    <p class="code">&nbsp;&nbsp;&lt;/Item&gt;</p>
+                    <p class="code">&nbsp;</p>
+                </div>
+
+                <p>Not all that difficult. XML is read into the program using the JDOM library, which allows the XML tree to be traversed in much the same way javascript traverses the HTML DOM. Each &lt;item&gt; tag in the .bsx file becomes an &ldquo;inventoryLot&rdquo; class in the java code, with all the relevant fields, which can then be read and updated like any other object.</p>
+                <p>There were two hitches in this process. The first was a distinction triggered by a small handful of particularly numerous parts. If a part takes up more volume than a single drawer allows, it will be spread across multiple drawers, which could be anywhere. Bricklink and Brickstock considers these to be one <em>lot</em>. The remarks for each location are simply concatenated together, but it appears in the data as one entity.&nbsp; However, for most of what I&rsquo;m trying to do, I&rsquo;m more interested in <em>locations</em>, considering that part two distinct entities for the purposes of tracking and allocating drawer space for it. This minor inconsistency, since it is so core to the data structures being used, has been surprisingly difficult to stamp out. Right now, InventoryLot classes can have one or more child &ldquo;InventoryLocation&rdquo; classes, containing the same data but only for a single location. Bugs where this structure breaks everything remain prevalent at the moment &ndash; I need to overhaul how this is handled. Preserving the capacity to spread parts out like this may just be more trouble than it&rsquo;s worth.</p>
+                <p>The second issue was comparatively straightforward. From the scrape operation, I already have a class, &ldquo;CatalogPart,&rdquo; which houses all information I can get from the Bricklink catalog. The .bsx format is not directly tied to the Bricklink catalog in any way, but a number of data fields correspond directly to information represented in Bricklink&rsquo;s catalog data, such as weight, description, part category, etc. Other fields, such as price and quantity, are specific to this specific <em>instance</em> of the lot. In cases where this data overlaps, I want to have the InventoryLot and InventoryLocation classes link to and defer to the CatalogPart class associated with their part number, to prevent data from being entered twice, and so that the most recent information is always used.</p>
+
+                <h3>Determining drawers to manufacture</h3>
+
+                <p>This was one of the first things that drove me to build .bsx interpretation software. In the last part, I touched on the fact that I was using software to calculate what varieties of drawers I needed to manufacture to most optimally house the parts I have on hand. Here&rsquo;s how that&rsquo;s done.</p>
+                <p>First, tracking of empty compartments has been a problem ever since the divider system was first implemented. As we left things, this was being tracked in an excel spreadsheet, which had to be manually updated with every order. The main frustration here was that this was a separate entity. I had a full file with information on every part in my system, but when a drawer emptied out, the reference to that drawer disappeared entirely from the file. What I needed was a way to algorithmically compare the parts I had on hand and where they were, with my permanent record of where I had what divider sizes.</p>
+                <p>So I did exactly that. The excel spreadsheet was converted to a csv format which could easily be read by my program. The listing of what physical compartments exist is read every time on startup, which allows empty compartments to be detected by comparing this list to a .bsx file of my entire inventory. If a drawer compartment exists in the database, but no parts in the .bsx list that compartment in their remarks, it is flagged as empty by direct inference from the .bsx data, unlike Brickstock which has no concept that anything which isn&rsquo;t listed in the .bsx could exist. As a fun &ldquo;it&rsquo;s not a bug, it&rsquo;s a feature!&rdquo; element, I also get some impressively long stacktrace messages to alert me if I&rsquo;ve made a typo and double-listed two parts in the same compartment in the .bsx.</p>
+                <p>With all the data on empty drawers being tracked by the program, it&rsquo;s easy to generate a tally of how many empty compartments of each size exist. With this information, and the ability to parse the remarks to extract the R/E/M codes, the program can calculate what drawers I need to make. The double-wide drawers are easy, due to the limited number of configurations. But the single-wide drawers, which can arbitrarily nest many different sizes in the same drawer, pose a larger challenge.</p>
+                <p>This is a bit of an optimization problem. To give an example, let&rsquo;s say that I have 80 parts which are going to require 4 stud compartments. I could say, okay, that&rsquo;s a lot, squeeze them into as few drawers as possible. Each drawer is 16 studs, to make 20x drawers with four compartments of 4 studs each. That works in isolation, but then, what if you also have to make some 12 stud drawers? Those will leave four studs left over, meaning you&rsquo;ll now be adding more 4 stud compartments than you needed. It gets even more complex and confusing when you add in all 16 possible sizes. It&rsquo;s all about figuring out how to put everything you need into as few drawers as possible, with as few &ldquo;extra&rdquo; compartments built as possible. The problem is closely related to the <a href="  https://en.wikipedia.org/wiki/Cutting_stock_problem" tarteg="_blank">cutting stock problem</a> commonly used in teaching algorithm design.</p>
+                <p>I&rsquo;m solving it using a recursive approach, which works its way from largest to smallest. It starts with a tally of how many of each division size you want to make, considering this to be the number of &ldquo;available&rdquo; compartments of each size. As the algorithm fills in a drawer, it &ldquo;pulls&rdquo; from these availability lists, starting with the largest size available, and working its way downwards. Say that the largest size you need to make is a 12 stud, and, as always, you have 16 stud long drawers. On the first iteration, it will check the 15, 14, and 13 stud variables, and see that since none are demanded, none are available. It will then pull a 12 out, subtracting that variable by 1, and start building a drawer back-to-front with a 12 stud division.</p>
+                <p>It will then recursively run the same algorithm on the left-over empty space. If a 4 stud compartment is available, it will pull one of those and end there, as it&rsquo;s filled in all the space. If not, it could pull a 3 and a 1, or a 2 and a 2. If <em>nothing</em> is available which fills in the space remaining, which typically only happens a couple layers of recursion in, it will create a needless empty division to fill in the space. But this is kept to a minimum, because it always prefers any option which fills the space in a useful manner instead.</p>
+
+                <p>Here's a look at how this is actually being done in the code:</p>
+
+                <div class="codeblock"><p><span class="javadoc">/**<br />* Recursively develops a division plan for a full drawer or sub-section of a drawer, creating<br />* compartments of sizes demanded by the pending parts not yet assigned divided compartments<br />* when possible. <br />* <br />* @param sizeToFill The size compartment being filled, measured in studs. Always starts at 16,<br />* but recursive calls can fill a smaller compartment<br />* @return a list of division sizes, from the drawer's back to the front, measured in LEGO studs</span><br />*/<br /><span class="keyword">public</span> ArrayList&lt;Integer&gt; recursiveDrawerBuilder(<span class="keyword">int</span> <span class="param">sizeToFill</span>)<br />&#9;{<br /></p>
+
+                    <p class="code" style="margin-left: 40px"><span class="comment">/*<br /> * toBe is a map which maps division sizes (1-16 studs) to the number of compartments of<br />* that division size which should be made, based on the parts in inventory which haven't<br />* yet been placed in divided drawers<br />     */<br /><br />/*<br />* Loop through each size compartment, starting with the total volume being filled and <br />* iterating downwards<br />*/<br /><br /></span><span class="keyword">for</span> (<span class="keyword">int</span> <span class="param">i</span>=<span class="param">sizeToFill</span>; <span class="param">i</span>&gt;0; <span class="param">i</span>--)<br />{<br /></p>
+
+                    <p style="margin-left: 80px"><span class="keyword">if</span> (toBe(<span class="param">i</span>)&gt;0)<br />{<br /></p>
+
+                    <p style="margin-left: 120px"><span class="keyword">if</span> (<span class="param">i</span>==<span class="param">sizeToFill</span>)<br />{<br /></p>
+
+                    <p style="margin-left: 160px"><span class="comment">/*<br />* Path A. Executed if the largest pending part requires the entire volume<br />* being evaluated. Returns a list with a single entry, and decrements the list<br />* of pending parts demanding this size by one. <br />*/</span><br />ArrayList&lt;Integer&gt; <span class="param">returnValue</span> = <span class="keyword">new</span> ArrayList&lt;&gt;();<br /><span class="param">returnValue</span>.add(<span class="param">i</span>);<br />subtractToBe(<span class="param">i</span>,1);<br /><span class="comment">//System.out.println("Subtracted a drawer of size "+i+ " in path A. "+toBe(i)+<br />// " remaining.");<br />return returnValue;</span></p>
+                    <p style="margin-left: 120px">
+                        }<br /><span class="keyword">else</span><br />{<br /></p>
+
+
+                    <p style="margin-left: 160px"><span class="comment">/*<br />* Path B. Executed if the largest pending part is less than, not equal to, the<br />* volume being evaluated. Fills the volume with the part's requisite <br />* compartment size, then recursively calls the drawer builder method on the<br />* remaining volume, appending the output to the return list<br />* <br />* For example, if evaluating a full length (16 stud) drawer, and the largest<br />* part requires a 10 stud drawer, it will add a 10 stud compartment as the<br />* first entry on the list, then recursively call the method on the 6 stud<br />* remainder, which will be filled with 1 or more divisions adding up to 6. <br />*/</span><br />ArrayList&lt;Integer&gt; <span class="param">returnValue</span> = <span class="keyword">new</span> ArrayList&lt;&gt;();<br /><span class="param">returnValue</span>.add(<span class="param">i</span>);<br />subtractToBe(<span class="param">i</span>,1);<br /><span class="comment">//System.out.println("Subtracted a drawer of size "+i+ " in path B. "+toBe(i)+<br />// " remaining.");</span><br /><span class="keyword">int</span> <span class="param">left</span> = <span class="param">sizeToFill</span>-<span class="param">i</span>;<br /><span class="param">returnValue</span>.addAll(recursiveDrawerBuilder(<span class="param">left</span>));<br /><span class="keyword">return</span> <span class="param">returnValue</span>;<br />
+
+
+                    </p>
+                    <p style="margin-left: 120px">}<br /></p>
+
+                    <p style="margin-left: 80px">
+                        }<br /></p>
+
+                    <p style="margin-left: 40px">}<br /><span class="comment">/*<br />* Path C, usually not reached due to return statements in A and B terminating the method<br />* early. Adds a single compartment to fill the remaining space, regardless of whether or not it<br />* is needed.<br />* <br />* This part of the code is typically only reached during recursive calls. For example, say<br />* a 16 stud drawer starts out by being given a 9 stud compartment. There are no pending<br />* parts which require a 7 stud compartment, but there are some which require 6 studs. <br />* So a 9 and a 6 have been added, leaving a 1 stud remainder, which the method again gets<br />* recursively called on. If no parts exist which require a 1 stud compartment, this part of<br />* the code will add one anyways, knowing that it will initially be empty. <br />*/</span><br />ArrayList&lt;Integer&gt; <span class="param">returnValue</span> = <span class="keyword">new</span> ArrayList&lt;&gt;();<br /><span class="param">returnValue</span>.add(<span class="param">sizeToFill</span>);<br />subtractToBe(<span class="param">sizeToFill</span>,1);<br /><span class="comment">//System.out.println("Subtracted a drawer of size "+sizeToFill+ " in path C. "+toBe(sizeToFill)+<br />// " remaining.");<br />//System.out.println("Creating an extra compartment of size "+sizeToFill);</span><br /><span class="keyword">return</span> <span class="param">returnValue</span>;</p>
+                    <p><br />}</p>
+
+
+
+                </div>
+
+                <p>This was all a <em>tremendous</em> time saver. Obviously, it prevents me from doing these calculations myself. It also gives an <em>exact</em> tally of each size required for every &ldquo;drawer day,&rdquo; allowing me to get into a zone and crank out dozens of the same size in one sitting, rather than thinking about each drawer&rsquo;s requirements on a case-by-case basis. And, it gives me the confidence that I was building dividers in a fairly optimal manner which wouldn&rsquo;t land me with a bunch of useless space someday.</p>
+
+                <h3>Expanded Software Structure</h3>
+
+                <p>So with all of these features being added, how was the overall software structure holding up? Well&hellip;it&rsquo;s seen better days. Real quick, here&rsquo;s a list of some of the feats and ongoing failures, as functionality began to sprawl.</p>
+                <ul>
+                    <li>There are a <em>lot</em> of really convenient data types, for simple structures which repeat themselves many times in the part database. Things like, a color paired with a quantity. These are important for data manipulation, as it allows you to do things like add them into lists and sort them intelligently, through Java&rsquo;s Comparable interface.</li>
+                    <li>The code is also cluttered with a lot of false-starts or previous attempts at doing things which are no longer used. These need to be cleaned out.</li>
+                    <li>This is because I found it was easy to get into a trap of building certain functionality into solitary massive classes, instead of developing proper object oriented structure. Things like the databaseController class, for example, perform <strong><em>far more things than they should</em></strong>, in that case, pretty much every sweeping operation which iterates over the entire part database to collect statistical information. You&rsquo;ll see a lot of graphs later in this series of posts about the Bricklink database, most of which were generated through bad means like this.</li>
+                    <li>The Command system, however, has worked out great. The individual commands are well organized and categorized, and it makes it very easy to find where an action kicks off in the code, or to reuse old functionality in new ways.</li>
+                    <li>However, I need to build a quicker means of adding a command to the console. Right now, doing so requires copying several distinct blocks of code, making and populating a command class manually, and then writing the actual functionality. The tediousness of this process has meant that very, very often, for &ldquo;one quick check,&rdquo; I&rsquo;ve written things which run either at startup, or tacked onto existing, working commands. These &ldquo;one quick checks&rdquo; then become hard to track, and muddy up the code, and in some cases lead to some <em>really nonsensical locations</em> for some permanent functionality, like initializing empty files in preparation for data collection during a scrape. I&rsquo;d rather not say where that happens right now.</li>
+                    <li>The class structure used for the GUI/View also leaves a lot to be desired in that regard, but that has more to do with my limited understanding of the actual workings of Java GUIs, and not knowing how to safely vary from the condensed examples you find online, as things grow. I need to look at some examples of real, sprawling GUI designs, and see how people who know what they&rsquo;re doing do the code behind the scenes.</li>
+                </ul>
+
+                <h3>Fine! I’ll build my own Brickstock! With blackjack and intelligent color filtering!</h3>
+
+                <p>All of these software pieces started out as discrete tools, all triggered via the console interface discussed earlier. However, I pretty quickly realized that to solve some of the larger problems, I really needed to extend or move beyond Brickstock. There were just too many frustrations and shortcomings left in the user interface</p>
+                <p>Now, brickstock is <a href="https://brickstock.patrickbrans.com/" target="_blank">open source</a>. However, it&rsquo;s open source&hellip;with zero comments in the code, no wiki or overarching structural documentation, and written in a language where my experience level is &ldquo;barely not zero.&rdquo; I&rsquo;ve always thought that &ldquo;open source,&rdquo; with minimal effort put in, really isn&rsquo;t open source. If you open source software without giving any indication of where to begin interpreting it&hellip;it&rsquo;s not really useful. If you open source hardware, and design all your parts to be hard to manufacture such that it&rsquo;s really much easier to just buy them from you&hellip;that&rsquo;s not really open source. I&rsquo;d rather have someone word-vomiting about the process of their project, over every single source file, any day, when it comes to actually learning from and building off the works of others.</p>
+                <p>So I&rsquo;m going to just make my own from scratch. And I&rsquo;m going to make it useful to others, not necessarily by giving out the code, but by <strong><em>talking your ears off about the process and why it is the way that it is</em></strong>.</p>
+                <p>Also, a lot of Brickstock&rsquo;s design is somewhat bloated for my purposes. It contains a number of features aimed at tracking collections of actual sets as well as seller support, and a number of tiered pricing and other more obscure Bricklink features that I just haven&rsquo;t found useful. So I can strip a lot of things away in my own design. That being said, the overall design of Brickstock is sound. It does a great job at providing lots of information at once, and making it easily accessible. So my own software, dubbed the <strong><em>Inventory Management System GUI (IMSGUI),</em></strong> was closely modeled on Brickstock&rsquo;s design.</p>
+                
+                  <div class=pageimgcontainer><img class="pageimg" src="/images/imsgui.png"></div>
+
+<p>This is still running as a module of the original BLCrawler application, as I can make extensive use of the database information accumulated there. It takes the previously added capability to interpret a BSX file and create inventoryLocation classes from the data. It ties these classes to the images I&rsquo;ve scraped, and prints everything relevant into a table. New parts can also be added on the fly, starting with the database of all possible parts pulled from Bricklink, with added inventory-specific data like location and price, creating new inventoryLocation rows in the table. So, pretty much just like Brickstock. Except now, I have control over all the annoyances where Brickstock slows me down</p>
+<p>The interface is built using JavaFX. This is really my first time creating a custom GUI with proper tools, aside from very basic menus made for various games. So it&rsquo;s been a learning curve. I&rsquo;ve been really surprised at the kinds of things which do, and don&rsquo;t, exist in neat, pre-packaged classes, and what you have to hack together yourself.</p>
+<p><strong><em>Things I thought would be really hard, but were really easy:</em></strong></p>
+<ul>
+<li><strong>Interpreting and formatting data stored in the BSX file for display. </strong>JavaFX has this really cool thing called a &ldquo;PropertyValueFactory&rdquo; which basically does this for you, intelligently determining how to display a field of really any type, based only on the variable name. Each InventoryLocation class is represented by a row in the table, and each column corresponds to a field in InventoryLocation. For something like turmeric values, this is quite straightforwards. Even something like displaying images is pretty easy &ndash; the JavaFX image class is simply pointed to a file name parsed together based on the part number, and it just works.</li>
+<li><strong>Table sorting. </strong>This was pretty much built-in. Unlike Brickstock, it even remembers my last sort! For example, if I sort by quantity low-to-high, and then by color, parts will sort by color, but those which share the same color will still show up sorted by price.</li>
+<li><strong>Customizing display</strong>. I was used to Swing, and even more primitive means of building UIs, which meant that any graphical tweaks I&rsquo;ve done previously were rather hard-coded. JavaFX has CSS support, which makes this much, <em>much</em> Of course, I didn&rsquo;t really know the first thing about CSS at the start of this project, and in fact actively feared diving into it for a while, which leaves some lingering terribly ugly strings of hard-coded design in the code. Now that I&rsquo;ve gotten a better handle on CSS in pursuit of building this site, I can&rsquo;t wait to go back and make everything look nice. Well, it&rsquo;ll do several hilarious twitchy things first, as all CSS in development does. But then it&rsquo;ll look nice.</li>
+<li><strong>Menus</strong>. These just exist. It&rsquo;s fantastic.</li>
+<li><strong>Undo/Redo</strong>. This was still <em>hard</em>, but not as <em>catastrophically hard</em> as I feared it might be. Turns out the command-based structure of the original program makes a great framework for this. Any commands built for the IMSGUI system have an inverse command affiliated with them. &ldquo;Delete,&rdquo; for example, records an &ldquo;Add all selected items exactly as they were&rdquo; as its inverse. The inverse commands are added to a stack, such that the first entry can be popped off the top when undo is pressed. When undo is used, the inverse-of-the-inverses are pushed into a second stack for redo. It takes a bit of thought to get this in place, and sometimes the inverse commands can be quite complex, but it works well.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><em>Things I thought would be a single line of pre-canned code, but are built nearly entirely from scratch</em></strong></p>
+<ul>
+<li><p><strong>Drag to select</strong>. This required a tremendous amount of custom code. Everything dealing with tracking the mouse as it passes through the various cells, and handling cases like the mouse exiting the table to the side, is built from the ground up. It&rsquo;s in a &ldquo;usable, but needs work&rdquo; state.</p>
+<p>This basically works by assigning the first cell clicked as an &ldquo;anchor,&rdquo; which will always be selected. Entering and leaving a cell can mean selection or deselection, depending on the direction of the cell relative to the anchor and the mouse position. I wish I had GIFs of some of the more hilarious runaway incorrect selection behaviors that happened in developing and debugging this.</p></li>
+<li><strong>Shortcut keys</strong>. These have to be built from the ground up, using actionlisteners. I still don&rsquo;t &ldquo;get&rdquo; this particular aspect of Java, which I should probably be working on.</li>
+<li><strong>Copy/Paste</strong>. Also still on the &ldquo;to do&rdquo; list.</li>
+<li><strong>Editing the underlying data structure</strong>. Yeah, this doesn&rsquo;t just happen. Getter methods have to be explicitly called for just about everything.</li>
+<li><strong>Restricting input format</strong>. For example, ensuring that the price field can only contain correctly formatted prices. This is done by Regex matching, but the location where it must be applied is <strong><em>deep</em></strong> within the JavaFX library. Several layers of core library classes surrounding the definition of table cells had to be duplicated and slightly modified, in order to add this seemingly basic functionality.</li>
+</ul>
+<p>As mentioned, the command system is maintained in this part of the program. Unlike the original system, where commands cease to be useful once executed and are eventually caught by Java garbage collection, IMSGUI commands persist in the undo queue after their execution. The interface used for IMSGUI extends the original command interface, and adds an &ldquo;undo&rdquo; method</p>
+<p>Here&rsquo;s an example of some actual code:</p>
+
+<div class="codeblock">
+    <p><span class="keyword">package</span> blcrawler.commands.imsgui;</p>
+    <p><span class="keyword">import</span> blcrawler.model.ConsoleGUIModel;<br /><span class="keyword">import</span> blcrawler.model.bsx.inventorylot.InventoryLocation;<br /><span class="keyword">import</span> javafx.collections.FXCollections;<br /><span class="keyword">import</span> javafx.collections.ObservableList;</p>
+    <p><span class="keyword">public class</span> Delete <span class="keyword">implements</span> GUICommand<br />{<br /><br />
+    
+    </p>
+    
+    <p style="margin-left: 40px"><span class="comment">/*<br />* Particular Fields<br />*/</span><br /><span class="keyword">public</span> ObservableList&lt;InventoryLocation&gt; <span class="varname">items</span>; <span class="comment">//The items to be deleted</span><br /><span class="keyword">public</span> ObservableList&lt;Integer&gt; <span class="varname">indices</span>; <span class="comment">//The indices in the table of the selected items</span><br /><br /><span class="javadoc">/**<br />* Constructor<br />* @param selection List of selected InventoryLocations. Typical use is, <br />* inventoryView.getSelectionModel().getSelectedItems()<br />* @param ids List of selected inventory indecies. Typical use is, <br />* inventoryView.getSelectionModel().getSelectedIndices()<br />*/<br /></span><span class="keyword">public</span> Delete (ObservableList&lt;InventoryLocation&gt; <span class="param">selection</span>, ObservableList&lt;Integer&gt; <span class="param">ids</span>)<br />{<br /></p>
+    
+    <p style="margin-left: 80px"><span class="comment">//Add all selected InventoryLocations to items<br /></span><span class="varname">items</span> = FXCollections.observableArrayList(); <br /><span class="varname">items</span>.addAll(<span class="param">selection</span>);<br /><br /><span class="comment">//Add all selected index IDs to indices. Only used for undo<br /></span><span class="varname">indices</span> = FXCollections.observableArrayList();<br />indices.addAll(<span class="param">ids</span>);<br />execute();<br /></p>
+    <p style="margin-left: 40px">}<br /><br />@Override<br /><span class="keyword">public void</span> execute()<br />{<br />
+    
+    </p>
+    <p style="margin-left: 80px"><span class="comment">//Remove all items on the list<br /></span>System.out.println(<span class="varname">"Removing item count: "</span> + <span class="varname">items</span>.size());<br />ConsoleGUIModel.getImsgui().removeItems(<span class="comment">items</span>);</p>
+<p style="margin-left: 40px">}</p>
+    <p style="margin-left: 40px"><br />@Override<br /><span class="keyword">public void</span> undo()<br />{<br /></p>
+    
+    <p style="margin-left: 80px"><span class="comment">//Reinsert all items, at each corresponding index<br /></span>ConsoleGUIModel.getImsgui().addItems(<span class="varname">items</span>, <span class="varname">indices</span>);<br /></p><p style="margin-left: 40px">}</p><p><br />}</p>
+</div>
+
+
+
+<p>This is the &ldquo;delete&rdquo; command. You can see that even as it removes items, it maintains them in memory, and provides an easy-access method through which they can be called back. The command then goes onto the &ldquo;undo&rdquo; stack, where it will stay until it is popped off the top of the stack. When this happens, undo() gets called, starting the complex addItems() method to add back the deleted parts, exactly as they were. The command then shifts over to the redo stack, which works the same way, except it will call execute() when the command is popped.</p>
+
+                
+                  <div class=pageimgcontainer><img class="pageimg" src="/images/addpart.png"></div>
+                  
+                  <p>Here&rsquo;s the add part window, as it exists right now, and where you can begin to see some of the real utility I&rsquo;m gaining over Brickstock. First of all, this runs <em>much</em> faster. The &ldquo;All Items&rdquo; category is perfectly usable, and will list all 53,000 parts without a hitch. The part database comes from my own scrape algorithm, and I have access to all of the data behind the scenes, rather than just simple names and part numbers. Right now, only <em>very basic</em> filtering by part number works, but I am not limiting myself to 1:1 filters, and plan to add much more advanced search functionality to this bar, to take advantage of things like part relations Bricklink tracks. The form also filters things &ndash; for example, it won&rsquo;t let me add the part if the remarks don&rsquo;t match the labeling convention I&rsquo;ve been using. Typos screw things up, and now they don&rsquo;t happen. One of the very next features I plan to add is &ldquo;auto incrementing&rdquo; of remarks, as I&rsquo;m generally adding parts one drawer after another. One less thing to type.</p>
+<p>Finally, and most obviously, are the colors. In Brickstock, here&rsquo;s the same screen:</p>
+
+<div class=pageimgcontainer><img class="pageimg" src="/images/addpartbrickstock.png"></div>
+
+<p>Every color is shown. On my program, I&rsquo;m reading the colors the part <em>actually comes in</em>, and filtering down the list without even asking. See how much easier that makes things? I&rsquo;ve never tracked what percent of the data entry time is scrolling up and down that color list but&hellip;it&rsquo;s a lot.</p>
+<p>It&rsquo;s a start, but also clearly a work in progress. It&rsquo;s also missing some very basic functionality, like the ability to update pricing any way other than manually one at a time, or export any of this to Bricklink. So what comes next?</p>
+<p>In software engineering class, we learned about something called &ldquo;Test Driven Development&rdquo; (TDD). This is a somewhat formal programming technique, where you write unit tests as the first step, which totally and absolutely exist all over the place in my project. The idea is, the tests drive your program constraints, and you write the minimum code required to satisfy all tests. If your tests are well designed and comprehensive, and your program passes the tests, you&rsquo;ll have written a good program, the theory goes.</p>
+<p><em>Sidenote: Is there a good resource for learning more about practical unit testing and TDD out there? Every CS class I took which mandated their use had laughably self-contained, calculation-driven assignments, with very clear &ldquo;right answers,&rdquo; contrary to every practical engineering problem ever. I&rsquo;ve never had the first idea how to apply unit test principles to more nebulous, open-ended software tasks, like &ldquo;does the robot actually drive forwards?&rdquo; or &ldquo;Does the GUI display nicely without spewing stray overflowing text everywhere?&rdquo; I need to know more about this than I know right now.</em></p>
+<p>For now, I&rsquo;m using something with a similar philosophy, but a heck of a lot more rough around the edges, which I&rsquo;ll call &ldquo;cup driven development.&rdquo; In cup driven development, you sit down at your desk with a pile of LEGO parts in dixie cups. You pretend that your software has all the functionality it needs, even though you know perfectly well it does not. You go through the procedure you&rsquo;d use to enter parts using Brickstock. The moment you hit a missing feature, inconvenience, or exception stacktrace which prevents you from proceeding to accomplish useful things with your program, you stop, and take note of what stopped you. You fix it, you add the feature, you make it better.</p>
+<p>This is a good approach for developing something quickly, and making sure that you focus on what&rsquo;s really important, instead of useless optimizations, or cool features which you don&rsquo;t really need at the end of the day. It means that the &ldquo;small parts&rdquo; of the code are developed in discrete blocks, and nicely well-contained. It&rsquo;s a bad approach for developing efficiently planned and optimized overarching code structures, and lends itself to a lot of somewhat hacked together solutions.</p>
+<p>Actually, that sounds a lot like the pros and cons of proper TDD. Maybe it&rsquo;s not so different&hellip;</p>
+<p>Here&rsquo;s the current mostly-complete list of &ldquo;walls that I need to break through before IMSGUI can replace Brickstock.&rdquo; Once this happens, the efficiency of the manual data entry process is going to <em>skyrocket</em>.</p>
+<ul>
+<li>The add part window should display an image of the part being added</li>
+<li>Filtering doesn&rsquo;t work right</li>
+<li>Multi-drawer parts are still not handles well at all</li>
+<li>You have to click the &ldquo;add part&rdquo; button, or have it highlighted, instead of being able to add a part</li>
+<li>Error readouts appear in the background in the console, instead of somewhere the user will actually see them.</li>
+<li>Automatic consolidation isn&rsquo;t a thing yet. When it is a thing, it needs to alert the user that it has happened. There are a lot of potentially really useful features that can be added around this, but the basics need to come first.</li>
+<li>Nothing has been built in the way of XML output to Bricklink. This should have capacity for updating things like remarks this way that Brickstock currently does not.</li>
+<li>Handle oversize parts stored in locations separate from the main drawer system properly</li>
+<li>Add, at the very least, mass price-setting features comparable to brickstock, and quickly move towards taking advantage of your data to make this much better.</li>
+<li>Integrate empty location tracking</li>
+<li>Everything takes up way, way too much memory &ndash; information which should be referenced from the database is being stored in RAM at all times and I don&rsquo;t know why.</li>
+</ul>
+<p>And in parallel with this, there&rsquo;s the &ldquo;This can be lived with, but it really shouldn&rsquo;t be this way&rdquo; list, both bugs and missing features:</p>
+<ul>
+<li>Drag to select deselects the item you&rsquo;re mousing over when you release the mouse</li>
+<li>Drag to select freaks out badly if you exit the window with the mouse</li>
+<li>Selection via arrow keys occasionally does full-page jumps when it gets in a bad mood. Or when an image lines up with the bottom of the window just the wrong way.</li>
+<li>BSX imports do not properly defer to the scraped database for certain information if conflicts occur between duplicated information.</li>
+<li>Manually edited prices cannot be started with a leading decimel, IE &ldquo;.12&rdquo; will be rejected instead of turning into &ldquo;$0.12&rdquo;</li>
+<li>The table is vertically larger than it should be, and should have its CSS altered to match the special efficiency of Brickstock</li>
+<li>Color fields should display representation</li>
+<li>Minifig images are not scraped</li>
+</ul>
+<p>And then the &ldquo;I know I want to build this, but the program can be useful to me without them&rdquo; list.</p>
+<ul>
+<li>Sequential read-outs of destinations for parts which consolidated with other parts. That way, I can set all parts already in inventory aside. When I go to put them in the drawers, the program would just read a list back to me, of the part I should have in my hand, and where it belongs, so I can do it all in one shot without error.</li>
+<li>Intelligent filtering and search options, which don&rsquo;t require you to enter an exact, character-by-character name match.</li>
+<li>Auto-incrementing of the remarks field. I&rsquo;ll typically be entering parts one drawer after another, in sequential order. The program should anticipate this, so that in normal use, I never have to type anything in the remarks field.</li>
+<li>Integration with the mold data I talked about earlier, so I no longer have to enter r/e/m codes.</li>
+<li>Interpretation of r/e/m codes that already exist, use them to suggest valid empty drawers for new parts.</li>
+<li>Auto-counting of parts via plug-in scale</li>
+</ul>
+<p>My main point here is, I don&rsquo;t want you to leave with a sense of this as a complete, figured out, software solution. It&rsquo;s an exercise in actively putting out fires, and choosing which fire is most important, until there are few enough fires that I can actually sell some LEGO again with it. The program is just gradually going to get less and less buggy, and more and more useful, mostly through the continuous integration of tiny features, one at a time.</p>
+
+<p>Oh, and also some bigger features. </p>
+
+<h3>Radically Altering Data Entry, and Shifting Towards Automation</h3>
+
+<p>Building a better Brickstock is great. But the biggest problem is very core to its design: the fact that data is entered via keyboard, and via a person.</p>
+<p>When I&rsquo;m entering parts, I&rsquo;ve identified the parts far before I actually get the data in place. This is because, my mind works faster than my hands can move. I <em>could</em> be shuffling through cups while giving a running dialog of what&rsquo;s passing under my nose out loud. &ldquo;2x2 inverted slope red, quantity 3. 1x2 slope green, quantity 8. 2x3 inverted slope yellow, new style studs, quantity 1.&rdquo; I just did that looking into some pending cups, and it took my 10 times longer to type this into my webpage, than it did to count the parts and assess that information.</p>
+<p>But right now, I have to pause, take my hands away from filtering through the cups to see what&rsquo;s coming next, and type all this information into Brickstock. It&rsquo;s a bit more efficient, but ultimately the same way, with IMSGUI.</p>
+<p>I want to radically change this.</p>
+<p>In my envisioned ideal manual workflow, I never leave the drawers. I have a tray of parts ready to go next to me, pull one up, evaluate it, and put it away. Here&rsquo;s what it looks like, if I&rsquo;m entering parts as fast as I can mentally identify and count them.</p>
+                
+                <video width="800" controls><source src="/images/fpvdrawers2.mp4" type="video/mp4"></video>
+                
+                
+                <p>And here’s an unedited look at what the process of actually typing away this data looks like:</p>
+                
+                <video width="800" controls><source src="/images/brickstockentry.mp4" type="video/mp4"></video>
+
+
+
+<p>Exciting, eh? The speed difference is pretty staggering. The video highlights some of the inefficiencies of Brickstock pretty well, but even if you optimize those away, <em>this is on top of, rather than instead of, the first video. You also still have to physically put the parts away, and you can&rsquo;t do it at the same time as you enter data.</em></p>
+<p>So how do you enter data, without actually entering data? Well, I guess this is one of those cases I was skeptical about the existence of earlier, where being sneaky with your problem definition can pay huge dividends.</p>
+<p>The problem is not that I have to take the time to enter data, or that entering the data takes extra focus.</p>
+<p>The problem is I enter data <strong><em>using my hands</em></strong>, the same tool I use to put the parts away, which means the two tasks can&rsquo;t be done simultaneously.</p>
+<p>So, I could train for years to develop a significant degree of foot dexterity, and break through limb-independence issues which several years of drumming are yet to fully wipe away.</p>
+<p>Or I could learn something about voice control.</p>
+<p>Certainly, it&rsquo;s not going to work for everything &ndash; having the list of parts on hand to search and filter through will always be necessary for the more obscure parts. All the enhancements to that process still add value. But for the parts I can identify off the top of my head which is&hellip;quite a few, when you&rsquo;ve stared at LEGO as long as I have, it&rsquo;s going to be much, much faster.</p>
+<p>Entry would need to be done in a way which captures both part ID, color, and quantity. Pricing and everything else can be determined algorithmically anyways. For efficiency, this probably means giving logical aliases to a lot of things, to reduce the speech time involved in saying &ldquo;light bluish grey&rdquo; or &ldquo;Liftarm 1x11.5 double bent thick&rdquo; out loud. Further shortening could be done via a keyword like &ldquo;same,&rdquo; with, for example &ldquo;same blue&rdquo; indicating entry of the same part and quantity, but in blue this time instead of the previous color. The system would also need the ability and the time to confirm interpretations, or report if it could not enter the part as planned.</p>
+<p>I knew <strong><em>zero</em></strong> about how this worked when the idea popped into my mind, but I&rsquo;m not one to let utter cluelessness stop me from trying, and learning in the process.</p>
+<p>My research in this area hasn&rsquo;t exactly been a high priority with so many other fires to be putting out, but I&rsquo;ve been disappointed in what I&rsquo;ve found so far. I definitely don&rsquo;t want to build, or see much utility in, building a voice recognition program from scratch. It seems like a common task for learning the basics of deep learning, but as we&rsquo;ll see in much more detail in a second, that requires a massive dataset, and I don&rsquo;t really want to just sit there shouting &ldquo;two by four!&rdquo; thousands of times over to build something barely passable.</p>
+<p>However, most APIs or existing applications seem focused around general-purpose transcription and dictation, rather than commands. Things like Alexa and Google Home put a lot of emphasis on natural language processing, which really isn&rsquo;t a priority in my system, and really, can be actively detrimental. Complete sentences are inefficient. I want to work with a very small, LEGO-relevant subset of the English language, for example, I will have always meant &ldquo;red&rdquo; instead of &ldquo;read,&rdquo; and I want the program to adapt its tolerances accordingly, so it can better handle background noise, parts thudding into drawers, and me walking around the room. And I definitely don&rsquo;t want to preface every single part with &ldquo;Alexa, pay attention to me.&rdquo; They&rsquo;re going to come way too rapid-fire for that.</p>
+<p>I&rsquo;ve found some home automation solutions which look like they focus in on this kind of thing, but assume you&rsquo;re working with home automation technology, rather than my Java program. Sphinx also looks somewhat promising, though with a high learning curve.</p>
+<p>I&rsquo;ll get back to this one later.</p>
+<p>And, this is going to be <em>even more important</em> when I get to automation, and supporting the long and gradual transition to that process.</p>
+<p>Right, let&rsquo;s talk about that.</p>
+<p>I&rsquo;ve shown how I can make a lot of the problems I talked about in the last part better. But there&rsquo;s a big one I&rsquo;ve been ignoring. The sheer manual effort involved, in every step of the process. The fact that I have to be the one doing things, every step of the way. I&rsquo;m just one guy, and I get tired.</p>
+<p>What if I didn&rsquo;t have to be there? How far could this thing go?</p>
+<p>Well, let&rsquo;s do some math. Let&rsquo;s say, hypothetically, I can make a machine, that does my brain&rsquo;s job as well as my brain does, when working with parts it is very familiar with. It can identify a part, a single part, in about a second.</p>
+<p>Let&rsquo;s also say that, I can build a machine which reflects a more ideal process. My ideal process would be, pick up a part, identify it, and then hand it to a small child who happily runs off to the correct drawer and puts it away, such that I don&rsquo;t have to expend any effort on that part of the process. Lets say there are several small children, running in a circle, such that even if each part takes a minute to put away, I can put a new part in the pipeline as fast as I can think about them. Effective, but definitely in violation of child labor laws.</p>
+<p>But let&rsquo;s say I can build a machine that does all that. That handles a continuous stream of 1 part per second. No sleeping, no internet breaks. Just parts, streaming through, 24/7.</p>
+<p>$0.085 average profit a part. 1 part a second. 60 seconds a minute, 60 minutes an hour, 24 hours a day, 365 days a year. How much is that machine worth?</p>
+<p><em><strong>$2,680,560.00</strong></em></p>
+<p>I can live with that number.</p>
+<p>Let&rsquo;s get to work making it real.</p>
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page6.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page8.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+
+        </script>
+    </body>
+
+</html>

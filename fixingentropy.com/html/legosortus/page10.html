@@ -1,0 +1,891 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Documenting the life of a universal LEGO sorting machine">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="math.css">
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                    <div class="column">
+                        <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>Using Flow and Geometry to Separate the “Bad and Crazy” Ideas from the “Just Crazy” Ideas</h1>
+
+<p><em>This section is going to be spent almost entirely on leading you down false rabbit holes I’ve been down myself, and then explaining why they’re dead ends, before presenting how to do it in the least wrong way. This is a problem which bites you in a lot of sneaky ways. It’s important to feel and understand the sneaking. </em></p>
+
+<p>Let’s assume we’ve got it! We’ve built software which can identify, precisely, every single LEGO part. Now we just have to put them where they belong. This should be easy, right? The only reason we didn’t put 70,000 Dixie cups in front of a person sorting LEGO was because human minds are limited, and it’s hard to remember exactly which of the 70,000 cups is right. But a computer works in more absolute terms, and shouldn’t have that problem. Let’s start laying down the cups!</p>
+
+<div class=pageimgcontainer><img class="pageimg" src="/images/cuparray.png"></div>
+
+<p>That&rsquo;s&hellip;that&rsquo;s a truly dramatic quantity of cups. It&rsquo;s&hellip;<strong><em>only a quarter of the cups we need</em></strong> &ndash; I couldn&rsquo;t draw them all without crashing things. A 48 foot square region of nothing but cups. That feels impractical for other reasons, involving phrases like &ldquo;how in the heck do you precisely traverse a 48 foot square in a timely fashion?&rdquo; and &ldquo;can&rsquo;t you use&hellip;not Dixie cups, for this?&rdquo; This is feeling more practical as a component of a dorm prank than a sort system. We should probably look into this problem more in-depth.</p>
+
+<p>Unfortunately, digging into the problem a bit reveals challenges that are really pretty unique to LEGO. First, in most industrial applications, you&rsquo;re really doing the opposite. When assembling a complex product like a car, you have parts coming <em>into</em> an assembly line, from hundreds or thousands of different sources. Each part is very predictable, and can use very specialized equipment to process it. The final output is, in essence, a mixture &ndash; a very well-structured mixture, but still, a mixture of parts.</p>
+<p>LEGO is the opposite. You&rsquo;re taking tens of thousands of unique parts, all mixed together, and separating them out. It more closely parallels disassembly than it does assembly, a task which in the real world has unfortunately seen <a href="https://www.wired.com/story/international-electronic-waste-photographs/" target="_blank">horrific labor conditions</a> dominate rather than automation. Most industrial sorting applications only have to contend with a few classes of part &ndash; sorting out defective parts from acceptable ones is a common task, which only requires two destinations. Even in cases where things arrive mixed and highly variable, as they do in the case of <a class="popup" onclick="popup1()">books
+                        <span class="popuptext" id="popup1">        <iframe width="560" height="315" src="https://www.youtube.com/embed/zW0BcO6ZUY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a> or <a class="popup" onclick="popup3()">food
+                        <span class="popuptext" id="popup3">        <iframe width="560" height="315" src="https://www.youtube.com/embed/j4RWJTs0QCk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>, the parts being sorted have <em>mostly</em> the same form factor, which helps with processing. Also, even if there is a lot of discrete variability as in books, or infinite variability as in organic items like tomatoes, parts are still sorted into one of relatively few categories. Here, every difference is non-trivial, and we really do need tens of thousands of final storage destinations.</p>
+<p>The closest industry to these problems is the package and mail sorting industry, where packages of fairly variable form factor are sorted into a fairly large number of outputs, for distribution into trucks and other forms of transport around the country. There will definitely be a lot we can learn from the technologies used there.</p>
+
+<h3>Flow Analysis</h3>
+
+<p>As I mentioned briefly earlier, we need to think about this design from a parts flow perspective first. We can come up with some sweet mechanisms for handling parts. But if this results in parts piling up somewhere, or a system being starved of the parts it is expecting, the whole thing is going to break down. So this entire section, before I get to the actual mechanisms handling the parts, we&rsquo;ll be talking about flow, and how parts need to flow through various system aspects, to end up with something both practical to build and without the potential for massive part pile ups.</p>
+<p>We can learn a lot about flow by looking at a classic staple of LEGO conventions, the GBC!</p>
+
+<iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/HvJg3YoehYk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><em>Fun fact: These machines drive the demand for those inconspicuous plastic balls, which were last produced by LEGO more than a decade ago for a line of soccer/basketball sets, <strong>through the roof!</strong> They go for about $2.50 <strong>each</strong> on Bricklink, obviously in large quantities. The quirks of this market are a sight to behold. </em></p>
+<p>A Great Ball Contraption (GBC) is communally assembled at these events. Dozens of people bring in their own &ldquo;modules,&rdquo; and line them up, end to end, with no prior knowledge of what they&rsquo;ll be feeding. Each module adheres to a <a href="http://www.teamhassenplug.org/GBC/">set of rules</a> to ensure that any module can interface with any other module, including the entrance/exit port geometry, and throughput capacity. In between the start and the end, the machine can do anything the creator wants with the balls, as long as they enter/exit the right way.</p>
+<p>The utter joy these things give the mechanisms nerd in me aside, there&rsquo;s a lot to learn from them. I mean, first off, <em>look at all the awesome mechanisms!</em> Look at them! They&rsquo;re giving me so many ideas; I want to put most of them in this machine!</p>
+<p><em>(I am going to use a frightening amount of them. Maybe when this is all over, I&rsquo;ll build a GBC-mockup of the LEGOSortus. Or maybe I should do that first as a prototype&hellip;)</em></p>
+<p>No, seriously, the sheer variety of actions which can be incorporated into a continuously operating machine like this, even within only very basic constraints on flow rate and little/no pre-planning, tells us a lot about how to design the flow control of the LEGOSortus, and how much flexibility we really have.</p>
+<p>A &ldquo;part per second&rdquo; can mean one part every second, on the second. It can also mean, on average a part every 0.8 seconds, with occasional pauses where it needs to stop and catch its breath for longer. It can mean a giant batch of 600 parts, delivered every 10 minutes. It can mean total randomness which averages out to a part per second over a decent length of time. It can mean closely packed parts moving along a conveyor at a crawl, or a cannon which launches parts at tremendous speeds, with large separation between the parts.</p>
+<p>Any of these is ultimately valid, but you need to plan for this variation. A design which shows up a lot on the GBCs is <a class="popup" onclick="popup4()">something like this
+                        <span class="popuptext" id="popup4">        <iframe width="560" height="315" src="https://www.youtube.com/embed/v0N4E87qgQw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>, followed by something more creative. These &ldquo;loading wheels&rdquo; do a great job at <em>regularizing</em> flow, going from a fairly random input, to a very predictable output of a ball per second. This allows designs or process aspects which depend on very precise entry of the parts to do their thing.</p>
+<p>And a key distinction to make here is, it does <em>need</em> to be a flow. To visualize this even better, here&rsquo;s a small graphical simulation of something which would <em>not</em> be considered a flow-based process. One could easily envision a physical implementation of this. Put a bucket on a linear slide, and have it zip along in front of all the drawers, dumping parts at the correct spot. It could even be extended to two dimensions, and implemented as a <a class="popup" onclick="popup5()">gantry
+                        <span class="popuptext" id="popup5">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Evo4AtPlvPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>.</p>
+                        
+                        
+                <div class=pageimgcontainer><video width="600" loop autoplay muted><source src="/images/cart51.mp4" type="video/mp4"></video></div>
+                        
+                        <p>The simulation reveals some of the shortcomings of this approach. The vision cell turns from red to green as soon as it has identified a part. The purple “transport” device is working at impressively quickly but depending on the destination’s distance from the vision cell, sometimes leaves it hanging for a moment. Also, 50% of each cycle is spent on the return trip. This doesn’t seem all that bad in this simulation, although there are only 50 compartments shown, and it’s working at breakneck pace, a speed that would make you go “woah that’s super-fast!” if you saw a real machine with real LEGO doing it. Let’s see what happens if we extend this to 70,000 parts, place the vision cell in the middle, and ask it to traverse that worst-case distance at the same speed:</p>
+                        
+                        
+                        
+                        
+                        
+                        <div class=pageimgcontainer><video width="600" loop autoplay muted><source src="/images/cart70000cut3.mp4" type="video/mp4"></video></div>
+                        
+                        
+                        
+                        
+                        <p>Yeah I didn’t watch the whole video either. There could be dragons down at the bottom for all I know. It takes a bit. And then it takes a bit to get back. </p>
+                        
+                <p>So this means that we should beware of any design where a <em>single</em> device is cycled repeatedly to carry individual parts. This means it is not representative of a system based on flow, and will slow down to the point of uselessness when scaled to handle a large number of parts. But that’s good! This is why we’re doing this, so that we eliminate systems whose fundamental properties don’t work with our goals before we invest real effort into detailed designs surrounding them. </p>
+                       
+                       <h3>One Dimensional Flow Designs and Stepper Motor Tidal Waves</h3>
+                       
+                       <p>What happens if we assume, for the moment, that we can eliminate the cart, and just eject parts from the vision cell as fast as it can process them?</p>
+                       
+                <div class=pageimgcontainer><video width="600" loop autoplay muted><source src="/images/shortbelt2.mp4" type="video/mp4"></video></div>
+                       
+                       <p>That’s much better! Because it's a flow-based system, parts enter and exit the system continuously at a rate of one per second, even if their actual travel time is much longer. Even if I add all 70,000 compartments (shown offscreen below, but the parts are programmed to go to one of 70,000), it looks workable. </p>
+                        
+                        
+                <div class=pageimgcontainer><video width="600" loop autoplay muted><source src="/images/conveyor70000.mp4" type="video/mp4"></video></div>
+                       
+                       <p>Now all we need to do is figure out how to actually build it, and to see if it's practical. And fortunately, there&rsquo;s an analogous process which is quite standard in industry. Put the parts on a conveyor, then use <a class="popup" onclick="popup6()">blasts of air
+                        <span class="popuptext" id="popup6">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Pl7H7JAtnl4?start=40" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a> to force the parts off at the right point. With lightweight objects, <a class="popup" onclick="popup7()">the throughput can be incredible
+                        <span class="popuptext" id="popup7">        <iframe width="560" height="315" src="https://www.youtube.com/embed/WLnHDF9Gh90" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>. It has already been used for LEGO, both at <a class="popup" onclick="popup8()">small scale
+                        <span class="popuptext" id="popup8">        <iframe width="560" height="315" src="https://www.youtube.com/embed/CuW73P5PanM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>, and in one of the more <a class="popup" onclick="popup9()">ambitious machines out there
+                        <span class="popuptext" id="popup9">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Zsezo03GF-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>. I&rsquo;m not convinced of the air design for heavier parts, but again, there are plenty of <a class="popup" onclick="popup10()">more hard-hitting alternatives
+                        <span class="popuptext" id="popup10">        <iframe width="560" height="315" src="https://www.youtube.com/embed/SMEQgGcl1ik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>.</p>
+<p>The only problem is, for 70,000 bins, you&rsquo;re going to need 70,000 nozzles, or 70,000 stepper motors. Which is 70,000 solenoid actuators/stepper drivers. Which is 70,000 microcontroller output ports. Which is&hellip;a very non-zero number of dollars, multiplied by 70,000.</p>
+<p>Welp.</p>
+<p>There are <em>so many designs</em> which fall victim to this issue, especially if you&rsquo;re thinking of this sort process along the lines of how you would a software sort. In the hardware world, each &ldquo;action point&rdquo; carries real, physical cost with it. It is very easy to fall into the trap of &ldquo;just add another actuator,&rdquo; but if you actuator count scales linearly with your category count, you&rsquo;re going to get yourself in trouble real quick.</p>
+<p>Actuator optimization design problems are super fun though! They were literally my life back in FLL, trying to squeeze 14+ tasks of functionality out of only three motors. There are all kinds of cool tricks you can do to get different functionality out of a reversed motor, basic mechanical computation to generate variable output from different combinations of actuator input, or just directly multipurpose a single actuator.</p>
+<p>Thinking in these terms leads to a design which sorts parts using a series of cascading binary &ldquo;gates.&rdquo; The most efficient thing you can possibly do with a single digital actuator, which makes a simple decision between &ldquo;path a&rdquo; or &ldquo;path b,&rdquo; is to break the number of classes up evenly by two. Putting in a single decision point like this takes one pathway with 70,000 possible destinations, and turns it into two pathways with 35,000 each. By building a tree downwards from there, now picturing instead of a conveyor belt, a large pyramid which the parts rattle their way through from top to bottom, you can comprehensively classify any given part with only 17 actuations! That sounds doable!</p>
+<p>At first glance, it appears that the number of actuations per &ldquo;layer&rdquo; would increase by a factor of two, up to an unmanageable 35,000 actuator final layer. But we can solve this problem by paying attention to the idea of part flow. If we&rsquo;re putting a part per second through this tree, we could set it up so that each second, every part in the tree drops down one layer. If the tree starts out empty, and receives a regularized part per second at the top, there will only ever be one part per layer. The vast, vast majority of the gates will be empty. Therefore, we can <a class="popup" onclick="popup11()">chain together the actuation
+                        <span class="popuptext" id="popup11">        <iframe width="560" height="315" src="https://www.youtube.com/embed/tWCNFqoU9uI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a> of <em>every single gate on each layer</em>. So even though we have tens of thousands of physical gates, we still only need the 17 actuators!</p>
+<p>However, this design has a different problem at scale: the fact that each decision point, and each pathway, has a non-zero width.</p>
+                       
+                       <div class=pageimgcontainer><video width="600" loop autoplay muted><source src="/images/treenew.mp4" type="video/mp4"></video></div>
+                        
+                        <p>As the tree gets taller, the horizontal distance the part must necessarily travel within the early gates increases exponentially. Not due to the function of the gates themselves, but to make room for more gates down below. If we assume a two inch average width per storage compartment, that puts our parts travelling <em>over half a mile</em> during passage through the first gate. And if we want to make sure the parts actually fall down, this means we need to make the first gate alone <em>somewhere in the neighborhood of a half mile tall</em>. In addition to &ldquo;don&rsquo;t break the sound barrier,&rdquo; &ldquo;don&rsquo;t build a skyscraper&rdquo; should also be a fundamental design constraint.</p>
+<p>You could consider making a more structurally complex tree, which doesn&rsquo;t simply exist in a plane. Stagger things, have the final few sorts direct the parts down twisting pathways so that they don&rsquo;t take up as much sheer horizontal space. This can help to a point, but is a dangerous line of thinking. Remember, you have real, physical parts rattling their way through this thing, whose geometry could be most anything. The further you deviate from &ldquo;let gravity do its thing and drop the parts straight down,&rdquo; the more likely it is your parts will get stuck, require a variable amount of time to traverse certain passageways, or otherwise not behave as expected. This applies not just in the distribution system but everywhere in the project&rsquo;s build: having parts take corners is playing with fire.</p>
+                       
+                       <h3>Analog Actuators</h3>
+                       
+                       <p>Both of these approaches share in common the use of &ldquo;digital&rdquo; actuators. In the case of the push-parts-off-conveyor design, the actuators make a binary choice between &ldquo;eject&rdquo; or &ldquo;let it pass by.&rdquo; In the tree design, the actuators make a choice between &ldquo;left&rdquo; and &ldquo;right.&rdquo; Both of these designs try to reduce cost and complexity with simple actuators, and both of them end up with impractical problems of scale.</p>
+<p>So the next logical question is, if we add more capability to each actuator, do the scale problems go away?</p>
+<p>Turns out they do! Imagine the binary tree design, except this time, we&rsquo;re using quaternary (four way) gates instead. Instead of laying it out in a straight line, we can lay it out as kind of a conical structure, with parts entering at the point, and being distributed radially to different gates. Laying it out in a line wouldn&rsquo;t help us, because distribution to the &ldquo;edges&rdquo; of the tree would still cover a lot of distance, but in this radial design, every pathway is the same, relatively short, distance.</p>
+                        
+
+<div class=pageimgcontainer><img class="pageimg" src="/images/ternarygates.png"></div>
+
+<p>That seems a lot more efficient at first glance. However, the scale problem still comes back to bite us, as we add more layers. At the end of the day, the problems with the tree sort stem from the physical scale of the final output locations.</p>
+<p>Why is this a problem for the tree, and not for the conveyor? Flow. If we&rsquo;re targeting a part per second, the system needs to be able to take one part in per second, and eject one part per second. This does <em>not</em>, however, mean that each part must be processed in one second. If the subsystem can hold 10 parts at a time, each part can</p>
+<p>The tree is very rigid. Every part <em>must</em> advance one layer per second. If they don&rsquo;t, you&rsquo;ll end up with two parts in a layer at a time, and they won&rsquo;t be directed to the right locations.</p>
+<p>The conveyor, however, allows for much more variability in any given part&rsquo;s journey. Pretending for a moment that a single, straight-line conveyor which zips past 70,000 appreciably-sized bins is practical to physically produce, the actual flow dynamics involved are completely workable. Yes, certain parts will have to stay on the conveyor for ages, in order to make it all the way to the end of the line. However, the presence, or lack thereof, of these parts, doesn&rsquo;t alter the conveyor&rsquo;s ability to accept new parts. As long as the conveyor moves fast enough that each second opens up a decent sized window at the end of the conveyor for parts to be loaded on, it will be fine. The show-stopper is paying for materials, not the laws of physics demanding that we move parts at half a mile per second. Remember, first physics principles.</p>
+<p>The design which is not hard-capped by the laws of physics is likely more promising, so let&rsquo;s go back to the conveyor design. Given that it seems better in this regard, can these types of <strong><em>analog actuators</em></strong> help out more here? Absolutely! The first thought that jumps to mind would be variable pressure on the nozzles, kicking the parts different distances, into rows of waiting bins. Spectacular, but probably not the most reliable idea I&rsquo;ve ever had.</p>
+<p>A better approach is, move the bins to match the output location. Imagine if, instead of a single bin, you had two bins under each exhaust port, which you could swap between with an additional actuator. The software would know what parts are coming down the line, and position the bins accordingly. Something like <a class="popup" onclick="popup12()">this machine
+                        <span class="popuptext" id="popup12">        <iframe width="560" height="315" src="https://www.youtube.com/embed/IzYLmAlFkWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>.</p>
+                        
+                        <p>~~~~PLACEHOLDER FOR BINARY-ANALOG VID</p>
+<p>So we&rsquo;ve gone from 70,000 nozzles, down to 35,000 nozzles, and 35,000 bin movers, which isn&rsquo;t any better. But with the bins, we don&rsquo;t have to stop at two! Here&rsquo;s a system with 7,000 nozzles, and 10 bins per nozzle, still powered by a single actuator. In this case, &ldquo;analog&rdquo; refers to the ability, using a stepper motor, servomotor, or similar closed loop system, to position the bin strip at any arbitrary position. Assuming <em>very</em> roughly that each actuator, regardless of type, costs the same, we&rsquo;ve gone down from 70,000 actuators to 14,000, reducing our cost by 80%! Awesome!</p>
+<p>But the phrase &ldquo;14,000 actuators&rdquo; is still making my wallet emit muffled screams of pain every time I say it out loud. Can we go further with this system?</p>
+<p>Well, what if we take it to the extreme? One nozzle, 70,000 sliding bins. We just have to wait for the bins to slide into position and&hellip;</p>
+
+
+                        <div class=pageimgcontainer><video width="600" loop autoplay muted><source src="/images/cart70000cut3.mp4" type="video/mp4"></video></div>
+                        
+                        <p>&hellip;and we&rsquo;re back to where we started. In terms of flow dynamics, moving a single part past 70,000 bins stationary bins until it lines up with the right one, is exactly the same as moving 70,000 bins past a stationary part until everything lines up right. We&rsquo;ve killed our part per second rate again. Oops.</p>
+<p>In fact, in certain ways, it&rsquo;s a lot worse.</p>
+<p>With a moving part, and stationary bins, you aren&rsquo;t moving very much mass. But if you&rsquo;re shifting around your entire inventory, of potentially tens of millions of parts every time you want to add a new one? That gets <em>heavy</em>. Quickly accelerating that much material is not trivial, and potentially not practical. It&rsquo;s certainly not practical to accelerate all 70,000 compartments as shown above, although that&rsquo;s not practical for a whole host of other reasons. But still, it&rsquo;s another fundamental physics-thing. Moving more mass is trickier than moving less mass.</p>
+<p>And yet, there is also a key advantage to using moving storage, which means that for a lot of applications, it is still <em>dramatically</em> preferable.</p>
+<p>If you do moving storage right, your part&rsquo;s pathways never change. Moving a part to a bunch of different locations, by nature, changes its pathway. And changing a part&rsquo;s pathway is a minefield of potential mechanical issues.</p>
+<p>Imagine, for example, instead of sliding the bins in the example above, you have a ramp/extension you can deploy to alter the pathway of a part, directing it into one of the waiting bins.</p>
+<p>*Ramp vid*</p>
+<p>Well, okay, but that raises so many questions. What angle do you make the ramp? Does this angle need to change as the ramp gets longer? If it becomes really shallow at long lengths, will it still work? If it&rsquo;s a fixed, steep angle, will there be a really long vertical drop-off when it&rsquo;s really short? Will that be okay? Will the ramp geometry interact favorably with every single part it has to process? How will you test all of this?</p>
+<p>This kind of problem gets even worse when you consider the likely reality of vertical storage. Picture a vacuum cleaner hose mounted on an X/Y gantry, directing parts from a fixed location at the top, down to any number of drawers on a wall. You have to test this geometry, at <em>every single location on the wall</em>, to make sure that parts can never, ever get stuck, even as the availability of gravity to help or hurt you varies <em>dramatically</em> with location.</p>
+<p>Now, there are ways, on a small scale, to do this kind of moving-exhaust design well. <a class="popup" onclick="popup13()">Here's one
+                        <span class="popuptext" id="popup13">        <iframe width="560" height="315" src="https://www.youtube.com/embed/uCuQsNwX1QY?start=9" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>. The only change in geometry comes from meaningless rotation in the tube. <a class="popup" onclick="popup14()">Here's another
+                        <span class="popuptext" id="popup14">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Evo4AtPlvPM?start=43" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>. By moving parts about in a container, the physical surfaces the part interacts with never change, even if its path from bin to bin is very different. But the rotating nozzle design can&rsquo;t handle many more parts than this without scaling issues, and the carriage design introduces that 50% duty cycle, where the system must wait for it to return before the next part can be processed, even if it&rsquo;s shoveling the same type of part to the same location over and over again, a fairly likely occurrence on batches with reduced variety.</p>
+<p>But moving storage is always going to be easiest of all. The only thing I have to do is create a fixed &ldquo;part exit point&rdquo; from the previous system. Ideally, I can make this exit point straight up and down, so that parts fall straight through into the waiting storage bin every time. As long as the mass being moved isn&rsquo;t terribly unreasonable, it&rsquo;ll be great.</p>
+<p>&ldquo;As long as you don&rsquo;t go overboard with it, it&rsquo;s really good&rdquo; is a common theme with these analog sort techniques. Remember how fast and efficient that initial, small scale simulation of the moving container design looked? That wasn&rsquo;t an illusion. <em>As long as we keep the total motion required minimal to the point where it doesn&rsquo;t become the system&rsquo;s limiting speed factor</em>, these analog redirection techniques are quite powerful. On their own, they can&rsquo;t scale to the entire set of parts, but kept to reasonable scope, they can be a great tool within a larger system. So, how do we keep things more reasonable?</p>
+
+<h3>One, Two, Three Dimensional Storage, and the Principle of Instant Access</h3>
+
+<p>Most of the examples I&rsquo;ve given so far have used one dimensional storage of all the parts. 70,000 bins, all in a straight line. This is simple to understand and helps us develop a better intuition for the strengths and weaknesses of various design classes as they scale, but obviously it isn&rsquo;t very practical for the actual physical implementation. 70,000 bins, at two inches average per bin, puts us at just over two miles. We need to do better than this.</p>
+<p>Now, an important subtlety. &ldquo;One dimensional&rdquo; doesn&rsquo;t necessarily have to be restricted to straight lines. It really refers to the number of degrees of freedom, or dimensions, needed to describe where an object is. A three dimensional roller coaster, twisting and turning through space, can be thought of as one dimensional, if you measure as &ldquo;distance along track from the starting point.&rdquo; The &ldquo;one dimension&rdquo; just happens to twist and turn. But a train &ldquo;100 train-lengths from the start&rdquo; will always be in the exact same place.</p>
+<p>Similarly, we could build a multi-dimensional sorting system, with only one dimension which matters. We could zigzag a conveyor across a large room&rsquo;s floor, build a spiraling incline with a tower of bins on all sides, all kinds of different things. The conveyor design in particular lends itself to this kind of thing.</p>
+<p>But in practice, by itself at least, twisting things around like this doesn&rsquo;t do much good, once again because of the problems associated with direction changes. Building a curving conveyor is much harder than a straight one, and <a class="popup" onclick="popup15()">most existing industrial solutions<span class="popuptext" id="popup15"><img class="popupimg" src="/images/conveyorcurve.jpg"></span></a>  are geared towards much larger parts. Even just dropping parts onto a <a class="popup" onclick="popup16()">perpendicular conveyor<span class="popuptext" id="popup16"><img class="popupimg" src="/images/conveyordirection.jpg"></span></a> is going to mess things up. The conveyor with ejectors design depends on precise knowledge of a part&rsquo;s location on the belt, and cornering in this way would cause the machine to lose track of its position. And, you end up wasting a lot of space which could be used for part storage on conveyor footprint instead. As we&rsquo;re going to see shortly, we really need to be storing our parts as densely as possible.</p>
+<p>Let&rsquo;s say, again, that our storage bins are highly variable in size, but work out to a 2&rdquo; cube on average. Now, we want to run a conveyor past every single one, in a ziz-zag pattern like this (belt in blue, storage in yellow:</p>
+
+
+<div class=pageimgcontainer><img class="pageimg" src="/images/1dbelt.png"></div>
+                <p>Unfortunately, the belt still has to be wide enough to handle <em>everything</em>. So it’s going to be, bare minimum, 256mm wide. This means that the picture looks more like this in reality:</p>
+
+
+<div class=pageimgcontainer><img class="pageimg" src="/images/1dbeltscaled.png"></div>
+
+<p>We&rsquo;re spending most of our footprint on conveyors instead of storing parts. This isn&rsquo;t very good. So what about two dimensional storage? Something like, say, the giant <a class="popup" onclick="popup17()">grid of drawers<span class="popuptext" id="popup17"><img class="popupimg" src="/images/drawerwall.png"></span></a>  I&rsquo;ve been using to date? One dimension would be handled by one mechanism, which feeds into a series of identical secondary mechanisms handling the second dimension. What could possibly go wrong?</p>
+<p>Well first of all, the drawers themselves have to go. Drawers are a structure which are very human-friendly, but incredibly cumbersome for a machine. Pulling them out is just an unnecessary, and surprisingly complex, action. We could use a wall of compartments something <a class="popup" onclick="popup18()">like this<span class="popuptext" id="popup18"><img class="popupimg" src="/images/angledopenings.png"></span></a> , with permanent openings for parts to enter. Or more realistically, we could turn the whole thing on its side, and store our parts in a horizontal grid instead of a vertical one. This will make it much easier to get parts out of the system, when they sell.</p>
+<p>But that&rsquo;s doable. A more sticky bit of this new design is, this two dimensional idea means that we can&rsquo;t use conveyors for both dimensions. Conveyors are inherently one dimensional devices &ndash; the roller coaster analogy, of a dimension as &ldquo;distance along a conveyor&rdquo; is always going to apply. There&rsquo;s no real point in doing something like a capital &ldquo;E&rdquo; shaped conveyor design, with one &ldquo;master belt&rdquo; which branches off into a series of perpendicular &ldquo;secondary belts;&rdquo; it&rsquo;s going to take up the same physical space as winding through.</p>
+<p>But this really isn&rsquo;t a good sign, because conveyors, or other similar &ldquo;flow along a constant path&rdquo; designs are the only thing we have which still works no matter how physically big your storage system&rsquo;s footprint ends up being. And a two dimensional array of every single part is still pretty dang big.</p>
+<p>Specifically, at our rough estimate of 2&rdquo; cube per compartment, it&rsquo;s a 44 foot by 44 foot square. Aside from the impracticality of finding physical space this large to store all the parts, this is too large for tree sorts, which by my rough, first-order estimates, lose their practicality at about four feet wide, or analog sorts achieved by shifting the storage compartments or the part drop-off point around, which can maybe be pushed to 8 feet if we&rsquo;re aggressive with it. If we constrain one dimension, the dimension we won&rsquo;t be using conveyors+nozzles on, down to this 8 foot value, we end up with nearly 2,000 unique conveyor exit points, meaning we&rsquo;re still at 4,000 actuators, 2,000 of which must now push analog storage techniques to their absolute limits, and a storage system over 300 feet long. Still not viable at all.</p>
+<p>What if we abandon conveyors entirely, and try to come up with a system which uses analog sorting techniques in two dimensions? In a two dimensional storage system, shifting the entire 70,000 location storage unit around seems silly, so in practice, the best way to do this would be a gantry, which traverses the array of storage locations. Which, again, is 44 feet by 44 feet. That seems extreme.</p>
+<p>It&rsquo;s extreme because, again, a gantry isn&rsquo;t a mechanism which permits a constant flow of parts. It can carry one part around, must traverse the entire distance to the storage location, then come back to a fixed location to pick up the next one. At this scale, there&rsquo;s just no way we can make a single gantry like this work in a timely fashion.</p>
+<p>Is there any way at all to use a gantry or something similar, while allowing multiple parts to be making their way to their destinations simultaneously, therefore bringing us back to a flow-based system? Well, we could just add <strong><em>more gantries</em></strong>. Layer a bunch of them on top of each other, and have them each work independently. Time things so that as one gantry is heading out, another is on the return trip, and there&rsquo;s a constant flow of gantry-endeffectors moving past the part pickup location. In fact, all this gantry-hardware is starting to sound redundant. We could just&hellip;</p>
+                
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/jwu9SX3YPSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+                <p>This is the kind of solution to problems of this scale and nature that the real world is gravitating towards. Starting to feel like a bit of an extreme problem, isn&rsquo;t it?</p>
+<p>Kinematically, a bunch of mobile robots constrained to a grid like this is equivalent to a bunch of gantries, except without a bunch of linear guides to stack on top of one another. Anyone who has ever tried to make a mobile robot autonomously track a straight line and execute reliable 90 degree corners will probably scream in horror upon watching this video, until they remember that oh-so-key principle of environmental control. We&rsquo;re building the floor. We could put anything on it to help the robots around &ndash; some designs use magnetic tape, others use physical tracks to lock the robots in <a class="popup" onclick="popup19()">straight lines
+                        <span class="popuptext" id="popup19">        <iframe width="560" height="315" src="https://www.youtube.com/embed/jwu9SX3YPSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>.</p>
+<p>This is&hellip;shockingly, actually the first fully workable and infinitely scaleable solution we&rsquo;ve seen so far. But I&rsquo;m not going to do it.</p>
+<p>For a couple of reasons. First of all, I simply don&rsquo;t have the space, or the resources. That 45&rsquo;x45&rsquo; figure is going to push itself up by quite a bit when you consider giving the robots space to move about. Plus, you know, <strong><em>building hundreds of identical mobile robots capable precision navigation, even with environmental aids, is the exact opposite of cheap</em></strong>. Especially considering how small they would likely end up. Robots do a bit of a curve in their expense, where up until a point, making them smaller makes them cheaper, and then at a certain critical size trying to pack all the hardware and electronics into a tiny package while maintaining functionality starts driving the expense up again as you shrink it. I&rsquo;m fairly certain that optimal robots for the smallest parts would be well beyond this critical point. Plus, this is yet another place where the vast size range of LEGO pieces can bite us. Variable size robots would be optimal, but exponentially harder to execute.</p>
+<p>And most importantly&hellip;this is still developing, poorly understood technology. Specifically, robotic swarm behavior, path optimization, and collision avoidance. This is the kind of thing people do masters and PhD thesis&rsquo; in. I&rsquo;m trying to avoid cutting-edge technologies like this. Remember, I went into the mechanical design aspect on the theory that every action, taken individually, would be easy. It&rsquo;s <em>definitely</em> not feeling that way right now, if a design like this is even slightly under consideration.</p>
+<p>So right now, it just feels like getting a part from an identification cell straight into one of 70,000 storage locations isn&rsquo;t really practical. It seems like it should be, but it just isn&rsquo;t, largely on account of the sheer scale of the storage region. Darn.</p>
+<p>But what if we remove that &ldquo;immediate access&rdquo; requirement?</p>
+<p>Let&rsquo;s jump up another dimension, and convert that storage square, into a storage cube. How big is it?</p>
+
+
+<div class=pageimgcontainer><img class="pageimg" src="/images/cubeequation.png"></div>
+
+<p>That&rsquo;s&hellip;that&rsquo;s it?</p>
+<p>I could fit that in my garage! Three dimensions are the way to go!</p>
+<p>Except that three-dimensional storage takes something big away from you.</p>
+<p>In one dimensional storage, with 70,000 nozzles along a conveyor belt, every part&rsquo;s compartment could be accessed as easily as any other. Some might take more time for the part to reach than others, but the aperture of the compartment would always be there, right out in the open. The same applies in two dimensions. In a square region of 70,000 parts, every part still has an open top to their container. It would collect a lot of dust, but it would work well.</p>
+<p>In three dimensions, the vast majority of your parts are buried in the middle of a giant cube, underneath dozens of other parts and their storage containers, with no way to get at them. Oops.</p>
+<p>Well, obviously we can do better than that. For example, we could build the storage cube out of a series of <a class="popup" onclick="popup20()">layered large-format divided drawers<span class="popuptext" id="popup20"><img class="popupimg" src="/images/largeformatdrawers.jpg"></span></a> , each layer containing a two-dimensional grid of 1/41th of all LEGO parts. We have &ldquo;access&rdquo; to every part. But now it&rsquo;s non-trivial access. We can only drop a part, no questions asked, into the drawer at the top. For 97% of parts, we have to go and pull out the correct drawer, which given their scale (7 feet across and deep, and probably hundreds of pounds of LEGO), is going to take a non-trivial amount of time. But this is a problem.</p>
+<p>Say for a moment that we&rsquo;re using a 2d gantry to put away our parts. We position the &ldquo;correct&rdquo; drawer underneath the gantry, and say that the drawer&rsquo;s reduced size relative to the whole 70,000 part grid makes it viable to use a gantry to traverse corner-to-corner and back again in under a second. Every second, the gantry picks up a part from the vision cell, drops it off, and returns to the vision cell for another.</p>
+<p>Except that 97% of the time, we need to wait for the drawer to swap itself out. Which due to the scale and mass involved, almost certainly can&rsquo;t be done in under a second.</p>
+<p>If we fed the system a long series of parts all destined for the same drawer, this would work fine. The drawer wouldn&rsquo;t have to swap, but since each drawer contains over 1700 compartments, you could probably sort hundreds or thousands of parts in a row this way without issue.</p>
+<p>But&hellip;we have no way to guarantee this.</p>
+<p>The vision cell is going to be receiving <em>totally random LEGO</em>. The part coming straight out of it could be <em>anything. </em>Right now, this hypothetical scenario, where we enforce that the machine only processes a subset of the LEGO catalog, parts which belong in a corresponding subset of the storage system which we can provide immediate access to, just isn&rsquo;t something we can make real with our machine.</p>
+<p>What if we could?</p>
+<h3>Back to Multi-Stage Sorting</h3>
+
+<p>I resisted this for a very long time, but it&rsquo;s the correct solution, or at least, starts to form the basis of the most workable solution I&rsquo;ve found so far. Going back to the way we solved this problem in the manual sorting process. &nbsp;</p>
+<p>In the manual process, we recognized that there was no way we&rsquo;d have the knowledge or physical ability to pick up a part, properly identify it every time, determine its proper storage location, and get up to carry it over to where it belongs in a remotely timely fashion. At the time, &ldquo;remember every single LEGO ever&rdquo; seemed like the primary obstacle. That isn&rsquo;t as much a problem for an automated system, but it turns out that the problem of &ldquo;70,000 bins are probably, like, super spread out&rdquo; is still there.</p>
+<p>But if we add back the first order, second order sort dynamic, throwing parts into mixed bins representing sub-sections of the entire LEGO library, and then processing each of those bins one at a time, we get the dynamic we wanted above. Our second order sort will only ever see a small percent of the total part types at any given moment, and so we only need immediate access to the compartments for that subsection of the library, instead of all 70,000.</p>
+<p>The downside, of course, is that it just &ldquo;feels&rdquo; wrong, to throw away perfectly good identifications from the first order sort. You&rsquo;d run the same algorithms on the first and second order sort &ndash; why wouldn&rsquo;t you? You have to develop something to identify every LEGO anyways, so you might as well use it. But in reality&hellip;this isn&rsquo;t really a real downside. If the computer can identify a part once, it can do it twice with minimal effort. The hardware cost will be greater upfront, but identification hardware is a small fraction of the system cost. Processing time, at first glance, appears to double, but then you remember, you can build this as a flow-based system. Unlike with the manual system, where a single person has to alternate duties, you can have two vision cells working in sync, streaming a continuous flow of parts through them. So adding a second identification step really doesn&rsquo;t make this thing any harder to build.</p>
+<p>In fact, could we take this theory further? Would it help to add more than two layers? Well, we could. That&rsquo;s been the <a class="popup" onclick="popup21()">approach used by others
+                        <span class="popuptext" id="popup21">        <iframe width="560" height="315" src="https://www.youtube.com/embed/6lZ9rSZwDzE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a> who have tried to build a <a class="popup" onclick="popup22()">universal LEGO sorting machine
+                        <span class="popuptext" id="popup22">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Zsezo03GF-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>. Focus on the software, and build a fairly modest mechanical solution, with only a few compartments, using techniques like conveyor ejectors or one dimensional moving storage, which work fine at small scale. Process parts into 12 or so high level categories, not much, but the most that the mechanical design can handle without much effort. Then, sequentially re-sort each of those 12 divided categories, ending up with 144. Keep this up recursively, until you get to 70,000.</p>
+<p>But once again, at extreme scale, this just doesn&rsquo;t work, for a few reasons. First, you still end up needing a heck of a lot of storage space. If our actual sort machine is capable of dividing things up into 12 categories, that means that at the final recursion, you have <strong><em>5833</em></strong> categories in waiting, in line to be sorted. Where do you put those 5833 bins containing a decent number of mixed parts? Or the 486 bins in the layer above that? Or the 12 <em>massive</em> bins which have to store 1/12<sup>th</sup> of your inventory in waiting?</p>
+<p>Second, just like drawer changeover time was non-trivial, retrieval time from a holding container is non-trivial. And if you have <em>thousands</em> of holding containers, you&rsquo;re going to have to have <em>very few parts per container</em> at the lowest levels. You&rsquo;re going to be changing out your storage, shuttling the 12 parts you&rsquo;ve sorted out into their actual correct location, whether that be their final storage location, or one of your thousands of holding containers. That&rsquo;s all you&rsquo;re going to be doing. Actually sorting parts is going to become an insignificant portion of how your machine spends its time.</p>
+<p>Multi-stage sorting, much like every other solution we&rsquo;ve looked at, just doesn&rsquo;t work if you try to solve the entire problem with it, but it can definitely be a big help applied in moderation. This seems like a recurring theme. And, predictably, that means that the design I&rsquo;m proceeding with utilizes bits of the majority of the concepts presented in this section, all implemented individually at manageable scale, assembled together into something of a massive machine.</p>
+
+<h3>The Design</h3>
+
+<p>You start with a vision cell. I haven&rsquo;t talked about this aspect at all yet, but the vision cell is going to have some hefty equipment associated with it, to make sure that only one part gets fed past the cameras at a time. But for the moment, we&rsquo;re only going to be focusing on the flow, and the abstract categories of sort techniques I&rsquo;ve talked about. So, schematically speaking, it&rsquo;s just a vision cell.</p>
+<p>Form the vision cell, you move into an approximately 48 way sort, accomplished via a design which supports continuous flow regardless of the parts it gets, such as a conveyor ejection design. This breaks the parts into about 48 categories, and is also where special cases like rejected damaged parts can be filtered out. Each of these 48 categories refers to a different vertical, Z-axis level, in the final storage cube.</p>
+<p>Each of those 48 holding bins, one at a time, is transferred to a secondary vision cell, where the parts are re-classified. If there is any kind of discrepancy, where it sees a part it didn&rsquo;t expect to see, the part gets tossed.</p>
+<p>This secondary cell has to contend with about 1,500 classes of part at a time, and path them to the correct storage location directly. No third tier of sorting.</p>
+<p>This 1,500 way sort is going to be accomplished by pushing some of the techniques we&rsquo;ve talked about in terms of analog and tree sorting to their limits. They&rsquo;re used here over conveyor ejection systems to&nbsp; minimize the actuator count when dealing with large class counts. These systems have hard scaling limits associated with them, and we&rsquo;ll be running right to the edges of them. If it&rsquo;s too much, we can add more vertical drawers, and more holding categories, to reduce the number of classes per drawer. The 48-way sort would be easy to make quite a bit larger, we have some wiggle room here.</p>
+<p>All parts that pass through the secondary sort are directed to the correct compartment within the drawer, which is waiting down below the whole thing. In the next part, we&rsquo;ll see how it&rsquo;s going to turn out easier mechanically to build a system which stores the sorted parts in 1,500 small holding compartments, then simultaneously drops everything into the drawer in one fell swoop, making one heck of a racket in the process. This is okay &ndash; remember, 1 part per second is the same as 0 parts for 1499 seconds, and then 1500 parts in 1 second.</p>
+<p>The drawer is returned to the storage cube, and the next one is retrieved. While this is happening, the next holding bin is brought to the identification cell. There&rsquo;s a slight moment of downtime from this, but unlike previous examples where these actions took up a majority of the system&rsquo;s time, here all they are is slight interruptions in between batches of 10s of thousands of parts sorted continuously. Increase your feed rate by fractions of a second, and they disappear.</p>
+<p>Repeat indefinitely, and it&rsquo;s doing it! Sorting parts continuously, as fast as the vision cells can take them, without any mechanisms that require breaking the sound barrier! I&rsquo;ll call that a success!</p>
+<p>Here&rsquo;s how it all looks, working together:</p>
+
+<div class="pageimgcontainer ultrawidebody"><div class="gm4html5_div_class" id="gm4html5_div_id">
+            <!-- Create the canvas element the game draws to -->
+            <canvas id="canvas" width="1000" height="686">
+               <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+    </div></div>
+
+
+
+
+<a class="popup" onclick="popup20()">layered large-format divided drawers<span class="popuptext" id="popup20"><img class="popupimg" src="/images/largeformatdrawers.jpg"></span></a> 
+
+<a class="popup" onclick="popup22()">universal LEGO sorting machine
+                        <span class="popuptext" id="popup22">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Zsezo03GF-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </span>
+                        </a>
+                        
+                        <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/jwu9SX3YPSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page9.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page11.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup18() {
+                var popup = document.getElementById("popup18");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup19() {
+                var popup = document.getElementById("popup19");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup20() {
+                var popup = document.getElementById("popup20");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup21() {
+                var popup = document.getElementById("popup21");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup22() {
+                var popup = document.getElementById("popup22");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup23() {
+                var popup = document.getElementById("popup23");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup24() {
+                var popup = document.getElementById("popup24");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup25() {
+                var popup = document.getElementById("popup25");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup26() {
+                var popup = document.getElementById("popup26");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup27() {
+                var popup = document.getElementById("popup27");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup28() {
+                var popup = document.getElementById("popup28");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup29() {
+                var popup = document.getElementById("popup29");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup30() {
+                var popup = document.getElementById("popup30");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup31() {
+                var popup = document.getElementById("popup31");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup32() {
+                var popup = document.getElementById("popup32");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup33() {
+                var popup = document.getElementById("popup33");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup34() {
+                var popup = document.getElementById("popup34");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup35() {
+                var popup = document.getElementById("popup35");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup36() {
+                var popup = document.getElementById("popup36");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup37() {
+                var popup = document.getElementById("popup37");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup38() {
+                var popup = document.getElementById("popup38");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup39() {
+                var popup = document.getElementById("popup39");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup40() {
+                var popup = document.getElementById("popup40");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup41() {
+                var popup = document.getElementById("popup41");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup42() {
+                var popup = document.getElementById("popup42");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup43() {
+                var popup = document.getElementById("popup43");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup44() {
+                var popup = document.getElementById("popup44");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup45() {
+                var popup = document.getElementById("popup45");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup46() {
+                var popup = document.getElementById("popup46");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup47() {
+                var popup = document.getElementById("popup47");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup48() {
+                var popup = document.getElementById("popup48");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup49() {
+                var popup = document.getElementById("popup49");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup50() {
+                var popup = document.getElementById("popup50");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup51() {
+                var popup = document.getElementById("popup51");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup52() {
+                var popup = document.getElementById("popup52");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup53() {
+                var popup = document.getElementById("popup53");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup54() {
+                var popup = document.getElementById("popup54");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup55() {
+                var popup = document.getElementById("popup55");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup56() {
+                var popup = document.getElementById("popup56");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup57() {
+                var popup = document.getElementById("popup57");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup58() {
+                var popup = document.getElementById("popup58");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup59() {
+                var popup = document.getElementById("popup59");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+
+        </script>
+        
+        <!-- Run the game code -->
+        <script type="text/javascript" src="/legosortus/sims/text1000w/html5game/Project1.js?ECRZB=1705488485"></script>
+        <script>window.onload = GameMaker_Init;</script>
+    </body>
+
+</html>

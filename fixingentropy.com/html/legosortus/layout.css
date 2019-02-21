@@ -1,0 +1,472 @@
+body{
+    position: relative;
+    margin: 0px;
+    color: #555;
+}
+
+canvas {
+    image-rendering: optimizeSpeed;
+    -webkit-interpolation-mode: nearest-neighbor;
+    -ms-touch-action: none;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+:-webkit-full-screen #canvas {
+    width: 100%;
+    height: 100%;
+}
+div.gm4html5_div_class
+{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+/* START - Login Dialog Box */
+div.gm4html5_login
+{
+    padding: 20px;
+    position: absolute;
+    border: solid 2px #000000;
+    background-color: #404040;
+    color:#00ff00;
+    border-radius: 15px;
+    box-shadow: #101010 20px 20px 40px;
+}
+div.gm4html5_cancel_button
+{
+    float: right;
+}
+div.gm4html5_login_button
+{
+    float: left;
+}
+div.gm4html5_login_header
+{
+    text-align: center;
+}
+/* END - Login Dialog Box */
+:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+
+.popupmask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+    background-color: black;
+    visibility: hidden;
+}
+
+.photogrid{
+    margin:0px;
+    padding:0px;
+    width:9%;
+    height:auto;
+}
+
+#gridcontainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#grid { 
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0px;
+}
+
+#grid:hover{
+    transform: scaleY(0.(6)); 
+}
+
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 12vw;
+    align-self: flex-end;
+    min-width: 100px;
+    padding: 0
+}
+
+.pagevid {
+    display: block;
+    margin: 0 auto;
+}
+
+.column img {
+    margin-top: 0px;
+    vertical-align: middle;
+    width: 100%;
+    opacity: 0.8;
+    animation-name: imgFadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.bannerimg{
+    object-fit: cover;
+    height: 20vh;
+    transition: transform .2s;
+}
+
+.column img:hover {
+    transform: scale(1.15);
+} 
+
+.popupvisible{
+    visibility: visible;
+    text-transform: capitalize;
+} 
+
+
+
+h1,h2,strong {
+    color: #333;
+}
+
+small{
+    font-size: 7px;
+}
+
+#page{
+    margin: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+#banner{
+    margin: 0px;
+    width: 100%;
+    height: 20vh;
+    background-color: maroon;
+    animation-name: bannerFadeIn;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    /*animation-fill-mode: forwards;*/
+    transition: height .8s;
+    z-index: 1;
+    overflow: hidden;
+    transform: scaleY(1.0);
+
+}
+
+#banner:hover{
+    height: 25vh;
+}
+
+
+#about{
+    margin: 0px;
+    width: 100%;
+    height: 5vh;
+    background-color: purple;
+    display: block;
+}
+
+.caption{
+    text-align:center;
+} 
+
+
+
+#sidebar-container{
+    position: absolute;
+    margin: 0px;
+    width: 20%;
+    height: 100%;
+    z-index: -1;
+    background-color: teal;
+    border: 0px;
+}
+
+#sidebar{
+    position: sticky;
+    margin-top: 700px;
+    top: 40vh;
+    width: 100%;
+    height: 20vh;
+    z-index: 0;
+    background-color: darkgreen;
+}
+
+#content-wrapper{
+    margin: 0px;
+    margin-left: 20%;
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+#content{
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Helvetica", "Arial", sans-serif;  
+    line-height: 1.5;
+    padding: 4em 1em;
+}
+
+#content li{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+@keyframes imgFadeIn{
+    0%    {opacity: 0}
+    50%    {opacity: 0}
+    100%  {opacity: 0.9}
+}
+
+@keyframes bannerFadeIn {
+    0%   {background-color:white; height: 100vh;}
+    20%   {background-color:white; height: 100vh;}
+    40%  {background-color:maroon; height: 100vh;}
+    70%  {background-color:maroon; height: 100vh}
+    100% {height: 20vh;}
+}
+
+@keyframes subBannerFadeIn {
+    0%   {background-color:white; height: 100%;}
+    35%  {background-color:maroon; height: 100%;}
+    45%  {background-color:maroon; height: 100%;}
+    100% {height: 20%;}
+}
+
+a{
+    color: #DC143C;
+    text-decoration: underline;
+}
+
+.codeblock{
+    background-color: #ccc;
+    font-family: monospace;
+    font-size: 12px; 
+    padding: 12px;
+}
+
+.codeblock *{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.keyword{
+    color: darkmagenta;
+    font-weight: bold;
+}
+
+.param{
+    color: brown;
+}
+
+.varname{
+    color: blue;
+}
+
+
+
+.comment{
+    color: mediumseagreen;
+}
+
+.javadoc{
+    color: cornflowerblue;
+}
+
+.pykeyword{
+    color: darkviolet}
+
+.pyvalue{
+    color: #cc3300
+}
+
+.pymethod{
+    color: #00a3cc;
+}
+
+.pyobject{
+    color: orangered;
+}
+
+.pydata{
+    color: aquamarine
+}
+
+.pystring{
+    color: mediumseagreen;
+}
+
+.pycomment{
+    color: #888;
+    font-style: italic;
+}
+
+.nav{ 
+    color: #555;
+}
+
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    background-color: blue;
+    color: #f5f5f5;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -160px;
+}
+
+.popupimg{
+    max-width: 400px;
+    display: block;
+}
+
+.pageimg{
+    /*display: block;*/
+    max-width: 800px;
+    margin: 10px;
+}
+
+.pageimgcontainer{
+    text-align: center;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 40px;
+    margin-left: 95px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    z-index: 2;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.extratop{
+    margin-top: 50px;
+}
+
+#footer{
+    width: 100%;
+    height: 80px; 
+    display: block;
+}
+
+#backbutton{
+    align-self: left;
+    display: inline;
+    float: left;
+    width: 100px;
+
+    text-align: center;
+}
+#footerspacer{
+    width: 400px;
+    height: 50px;
+    background-color: blue;
+    display: inline; 
+
+}
+#nextbutton{
+    align-self: right;
+    display: inline;
+    float: right;
+    width: 100px;
+    text-align: center;
+}
+
+.fa-arrow-alt-circle-right{
+    font-size: 50px; 
+    text-align: center; 
+
+}
+
+.fa-arrow-alt-circle-left{
+    font-size: 50px; 
+    text-align: center;
+}
+
+.arrowtext{
+    margin: 6px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    display: block;
+}
+
+.widebody {
+    border-collapse: collapse;
+    width: 100%;
+    display: block;
+    max-width: 65em;
+    width: 65em;
+    margin-left: -7.5em;
+}
+
+.ultrawidebody {
+    border-collapse: collapse;
+    width: 100%;
+    display: block;
+    max-width: 90%;
+    margin-left: -20%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+td.header{
+    text-align: center;
+    font-weight: bold;
+}

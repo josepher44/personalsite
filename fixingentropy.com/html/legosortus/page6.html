@@ -1,0 +1,1566 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Joe Gallagher's Engineering Portfolio">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                                        <div class="column">
+                    <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+                        
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+                        
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+                       
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>The bottleneck: My self-imposed term as a LEGO sweatshop worker</h1>
+
+                <p>To begin, a bit of a tangent/soapbox session.</p>
+
+                <p>When you first get involved in formal engineering education, one of the first things you get shown is this image, or something very much like it: </p>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/designprocess.png"></div>
+
+                <p>For me, this came my freshman year of high school as part of a four year pre-engineering program, after I&rsquo;d already been doing what I&rsquo;d considered to be decently serious engineering for quite some time, across a number of different areas. It&rsquo;s always a bit of a bumpy ride, taking something you&rsquo;ve learned to do reasonably effectively albeit through very informal means, and then entering into a situation where you kind of start over with all kinds of formal rules, some of which line up with how you&rsquo;ve been doing things, and some of which do not, and documenting your strict adherence to these rules is given infinitely more importance than the actual outcome produced by following them. With the design process, there was plenty that was right in line with how I&rsquo;d been doing things since I was a tiny person. &ldquo;Brainstorm possible solutions&rdquo; definitely came pretty naturally, as did the actual &ldquo;Build something&rdquo; step. And I was definitely well aware that the whole thing is a never-ending cycle from which there can be no escape.</p>
+                <p>But other steps felt to me like pointless busy-work when I was getting started. The one I want to talk about here is the first step. &ldquo;Define the problem.&rdquo;</p>
+                <p><strong><em>Of course</em> </strong>you have to define the problem. I mean, the most succinct definition of engineering I&rsquo;ve ever heard is simply &ldquo;problem solving&rdquo; &ndash; it&rsquo;s kinda what we do. But at first glance, it seems like a kind of trivial step. Like, &ldquo;Yes, you have to do it, and it you should write it down when you do it, because where else would you start, but&hellip;cmon, it&rsquo;s gonna be pretty quick. Let&rsquo;s do that as fast possible, so we can also do step 2 as fast as possible, so we can get to the actual fun and start &ldquo;brainstorming&rdquo; by sketching up the totally correct and optimal 1<sup>st</sup> idea that popped into my mind!&rdquo; That&rsquo;s certainly how I felt back then, and still am prone to feeling at times.</p>
+                <p>And yet, <em>every single introduction to the engineering design process I&rsquo;ve ever had</em> has absolutely <strong><em>drilled</em></strong> in the theme &ldquo;defining the problem is the <strong><em>most important step</em></strong>. If you don&rsquo;t define the problem, how can you solve it?&rdquo;</p>
+                <p>Okay, that&rsquo;s fair. Maybe there&rsquo;s more involved here than meets the eye. I&rsquo;ll keep an open mind.</p>
+                <p>But&hellip;none of the structured engineering problems I took on backed up this proclamation in any meaningful way. We&rsquo;d get an assignment sheet which said something like &ldquo;You have to build a foam maglev which will run the length of this track we&rsquo;ve given you,&rdquo; and be asked to parrot back our own interpretation without really adding any information. &ldquo;We have to build a device which will run the length of this track, using maglev technology and foam to construct it.&rdquo; Zero thought involved beyond showing basic comprehension of what we&rsquo;d just read. Simply repeatedly preaching that what we&rsquo;d just done was the most important part doesn&rsquo;t really make it true. For something to be important, it needs to have real consequence and impact on the direction of a project, and likely take real effort, right?</p>
+                <p>Even in college, when we did actual engineering projects, in particular research projects for a professor&hellip;all this philosophizing and formal process work got thrown out the window when push came to shove. It was back to where I&rsquo;d started, with the frantic rush to finish <em>something, <strong>anything</strong></em> completely superceding any sense that formal process could be any help at all to developing effective solutions. Panicked rejections of detailed constraint analysis spreadsheets by professors expecting code to start happening during the first week of a project have happened to me more than once.</p>
+                <p>These were a minority of my college experience though. For the most part, you tend to do a lot more listening to case studies and mathematical analysis of theoretical engineering projects rather than gaining experience with actual engineering projects. In these case studies, they make a point of giving us extreme examples where an outside-the-box problem definition completely changed the context and nature of the solution.</p>
+                <p>The classic example, which I&rsquo;ve heard more times than I can count now, is the &ldquo;elevator problem.&rdquo; It&rsquo;s the story of the competing engineering firms hired by a company whose employees have reported that their elevators run too slowly, and they have to wait too long for them to arrive. One company offers to outfit the elevator with more powerful motors, for five million dollars. The next company looked at in in a completely different way, and offers to write more efficient software to optimize the elevator pathing, for only four million dollars. Then the third company comes in, and says, &ldquo;we&rsquo;re just going to hang mirrors up in front of the elevators.&rdquo; This solves the problem &ndash; the true problem. Not that the elevators were too slow, but that people <strong><em>were noticing and complaining</em></strong> about the elevators being too slow! If you distract them, and let them adjust their ties or something for a few seconds while they wait, the problem is solved!</p>
+                <p>Similarly, in FIRST, and in most &ldquo;gamified&rdquo; engineering challenges I&rsquo;ve been involved with, &ldquo;defining the problem&rdquo; has meant &ldquo;strategy.&rdquo; Taking a complex problem, like a FIRST game, and analyzing it to figure out which parts are important to focus on, and which are not. Defining a clear list of actions you need to take without specifying how they&rsquo;ll be taken, so that you establish which ones you need to do, and which ones are unimportant. First acknowledging the problem, but then really defining it by identifying a subset of the problem that's important to you. This can get as extreme as declaring solutions already implemented by others impractical, due to your own perceived lack of resources or knowledge. </p>
+                <p>I don&rsquo;t like this, as a means of justifying problem definition being the most important step. I think that while it&rsquo;s certainly effective in some cases, and always good to reframe the angle from which you approach a problem, that it&rsquo;s disingenuous to suggest that most engineering problems can be most effectively solved by being creative with the terms of the problem. I think in emphasizing this, you teach people to turn fear of problems and the challenges that come with them into a weird sense of pride or even borderline smugness in shortcutting or avoiding problems, rather than developing the technical skills or knowledge to take them on. &ldquo;Yeah, you built a crazy-sophisticated mechanism to solve this problem, but we decided way back in step 1 that that wasn&rsquo;t important enough to lose sleep over, so really, we solved that problem even better than you did by choosing not to solve it and learning to talk about that choice in ways that make us sound smart.&rdquo; Mirrors may have stopped the stream of complaints to management&hellip;but&hellip;hey, the world could use faster, better elevators, couldn&rsquo;t it?</p> 
+
+                <p>And&hellip;I&rsquo;ve learned kind of a lot about how to be an engineer through attempting, sometimes with success, sometimes without, super ambitious system designs, or reading about people who attempt super ambitious system designs. I got into this whole thing because of people doing crazy, stupid, objectively illogical things like lowering several hundred pounds of rover onto the surface of mars with a rocket powered crane, not to show off my fairly nonexistant sense of pragmatism. I think if you set your sights on a goal of "maybe someday I'll make something just as good as what other people have made, but I'm not there yet" rather than "I have an idea for something that's never been done before, and I want to make it happen", you sell yourself short, and prevent yourself from growing.&nbsp;</p>
+
+                <iframe class="pagevid" align="center" width="560" height="315" src="https://www.youtube.com/embed/Ki_Af_o9Q9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p class="caption"><em>We didn't do this by giving people paintings of mars to look at, and solving problems by running from problems. We faced them head on, and made things we hadn't done before real</em></p>
+
+
+                <p>&nbsp;</p>
+                <p>Sorry, that got to be a bit of a rant. I just really, really don't appreciate working super hard on something, and being exhausted, and having numerous successes, learning experiences, and mechanical tricks that make me giggle with delight buried in the project, but sometimes also a few failures or shortcomings which overshadow some of those successes, and getting reactions along the lines of "See, why did you try so hard? You could have tried less hard and spent less time doing what you love doing - the fact that you have all this funky mechanical stuff going on, and are horridly sleep deprived, really indicates you're not as smart as the guy who phoned it in, bought the next best product off the shelf, and is now watching TV," instead of a nerd-out session about the winding yet largely logically sound reasons the ridiculous device I've just produced is the way that it is, driven by subtleties of the problem I'm choosing not to ignore or solve with authority, and how cool and useful the space-saving reverted gearing technique is, and let's face facts the slim potential to have that nerd-out session is a prime reason you chose to get involved in solving that problem in the first place, rather than arguing for the gearbox's justification to exist. If, as I've heard so many times, my exciteability over engineering details makes me a terrible engineer, well, I'm going to be a terrible, exciteable engineer on my own terms, and apply it to objectively absurd machines like the monstrosity this project is going to spiral into, alright?</p>
+                <p>Okay, I'm actually done now.</p>
+                <p>&nbsp;</p>
+                <p>Despite all this, I&rsquo;ve come to firmly agree with that overarching statement. Clearly defining the problem <strong><em>is</em></strong> the most important part of the engineering design process.</p>
+                <p>Except, I think that to do so effectively, you&rsquo;ve got to go well beyond describing it in a sentence or two.</p>
+                <p>I&rsquo;m more interested in cases where you&rsquo;re not looking to define the problem predominantly by figuring out how to hack away at it. I think that defining the problem is best done by adding detail rather than taking it away. Replacing a qualitative statement with quantifiable objectives. Digging into the nuances, removing loopholes which lead to solutions which &ldquo;technically&rdquo; solve the problem rather than embracing them, so that the final solution reflects the intent of the people posing the problem. And of course, developing a deep, true understanding of all the layers of problems and sub-problems, which are nearly impossible to see at first glance, and in many cases only rear their head in the face of a solution.</p>
+
+                <p>Over time, I think every engineer develops their own nuanced take on the design process chart as they build experience, mold it to the detailed and unique constraints of the specific fields they find excitement in solving problems within, and also allow their own natural strengths and mentalities to shape their workflow. <a href="https://johnvneun.com/" target="_blank">John V Neun</a> , one of my more influential engineering role models from afar, I think, <a class="popup" onclick="popup46()">said it best.<span class="popuptext" id="popup46"><iframe width="560" height="315" src="https://www.youtube.com/embed/Y-nwXyVwl9M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a> “The design process is like banana bread – everyone has their own recipe, but it usually starts with bananas, and usually ends with a loaf of something.” “Comparing banana bread recepies” is always a good thing to do when entering  into a new team environment to make sure everyone is on the same page about the overarching project flow and philosophy</p>
+
+
+
+
+
+
+                <p>For me, my preferred wording these days is &ldquo;Step 1: <strong><em>Know</em> </strong>the problem.&rdquo;</p>
+                <p>Knowing the problem isn&rsquo;t something you can do quickly. Knowing the problem isn&rsquo;t something you can do from the outside looking in. Knowing the problem does not lend itself to neat, concise statements. Knowing the problem gets messy, because if it isn&rsquo;t messy, it&rsquo;s probably not a problem. Knowing a problem demands research, it demands experimentation, it demands getting your hands dirty and developing direct experience facing down the problem yourself.</p>
+                <p>Knowing a big problem very often means identifying and getting to know dozens or hundreds of sub-problems, which are smaller, but easier to either quantify, or assign measurable means of assessing the quality with which the problems have been solved.</p>
+                <p>Knowing a problem means writing out dozens of constraints. I think it's very easy to mistake ignorance or neglect of suble sub-problems as simplicity. Any complex problem can be described in very simple terms, if you gloss over enough details.</p>
+                <p>Knowing a problem means obsessing over a problem, letting new insights about the problem interrupt your daily life, making it develop into the thing you most want to be spending time on.</p>
+                <p>Knowing a problem requires you expose yourself to the problem firsthand. Knowing the problem isn&rsquo;t usually something you can do sitting at a computer. Defining a problem can be done in a board room, knowing a problem is where you get CEOs sleeping on the factory floor.</p>
+                <p>As much as we'd like to try otherwise, knowing a problem isn't totally independant of the solution approach chosen. It's not always practical to make early design direction choices completely correctly, or to completely start over on a whim. Solutions create new problems, and new layers to the problem, which must be known as well. Even the more high-level, abstract problems are shaped in our perception of their severity by potential solutions which come to mind naturally as we think about them.</p>
+                <p>Knowing a problem demands many things that you can only get by going through a full engineering development cycle, knowing full well you don't know enough about the problem to solve it particularly well at first. Going through the full loop and developing a solution teaches you more about the problem than you could ever hope to learn by simply staring at it, because the problem will perfectly expose the areas where your solution is effective, where it falls short, and where it creates its new problems. The process truly is a cycle, not because you&rsquo;re bad at it and inevitably going to be &ldquo;wrong&rdquo; the first time through, <em>but precisely because completing the last step directly enables you to return to the first step dramatically more informed than you possibly could have been before.</em> So much of what you do throughout the entire process &ndash; prototyping, researching existing solutions, testing over and over &ndash; it&rsquo;s all about learning the nuances and details of the problem better, so that it can be more clearly defined, so that it can be more effectively solved the next time through. Consciously viewing these steps in this light, as tools to learn about the problem, allows you to hone in on their true purpose and get the most out of them.</p>
+                <p>To illustrate this, here&rsquo;s a table of some of my larger engineering projects to date, comparing a simplistic, high-level &ldquo;problem statement,&rdquo; with the actual, do-or-die problems I was facing as deadlines loomed, or which ultimately ended up dooming the project:</p>
+
+
+                <table class="widebody">
+                    <tbody>
+                        <tr>
+                            <td class="header">
+                                <p>Project</p>
+                            </td>
+                            <td class="header">
+                                <p>Original problem statement</p>
+                            </td>
+                            <td class="header">
+                                <p>&ldquo;Problem&rdquo; being solved at the 11<sup>th</sup> hour</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Dual airstart rocket design</p>
+                            </td>
+                            <td>
+                                <p>Safely fly and recover a rocket to over 9,000 feet using the motor hardware available to you</p>
+                            </td>
+                            <td>
+                                <p>&ldquo;If you don&rsquo;t do a full <a href="http://pergatory.mit.edu/resources/FUNdaMENTALs%20Book%20pdf/FUNdaMENTALs%20Topic%203.PDF" target="_blank">force loop analysis</a> of fasteners associated with the shock of recovery system deployment, including not just the fasteners themselves but also the materials they are embedded in, things will disconnect from one another in unanticipated ways at very non-zero altitudes, and half the rocket will end up <a class="popup" onclick="popup53()">buried two feet underground <span class="popuptext" id="popup53"><img class="popupimg" src="/images/epiphanyfail.JPG"></span></a> in upstate New York&rdquo;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>RBE1001 robot</p>
+                            </td>
+                            <td>
+                                <p>Design a robot to win matches in the class&rsquo; TBS game</p>
+                            </td>
+                            <td>
+                                <p>&ldquo;Turns out that when CAD says you totally have 0.03 inches of room for a standoff, you probably don&rsquo;t actually have 0.03 inches of room for a standoff, because CAD doesn&rsquo;t reflect the 10 years of wear from reuse all the robot&rsquo;s parts have experienced&rdquo;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Software Engineering Term Project</p>
+                            </td>
+                            <td>
+                                <p>Build a better Trello. Or at least, an almost-better Trello, but one which we own and can personally profit from, because the guy in the terrible wig said so</p>
+                            </td>
+                            <td>
+                                <p>&ldquo;Somebody working on the code base four years prior to my class forgot to actually fill in the functionality of a getter function buried deep within the codebase, and I just wasted 18 hours straight of life assuming it was in place even though I couldn&rsquo;t see it god damnit why is this so hard to notice this is why I should stick to mech-E where things make awful grinding noises when they&rsquo;re not working right&rdquo;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Advanced Engineering Design Gearbox</p>
+                            </td>
+                            <td>
+                                <p>Create a gearbox with a 30:1 gear ratio, right angle output</p>
+                            </td>
+                            <td>
+                                <p>&ldquo;Welp, guess I&rsquo;ve got to improvise and soak an endmill in epoxy so it looks close enough to an actual turned shaft that people probably won&rsquo;t realize &ndash; I miss software where you can just will flawless things into existence without hours of machining time now&rdquo;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Advanced CAD project</p>
+                            </td>
+                            <td>
+                                <p>Reproduce the Releaux continuous drive ratchet mechanism</p>
+                            </td>
+                            <td>
+                                <p>&ldquo;No No No No why is the building with the laser cutter closed I need to get in to get at my precious precision tools&rdquo;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Selling off childhood LEGO</p>
+                            </td>
+                            <td>
+                                <p>Figure out the most profitable way to sell LEGO</p>
+                            </td>
+                            <td>
+                                <p>&ldquo;Standard involute gear teeth don&rsquo;t work well for mesh shifting and spatial constraints don&rsquo;t allow dog shifting, so the system needs to be designed to accommodate the quirks of mesh shifted cycloidal gearing instead&rdquo;</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>&nbsp;</p>
+                <p>Aside from questionable things the above may say about my project timeline planning and quality assurance skills, or lack thereof, the point is clear. The tiny, nitty gritty problems that you&rsquo;re facing near the conclusion of an engineering project aren&rsquo;t things you&rsquo;d have a chance of conceiving of at the beginning - they're not even in the same ballpark. In many cases this is a natural evolution, because solutions to the problem create new problems of their own, but in others its simply because the problem is complex in ways you couldn&rsquo;t possibly anticipate in the early going.</p>
+                <p><em>You need to get to the point where you&rsquo;re getting to know these more-real aspects of your problem as soon as possible. Early analysis can easily drift into the realm of speculation which unfairly limits your solutions, if it is not informed by real knowledge of the real problems. </em></p>
+                <p>The means through which this is done can take on many forms, but it all comes down to &ldquo;actually do&hellip;something.&rdquo; Quick prototypes can do this&hellip;physical or virtual prototypes are fantastic ways to expose the hidden challenges not just associated with their specific design, but with the problem in general. Simulations of the situation can reveal tons of raw data about the problem. Quantifying performance specifications and constraints can add detail and form to the problem, allowing solutions to be driven by real requirements instead of a vague sense of difficulty.</p>
+                <p>Or, if your problem is that you face the prospect of performing a task repeatedly, and are considering building a device to perform this task, sometimes the best way to know your problem is to do it by hand, taking notes on the actions you have to take and the difficulties you encounter. Over, and over, and over again.</p>
+                <p>So, with all that said, let&rsquo;s get to know the problems associated with sorting LEGO, by diving in and just doing it. Because&hellip;it&rsquo;s a problem.</p>
+
+                <h3>The Starting Point</h3>
+
+                <p>So, this is what I’ve got. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/mixedbins.jpg"></div>
+
+                <p>Wow, that&rsquo;s a lot. And that's one of the easy ones. Where do you even begin, getting this organized and into those drawers I had made in the last part?</p>
+                <p>First, it&rsquo;s important to make clear that this is&hellip;not unusual.</p>
+                <p>We&rsquo;re not going to be able to say &ldquo;so don&rsquo;t let it get this bad!&rdquo; People do, people already have. I set out to find out how hard it would be to form a business around processing used LEGO, and we can&rsquo;t shortcut things by pretending the problem is easier than it is. This is the default. Your customers, who are buying specific parts for specific purposes and keeping them very specifically organized, are in the vast minority, of people who own LEGO. Most LEGO out in the world looks like this. This is how it is shipped by the LEGO company, this is how kids play with it. Some would argue that part of the joy of playing with it is the hunt for parts. Others, especially those who make giant things, or have had to do the hunting-for-parts thing over and over and over again, feel otherwise after a while. This is where you&rsquo;re adding value, by making it not look like this anymore.</p>
+
+                <p>As mentioned, I started out with a big bin of my own, and quickly found that these can be readily found for 1/10th or less their final parted-out price from a vast army of mothers selling of their disinterested child’s old collection on Craigslist, Facebook marketplace, and various lesser known corners of the internet where the value of LEGO in the right hands is wholly unknown. If it turns out this can be done quickly and efficiently such that you can afford to cut those raw margins a little tighter, your potential sources <a href="https://www.ebay.com/itm/LEGO-Lot-10-pounds-LB-Bulk-Lot-Cleaned-Sanitized-Bricks-other-assorted-pieces/283191396914?hash=item41ef85ca32:g:HOUAAOSwy2pbs91i:rk:2:pf:0" target="_blank">dramatically expand</a>, into larger quantities than is likely practical for even a highly efficient automated system. So sourcing parts like this isn’t exactly hard. I’ve gone in on a couple “too good to be true except they actually were true” purchases since getting started, and passed up on many others in the name of paying tuition bills. In total, I’ve brought in about 600 pounds total, and still have a significant backlog of raw material. </p>
+
+                <p>But it all looks like that.</p>
+                <p>And as bad as that looks, once you dig into the pit, you&rsquo;ll find a number of things which make it <em>even more intimidating</em>. Just a sampling of what you&rsquo;re up against:</p>
+                <ul>
+                    <li><strong>Off-brand clone parts.</strong> LEGO is popular, but LEGO is expensive. Many knock-off brands of studded construction toys have emerged, made of lower quality plastic, and bizarre complex molded single pieces monstrosities you&rsquo;d never find in a LEGO set. Any manufacturer doing this purposefully makes their bricks compatible with actual LEGO pieces, so that they can be snuck into an unsuspecting innocent child&rsquo;s collection undetected. Predictably, these off-brand pieces are <strong><em>despised </em></strong>by LEGO enthusiasts. And yet it takes a careful eye to spot some of the better quality ones &ndash; again, they&rsquo;re intentionally the same basic size and form factor as real LEGO</li>
+                    <li><strong>Damaged parts.</strong> LEGO is not indestructible. The parts get bent, cracked, or broken entirely. Small spots of damage on large parts can be hard to spot.</li>
+                    <li><strong>Sheer quantity. </strong>There are over 53,000 unique varieties of LEGO part. When you consider different colors to be distinct parts, that number jumps over 70,000.</li>
+                    <li><strong>Subtle differences</strong>. I&rsquo;ll talk about this more later, but LEGO has made changes to their production methods over the years. Colors of old parts may not always match colors of new parts. Molds have been modified with <a class="popup" onclick="popup1()">minute enhancements<span class="popuptext" id="popup1"><img class="popupimg" src="/images/cones.png"></span></a> over the years. These things matter to your customers, and must be considered distinct from each other in sorting.<strong>&nbsp;</strong></li>
+                </ul>
+                <p>So yeah, that&rsquo;s the first thing we learn about the problem. There&rsquo;s kinda a lot.</p>
+                <p>&nbsp;</p>
+
+                <h3>First Stage of Sorting</h3>
+                <p>So with that in mind, what next?</p>
+                <p>However you approach all this, you have to be as efficient as possible. This should be a process with very clearly measurable &ldquo;part per minute&rdquo; rates associated with it. Small inefficiencies, unnecessary actions, and so on add up very quickly in repetitive actions, both in terms of time wasted, but also in fatigue.</p>
+                <p>The initial inclination is to do this by reducing the number of steps involved. Pick up a part, identify it, place it where it belongs. How hard can that be? Unfortunately, this quickly reveals itself to be a bad idea.</p>
+                <p>Picking up a part, and directly placing it where it belongs, unfortunately, isn&rsquo;t going to work at all. &nbsp;Right now, that part could belong in one of over 3,000 locations, far too many to have within an arm&rsquo;s reach at all times. That 3,000 number is only going to grow &ndash; it represents the subset of the 70,000 types of parts out there I happen to have encountered to date. If you have to repeat a cycle of standing up and putting parts away, only to return back to your mixed bin for the next one, you&rsquo;re going to develop knee arthritis faster than sorted LEGO.</p>
+                <p>This idea of access is key. When processing items rapidly, you need immediate access to both the unprocessed items, and all possible destinations. If either access is interrupted, you&rsquo;re wasting time.</p>
+                <p>Another way you could do it is by &ldquo;searching&rdquo; for a specific part, or subset of parts. Pick a common part, dig through the bin until you find them all, put all the parts away at once, repeat. Again though, huge amounts of wasted time. You don&rsquo;t think about it, but when you go digging through a mixed bin for a specific part like this, your brain is actually processing and identifying hundreds, if not thousands, of &ldquo;wrong&rdquo; parts, and then completely wasting this effort by throwing them back, or not even picking them up. You want to utilize your available processing power at non-terrible levels of efficiency, whether your processing is done biologically or on silicon.</p>
+                <p>Both these methods don&rsquo;t work because of the sheer scope of possible varieties, so we&rsquo;ve got to do something about that, to reduce the search space to something more reasonable. Looking at what&rsquo;s out there, if you search for &ldquo;LEGO sorter,&rdquo; you&rsquo;ll find a lot of machine designs of various suitability, which I&rsquo;ll talk a lot more about once we start automation properly in <a href="page8.html">part 8</a>. You also find this:</p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/1chtba6C0lI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p>This, and other “sift sorters” like this would at first glance appear to be a great option for some kind of “first order sort,” running the parts through the sifter to sort them into basic size-driven batches, and then perform a detailed sort on each batch separately. </p>
+
+                <p>I was doing this for a while, using custom interlocking laser cut <a class="popup" onclick="popup3()">sort trays<span class="popuptext" id="popup3"><img class="popupimg" src="/images/sorttray.png"></span></a>, but eventually determined that it wasn’t really adding much benefit. First, the system is not perfect, due to the number of parts which are long and narrow. These parts are much less likely to fall through small holes, but it happens. If you can’t conclusively say which batch any given part will exist within, you’re not saving much time because you’re not eliminating subsets of the total part library from contention when you do your part-level sort. In fact, it turns out that if parts are spread out such that you enter 10 of the same part 5 times, instead of 50 of the same part once, you’re wasting a lot of time.</p>
+
+                <p><em>Actually, writing that and looking at the old design just gave me an idea. This might come back&hellip;</em></p>
+
+                <p>Also, there are a <em>lot</em> of very small parts, which can’t be easily distinguished purely by size. And counterintuitively, I found that having a bunch of small parts, and only small parts, actually made it more mentally taxing to sort them from each other, because they all blur together. If you have a couple small parts captured on a big part, they stand out much better. For the same reason, I never, ever sort by color until the very, very end – having a monolithic body of “white” makes it impossible to <a class="popup" onclick="popup4()">pick out different pieces<span class="popuptext" id="popup4"><img class="popupimg" src="/images/monoparts.jpg"></span></a>, whereas two identical white parts in a field with some other white, but mostly non-white, stick out. </p>
+
+                <p>So instead, I bit the bullet and just started doing a category-driven 1st order sort. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/firststage.jpg"></div>
+
+
+                <p>In this approach, you aren’t directly trying to put parts where they belong, but instead, into one of several high level categories, the kind of categories which are easy to intuit, and which are already used for categorizing LEGO. Things like, <a class="popup" onclick="popup41()">bricks versus plates versus tiles<span class="popuptext" id="popup41"><img class="popupimg" src="/images/brickplatetile.png"></span></a>. The number of categories is manageable, such that containers from each category can be easily reached without moving – this maxes out at around 30-35, though more could be added through a more <a class="popup" onclick="popup42()">more sophisticated container system<span class="popuptext" id="popup42"><img class="popupimg" src="/images/akro.png"></span></a>, or perhaps a <a class="popup" onclick="popup43()">Swanson swivel desk<span class="popuptext" id="popup43"><iframe width="560" height="315" src="https://www.youtube.com/embed/Hyc1aMtnHJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a>. I actually really like the Akro mills bin concept, and may pursue something similar in the future. At first, parts were dumped directly into large storage bins, but I found it much more effective to increase the possible category count by using smaller bowls, then dumping these in the larger bins as they filled up. The chart below shows the sort decision points (blue) and physical containers (yellow) a part flows through on its path to its final destination (more details on the stage 2 process in a second). </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/sortprocessflow.png"></div>
+
+                <p>The categories don&rsquo;t directly correspond to the 200+ categories used by Bricklink, as they are both too high in quantity, and in many cases too specific for a person to immediately intuit where something goes. In cases where my own intuition for where something belongs conflicts with what Bricklink says, I go with my intuition, so I don&rsquo;t have to remember a bunch of exceptions to intuition. The categories don&rsquo;t have any real physical meaning anyways in the final storage, this is just a stopgap.</p>
+                <p>The category list itself is in a constant state of flux. In fact, I&rsquo;ve recently taken to varying the categories used based on the characteristics of a raw bin. One purchase may be loaded with TECHNIC parts and require they be broken into a dozen categories, while for others it may make sense to lump everything TECHNIC into one bin. Some categories only represent a dozen or so parts which show up in quantities of hundreds or thousands at a time, others are miscellaneous catch-all categories with thousands of varieties of parts, all relatively rare. There is a vague, minimal effort made to ensure that each category fills at roughly the same rate, and that they roughly correspond to cleanly encompass several Bricklink categories when possible. Here&rsquo;s a list of typical categories used with representative images, though as anyone who I&rsquo;ve ever roped into helping with this for a bit knows, the lines between many of these categories are complex, and take lots of practice to assess consistently.</p>
+                <ul>
+                    <li><a class="popup" onclick="popup5()">Bricks, 1 by x studs<span class="popuptext" id="popup5"><img class="popupimg" src="/images/cat01.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup6()">Bricks, 2 by x studs<span class="popuptext" id="popup6"><img class="popupimg" src="/images/cat02.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup7()">Plates, 1 by x studs<span class="popuptext" id="popup7"><img class="popupimg" src="/images/cat03.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup8()">Plates, 2 by x studs<span class="popuptext" id="popup8"><img class="popupimg" src="/images/cat04.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup9()">Oversize bricks and plates, 4 studs or more in two dimensions<span class="popuptext" id="popup9"><img class="popupimg" src="/images/cat05.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup10()">Tiles<span class="popuptext" id="popup10"><img class="popupimg" src="/images/cat06.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup11()">Panels and supports<span class="popuptext" id="popup11"><img class="popupimg" src="/images/cat07.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup12()">Slopes<span class="popuptext" id="popup12"><img class="popupimg" src="/images/cat08.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup13()">Wedges<span class="popuptext" id="popup13"><img class="popupimg" src="/images/cat09.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup14()">Oversize Z dimension bricks and arches<span class="popuptext" id="popup14"><img class="popupimg" src="/images/cat10.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup15()">Glass<span class="popuptext" id="popup15"><img class="popupimg" src="/images/cat11.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup16()">Rounds<span class="popuptext" id="popup16"><img class="popupimg" src="/images/cat12.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup17()">Wheels and Tires<span class="popuptext" id="popup17"><img class="popupimg" src="/images/cat13.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup18()">Hinges<span class="popuptext" id="popup18"><img class="popupimg" src="/images/cat14.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup19()">Brackets and SNOT pieces<span class="popuptext" id="popup19"><img class="popupimg" src="/images/cat15.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup20()">3.18mm bar and clip<span class="popuptext" id="popup20"><img class="popupimg" src="/images/cat16.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup21()">Modified/Miscellaneous bricks<span class="popuptext" id="popup21"><img class="popupimg" src="/images/cat17.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup22()">Modified/Miscellaneous plates<span class="popuptext" id="popup22"><img class="popupimg" src="/images/cat18.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup23()">TECHNIC pins<span class="popuptext" id="popup23"><img class="popupimg" src="/images/cat19.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup24()">TECHNIC axles<span class="popuptext" id="popup24"><img class="popupimg" src="/images/cat20.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup25()">TECHNIC standard beams<span class="popuptext" id="popup25"><img class="popupimg" src="/images/cat21.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup26()">TECHNIC standard liftarms<span class="popuptext" id="popup26"><img class="popupimg" src="/images/cat22.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup27()">Gears<span class="popuptext" id="popup27"><img class="popupimg" src="/images/cat23.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup28()">TECHNIC connectors<span class="popuptext" id="popup28"><img class="popupimg" src="/images/cat24.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup29()">Bionicle<span class="popuptext" id="popup29"><img class="popupimg" src="/images/cat25.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup30()">Tubes, hoses, and other flexible components<span class="popuptext" id="popup30"><img class="popupimg" src="/images/cat26.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup31()">Minifigs and Minifig accessories<span class="popuptext" id="popup31"><img class="popupimg" src="/images/cat27.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup32()">Electrical and pneumatic<span class="popuptext" id="popup32"><img class="popupimg" src="/images/cat28.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup33()">Stickered parts<span class="popuptext" id="popup33"><img class="popupimg" src="/images/cat29.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup34()">Printed parts<span class="popuptext" id="popup34"><img class="popupimg" src="/images/cat30.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup35()">Chromed parts<span class="popuptext" id="popup35"><img class="popupimg" src="/images/cat31.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup36()">Miscellaneous tiny<span class="popuptext" id="popup36"><img class="popupimg" src="/images/cat32.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup37()">Miscellaneous small<span class="popuptext" id="popup37"><img class="popupimg" src="/images/cat33.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup38()">Miscellaneous large<span class="popuptext" id="popup38"><img class="popupimg" src="/images/cat34.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup39()">Parts which need H2O2 treatment<span class="popuptext" id="popup39"><img class="popupimg" src="/images/cat35.jpg"></span></a></li>
+                    <li><a class="popup" onclick="popup40()">Offbrand and broken, all parts<span class="popuptext" id="popup40"><img class="popupimg" src="/images/cat36.jpg"></span></a></li>
+                </ul>
+
+                <p>So yeah, this gets complex, and a bit hard to keep track of. It’s not a disaster if a stray part wanders into the wrong category, but I try to keep that to a minimum. Certain categories have clear precedence over others assigned to them (for example, the bar and clip-ness of <a class="popup" onclick="popup44()">this part<span class="popuptext" id="popup44"><img class="popupimg" src="/images/barorclip.png"></span></a> overrides its tile-ness, and a wheel’s wheel-ness overrides its round-ness). One super important aspect of the system is that decorated and electrical parts are sectioned off by having their categories override all others, because of the challenges washing them poses. Many of these distinctions are made up on the fly. </p>
+
+                <p>This system works well enough, but there&rsquo;s one aspect of it which drives me <em>nuts</em>. For plenty of parts, I&rsquo;m able to accurately identify what I&rsquo;m holding on my hand in the moment. Not just &ldquo;this is a technic pin,&rdquo; but &ldquo;this is part #2780, Pin with Friction Ridges Lengthwise, with Center Slots, in black.&rdquo; It feels like I <em>should</em> be able to act on this information. But unfortunately, the container for this part is in another room, and I&rsquo;d have to break my monotonous flow to type in that I&rsquo;d added the part into the system. So I throw it into a slightly less mixed bin, with a couple dozen other varieties of parts, only to sort that out again later. It&rsquo;s horridly wasteful, but it&rsquo;s the best I can do right now. The degree to which this wasteful dynamic can be eliminated is going to be a focal point of the automation effort.</p>
+                <p>Even without considering the waste, the process is also slow, and labor intensive. At the end of the day, there&rsquo;s no avoiding the fact that out of a bin of 10s of thousands of parts, you&rsquo;ve got to pick each one up, look at it, and throw it into a container individually. The time per part varied dramatically, but I&rsquo;d say it averages about two seconds. In fact, let&rsquo;s start tracking the journey a part makes, and the time investment represented by each step, to see what I&rsquo;m really making for my time on this as a manual process.</p>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="header">
+                                <p>Step</p>
+                            </td>
+                            <td class="header">
+                                <p>Parts Per Second Calculation</p>
+                            </td>
+                            <td class="header">
+                                <p>Running Total of Time Elapsed Per Part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Aquiring Parts</p>
+                            </td>
+                            <td>
+                                <p>~1hr per every ~40 pounds, ~350 parts a pound</p>
+                            </td>
+                            <td>
+                                <p>~0.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>First Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~0.5 parts per second</p>
+                            </td>
+                            <td>
+                                <p>~2.25 seconds per part</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Is that good or bad? We’ll find out. We haven’t even hit the slow parts yet…</p>
+
+                <h3>Washing Parts</h3>
+
+                <p>Kids and homes can be nasty places. I once found a moldy orange peel in the bottom of a used lego bin, which had clearly been there for years. I have encountered unbelievable quantities of dog hair there as well. I nearly fainted over the overpowering smell of cigarette smoke on one craigslist trip. I was once politely asked by students in one of my LEGO robotics classes for permission to lick my FRC team&rsquo;s robot after demoing it. I have strong suspicions that the child&rsquo;s personal LEGO collection suffered assault by tongue, because, hey, why wouldn&rsquo;t it, right?</p>
+                <p>Needless to say, everything I process gets washed before it goes anywhere near the bricklink store.</p>
+                <p>How to do this is another question.</p>
+                <p>Recommendations vary. Some people suggest a pillowcase tied up in a washing machine, but I found that mine damaged the parts. Others say a dish washer is better, but I don&rsquo;t have immediate access to one. A more simple approach is just soaking them in warm soapy water, but this doesn&rsquo;t really get any heavy grime off, and scrubbing them manually takes way too much time. For a while, I was doing it this way, but it was impractical for a number of reasons, not the least of which was the space taken up by precariously balanced plastic bins full of LEGO and soapy water. There was a spill once. It was not fun.</p>
+                <p>So instead, I picked up one of these.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/ultrasonic.jpg"></div>
+
+                <p>It&rsquo;s an ultrasonic cleaner, a super cool device used for cleaning everything from engine parts to jewelry. It works by submerging parts in a fluid or solvent bath (can be anything from water to intense industrial chemicals), and pulsing high frequency sound waves throughout the fluid. This causes the parts themselves to vibrate, shaking off any dirt and grime as the parts and solvent interact. The results were <em>fantastic</em>. For most parts, it was as if I&rsquo;d scrubbed them meticulously by hand, but using a &ldquo;dump the parts in and let them sit&rdquo; approach. Simple soapy water works fine as a solvent for plastic, though I&rsquo;d like to experiment with specialty products in the future.</p>
+                <p>There are some drawbacks, mostly surrounding the rather cheap, Harbor Freight brand machine I got. It will only run for 8 minutes at a time, and parts typically require 2-3x this to really get clean. It also has very limited capacity, generally taking 3 to 4 batches to finish off a 1<sup>st</sup> order category. Emptying it out is also quite fiddly. So the current process has some hiccups, but is really all I can ask for, and there&rsquo;s a very clear &ldquo;throw money at the problem&rdquo; solution when I&rsquo;m ready for that.</p>
+                <p>There are a few types of parts which require special attention:</p>
+                <ul>
+                    <li><strong>Smokey parts</strong>. ABS plastic apparently <em>really</em> holds on to the smell of tobacco. Like, for months or years. Rubber LEGO tires are even worse. Vinegar as an ultrasonic solvent before the conventional cleaning gives the parts their own stench, but it dissipates much quicker, and does wonders to in taking the smoke smell with it as it goes.</li>
+                    <li><strong>Electronic parts</strong>. These are washed separately by hand with a damp cloth, avoiding getting water on any sensitive parts. It&rsquo;s tedious, but these parts are pretty rare and tend to be worth 100x or more than average, so it&rsquo;s definitely worthwhile. They tend to be in better shape than most parts on the cleanliness front anyways.</li>
+                    <li><strong>Discolored parts</strong>. Certain parts contain coloring additives which react negatively with sunlight, turning an <a class="popup" onclick="popup45()">ugly yellow color<span class="popuptext" id="popup45"><img class="popupimg" src="/images/yellowed.jpg"></span></a> when exposed to the sun for years. This happens most prominently with white pieces, but older greys and blues can be damaged this way as well. This process can be reversed by soaking the parts in hydrogen peroxide, and exposing them to ultraviolet light. This process is time consuming, so I set aside parts damaged this way so that they can be processed in large batches. Right now, I&rsquo;m just doing this in direct sunlight, but eventually plan to build a blacklight/dark room rig to improve efficiency.</li>
+                    <li><strong>Printed and stickered parts. </strong>To be honest, I haven&rsquo;t really experimented with these yet. I need to do more research. I suspect that these will be more sensitive to damage in the ultrasonic cleaner, but I don&rsquo;t know how much so, and how to work around it. So right now, I&rsquo;m just hoarding parts until the bin overflows badly enough to compel me to do something about it.</li>
+                    <li><strong>Sticker residue. </strong>When stickers are removed or hanging on for dear life, they leave a sticky residue. GooGone works wonders for these, either as an ultrasonic fluid or rubbed on manually.</li>
+                    <li><strong>Just really, really grimey parts. </strong>The ultrasonic cleaner doesn&rsquo;t always get everything. Having tons of plastic, and tons of fluid in the machine at once dampens the ultrasonic waves, meaning each part sees less effective cleaning. I&rsquo;ll take the really stubborn parts, and run them through in batches of 5 or 10 at a time, with super shallow fluid. This blasts the crud off them.</li>
+                </ul>
+
+                <p>Drying is a bit trickier. LEGO likes to hold water – the many indentations and crevices in their design see to this. Simply letting them air dry leaves visible water marks all over the place. The solution to date has been the low-cost one, towels. Many people recommend simply laying your parts out on a towel so it absorbs the water, but this really requires that you take the time to orient them such that the “cupped” water falls out. Too time consuming for the volumes I’m doing. </p>
+
+                <p>Instead, I take a more physics-based approach, using centrifugal force to force the water out:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/bundle.jpg"></div>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/spincycle.gif"></div>
+
+
+                <p>It’s still not perfect. The towel saturates itself pretty quickly, and parts can be trapped in a position where they still cup water. But usually this plus a more casual dump on a flat towel gets good results. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/drying.jpg"></div>
+
+                <p>Others recommend <a class="popup" onclick="popup48()">salad spinners<span class="popuptext" id="popup48"><img class="popupimg" src="/images/saladspinner.gif"></span></a>, but I’ve never had the confidence in this concept to invest in one. They all seem far too small for the volumes I’d be passing through, and the small diameter, acceleration, and hard body all strike me as likely to damage some parts, scratching them up or worse.</p>
+
+                <p>I like the potential of the concept though. On the &ldquo;to be designed&rdquo; list is a custom salad spinner built for LEGO. Some probable features:</p>
+                <ul>
+                    <li>Large diameter, able to handle an entire 1<sup>st</sup> order category at once with ease. Plan for investment in a larger ultrasonic cleaner in the future.</li>
+                    <li>Padded, water absorbent, removable interior. Protect the parts from shock as they hit the wall, and soak up some water in the process. Make this an inner lining that pulls out, so it can be washed.</li>
+                    <li>Mesh size optimized for LEGO geometry</li>
+                    <li>Agitator, to kick parts off the wall to allow them to reorient themselves, preventing water from simply &ldquo;cupping&rdquo; in a part continuously pinned against the wall.</li>
+                    <li>Just throw the parts in and let it do its thing.</li>
+                </ul>
+                <p>Checking in on the time table, both these tasks add surprisingly little time. &ldquo;Dead time,&rdquo; such as time spent sitting in the ultrasonic cleaner, isn&rsquo;t being tracked here, we&rsquo;re only concerned about the time, per part, where I need to be paying them active attention. Batch size here is an estimate, and skews both ways.</p>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="header">
+                                <p>Step</p>
+                            </td>
+                            <td class="header">
+                                <p>Parts Per Second Calculation</p>
+                            </td>
+                            <td class="header">
+                                <p>Running Total of Time Elapsed Per Part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Aquiring Parts</p>
+                            </td>
+                            <td>
+                                <p>~1hr per every ~40 pounds, ~350 parts a pound</p>
+                            </td>
+                            <td>
+                                <p>~0.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>First Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~0.5 parts per second</p>
+                            </td>
+                            <td>
+                                <p>~2.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic load time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.37 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic unload time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.5 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Active drying time</p>
+                            </td>
+                            <td>
+                                <p>~2 minutes for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.75 seconds per part</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Just do it already: The second order sort</h3>
+
+                <p>Okay, no more running away from it. Time to sit down, and go from mixed parts into sorted parts. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/cuptower.jpg"></div>
+
+                <p>Here are my weapons of choice. A <em>lot</em> of dixie cups. This tower goes from floor to ceiling when I don&rsquo;t have a lot of parts ready for uploading. For the larger parts, bowls work, or just grouping them together if they&rsquo;re <em>really</em> large, but really, most everything fits in the cups well enough.</p>
+                <p>Sorting is done on a desktop surface so that the parts are spread and all easily accessible and visible, usually right where they&rsquo;ve been being dried out. You go through them one by one, sorting every part out from every other part. Sometimes, as in the first image, this is a bit of a pain. Sometimes, as in the second, this is <em>really</em> a pain.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/easysort.jpg"></div>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/hardsort.jpg"></div>
+
+                <p>There really isn&rsquo;t much to be said about this step. The point mentioned above about similar parts blurring together holds &ndash; any kind of staged sorting into piles organized by color or size only slows you down, if you aren&rsquo;t going all the way to a by-part sort. The specific techniques used vary a lot, and tend to get developed on the fly based on the distribution of parts. Sometimes you&rsquo;ll be lining similar parts up in neat rows, incrementing in size. Sometimes you&rsquo;ll be building big towers of two very similarly colored parts so you can easily compare others you find. Sometimes, you&rsquo;ll notice orange sticks out compared to the other parts, so you&rsquo;ll just do all the orange parts one after another to systematically wipe that color off the table. This is actually a good way to make sure you don&rsquo;t lose track of what you&rsquo;ve already sorted &ndash; pick out what &ldquo;sticks out&rdquo; the most in the, since you&rsquo;re most likely to catch them all.</p>
+                <p>This isn&rsquo;t easy. You&rsquo;re usually keeping track of several dozen to a couple hundred classes of parts at once. You have to remember what you&rsquo;ve already given a home to, though splitting things across two cups inadvertently isn&rsquo;t the end of the world and would be caught in the next step. But mixing two distinct parts here is bad. You have to be observant &ndash; a lot of parts are <em>very</em> similar, and given that you certainly didn&rsquo;t think about their differences in the stage 1 sort, all the sort-of-similar parts will be on the table at the same time. You need to be deeply familiar with the LEGO system to anticipate these differences, like knowing to look for <a class="popup" onclick="popup49()">O vs U clips<span class="popuptext" id="popup49"><img class="popupimg" src="/images/ouclips.png"></span></a>. You have to be careful not to spill all the cups. You have to keep an eye out for any off-brand or damaged parts which slipped through the first order sort. You have to figure out a way to do this which doesn&rsquo;t kill your back leaning over the table for hours on end &ndash; I haven&rsquo;t solved that one yet. You have to be fast at all of the above.</p>
+                <p>Family has tried to help with this process. Family has largely failed. I&rsquo;m quite certain that sifting through large piles of LEGO my entire youth hardwired something in my brain, that makes me kinda-okay at this. I was always the only person who could find the one right screw in our FRC <a class="popup" onclick="popup50()">hardware pit of shame<span class="popuptext" id="popup50"><img class="popupimg" src="/images/pitofshame.jpg">The team’s running joke was, as we’d near the end of build season, requests to find things among the chaos would become so commonplace that it was all I, the team’s lead technical mentor, was spending time on. People knew what the robot needed done as well as I did at that point, but nobody could match my ability to pick out the one ¼-28 bolt from the pile of ¼--20. People began to take notice of this, and the dichotomy between my engineering skill and how it was being put to use, and would preface these requests with “Joe, since you’re so good at engineering, can you find me an 8-32 T-nut??”</span></a> as well. This is the kind of thing which seems like it should be low-skill work, but it isn&rsquo;t, necessarily.</p>
+                <p>Time spent on this step is variable, and a significant investment. Here&rsquo;s the updated table:</p>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="header">
+                                <p>Step</p>
+                            </td>
+                            <td class="header">
+                                <p>Parts Per Second Calculation</p>
+                            </td>
+                            <td class="header">
+                                <p>Running Total of Time Elapsed Per Part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Aquiring Parts</p>
+                            </td>
+                            <td>
+                                <p>~1hr per every ~40 pounds, ~350 parts a pound</p>
+                            </td>
+                            <td>
+                                <p>~0.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>First Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~0.5 parts per second</p>
+                            </td>
+                            <td>
+                                <p>~2.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic load time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.37 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic unload time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.5 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Active drying time</p>
+                            </td>
+                            <td>
+                                <p>~2 minutes for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.75 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Second Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~10 minutes for ~200 parts, with somewhat dramatic variance</p>
+                            </td>
+                            <td>
+                                <p>~5.75 seconds per part</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>And here is the <a class="popup" onclick="popup51()">end result<span class="popuptext" id="popup51"><img class="popupimg" src="/images/cupswithparts.jpg"></span></a>. Each type of part has its own cup. Most cups are empty enough that they can still be easily stacked for transport. They’re now ready to go into the drawers. But sorting the parts isn’t enough. You’ve also got to tell Bricklink what you’ve got in front of you. </p>
+
+                <h3>Data Entry</h3>
+
+                <p>Ok, time to tell Bricklink what you have on hand. This should be easy, right? A website this prolific has got to have a world-class UI for this kind of thing, right?</p>
+
+                <p>Well...</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/blui1.png"></div>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/blui2.png"></div>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/blui3.png"></div>
+                <div class=pageimgcontainer><img class="pageimg" src="/images/blui4.png"></div>
+
+                <p>This is&hellip;this is not a good UI. Why? Where do I begin?</p>
+                <ul>
+                    <li>Vertically gigantic. Requires that I scroll up and down the page for each and every part entered. Displays very little actual information at once, both on the overall page, and in menus like the part selection.</li>
+                    <li>Unnecessary &ldquo;verify&rdquo; step after each and every part</li>
+                    <li>TONS of unnecessary fields. I never use tiered pricing, stockroom, bulk quantities, custom images, retention, superlots, or reservations.</li>
+                    <li>Does not preserve very basic information, such as &ldquo;I&rsquo;m doing parts, not sets,&rdquo; between iterations of the form.</li>
+                    <li>Only way to tell if I&rsquo;m entering a part I already have on hand is to click through and find out.</li>
+                    <li>Zero search functionality for finding a part whose name or category I&rsquo;m not immediately aware of.</li>
+                    <li>Requires a tremendous amount of &ldquo;clicking through&rdquo; for &ldquo;yes, I want to do this &ldquo;adding a part thing&rdquo; again. Yes, really, I kinda have an absurd amount of cups in front of me, and I need to get rid of them before the minifigs start playing &ldquo;ABS-pong&rdquo; with them.&rdquo;</li>
+                </ul>
+                <p>So that&rsquo;s a disappointment. Fortunately, this isn&rsquo;t really where Bricklink shines. Their strong point when it comes to data entry is their acceptance that people were going to have a bunch of ideas for how best to do it, and want to import data from all manner of different sites and programs used to track and manipulate all things LEGO. So they provide a standard <a href="https://www.bricklink.com/help.asp?helpID=22" target="_blank">XML format</a> for uploading massive amounts of part data. Other programs can simply export a correctly formatted XML file, and items can be added or updated this way in batches of hundreds or more.</p>
+
+                <p>The best program out there right now for doing this is <a href="https://brickstock.patrickbrans.com/" target="_blank">Brickstock</a>. Brickstock has a much neater table/pseudo spreadsheet based user interface, which allows you to perform mass edits on a bunch of parts, or your entire library, by dragging and selecting. It does everything you’d expect a program of this form factor to do: flexible sort by any column of your choosing, easy copy-paste of items, easy summation of figures such as total inventory value, etc. It also has some pretty nifty features like the ability to load up the inventory of any set cataloged by Bricklink.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/brickstock.png"></div>
+
+                <p>Entry, likewise, is done via a much cleaner form. Each category is large enough to be easily scanned, and presents more relevant information. A simple search filter is also present. Information from your last part entered stays in the form by default, allowing you to quickly and easily do things like increment the remarks (you’re usually doing a series of empty drawers, one after another), or take advantage of arraigning your cups so that you’re doing the same part number or color several times in a row. And entering your part and moving onto the next one can be done by just pressing enter. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/brickstockentry.png"></div>
+
+                <p>However, there are still a large number of frustrations and shortcomings of this software. Just a few of them:</p>
+                <ul>
+                    <li><strong>Lots are consolidated, but no alert is given.</strong> If I add a part to the system, and I unknowingly already have that type of part in inventory, Brickstock very silently updates the existing entry. This action can easily be mistaken for having misclicked the &ldquo;add&rdquo; button, and I&rsquo;ll often do this two or three times before I&rsquo;ve realized what&rsquo;s happened, screwing up the part count. I have to then manually search for the part to find out what drawer it&rsquo;s being stored in, so I know what to do with the new ones I&rsquo;ve just added.</li>
+                    <li><strong>Export XML for mass upload works great. XML for mass update is near useless</strong>. Bricklink can take an upload, which adds entirely new parts to the system, or an update, which makes modifications to existing lots. As I&rsquo;ll be discussing in the next section, I am <em>constantly</em> updating the remarks fields of my parts, as they move around the storage system. Brickstock has no capacity to do this in batches, only allowing updates of price and quantity fields this way. I have to do this via the Bricklink interface.</li>
+                    <li><strong>Filtering and search is terrible</strong>. There is some inefficiency in Brickstock&rsquo;s code which makes an all-items search through every category run unacceptably slowly, often crashing the program. I have to blindly guess what category a part is in. Also, filtering, both when adding parts and searching your inventory, is based off a simple regex matching elimination filter. If I search &ldquo;rounded corners,&rdquo; and the actual part name contains &ldquo;round corners,&rdquo; the part I&rsquo;m looking for won&rsquo;t come up. None of the &ldquo;similarity&rdquo; information tracked by Bricklink and being scraped by my program is used anywhere in Brickstock. This requires pretty extensive knowledge of the Bricklink naming and categorization system, and all the quirky details of LEGO part design and history, to input parts with any efficiency. This is especially problematic for things like minifigs, which use highly qualitative descriptors, and makes what in theory should be some of the most lucrative parts not worth the effort.</li>
+                    <li><strong>Minimal pricing analytics.</strong> Fortunately, Brickstock provides a very easy means of mass-updating the prices of all parts in your inventory. Unfortunately, the options for doing so are very minimal, basically limited to setting to the minimum or average of parts sold, or parts currently for sale. Pricing strategy is a massive can of worms, and I&rsquo;d like to be able to experiment with things like, lowest price which ships from the US, or lowest price which also matches the quantity I have on hand, both of which could be significantly higher than the overall average. It doesn&rsquo;t appear that Brickstock is scraping the sale-by-sale price data that my software is targeting.</li>
+                    <li><strong>No indication of actual colors is given, which makes selection slow and imprecise. </strong>There are over 200 LEGO colors, but each part is only available in a tiny fraction of them. Usually, ten or fewer, and in a majority of cases, only one. Many colors have only ever been used on a tiny handful of parts, or haven&rsquo;t been produced in 40+ years. Doesn&rsquo;t matter, all 200+ colors show up as an option for every part, all of the time. This both means you have to scroll all the way down the page each and every time to get to &ldquo;yellow,&rdquo; and that you have to stop and think &ldquo;Okay pearl gold is used on bunches of parts, but pearl light gold is pretty much exclusively used to build C3PO minifigs produced 20 years ago.&rdquo;</li>
+                    <li><strong>No duplicate location checking is performed, and no knowledge of my drawers is present</strong>. Brickstock, like Bricklink, only provides a simple text field for remarks, and doesn&rsquo;t know anything about my labeling methodology. It doesn&rsquo;t have any way of knowing that in my system, duplicate remarks are indicative that something has gone wrong. It doesn&rsquo;t know how to identify where I have empty compartments, or what sizes they are. It doesn&rsquo;t know that certain parts won&rsquo;t fit in certain places.</li>
+                </ul>
+                <p>Still, it&rsquo;s a lot better than the alternatives, at least for now. The current process is, take a series of cups, and lay them out neatly, taking care to line up similar parts or colors such that the input time will be reduced. Input each part, and place them in one of two ordered grids, based on whether or not the part was already in the system. For remarks, you&rsquo;re starting at the lowest numbered empty drawer, and incrementing upwards each part &ndash; I&rsquo;ll get to how this saves time and eventually integrates with the divider system. Once finished, sort Brickstock by &ldquo;quantity difference,&rdquo; which will indicate what parts have had their quantities increased. Find the existing drawers with each of these parts, and put them away. Finally, do two uploads. For the first, perform an update on the existing parts you just increased the quantities of. For the second, sort by &ldquo;lot ID,&rdquo; which is an unique value assigned by Bricklink, which will be blank for all the completely new parts just added. Select all of those, and do a brand new upload.</p>
+                <p>Phew. Let&rsquo;s see where that puts us on our chart:</p>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="header">
+                                <p>Step</p>
+                            </td>
+                            <td class="header">
+                                <p>Parts Per Second Calculation</p>
+                            </td>
+                            <td class="header">
+                                <p>Running Total of Time Elapsed Per Part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Aquiring Parts</p>
+                            </td>
+                            <td>
+                                <p>~1hr per every ~40 pounds, ~350 parts a pound</p>
+                            </td>
+                            <td>
+                                <p>~0.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>First Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~0.5 parts per second</p>
+                            </td>
+                            <td>
+                                <p>~2.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic load time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.37 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic unload time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.5 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Active drying time</p>
+                            </td>
+                            <td>
+                                <p>~2 minutes for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.75 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Second Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~10 minutes for ~200 parts, with somewhat dramatic variance</p>
+                            </td>
+                            <td>
+                                <p>~5.75 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Inputting Parts to Brickstock</p>
+                            </td>
+                            <td>
+                                <p>~8 minutes for 90 parts</p>
+                            </td>
+                            <td>
+                                <p>~11.08 seconds per part</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>That&rsquo;s&hellip;surprisingly slow. There are two main reasons for this. First, just the accumulation of inconveniences described above slowly adding up. In particular, inability to find a part due to inadequate filtering causes some parts to be dramatic outliers, taking up to 10 minutes to find and input. Others are just slow in their own right, especially if they come by the hundreds and have to be counted.</p>
+                <p>Second, this is not a hands-off process. Once again, I can pick up a cup and look inside it, and my brain <em>instantly</em> knows exactly what I&rsquo;ve got. I can know this information while walking to take it to the drawer it belongs in. But I have no means of acting on this information in a useful way. I have to pause, sit at my desk, and type in the part name and information, orders of magnitude slower than I actually identify the part. Frustrating. It shouldn&rsquo;t be this way. We&rsquo;ll look at how this might be made this less frustrating in the next part.</p>
+
+                <h3>But what about that divider system design?</h3>
+
+                <p>Oh right, <em>those things</em>.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/moredividers.jpg"></div>
+
+                <p>Well, they actually add a lot of complication to the inputting process. Any part can no longer go just anywhere. And as more and more varieties of parts attract more and more customers, leaving stray empty compartments became a daily occurrence. And as my previous system for tracking these was &ldquo;pull the entire drawer out and throw it in a big box, then empty the box when you start uploading parts again,&rdquo; this wasn&rsquo;t going to work anymore.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/drawertracker.png"></div>
+
+                <p>I started out with a simple spreadsheet, tracking the size of each drawer, and its current emptiness state. It worked, but since it was its own entity completely independent of the .bsx inventory files manipulated by Brickstock, it had to be manually updated separately, a task I didn&rsquo;t always 100% keep up with. The next part, I&rsquo;ll talk more about how I replaced this with software, but for now, it&rsquo;s just important to establish that these things need to be tracked, or else you&rsquo;re going to end up with dead space indefinitely in your inventory without knowing it&rsquo;s there.</p>
+                <p>You&rsquo;d think that putting parts away directly into appropriately sized empty compartments right from the get-go would be the most efficient way to go. I thought so as well at first, and tried this out. All of a sudden, I was entering parts four times as slowly.</p>
+                <p>What happened? Well, in the previous system, without dividers, I never had to <strong><em>stop and think</em></strong> when I&rsquo;d get into a zone with a couple dozen easy-to-enter parts. I&rsquo;d just start the day entering parts into the lowest-numbered empty drawer, and count up from there. +1, +1, +1, no thought whatsoever. Yeah, I&rsquo;d have to refill the empties by pulling them out of the box when it started to overflow, but that was a once-in-a-blue-moon thing.</p>
+                <p>With the dividers, no such luck. I felt compelled to put parts immediately into an appropriately sized container, because the transitional phase, when I first introduced dividers and where I assessed each and every drawer for the appropriate size divided compartment, <strong><em>took forever</em></strong>. So I didn&rsquo;t want to leave a bunch of parts lying around in full drawers, which could easily fit into the tiny 10x divided compartments. I knew at any given time, I&rsquo;d have 50+ of these compartments empty. But finding them <strong><em>broke the flow</em></strong>. I&rsquo;d have to stop and assess the size compartment best suited to the part in front of me. I&rsquo;d have to mouse out of Brickstock and into excel, and filter the spreadsheet to find out how many 10x drawers had empty spots. I&rsquo;d have to mouse back into Brickstock, and enter the entire remark from scratch, since it&rsquo;d be some random drawer halfway through the filled drawers. I&rsquo;d have to get up and put the part away right then, lest I lose track of where it belongs. If I didn&rsquo;t have an appropriate drawer available, I&rsquo;d have to stop entirely and <em>make one</em>. The new process meant I had to stop and perform complex thoughts and actions like an actual human being, instead of mindlessly powering my way though cups at peak efficiency like a robot.</p>
+                <p>(That sounds terrible! This is why I&rsquo;m automating things, and studying making robots to do things like this. Because I don&rsquo;t think people would like me very much as a human-focused process engineer)</p>
+                <p>In an attempt to recover my non-humanity, I looked for a new system. The biggest priority was, eliminate the &ldquo;stand up and consult the drawers&rdquo; part, the biggest time-waster. I realized that the important action wasn&rsquo;t <em>putting</em> the parts in the correctly sized compartment, but <em>marking</em> the correct size to eventually house them. So I turned my desk into this:</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/towers.jpg"></div>
+
+                <p>Each &ldquo;tower&rdquo; corresponded to a division size. Each part in the tower would be given a remark of the size followed by the word &ldquo;HOLD.&rdquo; The &ldquo;hold towers&rdquo; would be stacked up until they reached unmanageable sizes, which usually took a day or two of sorting (some sizes, like 4, 6, and 10x, grew dramatically faster than the others). At this point, I&rsquo;d transfer everything in the stack into waiting empty compartments of appropriate size, all in one shot so that I didn't have to jump back and forth between the desk and the drawers. Once I ran out of appropriately sized empty compartments, I'd make more, driven by the number of drawers remaining in each stack.</p>
+                <p>This was better, but still had problems. The towers violated the principle of immediate access to every part, the reason I was using drawers in the first place. If someone ordered a part still in the tower, something which happened quite frequently as recently uploaded parts often attracted near-immediate buyers, retrieving them was fraught with peril. The image above is a small scale recreation for documentation purposes &ndash; the actual live towers got much taller and more numerous.</p>
+                <p>Eventually, I realized that I didn&rsquo;t need the towers at all. Instead of excluding parts in this state in separate entities, I realized that they could live with all the other parts in undivided drawers in the chests, as long as I was systematic about it, and clearly marked the parts with <strong><em>what kind of drawer they belong in eventually.</em> </strong>Doing this took a one-time restructuring of the drawer system, but it&rsquo;s worked out really well.</p>
+                <p>Confusing? Here&rsquo;s a visual representation of how this sequence works. First, how the drawers used to look:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel1.png"></div>
+
+                <p>
+                    Red drawers have already had dividers installed. Yellow drawers are full-size, undivided drawers, and feature large or large-quantity parts which take up the whole volume. White drawers are empty – the straggling white drawers are full-size drawers which have been emptied out, pulled out, and relegated to the empty drawer box. This was generally the source I pulled from to make the new divided drawers. At first, everything would have been a yellow drawer, but the red divided drawers dotted themselves in until they were a majority. 
+                </p>
+
+                <p>The “X” marks indicate divided drawers which have one of more empty compartments. When putting parts away, one of two things would happen with them. If the part belonged in an undivided drawer, it would be tacked on to the end of the filled region (shaded colors represent new drawers added during an input session)</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel2.png"></div>
+
+                <p>Parts which belong in a divided drawer, which represent over 80% of parts total, could do one of two things. Either they could fill in an X: </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel3.png"></div>
+
+                <p>Or, if no appropriately sized empty compartments were available, new divided drawers would be built on the fly, starting from the empty full size drawers from the middle of the filled region, and then interspersing the full size entries tacked onto the end. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel4.png"></div>
+
+                <p>This would go on and on, until I eventually ran out of drawers.</p>
+                <p>Now, the new system. First, I shifted everything, so that the &ldquo;filled block&rdquo; has two distinct regions, divided, and undivided.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel5.png"></div>
+
+                <p>This is the key step. Parts are added, now in blues of various shades, and from the last compartment backwards instead of picking up where the &ldquo;set&rdquo; drawers end. Each shade represents a labeled anticipated division size. <strong><em>These drawers are not physically divided yet</em></strong> &ndash; the parts are just sitting in hideously oversized drawers just like way back before I even had dividers. They are simply labeled with the size they <strong><em>should</em></strong> be in using the remarks field &ndash; each shade of blue is a &ldquo;virtual tower&rdquo; from the tower system. All the parts are added the same way, no matter what size compartment they belong in, even if they&rsquo;re going to take up the full drawer volume. This allows me to get back to the way things were before, with completely uninterrupted entry of parts sequentially into drawers, for minimum thought and maximum speed.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel6.png"></div>
+
+                <p>This goes on until there&rsquo;s a relatively small empty buffer between the newly added parts, usually a cabinet of 60 or so in reality. When this point is reached, a &ldquo;drawer day&rdquo; is done.</p>
+                <p>First, the drawers to be made are known, dictated by the destination compartment sizes the parts in blue are tagged with. I&rsquo;ll talk more about how this actually works in the next part, but a &ldquo;cut rod algorithm&rdquo; takes the array of desired compartment sizes, and spits out a plan to produce these using the fewest drawers and leaving the fewest empty straggler compartments possible. The total number of drawers already divided, plus the incoming drawers to be manufacture, drive the position of a new &ldquo;cutoff point,&rdquo; where the transition between divided and undivided drawers will occur. The last new divided drawer is marked in pink below:</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel7.png"></div>
+
+                <p>Usually this will be in or somewhere near the yellow region, and never in the blue. The remaining quantity of white (completely empty drawers) between the cutoff point and the start of the blue drawers should be larger than the total number of yellow (undivided) drawers. The undivided parts are then shifted down past this new transition point, and have their remarks updated accordingly. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel8.png"></div>
+
+                <p>Once again, first priority is to fill in the empty stragglers throughout the already divided region. Most, but not all, will end up filled &ndash; usually the rate at which I accumulate parts for a given divider size outpaces the rate at which they empty, but there will be occasions where I just don&rsquo;t have enough to fill a lesser-used size like 7 studs long.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel9.png"></div>
+
+                <p>Then, new divided drawers are manufactured in the appropriate sizes, right up to the new transition point. The remaining blues are transferred to the appropriate size. Once again, there will be some straggling empties right from the get-go (for example, creating a 6 stud compartment also creates a 10 stud compartment, but parts appropriate for 6 stud compartments dramatically outnumber 10 stud parts). The number of drawers emptied in the blue section will dramatically outpace the number of drawers being added between the end of the red and the new transition point, simply because you’re, at minimum, consolidating two full-size drawers into one divided drawer, and very often, as many as ten at a time. </p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel10.png"></div>
+
+                <p>Finally, the straggling full-size drawers from the mixed section are shifted up to their siblings in the yellow section. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/excel11.png"></div>
+
+
+                <p>And we&rsquo;re back to where we started, just with slightly more filled drawers in each section. Over time, more and more white Xs will appear on the grid as orders empty out compartments, and the blue wave of labeled but undivided drawers will grow until it threatens to fill the wall entirely, at which point it&rsquo;s time for another &ldquo;drawer day.&rdquo;</p>
+                <p>So with this new system, and the wide range of shapes and sizes of compartments parts could be within, how does the remarks format capture the information of this new reality? As I left off there, I was only labeling cabinet and drawer numbers, but now there&rsquo;s a lot more information content.</p>
+                <p>Incorporating the dividers themselves into the labeling system was as easy as adding a third number, representing the division index. Full-size drawers are now labeled ###-##-01. For single-wide drawers, compartments are numbered back to front. For double-wide, <a class="popup" onclick="popup52()">IC pin labeling convention<span class="popuptext" id="popup52"><img class="popupimg" src="/images/icpins.jpg"></span></a> is used, starting at the back-left and counting counterclockwise from there.</p>
+                <p>Figuring out what parts should go in what size was harder. In principle, it should be easy. Figure out how much room your current stock is taking up. Give a reasonable buffer to allow for growth. Repeat.</p>
+                <p>But it&rsquo;s not quite that simple. Here are just some of the irregularities which need to be thought about:</p>
+                <ul>
+                    <li>Very often, you&rsquo;ll just happen to have only a few of a part which you know perfectly well you&rsquo;re going to be stocking by the truckload &ndash; maybe you&rsquo;ve just happened to sell off most of your stock recently. Other times, you may have more of a given part than you&rsquo;d ever expect to have again. Either way, reasonable buffer for expected growth is not a constant.</li>
+                    <li>Some long, narrow parts don&rsquo;t benefit from being given room to expand. For example, any part longer than 8 studs. Something like this will stack very neatly. Adding more room to the compartment won&rsquo;t let me pack any more in. Even if I gave them the full length of the drawer, the region where parts &ldquo;towards the front&rdquo; or &ldquo;towards the back&rdquo;</li>
+                    <li>Likewise, certain parts only see a benefit from growing their allocated volume every nth studs larger you make it. A four stud long part only sees concrete benefit from an additional four studs of space, if you&rsquo;re lining them up neatly.</li>
+                    <li>Some parts don&rsquo;t have physical dimensions which line up nicely with the LEGO stud unit idea. I think that LEGO geometry is a work of genius, <a href="https://swooshable.com/snot" target="_blank">the number of ways it &ldquo;just works&rdquo; is mind-blowing</a>, and new ones are always being found. But that doesn&rsquo;t mean that the physical extremes of every part fit nicely into 8mm cubes.</li>
+                    <li>Some parts nest together in unusual ways, which mean that adding one part may take up 6 units, but adding the second may only add one more.</li>
+                    <li>Some parts can be placed in drawers in an orderly fashion which saves some space, but fiddling with them to get them in that way ends up more trouble than it&rsquo;s worth.</li>
+                    <li>The best orientation to place a part in a drawer can be an open question, which impacts space required.</li>
+                    <li>Some methodical packing techniques might &rdquo;barely not&rdquo; fit, scraping the top of the drawer and making it tricky to pull out. In some cases, the added capacity may be worth it, in others it may be not.</li>
+                </ul>
+                <p>The overarching lesson I&rsquo;ve learned from thinking about all this is that assigning order to parts as they lie in storage is largely more trouble than it&rsquo;s worth. I largely do not plan to pursue this when things move towards automation.</p>
+                
+                <p>Right now, I&rsquo;m labeling parts as they come in via a 3 number system, to flag their storage characteristics. It goes &ldquo;r#e#m#.&rdquo; The &ldquo;r-code,&rdquo; or &ldquo;reduction code,&rdquo; indicates the absolute minimum size compartment the current stock of the part could fit within, push comes to shove, with no allowance for expansion. It is only used for reference if I really get crunched on drawer space. The &ldquo;expected code&rdquo; indicates my reasonable estimate of the size compartment the part <em>should</em> be in, given basic intuition about its rarity and how it correlates, or doesn&rsquo;t, with the stock I actually have. And the &ldquo;multiple code,&rdquo; only used on parts which geometrically fit evenly into the divider geometry, indicates the stud count drawers containing the part should be an even multiple of, in order to not waste any space. Many, many parts have an m-code of 1, which is implied if the m code is left off to save time.</p>
+<p>For example, a part flagged &ldquo;r2e8m2&rdquo; indicates that right now, I <em>could</em> fit what I have into a two stud divider, but I expect a lot of growth, and more realistically, it should go in an 8 stud. Also, there is no benefit to be gained from increasing the storage size in multiples of less than two &ndash; if I need to bump it up, it&rsquo;s going to get bumped up straight to a 10 stud drawer.</p>
+<p>The r/e/m system is used <em>everywhere</em>, both on parts that are in divided drawers, and on parts which have been freshly entered into undivided drawers. Currently, its main use is in performing the consolidation into dividers procedure listed above (the e code flags the eventual destination of each part), and in bumping parts up to larger compartments if a bunch come in (the m code allows quick reference of appropriate sized larger compartments). I haven&rsquo;t had to do it yet, but the r codes are in place if I straight-up run out of drawer space, and need to perform a mass condensing operation to squeeze more space out of my drawers.</p>
+<p>Currently, this system is not great, relies on my stopping to think about each part as I enter it for the first time, and has a number of shortcomings. I&rsquo;ll talk more about these problems, and how I&rsquo;m using code to start to solve them, when we return to the software side in <a href="page7.html">part 7.</a></p>
+                
+                <h3>Where things stand</h3>
+                
+                
+                <p>Okay, that covers most everything about the manual process. Let’s check in on where things stand time-wise, for a final time:</p>
+                
+                
+                
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="header">
+                                <p>Step</p>
+                            </td>
+                            <td class="header">
+                                <p>Parts Per Second Calculation</p>
+                            </td>
+                            <td class="header">
+                                <p>Running Total of Time Elapsed Per Part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Aquiring Parts</p>
+                            </td>
+                            <td>
+                                <p>~1hr per every ~40 pounds, ~350 parts a pound</p>
+                            </td>
+                            <td>
+                                <p>~0.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>First Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~0.5 parts per second</p>
+                            </td>
+                            <td>
+                                <p>~2.25 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic load time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.37 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Ultrasonic unload time</p>
+                            </td>
+                            <td>
+                                <p>~1 minute for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.5 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Active drying time</p>
+                            </td>
+                            <td>
+                                <p>~2 minutes for ~500 parts</p>
+                            </td>
+                            <td>
+                                <p>~2.75 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Second Stage Sort</p>
+                            </td>
+                            <td>
+                                <p>~10 minutes for ~200 parts, with somewhat dramatic variance</p>
+                            </td>
+                            <td>
+                                <p>~5.75 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Inputting Parts to Brickstock</p>
+                            </td>
+                            <td>
+                                <p>~8 minutes for 90 parts</p>
+                            </td>
+                            <td>
+                                <p>~11.08 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Added input time to label sizes</p>
+                            </td>
+                            <td>
+                                <p>~1 second per part</p>
+                            </td>
+                            <td>
+                                <p>~12.08 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Shifting from placeholder to final locations, making new divided drawers</p>
+                            </td>
+                            <td>
+                                <p>~3 hours for ~6000 parts</p>
+                            </td>
+                            <td>
+                                <p>~13.88 seconds per part</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Pulling and packing orders (not discussed in detail)</p>
+                            </td>
+                            <td>
+                                <p><em><strong>Highly</strong></em> variable, but about 1 second per part</p>
+                            </td>
+                            <td>
+                                <p>~14.88 seconds per part</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+                
+                <p>That&rsquo;s&hellip;not great. Let&rsquo;s see what this means in terms of dollars.</p>
+<p>We&rsquo;ll assume, $0.10 average per sorted piece, $5 per pound supply, and 350 pieces per pound average. This means we&rsquo;re making a profit of about 8.5 cents per part sold. And it takes us about 15 seconds of focused energy per part, meaning that if I do this full-tilt, I&rsquo;m making&hellip;$20.40 per hour. Assuming that all parts actually sell, which one figures they would, though it&rsquo;s not a process of instant gratification by any metric whatsoever.</p>
+<p>Which is&hellip;not terrible? I mean, it&rsquo;s not great either, I&rsquo;ve made more per hour on dramatically less demanding jobs. But I didn&rsquo;t start this process with any idea whether sorting used bulk LEGO would end up netting $2 an hour, or $200. Now I know. It&rsquo;s not spectacular, but it&rsquo;s not unworthwhile, especially if some of the kinks can be worked out. A person could make a modest living doing this. Many people out there do already.</p>
+<p>But&hellip;I don&rsquo;t really want to spend my life doing this.</p>
+<p>I don&rsquo;t really want my eyes to glaze over scanning through hundreds of parts a day. I don&rsquo;t want to go to bed sore after leaning over hundreds of dixie cups. I don&rsquo;t want my dinner party conversation pieces to be my tricks for blind-identifying 1x2x1 LEGO panels with or without rounded corners in bulk quantities my just feeling around inside the cup.</p>
+<p>I&rsquo;m an engineer. I didn&rsquo;t do this because I thought it was a get rich quick scheme. I did it to make a little extra side cash, and because I saw something with, on paper, a nearly 1000% markup between raw materials and processed goods. I did it because I wanted to learn what was hard about taking advantage of that split, what one would have to build to solve any problems that prevent people from doing so, and whether or not building that would be practical.</p>
+<p>So, with all that we&rsquo;ve learned&hellip;let&rsquo;s go back and define the problem that we now know intimately. It&rsquo;s a bit of a doozy. Clearly, the best solution is going to be to give me a full-length mirror to admire my LEGO-induced, premature aging process as it happens live.</p>
+<ul>
+<li>The amount of focused energy per part is unacceptably high, and erases most of the margin gained. The bulk of this focused energy is spent on detailed sorting, data entry, and volumetric prediction.</li>
+<li>This is not purely low skill work even though it seems like it should be. Specialized knowledge of the subtleties of the LEGO system and history are required.</li>
+<li>The ergonomics of the job are terrible, and it is going to destroy my back in short order.</li>
+<li>Parts are mixed after being sorted, even if they can be accurately identified on the spot</li>
+<li>Optimizing the storage volume of each part takes way, way more thought, time, and effort than one would think it should.</li>
+<li>Inputting information and manipulating parts cannot be done simultaneously, because inputting information is not a hands-free activity</li>
+<li>Unnecessary information must be manually filtered out while inputting data</li>
+<li>Tools which assist in processing of mass quantities do not have means of communicating their data to the database in a useful manner (scales)</li>
+<li>Prices are set using minimally sophisticated methodologies which leave potential for extreme errors in both directions.</li>
+<li>Potentially lucrative parts such as minifigures are left unsorted as the time required to match physical parts to the database is prohibitive</li>
+<li>Information which should be easily calculable is not calculated. Including, but not limited to, empty compartments, growth of volume requirement for a given part, compartment scaling based on price guide data.</li>
+<li>Information which should be generalizable to other parts is not generalized to other parts. Including, but not limited to, size data regarding similar parts.</li>
+</ul>
+<p>Wow, that&rsquo;s a lot.</p>
+               
+               
+                
+                <div class=pageimgcontainer><img class="pageimg" src="/images/frankgif.gif"></div>
+                
+                
+
+<p>And when considering alternate solutions, it&rsquo;s equally important to look at and acknowledge the things which the current system is <em>really good at</em>. Some of these are going to sound silly, but when you&rsquo;re considering a dramatic step like removing humans from the process, they can&rsquo;t be taken lightly:</p>
+<ul>
+<li>The current system employs a state-of-the-art vision system and classification algorithm, which can differentiate and identify discreet objects in a mixed pile.</li>
+<li>The current system employs a 21 degree of freedom gripper with advanced continuous tactile feedback, capable of adapting to the wide variety of shapes present in mixed LEGO seamlessly, precisely picking individual parts from a pile, and performing on-the-fly disassembly.</li>
+<li>The current system is able to intuit frequency of many common parts.</li>
+<li>The current system has excellent capabilities in detecting part damage</li>
+<li>The current system has the capability of instantly recognizing faults, such as spillage of a container, and reacting appropriately.</li>
+</ul>
+<p>These are all the kinds of things that you&rsquo;d have to start from scratch on, with more dramatic solutions like fully automated designs. Well, I said there will be full automation designs, and I&rsquo;ll get there, but hold no illusions about that processes ease, or more importantly, expense. That process is going to take a very long time, undergo incremental progress where it can handle some parts but not all and demand regular albeit less backbreaking human observation and interaction, and is going to need financial support of some kind. We&rsquo;ll start to talk specifically about the challenges associated with automation in <a href="page8.html">part 8</a></p>
+<p>But in the meantime, therefore, there is significant value in making small, incremental enhancements to the manual process. To enable the manual process to more efficiently supplement the machine, and also to make the manual process a more viable means of funding the massive hardware investments the automated machine will take. One of the things which really attracted me to this project to begin with was the near-zero upfront cost. Its been able to pay for itself through product sales so far with minimal/no debt by reinvesting every penny made into the business, and I see no reason that can&rsquo;t continue further, at least until things start to call for legitimate industrial robots. Which might happen. Might.</p>
+<p>But back to the smaller things. I&rsquo;ve pretty much exhausted what I can do through hardware and process engineering in the last two parts. So, it&rsquo;s back to software, to put that database I acquired to real work.</p>
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page5.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page7.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup18() {
+                var popup = document.getElementById("popup18");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup19() {
+                var popup = document.getElementById("popup19");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup20() {
+                var popup = document.getElementById("popup20");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup21() {
+                var popup = document.getElementById("popup21");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup22() {
+                var popup = document.getElementById("popup22");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup23() {
+                var popup = document.getElementById("popup23");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup24() {
+                var popup = document.getElementById("popup24");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup25() {
+                var popup = document.getElementById("popup25");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup26() {
+                var popup = document.getElementById("popup26");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup27() {
+                var popup = document.getElementById("popup27");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup28() {
+                var popup = document.getElementById("popup28");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup29() {
+                var popup = document.getElementById("popup29");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup30() {
+                var popup = document.getElementById("popup30");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup31() {
+                var popup = document.getElementById("popup31");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup32() {
+                var popup = document.getElementById("popup32");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup33() {
+                var popup = document.getElementById("popup33");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup34() {
+                var popup = document.getElementById("popup34");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup35() {
+                var popup = document.getElementById("popup35");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup36() {
+                var popup = document.getElementById("popup36");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup37() {
+                var popup = document.getElementById("popup37");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup38() {
+                var popup = document.getElementById("popup38");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup39() {
+                var popup = document.getElementById("popup39");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup40() {
+                var popup = document.getElementById("popup40");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup41() {
+                var popup = document.getElementById("popup41");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup42() {
+                var popup = document.getElementById("popup42");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup43() {
+                var popup = document.getElementById("popup43");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup44() {
+                var popup = document.getElementById("popup44");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup45() {
+                var popup = document.getElementById("popup45");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup46() {
+                var popup = document.getElementById("popup46");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup47() {
+                var popup = document.getElementById("popup47");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup48() {
+                var popup = document.getElementById("popup48");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup49() {
+                var popup = document.getElementById("popup49");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup50() {
+                var popup = document.getElementById("popup50");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup51() {
+                var popup = document.getElementById("popup51");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup52() {
+                var popup = document.getElementById("popup52");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup53() {
+                var popup = document.getElementById("popup53");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup54() {
+                var popup = document.getElementById("popup54");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup55() {
+                var popup = document.getElementById("popup55");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup56() {
+                var popup = document.getElementById("popup56");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup57() {
+                var popup = document.getElementById("popup57");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup58() {
+                var popup = document.getElementById("popup58");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup59() {
+                var popup = document.getElementById("popup59");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+
+
+
+
+
+        </script>
+    </body>
+
+</html>

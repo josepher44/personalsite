@@ -1,0 +1,466 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Joe Gallagher's Engineering Portfolio">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                                        <div class="column">
+                    <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+                        
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+                        
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+                       
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>A Whole Lot of Drawers</h1>
+
+                <p>Building software designed to support the acquisition of thousands of LEGO pieces without a plan for them beyond “sell them, I guess?” sounded like a recipe for drowning in a sea of disorganized plastic parts. Even without more parts coming in, I still had the giant bin from my own collection I was planning on selling off. So nearly right from the beginning of the software development project, I was also developing a part organization system and business to efficiently process and sell anything the software turned up. Discoveries made during this process lead to pivoting from a narrow focus on optimized purchasing from Bricklink, to investigation of how the software could support all sorts of avenues through which LEGO could be aquired and processed for profit. This post, and the one which follows, were happening concurrent to the software development outlined above. I’ll return to how all of this worked its way back to influencing the software side in <a href="page7.html">part 7</a></p>
+
+                <p> While not as obviously technical, creation of a human-friendly process and organization poses a number of concrete, more human-focused design problems, which are often looked at under the purview of industrial engineering. This worked out better than I expected, and very quickly spiraled into something with dramatically larger ambitions than I had intended. </p>
+
+                <h3>Initial Research and Hardware</h3>
+
+                <p>When you’re looking at getting into a business that a bunch of other people are doing, the first step is always to look at how others have been doing it. The sheer scale of some Bricklink stores was hard to comprehend, with several approaching nearly 10 million parts in stock. Simply acquiring that many LEGO parts economically seemed impossible, let alone sorting them and storing them in a manner more supportive of rapid order fulfillment than the “mixed bin approach” most everyone adopts as a child. </p>
+
+                <p>There were a number of useful resources, but in particular, I found great insight in the videos by <a class="popup" onclick="popup1()">Bricks on the Dollar<span class="popuptext" id="popup1"><iframe width="560" height="315" src="https://www.youtube.com/embed/KmlUu5LzdPQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a>, <a class="popup" onclick="popup3()">Cora Harrison<span class="popuptext" id="popup3"><iframe width="560" height="315" src="https://www.youtube.com/embed/YdipM0d7A94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a>
+                    , and <a class="popup" onclick="popup4()">Bricks Anywhere<span class="popuptext" id="popup4"><iframe width="560" height="315" src="https://www.youtube.com/embed/52FzPpunUqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a>. What I found was quite surprising. It turns out that LEGO has an unusual property in that for a given set, the sum of its parts is typically worth more on the secondary market, than the set costs brand new off the shelf! Typically, a “parted out” set will be worth 1.5x to 2x the retail price. Therefore, the strategy being used by the majority of high volume sellers is actually to purchase sets new, dozens or even hundreds at a time. By building up huge libraries of the same set, you acquire quantities that somebody casually purchasing from toy stores simply can’t match, and you reduce the sort difficulty by working from the limited range of parts in a given set and trusting LEGO to have counted the parts right. </p>
+
+                <p>This became one of the first alternate uses for my data set &ndash; a quick &ldquo;part-out lookup&rdquo; program. It takes in a LEGO set name, and spits out the expected price of it once fully split up into its individual components. Bricklink conveniently lists the inventory of every LEGO set ever produced, making this quite straightforwards to do. On the &ldquo;to-do&rdquo; list is converting this particular feature into a tiny smart phone app, so that one can look up the potential gains from sets they see out in the wild on sale. I figure other sellers could make use of it as well.</p>
+                <p>But overall, I didn&rsquo;t really like the new set part-out approach. It still seemed like a tremendous amount of work sorting and picking out pieces, for fairly marginal gain. People make a living off this, but quite frankly, there are bunches of ways I&rsquo;d rather spend my day than sorting LEGO. That was one big advantage I saw to the automated-arbitrage I&rsquo;d been building my software for, that the parts would largely come in the mail pre-sorted. And buying hundreds of new sets featured the unfortunate element of &ldquo;spending thousands of dollars for startup costs which I don&rsquo;t have, on something that may or may not pan out,&rdquo; an element of risk I&rsquo;ve never been in a position to push through, which has rendered every wild business idea or innovative design I&rsquo;ve had to date firmly stuck on the drawing board.</p>
+                <p>Still it made me curious, as I figured that mixed used lots would have dominated their sourcing, in pursuit of increasing their margin-per-part as much as possible, that in fact doing so would be the only way to make decent money selling LEGO, and that the margins would still be quite slim. What I found amazed me. The lowest cost way to acquire bulk LEGO was simply to buy out mixed lots on a per-pound basis, which could usually be done at about $5 a pound in quantities greater than a single person could ever process if you look hard enough, sometimes much lower rates. Turns out that, on average, a random sampling of LEGO parts, fully sorted, sells for $35-50 a pound! The raw margin was intriguing, as was the fact that the pros seemed to largely be leaving it on the table. So I set out to learn firsthand about what the process would need to look like to convert raw mixed bulk into saleable pats. The results ended up intriguing, discouraging, educational, and, predictably, made me start thinking &ldquo;how hard could this be to automate, really?&rdquo; But to understand that, let&rsquo;s look at how the manual process worked first.</p>
+
+                <p>The resources I used to learn how the big stores work taught me a great deal about storage and packaging techniques, which was applicable to my plans. The “standard” for LEGO storage are these <a href="https://smile.amazon.com/Stack-DS-60-3-Drawer-Storage-Cabinet/dp/B000KKUSYS?sa-no-redirect=1" target="_blank">plastic drawer chests</a> by Stack-on, which come in small and large variants. The key advantage to a drawer system over bead trays or similar is that every part is as accessible as any other. In a stack of closed trays, it’s easier to get at parts on the top, than it is on the bottom. We’ll revisit this idea when we get to automated sorting, but for now, Stack-on drawers are the way to go, and make life much easier, so I picked up about 30 of them, and lined my bedroom walls in them.</p>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/drawerwall.png"></div>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/labels1.jpg"></div>
+
+                <p>The labeling system is pretty straightforward. The first number refers to the cabinet number. The second refers to the drawer number, 1 through 60 (or 1 through 18 for the large-drawer units). Per recommendations, I started out with a strict “one drawer, one part type” policy. Picking orders was reported as the most time-consuming part of the process, and reducing the thought involved by allowing someone to simply read the location of a part and pull it, without fishing through a mixed drawer. </p>
+
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/bricklinkinventory.png"></div>
+
+                <p>As parts are entered into Bricklink, they are tagged with “remarks,” indicating the cabinet/drawer number (014-52 is cabinet 14, drawer 52). When I receive an order, the packing list sorts and lists the potentially hundreds of parts by remarks. So to pull an order, I just run down the list, left to right, from cabinet 1 to 30, pulling each drawer that I come to in order. </p>
+
+                <h3>Increasing Order Through Randomness – Organizational Approach</h3>
+
+                <p>
+                    Very often, the key to adding efficiency to process-based designs like this is to recognize and remove key assumptions which feel like they should add efficiency, but only slow you down. A key broken-assumption which enables this system, is losing the idea that logically grouping parts makes them easier to find. Notice that in the picture above, the parts are sorted the way a customer might search for them, in logical categories (all “medium blue” color, all basic bricks). However, the remarks show that the parts are all over the place, in cabinets 8 through 15. 
+                </p>
+
+                <p>This doesn&rsquo;t make any real difference in the ease with which the parts can be found. But it makes a <strong><em>dramatic</em></strong> difference in the ease with which they can be put away. Instead of finding the region in the cabinets containing relevant parts, falling into the endless LEGO enthusiast debate between sorting by color versus type of part (WHY WOULD ANYONE SORT BY COLOR??), and shifting things around to make room for new parts in logical places, you can just throw any part in any empty drawer. As long as it&rsquo;s labeled correctly, it will be no easier or harder to find when you need to pack an order featuring it.</p>
+                <p>If a person were to try to use this system to actually build something from LEGO, it would be an <em>utter nightmare</em>, as there&rsquo;s no logic through which someone could find &ldquo;kinda a black slope looking thing, I don&rsquo;t really know how tall, I want to experiment a bit,&rdquo; or anything like that. But I don&rsquo;t need that functionality. If you know <em>exactly</em> what you need, which you always do when picking an order, it&rsquo;s perfect!</p>
+                <p>This &ldquo;nonsorted, just separated and labeled&rdquo; philosophy is key, and a major improvement over the last time I tried to design a large-scale organization system. For my FRC team, we spent a month meticulously sorting and spreadsheeting <strong><em>every single item</em></strong> we owned, in order to make sure that every item had a home. It was my observation that the saying &ldquo;a place for everything and everything in its place&rdquo; really, truly depends on getting the &ldquo;place for everything&rdquo; part right. When working with a team not necessarily 100% well-versed in the specifics of all the parts being stored, not having a distinct place for distinct parts inevitably lead to somewhat illogical mixtures of parts being organized. In my experience, there is no such thing as &ldquo;mostly organized.&rdquo; If people see hints of disorder in an organization system, their reservations over throwing a part in any old compartment to save a bit of time is dramatically reduced compared to working with a pristine system, where one error sticks out like a sore thumb. If inhibitions about increasing system disorder drop, then the system will become more disordered, and all hope becomes lost.</p>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/shopBeforeAfter.png"></div>
+
+                <p class="caption"><em>Left: The organization system on day 1, full of hope and optimism. Right: The unmitigated hellscape my garage became after being put through two and a half FRC build seasons. Three years later it is only beginning to recover its former dignity</em></p>
+
+                <p>However, there were flaws in this plan. Dozens of times, I came across items which fit in the category of &ldquo;my team doesn&rsquo;t own this because we&rsquo;re poor, but we <em>really, <strong>really</strong></em> should, and it&rsquo;s likely that we will if we ever become slightly-not-poor.&rdquo; Or &ldquo;we own two of these very small and vitally important objects, have reused them since 2005 in each and every robot, but we would buy them by the hundred and fill an entire drawer with them if we weren&rsquo;t still poor.&rdquo; So there was a choice: design the system for expansion by adding in a lot of empty and oversized compartments, or optimize it for the components we had on hand? We chose the former, out of the idea that adding new parts to the system would be difficult. If I allocated space for &frac12;&rdquo; bearings, and &frac34;&rdquo; bearings, and then we did a design which called for 5/8&rdquo; bearings, we&rsquo;d have to tear the whole thing apart or put them somewhere nonsensical.</p>
+                <p>This didn&rsquo;t work out any better. What ended up happening was, empty compartments were so numerous, they became both unwieldy and inviting. A massive drawer would be used for storage of one part, with 95% of the volume taken up by empty compartments set aside for potential future use. Parts were thrown back first into random compartments in the right drawer, then into any handy empty compartment, and then anywhere they could fit. It was a mess, not because parts didn&rsquo;t have a logical home, <strong><em>but because I hadn&rsquo;t designed considering minimizing the human labor involved in actually finding the correct homes. </em></strong>Logic can only do so much in the face of raw variety.</p>
+                <p>With LEGO, the same problems would occur. Allocating tons of specific, static space for rarely seen parts I didn&rsquo;t have on hand would mean counting a bunch of empty drawers out every time I put a new part away, a huge timewaster. Shortcutting this would break the designed organization. Neglecting to allocate the space beforehand would lead the requirement to shift everything over to make room for additional parts. Neglecting to do either would lead to an illogical layout.</p>
+                <p>And that&rsquo;s the key insight. If illogical layout doesn&rsquo;t negatively impact order pull time, it&rsquo;s not a drawback. And if it&rsquo;s not a drawback, there&rsquo;s no reason to worry about pre-allocating space for anything. So instead of any kind of pre-allocation, I simply started at drawer 001-01, and added each part as I came to it.</p>
+                <p>(Once again, this is a design choice which will be revisited when we start looking at automation. The factors which drive optimal part layout in an automated system may surprise you)</p>
+
+                <h3>Other Odds and Ends</h3>
+
+                <p>Other miscellaneous supplies I needed to purchase, or commandeer from elsewhere in my home, to get the drawers ready to serve as the backbone for an actual operational business. These seem like small things, but they make tons of difference to the human usability of the storage system, and to the quality of the packed orders:</p>
+                <ul>
+                    <li>Storage for miscellaneous oversized parts which don&rsquo;t fit in the drawers. These are few and far between, so the system used for them is a lot more eclectic. This will need to be regularized as I grow, certainly as I move towards automation.</li>
+                    <li><a class="popup" onclick="popup9()">A pack cart.<span class="popuptext" id="popup9"><img class="popupimg" src="/images/packcart.jpg"></span></a> This makes life <em>so much easier</em>. It lets me keep everything I need to pack an order with me at all times, without carrying anything in my hands. Parts are dumped from the drawer into a large plastic shoebox where they can easily be counted out and bagged, without the chance of dropping them on the floor. The total &ldquo;parts lost to the floor during order packing&rdquo; count over the duration of the business remains in the single digits, fingers crossed.</li>
+                    <li>Ziploc plastic bags, purchased in drug-dealer-level sizes and quantities. As will be touched on many times, LEGO fans tend to be borderline obsessive over the order and quality of their product. Receiving multiple pieces mixed together, or god forbit, loose in a large container, are unacceptable to many, due to difficulty in finding them, or the potential of small parts scratching larger ones. Therefore, I&rsquo;m going the overdone route and keeping distinct parts distinct from each other right up until the customer receives them, by packaging each &ldquo;lot&rdquo; in its own plastic bag. Three different sizes: 1.5&rdquo;x2&rdquo;, 3&rdquo;x3&rdquo;, and 3&rdquo;x8&rdquo; for the longer parts, cover 99% of orders processed so far. For large orders with dozens of unique lots, subsets of the order are then placed in even larger, labeled bags, to help the customer find specific parts as they unpack.</li>
+                </ul>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/packedorder.jpg"></div>
+                <ul>
+                    <li>The smallest bags are quite difficult to shovel parts into, so a funnel makes life much easier. A minor frustration was the largest throat funnel available just <em>barely</em> not being able to fit ten full &ldquo;<a class="popup" onclick="popup5()">LEGO units<span class="popuptext" id="popup5"><img class="popupimg" src="/images/legounits.png"></span></a> &rdquo; down its throat. To fix this, I ended up widening its throat, by tapering a piece of steel, heating it up, and forcing it through the funnel using an arbor press. This probably makes me the only Bricklink seller who has utilized machine tools and a butane torch in pursuit of their craft.</li>
+                    <li>A small object to dig small parts out of the corners of drawers, especially important once the divider system (next section) got added. Turns out, a LEGO shovel piece works great!</li>
+                    <li>A gram scale. This is useful for quickly counting parts. For the smallest parts, the variance in weight is low enough that batches of 50-100 can easily be accurately tallied up this way.</li>
+                    <li>Bubble mailers, also purchased in massive bulk quantities. The easiest and most cost effective way to pack and mail odd-shaped things like a pile of bagged LEGO bricks. Sizes range dramatically, as do sizes of orders.</li>
+                    <li>A thermal label printer. This is a <em>dramatic</em> time and money saver. Inkjet costs, packing tape costs, and time spent cutting out mailing labels adds up shockingly fast when you make a proactive point to keep track of such things.</li>
+                </ul>
+                <p>Most of these things are still in use. On the short term &ldquo;to do&rdquo; list is to design and 3d print some holders/dispensers for the various components, to keep the cart in better order and improve access to tools like the funnels, and to integrate a tablet into the cart to reference the order being processed, instead of fiddling with a smartphone screen.</p>
+                <p>To pick an order, I simply roll the cart from left to right down the wall of drawers. The packing list matches the order I&rsquo;ll come to them. Take the drawer out, dump its contents in the box, pick out what I need. Pick out an appropriately sized plastic bag, fill it up. Repeat with the next several drawers. Put everything in a bubble mailer. Calculate postage, print label, put in box to take to post office in the morning. Repeat.</p>
+                <p>Yes, this is the boring stuff. A lot of it seems obvious, but I&rsquo;m glad I have all this written out, because it&rsquo;s a helpful reference as I now look to automating the process. I&rsquo;m a strong believer in the idea that, if you&rsquo;re going to build a machine to do a person&rsquo;s job, you should have some real hand&rsquo;s on experience doing that job yourself. You notice all kinds of subtleties and things you have to remember to do that you wouldn&rsquo;t otherwise. Details and missed steps always run the greatest risk of entirely killing a massive system like this.</p>
+                <p>Anyways, with organization and everything in place, it was time to get started! I sorted out about a thousand unique parts, launched the first version of the store, and started taking orders in late 2016. How&rsquo;d it go? Well&hellip;</p>
+
+                <h3>Fixing and Changing Everything</h3>
+
+                <p>Okay, not <em>quite</em> that bad. But dramatic changes needed to be made in pretty short order. Remember in the first post when I described how you can make yourself an attractive seller by specializing in quantities of specific parts, or variety of parts available? By choosing to maximize the potential profit-per-piece by focusing on mixed used parts, I was by default choosing the variety route, at least in the early going. And this carried some unanticipated consequences.</p>
+                <p>First, I had to very quickly develop a plan for dealing with drawers as they emptied. Turns out that when you have a wide variety of parts, most of your customers are clearly either piecing together orders for the same parts across several stores, or just using your store to stock up on parts they know they&rsquo;ll be needing some uncertain largish number of in the future. As a result, orders which wiped me clean out of certain parts were the norm. This left a bunch of empty drawers in the cabinets, with no easy way to tell where they were.</p>
+
+                <p>My initial plan was to mark these drawers with little 
+                    <a class="popup" onclick="popup6()">stickers<span class="popuptext" id="popup6"><img class="popupimg" src="/images/dot.jpg"></span></a>, but this quickly proved far too time consuming, both to add and to remove them. I realized that the best way to identify empty drawers would be to visually differentiate them as much as possible, by simply removing them from the cabinets entirely. For a while, I was working this way, having a cardboard box full of empty drawers which I’d pick from when I went to put newly sorted parts away. Manually identifying the drawer’s placement and inputting it with the part was a bit of a time waster, but it was better than leaving an empty hole in the wall with no way to find it. This system, too, would later be supplanted, when changes to the drawers themselves made it impractical.</p>
+
+                <p>The much bigger problem I was facing was running out of drawers entirely, at an alarming rate. The mixed bulk from my own collection, and later on, collections purchased from others, represented what a kid would typically own rather than what a business would consciously purchase: one copy of a bunch of different sets. Each set typically features a good number of parts almost or entirely unique to that set, and often just a single part per set. This is good for attracting customers, because you end up with a huge variety very quickly. But it’s really bad for storage, because it meant that a solid number my drawers ended up looking like this: </p>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/singleton.jpg"></div>
+
+                <p class="extratop">For reference, that was a 5 cent part when it was first entered into the system. 
+                </p>
+
+                <p>You could easily say “So don’t spend your time on five cent one-offs, that’s so wasteful!” And I’d agree with you, except that by going to the trouble to identify it as a non-worthwhile five cent one-off, you’ve by definition gone 95% of the way towards sorting, cataloging, and inputting the part. There are no hard-and-fast rules through which you can instantly write off any part as nonworthwhile. If this part had a slightly different mold variant on the tapered end, it would command a six times higher price. If it was dark grey or green instead of black, it would sell for 100 times as much. It has also tripled in value since I listed it for sale, just sitting there. LEGO pricing is weird like that.</p>
+
+
+                <p>I wish there was a way to identify and reject parts probably not worth the time investment without going through the trouble of isolating them and looking them up, but there isn’t (yet). At that point, you might as well act on this information, go the rest of the way, and get it in the system instead of throwing it in the trash. Who knows, maybe that’ll be the tipping point that gets someone to place a $50 order to you instead of someone else. </p>
+
+                <p>(&ldquo;It seems silly not to be able to take advantage of knowledge that you&rsquo;ve gained anyways&rdquo; is a very dangerous statement which is going to result in a dramatic quantity of solenoid actuators getting involved in the near future. Be warned.)</p>
+                <p>Still, I didn&rsquo;t want to compromise on the &ldquo;one physical compartment, one item type&rdquo; policy. I know myself and my organizational habits: I have no setting between &ldquo;off&rdquo; and &ldquo;full&rdquo; when it comes to tidiness. I&rsquo;ve come this far with it, going to stick to it.</p>
+
+                <p>I also came up empty on a search for practical storage systems with smaller compartments. The stack-on 60 drawer units are about as small as forward-facing drawer units go. I could go smaller by using <a class="popup" onclick="popup7()">stackable bead trays<span class="popuptext" id="popup7"><img class="popupimg" src="/images/beadtray.jpg"></span></a>, however these have some real drawbacks. The first, simply, they’re much pricier per compartment than the stack-ons. Second, and more significantly, they move you from what is in essence a two-dimensional storage system to a 3-dimensional system. With the Stack-ons, every drawer exists on a 2-dimensional plane (the face of the chests), and any drawer can be accessed as easily as any other. In a pile of bead trays, parts in the middle can’t be immediately accessed – you have to go digging and lift the bead trays blocking the parts you want, due to the 3-dimensional nature of the system. Not every compartment is immediately exposed. </p>
+
+                <p>(Remember this distinction, it&rsquo;s going to be really, really important when we get to automated sorting.)</p>
+                <p>So I decided to make smaller compartments myself, and started subdividing the drawers in the stack-on cabinets I already had. As mentioned, I had previously done a very extensive subdivided drawer system for my FRC team, so I looked to build upon the successes and failures there.</p>
+                <p>THE GOOD:</p>
+                <ul>
+                    <li>Place for everything</li>
+                    <li>Quick and cheap construction</li>
+                    <li>Standardized parts</li>
+                    <li>Rugged divider material</li>
+                </ul>
+                <p>THE NOT SO GOOD:</p>
+                <ul>
+                    <li>Fragile at the joints</li>
+                    <li>Extensive effort to design drawers around components</li>
+                    <li>Inflexible</li>
+                    <li>Speculative expansion to fix inflexibility lead to system abuse</li>
+                </ul>
+                <p>On the previous project, I had gone to great effort to manually optimize the size of each compartment around the geometry and expected quantities of the component meant to be stored in them. In looking to do something similar this time around, I made a convenient discovery. It turns out that a Stack-On drawer measures almost exactly 6x16 in &ldquo;LEGO units.&rdquo; In other words, a six stud by sixteen stud LEGO plate nests perfectly into the footprint of a drawer.</p>
+                <p>This made it very easy to form a system whose geometric basis is the LEGO unit. Since most parts are going to have physical dimensions which round nicely into LEGO units, I could employ a system which always divided drawers into even multiples of LEGO units, rather than arbitrary dimensions. This would standardize the parts of the system greatly, and allow one subdivided compartment to be repurposed for numerous types of parts over its lifetime, as it empties and refills. I wouldn&rsquo;t bother with some of the more over-the-top elements from the old system, like trying to make L-shaped compartments to store L-shaped parts, or CADding out the expected distribution of geometrically regularized pieces to squeeze every millimeter of extra space out, as these approaches, by nature, explicitly and permanently assigned specific compartments to specific pieces. I&rsquo;m still keeping the philosophy of &ldquo;no logic to adjacent compartments; any part can go in any drawer,&rdquo; except now, it&rsquo;s &ldquo;any part can go in any compartment sized appropriately for it. Because there are relatively few valid sizes of compartments, any part still has quite a few options for where it can go.&rdquo;</p>
+                <p>Time to design dividers! Unlike the old FRC system, which stored fairly heavy parts and saw daily use, the drawers here will be storing very light objects, and most will sit untouched for months on end, so I can get away with something much more economical. Priorities will be on ensuring dimensional stability, minimizing footprint taken up by dividers, and ease/cost of manufacture, over raw durability. As a result, I chose to use basic cardstock as my material. Unfortunately the Stack-on drawers, depending on when they were manufactured, have either one or zero built-in slots for dividers, so I needed a way to physically bond them to the drawers. For now, simple hot glue works &ndash; it&rsquo;s actually better than a lot of things in terms of gap-filling, bonding to dissimilar materials and the slippery PET plastic used in the drawers, and ease of workability. I may investigate a good thickened epoxy/filler recipe if durability issues call for it, but the hot glue has worked fine so far.</p>
+                <p>The Stack-on drawers are built kind of on the cheap, seemingly via a <a class="popup" onclick="popup8()">vacuum-forming process<span class="popuptext" id="popup8"><iframe width="560" height="315" src="https://www.youtube.com/embed/JGFGmOQ29_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span></a>, and bear some dimensional irregularities in the name of enabling these lower cost techniques. The walls are tapered, and are tapered more towards the back than the front of the drawer. The entire drawer is also tapered, front to back. The interior is filleted, significantly so on the short faces. The lengthwise fillets have a variable radius, larger in the front. There are also at least two distinct &ldquo;styles&rdquo; I&rsquo;m aware of &ndash; Stack-on definitely changed their manufacturing process at some point. All of this helps Stack-on make their mold release process easier, but is a bit of a pain for creating standardized dividers. The below images are dimensionally exaggerated to help visualize the irregularities.</p>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/exagdrawer1.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/exagdrawer2.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/exagdrawer3.png"></div>
+
+                <p>To get a handle on this, I took accurate measurements of the inside of a drawer, first casting a negative of the interior by <span style="text-decoration: line-through;">filling it with specialized Smooth-on brand moldmaking resin</span> cheaping out and letting water freeze inside the drawer overnight, and measuring the key dimensions with calipers. I was particularly interested in the fillet radii, as getting this wrong would prevent the spacers from fully seating in the drawers. From there, it was simple to translate interior dimensions into divider designs. A bit of wiggle room was added to dimensions like overall width and fillet radii, figuring that taking away too much material would simply result in more gap-fill from the glue, but leaving too much would result in insertion difficulty or spacer buckling.</p>
+
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/divider1.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/divider2.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/divider3.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/divider4.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/divider5.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/divider6.png"></div>
+
+                <p>The system I came up with featured two basic sizes of divider – long and narrow. Unslotted narrow dividers could be used to preserve the entire width of the drawer while dividing it lengthwise by any multiple of LEGO units, or a single long divider could split the drawer down the middle and allow it to be further divided 0 to 5 more times by positioning in additional narrow dividers. In a key improvement over the old FRC system, the long and narrow dividers interlock, allowing forces to transfer through the material instead of the comparatively weak glue bonds. The narrow dividers come in two slightly different variants, to better match the differing interior shape of a drawer’s rear versus front. </p>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/singlewide.jpg"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/doublewide.jpg"></div>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/dividerexplodedfixed.gif"></div>
+
+                <p>A brief trial run showed a good fit, but encouraged slight modification in the form of “funneling ” added to the slots, to improve ease of assembly. The dividers were patterned out in dxf flies and cut out by the thousand on WPI’s ULS 60 watt laser cutter. It took an entire day to accumulate what I’m pretty sure is a lifetime supply – I haven’t come close to running out yet. Got plenty of strange looks slaving over away over sheet after sheet of nondescript trapezoids, but given the number of times I’ve had to wait in line for that machine behind raster engraved fraternity paddles…well…we all have our own priorities, I guess. Drawer dividers, beatings, whatever, right?</p>
+
+
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/dividerfunnel.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/dividerdxf.png"></div>
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/dividerpile.jpg"></div>
+
+                <p>Having the dividers on hand wouldn’t do much good without an easy way of installing them. The double wide drawers are somewhat self-aligning, but still allow the narrow spacers to <a class="popup" onclick="popup9()">pivot pretty freely<span class="popuptext" id="popup9"><img class="popupimg" src="/images/dividerwobble.jpg"></span></a>. The single-wide drawers provide no reference for installation. Since the whole thing is based on LEGO units, I could use LEGO as a reference to space them out, but then I’d likely get hot glue strands all over the product. So instead, back to CAD and the laser cutter to come up with a more permanent solution:</p>
+
+
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/cadsinglewide.png"></div>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/caddoublewide.png"></div>
+
+                <p>These “insert tools” make life dramatically easier. Their ends are shaped to conform tightly to the interior of the drawer. The slots allow dividers to be staged inside of them while glue is applied. Then simply drop the tool+dividers into the drawer (or as I later found to be easier, drop the drawer over the tool), give the glue a few seconds to bite in, and lift the tool out!</p>
+                <p>These tools were laser cut out of 3mm black acrylic, chosen on the theory that the glue wouldn’t adhere to them if it found its way over to the tool. They still get pretty badly gunked up, but they’re easy to clean with a heat gun. Both feature funneled slots for the dividers, sized such that they capture most of their body, but leave a perimeter exposed on three sides for glue to be applied.  Reinforcement bulkheads bridge each “finger,” of the tool, as without them, the acrylic would easily crack at the stress concentration at the tip of the slot. These made it kind of a pain to line up and assemble, but that only has to be done once. No room for T-nuts and no value in ever disassembling the units, so it was simply glued together. 
+                </p>
+                
+                <video width="800" controls><source src="/images/singlewidevid.mp4" type="video/mp4"></video>
+                
+                <p>The single-wide tool came out great. The double-wide tool, I made the somewhat major oversight of not adding slots to the reinforcing bulkheads, to give the central divider a place to live. So instead I’ve just been using the side plates as a guide, and it’s worked well so far. At some point I may go back and cut a taller variant of the tool where the bulkheads can be given a slot without compromising their structural integrity too badly. </p>
+
+                <video width="800" controls><source src="/images/doublewidevid.mp4" type="video/mp4"></video>
+                
+                <p>Note that on the double wide tool, not every slot is used for every division layout. Of particular interest are the 6x and 10x compartment drawers, as these do <em>not</em> match the standard LEGO dimensions used everywhere else. Both serve a special purpose, however, and ended up being made quite frequently. 6x drawers are the perfect size for most minifigs. And 10x is about as small as one can easily dig parts out of. It is used for very small, low quantity parts, which there are always quite a lot of.</p>
+<p>I&rsquo;ll talk more about the specifics of what drove the creation of specific compartment sizes in the next part, but the system ended up wildly successful. A system which started with a capacity of 1620 unique parts currently houses nearly 3000, with only half the drawers divided &ndash; I should be able to approach 6,000 unique parts before needing to expand.</p>
+<p>So now that storage hardware is in place and reasonably set, all that&rsquo;s left to do is put parts in them! How tedious or challenging could that possibly be? Read on to hear about experiences which would lead me to believe that teaching myself machine learning and building an electromechanical system with more than 200 unique actuators is the <strong><em>easy</em></strong> way out!</p>
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page4.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page6.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+        </script>
+    </body>
+
+</html>

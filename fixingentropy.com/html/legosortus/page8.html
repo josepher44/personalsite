@@ -1,0 +1,1348 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Engineering, Mechanical, Aerospace, Manufacturing, Robotics, Mechanical Engineer, Robotics Engineer, Portfolio, Boston">
+        <meta name="description" content="Documenting the life of a universal LEGO sorting machine">
+
+        <title>Fixing Entropy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="layout.css">
+
+    </head>
+
+    <body>
+        <div class="popupmask" onclick="hidePopups()"></div>
+
+        <div id="sidebar-container">
+            <div id="sidebar">
+
+            </div>
+
+        </div>
+
+        <div id="collageButton">
+
+        </div>
+        <div id="banner">
+            <div id="gridcontainer">
+                <div id="grid">
+
+                    <div class="column">
+                        <img src="/images/collage/croppedauger.jpg">
+                        <img src="/images/collage/matlab1.jpg">
+                        <img src="/images/collage/Catapult1.jpg">
+
+                        <img src="/images/collage/labview1.jpg">
+                        <img src="/images/collage/dynamite1.jpg">
+                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+
+                    </div>
+                    <div class="column">
+                        <img src="/images/collage/enables.png">
+                        <img src="/images/collage/bond.png">
+                        <img src="/images/collage/epiphanybuild1.jpg">
+
+                        <img src="/images/collage/opencv.png">
+                        <img class="bannerimg" src="/images/collage/kinematics1.jpg">
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/miscmatlab.png">
+                        <img src="/images/collage/savagesoccer1.jpg">
+                        <img src="/images/collage/osciliscreen1.jpg">
+                        <img src="/images/collage/FluxRing1.jpg">
+                        <img class="bannerimg" src="/images/collage/Reverted1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/Camgear.jpg">
+                        <img src="/images/collage/2015FRC9.jpg">
+                        <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
+
+                    </div> 
+                    <div class="column">
+                        <img src="/images/collage/shootergearbox1.jpg">
+
+                        <img src="/images/collage/polar.png">
+                        <img src="/images/collage/Savage2.jpg">
+                        <img src="/images/collage/Epiphanyebay1.jpg">
+                        <img src="/images/collage/Moose2.jpg">
+
+                        <img class="bannerimg" src="/images/collage/smad1.jpg">
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2012FRC1.jpg">
+                        <img src="/images/collage/panel1.jpg">
+                        <img src="/images/collage/link1.jpg">
+
+                        <img src="/images/collage/astar1.jpg">
+                        <img src="/images/collage/interstage.png">
+                        <img class="bannerimg" src="/images/collage/9barrender1.jpg">
+
+
+                    </div>
+                    <div class="column">
+
+                        <img src="/images/collage/softeng1.jpg">
+                        <img src="/images/collage/medusa.png">
+                        <img src="/images/collage/Bridgeport1.jpg">
+                        <img src="/images/collage/sailorpeg1.jpg">
+                        <img class="bannerimg" src="/images/collage/Sortedlego1.jpg">
+
+                    </div>                                
+                    <div class="column">
+                        <img src="/images/collage/matlab2.jpg"><img src="/images/collage/funkymonkey1.jpg">
+                        <img src="/images/collage/kidspeedy1.jpg">
+                        <img src="/images/collage/dynacam.jpg">
+                        <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+
+
+        </div>
+
+
+
+
+        <div id="content-wrapper">
+
+            <div id="content">
+
+                <h1>Thinking About Automated Design the Right Way, Because there are Lots of Wrong Ways</h1>
+
+                <p>Okay, here we go.</p>
+                <p>Before getting into the details of how I see an automated system design working, I want to talk about some overarching concepts first, and philosophical ideas which have by necessity been core to the entire design process of this <span style="text-decoration: line-through;">leap of faith </span>electromechanical system.</p>
+                <p>Why?</p>
+                <p>Because what I am proposing to build looks absurd, and understanding the full depth of the crazy problem it is trying to solve, and the thought process that has lead it to be what it is, helps make it look slightly less absurd. I want it to be less absurd too, but the laws of physics aren&rsquo;t totally a fan of that. As I&rsquo;ve said, you&rsquo;ve got to <strong><em>know</em></strong> your problem.</p>
+                <p>To my knowledge, this is the first attempt of its kind with a no-compromises policy towards some of the core goals. The system will take truly mixed parts as an input, without any kind of human presorting. The system will be able to handle every type of LEGO ever produced, and process out non-LEGO items such as assembled structures, off-brand pieces, stray rocks, and other things that get found in used bulk LEGO collections. The system will operate continuously &ndash; not every part will take the same amount of time to process, but parts will be output at a near-constant rate. At the end of the line, every class of part will be stored discretely from one another. Any given part will be easily and uniquely reachable, via a human driven or electromechanical retrieval system. Mixed goes in, parts in saleable condition come out. The only acceptable manual labor is dumping the bins of raw material into the machine.</p>
+                <p>The system for doing so you&rsquo;re picturing in your head right now is likely either dramatically trivializing some of the subtler challenges involved, or falling victim to one of the many pitfalls this problem is full of, which lead to a solution which is either impractical to build, exuberantly costly in either dollars or cubic inches, or inherently unstable and sensitive to extreme reliability problems. I&rsquo;ve crawled my way to the depths of each of these pits and resurfaced, and I&rsquo;m here for some musings on some of the more high-level, philosophical lessons learned, so that you think about this problem in the right way, and don&rsquo;t respond to the absurdly scoped machine design I&rsquo;m going to present in a few pages with a bunch of &ldquo;wouldn&rsquo;t it be so much easier if?&rdquo; questions. You may be right &ndash; some of these points correspond to dramatic scope-saving breakthroughs, but you&rsquo;re more likely down a pit and don&rsquo;t know it yet.</p>
+                <p>I&rsquo;ll start with problem specifics, but that&rsquo;s not really even the focus of this post. The focus is on ways of thinking, which allow you to focus on the problem in the right light, and understand the somewhat odd-seeming priorities of focus which will be on display in the more technical remaining posts.</p>
+
+                <h3>In case you forgot, as has been discussed, this is a really, really hard problem</h3>
+
+                <p>Like, <em>super</em> hard. And it&rsquo;s <em>super, <strong>super</strong></em> hard when you take the people away, and remember how much harder some tasks are for robots than for people. How hard is this? Lets take a look at some examples. We&rsquo;ll start with the obvious question: <em>How do you automatically identify any given LEGO piece?</em></p>
+                <p>When you think of the phrase &ldquo;mixed LEGO,&rdquo; you&rsquo;re probably picturing something nice and pleasant, like this:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/sanitizedmix.jpg"></div>
+
+                <p>Your classic brick pieces. They come in mostly rectangular shapes, and in a bunch of nice, bright, primary colors. Red, blue, black, green, pink, white, and so on. All pretty distinctly distinguishable from each other. How many? You’ve probably never checked. Let’s have a look, shall we?</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/allcolors.jpg"></div>
+
+                <p>Well, that&rsquo;s more than I expected.</p>
+                <p>It depends on who you talk to, what you&rsquo;re counting as natural pigmentation flaws versus planned distinction, and how you&rsquo;re counting various historical inconsistencies, such as times when LEGO changed their color naming convention without seemingly making changes to the plastic pigment, or colors which take on different shades when textured certain ways. But there are <em>about</em> 200 discrete colors to keep track of. Some of them, you really need to shine a bright light on to distinguish from one another.</p>
+                <p>And people care. They REALLY care.</p>
+
+                <p><a class="popup" onclick="popup1()">This is your customer base 
+                    <span class="popuptext" id="popup1">        <iframe width="560" height="315" src="https://www.youtube.com/embed/AfstjgilDmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>. People who experience <em>barely contained rage</em> at the prospect of replacing 25 cents of incorrectly shaded transparent parts in an $8 model. My personal experience with LEGO was slightly more <a class="popup" onclick="popup3()">aesthetic-agnostic<span class="popuptext" id="popup3"><img class="popupimg" src="/images/mashedparts.jpg"></span></a>,  but don’t get me wrong, I get it. Details can matter. </p>
+
+                <p>Take, for example, the color grey, seen here in less than ideal lighting:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/badgrey.jpg"></div>
+
+                <p>
+                    Two of the same, right? Let’s turn the flash on and add more lumens to the picture:
+                </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/goodgrey.jpg"></div>
+                <p>This is the result of the &ldquo;great color change of 2004,&rdquo; Still, kinda trivial difference, right? I&rsquo;ve been around LEGO a long time, and I still have to double check parts next to a <a class="popup" onclick="popup4()">known template<span class="popuptext" id="popup4"><img class="popupimg" src="/images/colorguide.jpg"></span></a>. But, <a href="https://news.lugnet.com/general/?n=43583" target="_blank">hundreds actually <em>rage-quit LEGO</em> in response to this</a>, and the internet flame wars regarding this change continue to this day. As a result, parts worth pennies in new grey can be marked up 100x or greater in old grey, and vice versa, depending on which was more commonly produced. For the most part, mixing and matching both shades in a build doesn&rsquo;t look good. This stuff makes a difference to your customers, and as the ones buying the product, they know what they&rsquo;re talking about.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <p>Okay so color is hard. What about the shapes. I mean, it’s just bricks, right?</p> 
+
+                <div class=pageimgcontainer><video width="80" autoplay muted loop><source src="/images/everypartever.mp4" type="video/mp4"></video></div>
+
+                <p>Waiting to see when that loops back around? You'll be here for an hour.</p>
+
+                <p>LEGO has been around for a <em>long</em> time. The company has experimented a lot, evolved their products, and had both some great successes and spectacular failures. And all of it’s out there, waiting for you to stumble across it.</p>
+
+                <p>And all of these parts matter, to someone, somewhere. The baffling combinations I’ve gotten in one order kind of boggle my mind, but really, that’s a large part of the magic of the bricks, and of design in general. The sheer number of ways they can be combined, and the chance that the crazy combo you have in your mind is something that nobody’s ever thought of before. Even at seemingly tiny scale, with just six pieces, the <a class="popup" onclick="popup5()">possibilities are astronomical 
+                    <span class="popuptext" id="popup5">        <iframe width="560" height="315" src="https://www.youtube.com/embed/3ItV57Mnnh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>. The more of these ideas you can support through your stock, the better a position you’re in. </p>
+
+
+                <p>So of course, I’m going to try to handle it all. </p>
+
+                <p>First, there’s just the sheer scope of storage involved in storing that many pieces. Those pictures of my wall of drawers you keep on seeing?</p>
+
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/drawers3.jpg"></div>
+
+                <p>Yeah, that represents about 3,500 unique part/color combinations right now. That wall has the potential to expand to maybe 5,000 or 6,000, as long as the actual quantities stay down. And if you&rsquo;re processing parts at the rate I hope to, they&rsquo;re not going to stay down.</p>
+                <p>This machine is going to need to be large, no matter how you spin it.</p>
+                <p>Then there&rsquo;s the challenge of actually identifying them all. Some of these physical parts are <em>really</em> similar. LEGO has made various enhancements to their product design over the years, adding tiny molded features for strength, usability, cost reduction, or better consistency with the LEGO system. Here are just a few:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/variant1.jpg"></div>
+
+                <p class="caption"><em>Sunroof piece, with a little capture ledge for the glass which fits within it. Or without.</em><br><br></p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/variant2.jpg"></div>
+
+
+                <p class="caption"><em>Wedge, with reinforcing bars added, or without.</em><br><br></p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/variant3.png"></div>
+
+                <p class="caption"><em>These clips, wherever they show up, have been in a <strong>constant</strong> state of flux. Straight edged, rounded edge, rounded undercut. Remember, these are <strong>tiny</strong> – the base is 8mm by 8mm.</em><br><br></p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/variant4.png"></div>
+
+                <p class="caption"><em>“Cross” versus “X” style axle holes. This distinction was product-wide, and exists across hundreds of parts featuring this very common connection interface. </em><br><br></p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/variant5.png"></div>
+
+                <p class="caption"><em>You think that the underside of a 1x2 jumper part doesn’t matter? The underside of a 1x2 jumper part <strong>definitely</strong> matters to somebody. </em><br><br></p>
+
+                <p>These are the kinds of skills I’ve picked up sorting LEGO for days on end. Noticing these thing instantly. Remembering which parts these differences exist for, so I know to look for them. It took a while to get there. </p>
+
+                <p>Other parts are challenging due to the extreme difference between them. Most industrial sorting machines are sorting things which are <em>mostly</em> the same. Good grapes from bad grapes. In-spec parts from out of spec parts.  Coins.  Books.  With LEGO, you have to build a machine which can sort this a very varied range of parts, with very different physical properties. It has to be able to, for example, handle all of these:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/smallparts.jpg"></div>
+
+                <p class="extratop">Okay, all of those are roughly the same size, and they&rsquo;re clearly distinct from one another. That in itself shouldn&rsquo;t be so bad. But, the same machine also has to do <em>these</em>:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/bigparts.jpg"></div>
+
+                <p class="extratop">Yes, same parts from before, in that little cluster. They’re easy enough to visually distinguish, but how to you even get both of these to a camera? This project is beginning to scare my hardware side as well as software side…</p>
+
+                <p>And we're just getting started...</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/stickers.jpg"></div>
+
+                <p class="extratop">Is the sticker on the left centered enough to be saleable? What about this sticker on the right, is it peeling at the corners too much? How do you make these calls yourself? How do you begin to make these calls with a machine?</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/legomega.jpg"></div>
+
+                <p>The part on the left is a LEGO 2x4 plate. It&rsquo;s very common. 237,818 of them have sold in the last six months, averaging about 8 cents a part.</p>
+                <p>The part on the right would get you <em>banned from Bricklink</em> if you made a pattern of knowingly selling it on their service, and would get you hate mail from your customers if it ever inadvertently slipped in your order. If I posted this image in certain corners of the internet, I would have bunches of terrible jokes about how I'm an evil human being for positioning it on the &ldquo;right&rdquo; side, because it&rsquo;s <strong><em>never</em></strong> "right."</p>
+                <p>The part on the right is made by MegaBloks, one of the larger LEGO-compatible clone brands. It will snap together well enough, to a layman anyways, with any standard LEGO piece. You&rsquo;ll find them very often in the mixed bulk lots I&rsquo;m getting, as the compatibility allows them to be freely mixed by non-LEGO internet purists. But &ldquo;Megablok&rdquo; is a bad word around LEGO internet purists. They have to go.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/blankheads.jpg"></div>
+
+                <p class="extratop">All the same part, right? Think again:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/fivefaces.jpg"></div>
+
+                <p class="extratop">They aren’t really even very regularized in that image, because they’re round. They can be at any given angle relative to a fixed camera. </p>
+
+                <p>Here are a few more “continuously variable” parts like this, this time in the geometry of the part itself:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/bendies.jpg"></div>
+
+                <p class="extratop">What do all of the parts below have in common?</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/damaged.jpg"></div>
+
+                <p class="extratop">They’re all parts I rejected during manual sorting, due to unacceptable damage. Various features are cracked, bent or missing. Some surfaces are really scuffed up. Visible light stress lines can be seen in the plastic. Corners are bashed in or have bite marks. They’re subtle, and they could be anything. See if you can spot them all. Not all points of damage are visible from this angle. This is intentional – this will be a real problem if you only capture one angle. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/assemblies.jpg"></div>
+                <p>These were all pulled out of a recently purchased mixed lot. Some of these are fragments of legitimate sets, but some are clearly the work of some kid mashing parts into the image in their head. The variety of geometries you could encounter is effectively infinite, especially when you consider things like the red thing in the top right, which is starting to come apart, or the hinged door on the wing on the right, which could be at any angle. Even though the individual pieces themselves are generally pretty standardized, there is so much variability in what your machine could encounter. These things are time-consuming to take apart, and certain geometries, like the hook-shaped structure at the bottom, could easily catch on mechanical elements of a poorly designed system.</p>
+                <p>Unlike most manipulation challenges where you know the specifications of your objects and can design mechanisms around them, you&rsquo;re really dealing with manipulating generalized unknown objects here, at least in the early going.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/hidingparts.jpg"></div>
+
+                <p class="extratop">Finally, a nice, straightforward one! Just an orange block, nothing to see here. Just going to look from another angle to make sure and-</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/container.jpg"></div>
+
+                <p>Surprise! You don&rsquo;t mind some stray flowers with your cabinet pieces, do you? Oh and did I mention that there&rsquo;s another part that looks exactly the same as the first picture from all angles, without the hollowed out body? Because that&rsquo;s a thing that exists.</p>
+                <p>So yeah, there&rsquo;s a lot that&rsquo;s hard about visually identifying LEGO. And here&rsquo;s the crazy part. <em>Nearly all of those things are SUPER obvious to humans dealing with real parts in real time, but suddenly seem impossible when done through still frame images, and thinking about how to program a computer to do it. </em>We&rsquo;re going to have to be really careful to ensure that the computer gets the data it needs to make</p>
+                <p>So now we know the problem a little better. Remember this <a class="popup" onclick="popup6()">nice and sanitized stock image<span class="popuptext" id="popup6"><img class="popupimg" src="/images/sanitizedmix.jpg"></span></a>? It&rsquo;s more like this. This is the reality of what we&rsquo;re dealing with:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/rawmix.jpg"></div>
+
+                <p>This is a batch untouched as it arrived to me. It is <em>messy</em>. It is <em>hostile</em>. There is a <em>random sweepstakes entry form</em> in there. There are <em>Megabloks</em> in there. This is a <em>hard</em> problem. But to take it on, you <strong><em>have</em> </strong>to know it; you have to understand it. You have to appreciate the difficulty, you have to have all the subtle ways the hostility of this pile of plastic can screw you up at the forefront of your mind, so that you can act on the ones which totally upend your design concepts before its too late. Ignorance of the subtleties of the problem make it easy to explain, and make it easy to build the confidence to start biting off bits of it, but ignorance screws you over. You have to know&hellip;everything about it. You have to respect the full force of the problem.</p>
+                <p>I&rsquo;m absolutely terrified. I&rsquo;m <em>pumped beyond words</em>. Let&rsquo;s go deeper.</p>
+
+                <h3>There's an Even Bigger Problem</h3>
+
+                <p>A subtler, and much more devious problem.</p>
+                <p><em>Say that you have a part, and know its identity. You have to get it to one of 70,000 distinct storage locations. <strong>How on earth do you actually do that with any kind of speed?</strong></em></p>
+                <p>This is ultimately an even bigger problem, or at least, a more expensive problem. All of those challenges I talked about in the section on manual sorting? About how you could know exactly what a part is, and not be able to act on that information? About how the most efficient solution ended up being to take a part out of a mixed bin, identify it fully, then throw it right back into a slightly less mixed bin? All of those dynamics apply to an automated solution. Given how hard the first problem is, the dynamic may be even worse, as isolating and identifying a part is much harder for a machine than for a person.</p>
+                <p>Solving this problem is inevitably going to involve something large scale, but it can&rsquo;t be cost-prohibitively large scale. The trick, as it so often is, is to do a lot, with very little. You could solve this problem easily by building a device which spans 12 miles, just like you could probably solve most problems in computing with enough raw processing power over effective design. But I don&rsquo;t have a supercomputer, and I don&rsquo;t have a 12 mile long warehouse. In fact, I don&rsquo;t have much of anything &ndash; I&rsquo;m kinda, yknow, piecing this together in my spare time, in spare space, using spare parts, and spare money earned by painstakingly sorting out LEGO pieces. God, what am I doing with my life?</p>
+                <p>So, existential crises aside, two big problems. How on earth do we go about solving them? Well, when you ponder a big problem long enough, it shapes your way of thinking. You realize that there are certain overarching mentalities you need to have, to stand a prayer at solving it. Let&rsquo;s talk about them, so you can understand why I&rsquo;m doing certain things the way I&rsquo;m doing them.</p>
+
+                <h3>Software-First Design</h3>
+
+                <p>Most every major engineering build I have done to date has used what I would describe as a &ldquo;hardware first&rdquo; design process. What do I mean by this? Simply, that the software elements, even if more challenging and ultimately consequential to the project&rsquo;s success, have had their design almost entirely dictated by the mechanical implementation. Little to no consideration was given to software design, and how it may impose constraints on the mechanical design. Hardware was given free reign to control the terms through which the software would be implemented, and accommodating choices made in hardware would be done in software, never the other way around. Ultimately, software development would be subservient to hardware development, in the project's overall proces, first and foremost serving the role of "accomplish the things that the hardware design demands that you accomplish with software."</p>
+                <p>An example of a choice like this would be using a differential/tank drivetrain for a mobile robot performing a navigation task, instead of a holonomic platform. The hololonomic design would likely ultimately be easier to develop effective navigation with, due to the increase in degrees of freedom. A task which might take several turns, each of which introduces unreliability due to scrub forces, can be accomplished easier with the holonomic design. And yet, I would typically choose the differential design, due to its ultimately superior mechanical effectiveness and reliability, and force software to compensate. Hardware would be designed first, software would be an exercise in adapting to an unchanging hardware setup, and when hardware and software constraints conflict, hardware would win out.</p>
+                <p>This is often a good choice, because of the relative flexibility and timescale associated with each element. Software is much more agile and adaptable to change than hardware, where manufacturing lead times and material costs make change comparatively challenging. Mechanical iterations usually occur in much more distinct, planned phases, and are made with the explicit goal of reducing cost. A software implementation for any given mechanical concept can generally be simply assumed to be doable during this process. Additionally, the lack of flexibility, and those pesky laws of physics, generally mean that hardware is more likely to be the ultimate limiting factor in a project&rsquo;s final functionality, and therefore demands more immediate focus to ensure that these limiting factors are mitigated as much as possible from the get-go. In almost all cases, a software simulation of a mechanical system can run orders of magnitude faster than the system itself.</p>
+                <p>For most of the projects I&rsquo;ve worked on, all of that has been accurate.</p>
+                <p>This project isn&rsquo;t like that at all, because of where the unknowns lie.</p>
+                <p>The mechanical challenges involved in this project are <em>immense</em>, but they&rsquo;re largely ultimately problems of scale. The main thing which is hard on the mechanical side is that there are <em>so many things to be done</em>. The LEGOSortus is not going to be simple and straightforwards, just because &ldquo;70,000 locations&rdquo; inevitably involves 70,000&hellip;somethings. There are a lot of tricks I can use to reduce the amount of <strong><em>stuff</em></strong> which has to be repeated hundreds or thousands of times, but at the end of the day, there&rsquo;s just going to be a lot of it. This means that the real problems are in areas like modularity, maximizing utility of minimal actuators, designing for ease of assembly/maintenance, cost-effective design, packaging, and reliability.</p>
+                <p>Notice that words like &ldquo;execution&rdquo; aren&rsquo;t in there. Every individual task performed by the mechanical system is something which, in isolation, is quite easy. Like, if there was just one part, and I asked &ldquo;ok, I have an impossible problem. Gonna hype up it's difficulty for 10 minutes, and...<em>how do I get this into that box over there</em>,&rdquo; you&rsquo;d respond &ldquo;&hellip;I don&rsquo;t know, a conveyor or something? Is this some kind of trick question?&rdquo; There&rsquo;s nothing the mechanical system has to do which inspires questions of &ldquo;but is this even going to be possible?&rdquo;</p>
+                <p>The software, on the other hand, has all kinds of unknowns associated with the basic functionality I&rsquo;ll be able to achieve. How well am I going to be able to address all of those nasty, nasty identification problems listed above? <strong><em>I don&rsquo;t really know the answer yet, and I don&rsquo;t know enough about potential solutions to assess <a class="popup" onclick="popup7()">how hard this is going to be<span class="popuptext" id="popup7"><img class="popupimg" src="https://imgs.xkcd.com/comics/tasks.png"></span></a></em></strong>. There is a non-zero chance that I get completely stuck on the software aspects of this project, and decide that it&rsquo;s not realistic with current technology to get meaningful results. I don&rsquo;t think this will be the case, and I certainly am going to work hard to make sure that it&rsquo;s actual tech road blocks rather than my own ignorance of CV techniques that would cause something like that to happen, but I need to approach this project in a way where I discover those road blocks at the beginning, rather than at the end.</p>
+                <p><strong><em>The software is where the added value comes from, and the hardware is where the expense comes from</em></strong>. This means that if you&rsquo;ve done the value-added part, return-on-investment from the expensive part is much closer to guaranteed. If I design and build the mechanical parts first in great detail, there is a very solid chance that I never am capable of building software to keep up with what I&rsquo;ve just sunk untold amounts of brain-juice and dollars into. There is an even larger chance that the software ends up <em>good</em>, just not <em>right</em> for the mechanical system I built, due to some unforeseen constraint, which forces me to radically redo the expensive part again. Finding out either of these things should be done as early as possible. Or most likely of all, I get into a situation where the software is <em>not good,</em> and the problems, are solvable, but I'm willfully blind to pathways to reduce the software suck-factor, because I'm operating under the hundreds of constraints the mechanical system is now imposing on what I can/can't easily do/change with the software.</p>
+                <p>If, on the other hand, I satisfactorily solve the software problems without building anything real yet, there&rsquo;s a very clear path of action through which I can build a mechanical system to match this output. It isn&rsquo;t necessarily the <em>right</em> approach, but I <em>could</em> brute-force a machine together by just throwing bunches of conveyor belts into a pile until it works. There aren&rsquo;t any problems that I&rsquo;m going to face that I know can&rsquo;t be solved by throwing time, money, and stepper motors at the problem. So you get into this situation where you hypothetically have working software for part identification, adding a tremendous amount of value to your pile of mixed LEGO. Why <strong><em>wouldn&rsquo;t</em> </strong>you go to the effort to build a mechanical system to take advantage of this exciting development? You only wouldn&rsquo;t do so if it wasn&rsquo;t going to pay itself off in short order and&hellip;well, the numbers suggest strongly that it would.</p>
+                <p>Additionally, the software of this project is much more flexible than the mechanical elements. I have done several projects in the past where I have gone out of my way to shift complexity from the software domain to the hardware domain, in response to shortcomings in software skill. These decisions were usually made very early in a project&rsquo;s lifecycle. Here, too, the software is likely to reveal shortcomings in the functionality functionality which can be achieved there, which could potentially be better solved mechanically.</p>
+                <p>But here, the mechanical system is going to be massive, such that an 11<sup>th</sup> hour new functional requirement that I add a new layer of mechanical 1<sup>st</sup> order sorting may <em>completely disrupt</em> the system design, even if this requirement is more of a reconfiguration than a new capability, and again, in isolation, is trivial to implement. The software, by comparison, can adapt to changes in the details of the mechanical layout much more easily, as long as these changes don&rsquo;t throw massive new technical requirements at the software. So therefore, I need to have as clear an idea as I can of what the software can and cannot do before I do the mechanical parts.</p>
+                <p>Finally, there are a lot of plain unknowns related to the basic design constraints of the mechanical system, which must be answered using data provided by the software. For example, size distribution. The mechanical side is clearly going to involve untold numbers of storage compartments, along with pathways and mobile containers through which parts will move enroute to their final destinations. It doesn&rsquo;t make sense to build these any larger than they need to be, or else I&rsquo;m wasting space (which adds cost in more ways than one &ndash; material costs, taking away space from other parts, and eventually, rental costs). I&rsquo;m also increasing the distance parts must traverse.</p>
+                <p>But, I don&rsquo;t know what size they <em>should</em> be. I don&rsquo;t know the expected distribution of parts which will find their way down this machine. Software, and analysis of all that data from Bricklink, holds those answers, which will dramatically impact the system&rsquo;s mechanical design. Completely different construction approaches may be made viable or nonviable depending on the scale this whole thing needs to be.</p>
+                <p>This same dynamic applies to unknowns surrounding the rate at which parts can realistically be processed by the software, the tolerance the software can demonstrate to less-than-ideal identification conditions, the percent success the software will have in identification, the data acquisition technologies the mechanical system must support to give the software what it needs, the success in using software for complex non-linear path planning behaviors, the types of errors the software will be prone to making, and so on. I don&rsquo;t know the details about any of this yet, and so I shouldn&rsquo;t be investing in the mechanical aspects in a way which makes assumptions about these parts.</p>
+                <p>The successes and failures of the software will dictate the kinds of mechanical solutions I must develop. I have a long list of things that I sincerely hope I don&rsquo;t actually need to build, thanks to hypothetically well-done software. &ldquo;Well done&rdquo; isn&rsquo;t a phrase that comes to mind in describing the software as it exists right now, but it&rsquo;s getting there&hellip;slowly.</p>
+                <p>It all gets back to that philosophy of <strong><em>knowing</em></strong> your problem. I don&rsquo;t <strong><em>know</em></strong> the mechanical problem well enough to act yet. Knowing it requires that I build the software to a decently complete level first.</p>
+                <p>Now, <em>testing</em> this software is going to require some hardware exist before the software operates in a meaningful form. Things like, for example, automatic part feeders, to rapidly shove pieces through a camera and any other sensors. In fact, one of the main functions of this hardware will be to support testing different sensor configurations, to figure out what kind of data the software needs to collect to make meaningful decisions. It tells me things like &ldquo;Okay, the conveyor needs strain gauges. Adding them is easy if you&rsquo;re thinking about them from the start, but you weren&rsquo;t thinking about them from the start, so now I need to rebuild the conveyor from scratch. Good thing that it&rsquo;s a conveyor made out of cardboard/PVC instead of something with real time invested, right?&rdquo;</p>
+                <p>This means that the hardware developed for testing purposes will almost certainly not appear in the final form of the system, and represents fairly trivial mechanical challenges compared to some of the big-ticket hardware questions later down the line. It&rsquo;s not the &ldquo;hard part.&rdquo;</p>
+
+
+
+
+
+                <p>The way my instincts tell my to approach a problem is, zero in on and obsess over the mechanical &ldquo;hard part,&rdquo; beat it to death with out-of-the-box design, then fill in the other pieces you&rsquo;ve been neglecting, very much built around that over-the-top solution to the core problem. That thought process has lead to a lot of projects with a really slickly executed &ldquo;centerpiece&rdquo; mechanism over the years accomplishing what in theory should be the most difficult part of a challenge with <em>authority</em>, like the <a class="popup" onclick="popup8()">9 bar linkage 
+                    <span class="popuptext" id="popup8">        <iframe width="560" height="315" src="https://www.youtube.com/embed/sF52dWz4-9o?start=36" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>, <a class="popup" onclick="popup9()">elevator tilt linkage<span class="popuptext" id="popup9"><img class="popupimg" src="/images/tiltlinkgif.gif"></span></a>, <a class="popup" onclick="popup10()">one way ratchet clutch<span class="popuptext" id="popup10"><img class="popupimg" src="/images/ratchetclutch.jpg"></span></a>, <a class="popup" onclick="popup11()">PTO Gearbox<span class="popuptext" id="popup11"><img class="popupimg" src="/images/ptobox.jpg"></span></a>, <a class="popup" onclick="popup12()">cast resin tapered auger<span class="popuptext" id="popup12"><img class="popupimg" src="/images/auger.jpg"></span></a>, even going back as far as the lovingly named FLL &ldquo;<a class="popup" onclick="popup13()">Baroque Bot<span class="popuptext" id="popup13"><img class="popupimg" src="/images/baroque.jpeg"></span></a>&rdquo; and the self-charging pneumatic claw.</p>
+
+                <p>And I guess I’m doing that here too, except for the first time, the “hard part,” or one of them anyways, is in the software. We’ll see how that goes.  </p>
+
+                <h3>Prototype Philosophy</h3>
+
+                <p>As I mentioned above, the early mechanical systems built in support of software development are very much going to be prototypes. They will only be as functional as they need to be, and place extreme priority on cost reduction, rapid fabrication, and ease of iteration over durability, reliability, and longevity.</p>
+                <p>The entire project is going to stay that way for a very, very long time.</p>
+                <p>There are going to be some <em>really ugly and rough mechanical solutions </em>featured in this thing. They&rsquo;ll be there in software too, but you&rsquo;ll see them more clearly on the mechanical side, and ask &ldquo;but why wouldn&rsquo;t you do it&hellip;better?&rdquo;</p>
+                <p>A couple of reasons. First, this project is and remains in a dramatic state of flux. Even just writing out these posts caused me to reflect on the rationality of several choices, and changed some details. And that&rsquo;s just looking at it from a fairly high-level perspective. I can&rsquo;t imagine what I&rsquo;m going to find when I get into the fine details.</p>
+                <p>Second, as mentioned, a huge part of the challenge unique to this project is the level of uncertainty in what is being manipulated. There is no practical means through which I can have a mental image of all 70,000 types of parts which will pass through it when I&rsquo;m CADding in holes they&rsquo;re meant to pass through, let alone all the not-saleable-LEGO items which <em>could</em> enter the machine. Details on the specific behavior of thousands of LEGO pieces tumbling through this thing are going to be answered far better by just building and testing than any simulation could ever hope to show. In manipulation challenges I&rsquo;m used to referring closely to the geometry of the object being manipulated, but that&rsquo;s just not really an option here. Experimental results rule all, and depending so much on experimental results means you&rsquo;d better be able to change things quickly and cheaply.</p>
+                <p>Third, there just isn&rsquo;t a whole lot about this which demands absolutely dramatic levels of precision. Particularly on the mechanical side, there&rsquo;s nothing cutting edge about what&rsquo;s being accomplished here. I&rsquo;m moving parts around. That&rsquo;s really it. There&rsquo;s a <em>lot</em> of moving parts around, but most of the challenges surround doing things in an economical manner, rather than accomplishing the motions at all. Therefore, the mechanical design really shouldn&rsquo;t be very risky. You&rsquo;re not going to see huge gains by experimenting with fancy things. Unlike most every other area where I have experience, there&rsquo;s little to be gained from creative techniques like <a class="popup" onclick="popup14()">generative design<span class="popuptext" id="popup14"><img class="popupimg" src="https://damassets.autodesk.net/content/dam/autodesk/www/solutions/generative-design/fy19-q2/autodesk_generative_design_manufacturing_general_motors.jpg"></span></a> for weight reduction. And a lot of the challenges which demand precision can be mitigated straight out of existence through design focused on environmental control (next section)</p>
+                <p>Fourth, frankly, this thing is being built on a budget. I don&rsquo;t exactly have investment capital behind this thing. At the end of the day, this is going to feel to most people like some guy taking a hobby <em>way</em> too far. I&rsquo;m paying for this myself from what&rsquo;s left over after tuition bills, which is kinda super not a lot.</p>
+                <p>But, that means that I also don&rsquo;t really have anyone I&rsquo;m trying to impress with it, which means I&rsquo;m more immune than usual to choices made in the name of &ldquo;I don&rsquo;t really have a sound reason not to do this, other than &ldquo;I feel like it makes me look bad.&rdquo;&rdquo;</p>
+                <p>I&rsquo;d be really curious to see an analysis of items produced by mechanical engineers in the world, specifically metal devices built via precision equipment. I&rsquo;d be curious to learn for how many of these things, the <em>real</em> justification for them being made in this way was &ldquo;Making it on a milling machine out of steel makes it feel strong and effective, and making it out of something else would look weak. I don&rsquo;t want to be the guy who suggests we make our device look weak, and neither does anybody else. So, it&rsquo;s going to be made out of machined steel, instead of out of wood, or plastic, or resin cast, or 3d printed, or any other way we might save a ton of money, without reducing strength and lifetime beyond what the bounds of the project call for.&rdquo;</p>
+                <p>This is a mentality I know I&rsquo;ve fallen victim to, and is somewhat reflexive of a big mistake I made in my engineering philosophy around late high school/early college, which was fairly recently shown to me to be an error, and which I&rsquo;ve been trying to correct in recent years.</p>
+                <p>In high school, I was on a dirt-poor FIRST Robotics Competition team. I had come into this from FIRST LEGO League, where everyone&rsquo;s robot has roughly the same level of professionalism in appearance and fabrication technology because, well, LEGO is LEGO. Aside from that one team that went to the extra effort to color coordinate their robot, we all had the same lumps of ABS Plastic. Come FRC, I was building robots that cost $150 and looked the part, in a competition where annual program budgets of $150,000 are not unheard of, and a solid chunk of teams are making parts via outsources precision machine tools worth $1,500,000 or more. Both within and outside of our team, the &ldquo;professionalism&rdquo; and &ldquo;effectiveness&rdquo; were considered to be one in the same, and this drove us to make some bad choices that may have made us look marginally better, but didn&rsquo;t really do our robot&rsquo;s effectiveness any good at all. &ldquo;Pursuit of professional construction&rdquo; became a driving, central part of my design approach, but I didn&rsquo;t have the means to get very far with it, so I just kept building progressively-slightly-less-terrible-things with hacksaws and duct tape.</p>
+                <p>When I got to college, I had never seen a mill or a lathe in my life. All of a sudden, I was exposed to both a professional-grade machine shop, and coursework that spent so much time on mathematical design optimization that &ldquo;actually making these things real&rdquo; fell by the wayside. We were kind of casually told on the first day &ldquo;oh, if you spend enough time on the numbers, actually building it is easy! That&rsquo;s why you&rsquo;re in engineering school to get a degree that focuses on the numbers, and the people who do the building don&rsquo;t have that degree.&rdquo; I learned a <em>ton</em> about engineering analysis, why things break, what can go wrong when you don&rsquo;t do the analysis right, and so on, enough that I felt like I was getting close to having the knowledge to do those &ldquo;professional level&rdquo; designs we compared ourselves to so much during FRC. I learned so much, that these tools became vital to me. To the point where knowing them intimidated me straight out of actually accomplishing anything.</p>
+
+
+
+
+
+
+
+
+
+
+
+                <p>The result was that I actually did much <em>less engineering and creation</em> than I’d been doing my entire life prior to that. Where I previously would have just built something <a class="popup" onclick="popup14()">like a rocket<span class="popuptext" id="popup14"><img class="popupimg" src="/images/epiphanyprogress.JPG"></span></a>, <a class="popup" onclick="popup15()">finished a rocket<span class="popuptext" id="popup15"><img class="popupimg" src="/images/epiphanydone.JPG"></span></a>, <a class="popup" onclick="popup16()">learned that I didn’t know enough about how to build a rocket<span class="popuptext" id="popup16"><img class="popupimg" src="/images/epiphanyfail.JPG"></span></a>, then figured out what went wrong and <a class="popup" onclick="popup17()">tried again to fly the rocket 
+                    <span class="popuptext" id="popup17">        <iframe width="560" height="315" src="https://www.youtube.com/embed/RfGwY56QlA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>, a thought process like this would emerge:
+                </p>
+
+                <p>&ldquo;Okay, I&rsquo;ve got this cool idea for a rocket. I&rsquo;m going to need to get the fins <em>really right</em>, so I need to laser cut a template. That template is going to run the risk of getting stuck during epoxying. I should buy some release agent sometime to prevent that. Okay the cardboard tube worked well enough, but I want to learn more about the kinds of loads it experiences. Alright I <em>think</em> this FEA model I&rsquo;ve spent the last month building says it&rsquo;s okay but there are still some scary red spots so I want to make it fiberglass. But that&rsquo;ll make it heavier, so everything else needs to be bigger and more expensive as well. Dang, FWFG tubes are <em>really</em> expensive. They&rsquo;re too thick for what I need though, and are weighing the whole thing down. Brb, going to go down a rabbit hole and find out how hard it would be to make my own filament winding machine.&rdquo;</p>
+                <p>Shockingly, that follow-up rocket still hasn&rsquo;t been actually built. I learned bunches from the process of not-building it, but it never became real, because it became slow to analyze things that didn&rsquo;t need analyzed, expensive to ensure perfection, and I spent so much time on exploring avenues to achieve a slightly more precise final product I was spending practically no time on the rocket itself. It felt like there was no point in moving forwards if I hadn&rsquo;t proved in MATLAB that it was going to be &ldquo;correct.&rdquo;</p>
+                <p>What I&rsquo;ve come to realize recently is that there&rsquo;s nothing about these precision techniques which makes them inherently &ldquo;better&rdquo; for any given task if you can use them, and they can really get in your head and hold you back. In fact, the number of tasks where you can&rsquo;t practically use them, or where the time sink is greater than any benefit, or where their utility will be wiped out by imprecision elsewhere, is dramatic. There isn&rsquo;t a fixed hierarchy of fabrication technologies and analysis techniques, there are only trade-offs. Sometimes the precision techniques are merited, other times, you just need to start making chips. Actually, scratch that, make sawdust. That&rsquo;ll go even faster.</p>
+                <p>Becoming <em>really good</em> at doing things <em>really roughly</em>, and developing intuition for where precision matters and where it only slows you down, is a <em>monumentally</em> important skill, and one that I&rsquo;m pretty sorely lacking in at the moment. I&rsquo;ve recently done some projects with people much better at this than me and learned some things, and hope to apply a more appropriate mixture of in-depth analysis and lightning-paced intuition-driven experimentation to this system. It&rsquo;s going to be a mixture.</p>
+                <p>But it&rsquo;s going to be a skewed mixture. In doing actual analysis of the trade-off between economical solutions which enable rapid iteration, versus precision techniques with piles of math behind them, the more flexible, prototype-y designs are almost always winning out, given the constraints.</p>
+                <p>Now, &ldquo;prototype-y&rdquo; is a relative term. I&rsquo;m absolutely going to be taking full advantage of my skillsets in CAD, and kinematic analysis, and statics, and so many other things, and there will be a lot of parts made using precision tools, but I won&rsquo;t be doing these things for the sake of it. In almost every case, the driving question is going to be &ldquo;will this make the project faster to complete?&rdquo; If so, it&rsquo;ll be done. In a lot of cases, this simply means designing for the tools I have, rather than the tools I wish I had. As such&hellip;there will be a <em>lot</em> of laser cut wood. Like&hellip;so much laser cut wood.</p>
+                <p>This won&rsquo;t last forever. At a certain point, yes, this thing is going to need to sit still, and run for weeks on end, for years at a time. At that point, yes, fatigue analysis comes into play, and materials which don&rsquo;t show an endurance limit become a good choice. I&rsquo;m not at that point. I&rsquo;m not going to be at that point for a long time.</p>
+                <p>I can make things quickly, and strong enough, out of laser cut fiberboard. So, I&rsquo;m going to be using dramatic amounts of laser cut fiberboard. <a class="popup" onclick="popup18()">Deal with it<span class="popuptext" id="popup18"><img class="popupimg" id="dealimg" src="/images/dealwithit.gif"></span></a>.</p>
+
+                <h3>Environmental Control and Machine-friendly design vs Human-friendly design</h3>
+
+                <p>For a long time, I thought humanoid robots were a really stupid idea. Interaction-heavy applications always came off as creepy. Functional, grunt-work applications nearly universally inspired thoughts of a much more efficient purpose-built design; the idea that the human body would be the &ldquo;best&rdquo; solution for any given task felt like an almost weirdly arrogant idea &ndash; like, why should <strong><em>we</em></strong> be optimal, and why should building something that looks like us be some kind of &ldquo;engineering end game?&rdquo; The primary motivation for the existence of these bots always felt like it was &ldquo;serve as a setup for apocalyptic science-fiction plotlines&rdquo; rather than engineering practicality. Movies like I, Robot made me ask &ldquo;but&hellip;why did they even build these robots in the first place? Like, why do we accept that these things will just inevitably kind of...exist?&rdquo; And C-3PO totally could have been a smartphone app (Duolingo, hire Anthony Daniels!). Westworld even goes a step farther and kind of acknowledges these questions by making a robot apocalypse intended to drive the creation of something <em>better</em> than humanity their creator&rsquo;s explicit goal, and having the function of the host's humanoid designs be to learn the flaws of people through exposure to the worst of them, instead of using humans as an ideal to strive for.</p>
+
+                <p>Seeing the <a class="popup" onclick="popup19()">DARPA Robotics Challenge
+                    <span class="popuptext" id="popup19">        <iframe width="560" height="315" src="https://www.youtube.com/embed/8P9geWwi9e0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> play out, aside from giving the <a class="popup" onclick="popup20()">Simone Giertz<span class="popuptext" id="popup20"><img class="popupimg" src="/images/simonegif.gif"></span></a> fan in me <a class="popup" onclick="popup21()">much to love
+                    <span class="popuptext" id="popup21">        <iframe width="560" height="315" src="https://www.youtube.com/embed/adFd0f7K46w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>, gave me a bit more insight into the matter. The challenge was all about performing maintenance tasks in environments designed to be perfectly safe for humans, turned incredibly dangerous by hazardous conditions like a nuclear meltdown. The fact is, the world, up to this point, has been designed for humans, because frankly, what else would you design it for? Climbing ladders and turning valves are trivial for humans – in fact, many of the devices the robots in this challenge interact with like power tools feature human ergonomics as a key engineering constraint in their designs. <em>Lots</em> of engineering effort in the world is spent on not only making things functional, but making them <em>easily usable specifically by humans</em>. I can bolt a drill bit onto a giant motor easily, but if I don’t surround it with an ergonomic shell that somebody can easily hold and manipulate in their hands, it isn’t very useful. </p>
+
+                <p>Endeavors like <a class="popup" onclick="popup22()">Robonaut<span class="popuptext" id="popup22"><img class="popupimg" src="/images/robonaut.jpg"></span></a> make a lot more sense when viewed in this light. The advantage of going to the tremendous trouble to build things shaped like humans isn’t the functionality, but the adaptability, to situations and places where we only envisioned humans going. If you have something which moves and acts like a human, you can quickly adapt it to perform any task typically performed by a person, just as we adapt ourselves constantly in our day to day lives. </p>
+
+                <p>However, humanoid robots are still <em>really hard</em>. Making a close-to-humanoid prosthetic arm which can do <a class="popup" onclick="popup23()">a bunch of things
+                    <span class="popuptext" id="popup23">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Zg-FH1Gn2Ls" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>, including pick up a water bottle, is really hard, but making a purpose-built robotic arm <em>just</em> to <a class="popup" onclick="popup24()">hold a water bottle
+                    <span class="popuptext" id="popup24">        <iframe width="560" height="315" src="https://www.youtube.com/embed/P2r9U4wkjcc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> can be done from cardboard. Even in the best of possible circumstances, when sophisticated systems like this are fully proven and ready for general use, the resource sink involved in them is going to be orders of magnitude greater than any kind of purpose-built simple solution. General purpose robots may become easier than they are now, but they&rsquo;ll never be &ldquo;the easiest solution&rdquo; for any given specific problem.</p>
+
+                <p>So how do we get things done with robots right now? Well, in some cases, we certainly do this by making our robots as <a class="popup" onclick="popup25()">adaptable and flexible as possible
+                    <span class="popuptext" id="popup25">        <iframe width="560" height="315" src="https://www.youtube.com/embed/ntlI-pDUxPE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> to an unpredictable and constantly variable world. But in many more cases, especially in more controlled environments, we can go the other way around, and adapt our world to the needs of the robot. This can be seen all over the place in the manufacturing industry. We mount parts to fixtures where they can be <a class="popup" onclick="popup26()">easily manipulated in mass quantities
+                    <span class="popuptext" id="popup26">        <iframe width="560" height="315" src="https://www.youtube.com/embed/zrzKih5rqD0?start=158" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>. <a class="popup" onclick="popup27()">Irregular material is regularized
+                    <span class="popuptext" id="popup27">        <iframe width="560" height="315" src="https://www.youtube.com/embed/rP_7FIpPFEQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> so that it is easier to work with. Small parts are kept <a class="popup" onclick="popup28()">joined together until the last possible moment
+                    <span class="popuptext" id="popup28">        <iframe width="560" height="315" src="https://www.youtube.com/embed/tFyzz9IcpmE?start=140" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>, so that they can be moved around with minimal effort. Objects are moved around via <a class="popup" onclick="popup29()">carts which closely track magnetic tape
+                    <span class="popuptext" id="popup29">        <iframe width="560" height="315" src="https://www.youtube.com/embed/8_lfxPI5ObM?start=14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> that we put right where it belongs, rather than taking on the challenge of free navigation. Parts are designed with <a class="popup" onclick="popup30()">self-aligning features  
+                    <span class="popuptext" id="popup30">        <iframe width="560" height="315" src="https://www.youtube.com/embed/r9byGJtbCws?start=92" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> tolerant to error in their installation. The list goes on and on, of ways that a process, and the physical elements an automated setup interacts with, can be designed to make automated solutions much easier to integrate than they otherwise would be. </p>
+
+                <p>Just think about the last time you struggled to grab something with a robot. Almost <em>all</em> of the challenge comes from the fact that what you&rsquo;re picking up is something you can&rsquo;t control. &ldquo;Just stick a magnet into the object&rdquo; probably wasn&rsquo;t on your radar as a solution, but if you&rsquo;re building both the robot, and the thing the robot picks up, it probably should be considered.</p>
+                <p>Likewise, look at the unsolved problem of self-driving cars. All of the challenge comes from the unstructured nature of the world, of identifying signs meant to be read by human drivers instead of software, of keeping course on roads which do nothing inherently to keep you on course, and dealing with the unpredictability of other drivers. Now, compare that unstructured environment, to the extremely controlled environment of a subway, where things run on straight rails and every train is controlled by the same organization. Japan has had autonomous subways for nearly 40 years, all because of environmental control. I&rsquo;m sure many a self-driving car engineer, in moments of frustration, has asked &ldquo;wouldn&rsquo;t it be so much easier to just lay down trolley tracks on every street?&rdquo;</p>
+                <p>So the question is, which is easier? Build your world to fit the robots, or build the robots to fit the world? The answer to that question is going to vary by application, and in large part, it depends whether or not the &ldquo;world&rdquo; that your robots will be living in has already been built. If you&rsquo;re sending robots out into a forest, you have no control over the specifics of that forest. But if you are designing a product, and know you want it to be assembled by robots, you can let that constraint drive your product design from the beginning, and create a product and assembly line that isn&rsquo;t particularly demanding of the robots that work on this. The lines between what counts as &ldquo;environmental control&rdquo; and &ldquo;MOAR ROBOTS&rdquo; is a bit blurry, but that&rsquo;s okay. As long as it is making each individual step more reliable, and is allowing you to actually get the task done with relatively economical technologies instead of investing in a research team to build 21DOF hands, you&rsquo;re okay.</p>
+                <p>So, what does all this have to do with sorting LEGO?</p>
+                <p>Well, on the surface, directly grabbing and working with LEGO pieces is a <em>nasty</em> challenge for a machine. Picking up the vast variety of parts is a surprisingly difficult manipulation challenge, which demands the full range of degree of freedom offered by your hands. This kind of uncertainty and demand for adaptability is exactly the sort of task automated solutions are <em>terrible</em> at.</p>
+                <p>But, if we think about the idea of environmental control in our design, that&rsquo;s going to be okay.</p>
+
+                <p>For example, we should try to design a system which minimizes the amount of time spent on directly physically manipulating and grabbing individual LEGO pieces. Instead, we can do things like put them in containers of our own design, which are specifically developed to be easily manipulated. We can add grip features, or even magnets for all I care. Which&hellip;hey, that&rsquo;s <em>exactly how the <a class="popup" onclick="popup31()">real LEGO factory
+                    <span class="popuptext" id="popup31">        <iframe width="560" height="315" src="https://www.youtube.com/embed/8xAxjzrKSs0?start=481" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> works!</em>. If we have to move things from place to place, we should employ those magnetic tracking robots and-yup, once again,  <a class="popup" onclick="popup32()">LEGO factory
+                    <span class="popuptext" id="popup32">        <iframe width="560" height="315" src="https://www.youtube.com/embed/8xAxjzrKSs0?start=301" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>! If we need to drop parts into another compartment, make it funnel in nicely instead of demanding precision placement. And so on. Machine friendly environmental design is going to show up all over the place in this thing.</p>
+
+                <p>Environmental control applies to software as well. Many of the big challenges in computer vision and machine learning come from the unstructured nature of the environments in which they operate, and the variability in the data they must process. Identifying LEGO is hard, but identifying LEGO pieces half-buried in a pile of other LEGO pieces is much harder. The more we can control the environment in which we perform our identification, and the more we can regularize what part xyz looks like to the computer every time part xyz passes through the system, the better.</p>
+                <p>Now, there&rsquo;s also a key corollary here. Very often, a machine-friendly design isn&rsquo;t necessarily a very human-friendly design, and in fact the two very often are in direct opposition to each other. Remember that example of the drill, and how hard it was for the DARPA robots to use a tool designed for people? I could <em>easily</em> build a robot with a built-in spinning drill bit, but a person couldn&rsquo;t pick it up and use it. I could <em>easily</em> provide a robot with a tapered toolholder and ask it to pick up and use a drill bit, but a person couldn&rsquo;t make any use of this.</p>
+                <p>The main place where this is going to come in to play in this problem is in storage and volumetric efficiency. Placing containers in locations easily accessible by the machine is an example of machine-friendly design which can also be a human-hostile design. Forcing a robot to store parts within a system of drawers designed for human use is machine-hostile design, as a much slicker system which doesn&rsquo;t depend on individual manipulation of awkward-shaped drawers could be built. The current system of retrieving parts, digging them out of compartments with your finger, is <em>definitely</em> machine-hostile, and will need to change. Some of the storage principles I&rsquo;ve discussed in previous sections, such as immediate access to all compartments, are primarily human-friendly, and don&rsquo;t quite apply 1:1 when you&rsquo;re talking about machines. The first-order sort logic, which separates parts in a manner that makes intuitive sense to humans, means nothing to a machine, who may gain significant utility by using dramatically different but visually nonsensical categorization.</p>
+                <p>Keep these principles in mind. They&rsquo;re going to drive a lot of design choices.</p>
+
+                <h3>Using Physics first principles in design, and to reveal the fluid mechanics parallels</h3>
+
+                <p>A heavy point of inspiration for this project has been the Tesla Gigafactory. That&rsquo;s probably a bad sign for project scope.</p>
+                <p>More specifically, I&rsquo;m talking about something Elon talks a fair bit about. The idea of design by &ldquo;physics first principles.&rdquo; I&rsquo;ll get back to the Gigafactory, and then back to LEGO, but I think this can most easily be seen in the comparison between the rocket booster landing systems developed by Blue Origin and SpaceX. Two monumentally impressive feats of engineering, with dramatically different mentalities towards the same problem.</p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/p1OSXRQI3aA?start=441" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/RPGUQySBikQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p>The Blue Origin approach more closely follows how I naturally work. The New Shepard system starts with getting to know the problem, the numerous reasons nobody had ever done it before, and the revelation that it&rsquo;s going to be really, really hard. It takes all of these problems, and adds purpose-built, super cool, slightly over the top subsystems &ndash; the ring fin, drag brakes, wedge fins, and so on, to solve them with <em>authority</em>. It builds hardware which is probably overkill, because there's so much that's unknown, in the name of making sure that any remaining uncertainty doesn&rsquo;t mess them up.</p>
+                <p>The SpaceX approach and the mentality behind it is different. It&rsquo;s a lot more straightforward, and, paraphrasing, basically goes like this:</p>
+                <p>&ldquo;The laws of physics say that a long, slender, cylindrical object will fall out of the sky, and will slow down if you light a rocket under it. The laws of physics also say that if you jiggle that engine right, you will keep the cylinder upright, and be able to steer. It could land really anywhere, but who&rsquo;s to say a boat doesn&rsquo;t just happen to be under it, right? The laws of physics say that all of this <em>could </em>happen. So we just kinda made it happen. What, think about it being hard? Who has time for that? Seriously, we literally <a href="%20https://www.quora.com/Elon-Musk/What-is-it-like-to-work-with-for-Elon-Musk/answers/5559684?share=1&amp;srid=n2Fg" target="_blank">don&rsquo;t have time for that</a>.&rdquo;</p>
+                <p>Physics says it should be doable, so therefore it&rsquo;s doable. Doesn&rsquo;t need to get any more complicated than that.</p>
+                <p>You can clearly see this, even in the rocket dynamics. Blue Origin lands with <em>authority</em>, in a very slow and controlled fashion. It deploys system after system to slow itself down in the air, only relying on dirty techniques fraught with peril like &ldquo;let&rsquo;s create some controlled explosions&rdquo; at the very end. It performs course corrections near the ground, and looks a little unrefined while doing so, but the landing is incredibly soft, with the rocket doing the last 50 feet at a leisurely pace. The legs look undersized compared to the booster and it wobbles a bit, but you have a feeling they&rsquo;re optimized to death, and no bigger than they need to be. They&rsquo;re certainly well integrated into the rocket structure, anyways.</p>
+                <p>The Falcon 9, by comparison, comes in hot. It&rsquo;s already fired its engine for deceleration multiple times at this point, and lights it again well above the pad. It looks like it&rsquo;s going to crash, right up until it somehow&hellip;doesn&rsquo;t. Even the legs come out at the last possible moment. So much of what Blue Origin is going with purpose-built hardware designed to mitigate the problem away, SpaceX is doing with control theory and armed with the simple knowledge of &ldquo;physics says it should be possible to do it this way.&rdquo;</p>
+                <p>I think there&rsquo;s merit in both mentalities. I mean, I&rsquo;m not going to second guess anyone who has successfully landed a rocket. I&rsquo;ve talked at length about the importance of knowing the details of a problem and letting that very explicitly drive your design details. Now I&rsquo;m going to talk about the utility of physics-driven temporary ignorance of design details.</p>
+                <p>Back to the Gigafactory. It was made with the same mentality. Here&rsquo;s a Musk-ism which grabbed my attention in particular:</p>
+                <p><span style="font-family: 'Helvetica',sans-serif; color: #313333; background: white;">&ldquo;Cells will be going through [the Gigafactory] like bullets from a machine gun. In fact, the exit rate of cells will be faster than bullets from a machine gun.&rdquo;</span></p>
+                <p style="tab-stops: center 3.25in;">I love this. &ldquo;We&rsquo;re making batteries, so the limiting factor should be, how fast can we get a battery to move without breaking it? How can we reduce the distance that each component of the battery has to travel?&rdquo;</p>
+                <p style="tab-stops: center 3.25in;">On a much smaller scale, this is the way I&rsquo;ve been trying to think about things. The design of the mechanical aspects of this system are based firmly around very basic principles of part flow. Before any system elements can have their details filled in, we need to path the flow of parts through the system. It is incredibly easy to run into a situation where one element operates at a higher rate than others, or creates a huge backlog/pileup of parts. Really, I&rsquo;ve been borrowing a number of tools from fluid mechanics, thinking of parts in terms of a basic &ldquo;entity count,&rdquo; rather than as physical objects. Making sure that everything flows smoothly.</p>
+                <p style="tab-stops: center 3.25in;">In the early going, systems are by necessity highly abstract. For example, I could draw up a dozen concepts for how to make physical binary gate, diverting parts down one of two paths. But that doesn&rsquo;t do me any good for quite a while. At the end of the day, all of these concepts will take up some non-zero volume, cost some non-zero amount of dollars, require some non-zero number of control inputs, and so on. They&rsquo;re all going to have the same functional output &ndash; some designs might be <em>better</em> at getting that output than others, but all concepts to solve a rigid mini-problem like that <em>should</em> produce identical outputs, which means they can be considered identical from a systems-level perspective. I can spend a bunch of time on optimizing these two-way gate designs. But, what if the flow analysis reveals that I&rsquo;m going to need 35,000 of them? That&rsquo;s probably not practical, no matter how efficient I can make the gate design. And trust me, as we'll see later on, it is <em><strong>not hard</strong></em> to come up with designs which seem like they work perfectly well on a small scale, but reveal that they require 35,000+ actuated components if you scale them to try and handle everything. This means that detailed design and minor optimization of individual elements is useless if the high level design shows that using them the way you&rsquo;re using them <strong><em>ruins everything.</em></strong></p>
+                <p>Therefore, we&rsquo;re going to start out by talking very little about the specific electromechanical elements an individual part must encounter on its journey from mixed pile to sorted containers. Instead, the discussion will begin with looking at the overall flow of parts and their states of sortedness. We&rsquo;ll be tracking distance travelled closely, and designing only what it takes to put some rudimentary numbers to this analysis. We&rsquo;ll be counting actuators and decision points without giving very much thought to what they&rsquo;ll actually look like, and assuming our engineering skill is sufficient to figure something suitable out, once the system-level design is figured out. For the most part, this is the flowchart phase, not the CAD phase. The priority will be ensuring that aspects of flow which demand impractically large structures or impractically large actuator count are avoided, that parts exit the LEGOSortus in a constant stream with no dead-time, and that spatial, material, and energy resources are intelligently consumed. Building a sweet decision point into your system is useless if you realize after the fact that you need 40,000 of them.</p>
+                <p>Also, it is important to recognize that although we are taking a software-first approach, the laws of physics, and more specifically, physics surrounding the motion of the machine and the parts, are going to be the limiting factor capping our part per minute rate. Any mechanism which depends on gravity will be limited by the rate at which parts fall through it. Any mechanism which depends on friction will be limited by the coefficient of friction we can realistically generate between the machine and any given part. Any mechanism which depends on the parts travelling a certain distance within a certain time must consider the part acceleration involved in that. The identification algorithm is likely to outpace physics-based constraints on even an excellent mechanical design, certainly the case for a poor one. If it doesn&rsquo;t, it can easily be made to do so by adding more identification capacity operating in parallel. Accommodating and minimizing the impact of these fundamental realities of physics must be the overarching driver of every mechanical design choice. Everything else is secondary. If it kills the flow, it&rsquo;s no good.</p>
+
+                <h3>Jams, Probability-Driven-Design, and Uncertainty in LEGO and Fish Identification</h3>
+
+                <p>I just said that this project is a lot more like a fluid mechanics system than may immediately meet the eye. It&rsquo;s more of a macroscopic fluid mechanics problem; the individual &ldquo;particles&rdquo; are large enough to be clearly distinct, but they all need to flow together.</p>
+                <p>Specifically, we&rsquo;re looking for predictable behavior, with little chaos or uncertainty. In fluid mechanics, this is referred to as <strong><em>laminar flow</em></strong>. Here are some example you could think of as laminar flow in fluids, with macro scale particles. Everything moving&hellip;together.</p>
+
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/7GwGu8QVpLU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/vbSww5SBqN4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/wkn6Whci2lE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/eXZLmh6KJPQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/jmh_usvhHLw?start=260" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+                <p>And the worst thing that can happen to a fluid system like this is a clog, or a jam. Here are some graphic examples of what happens when laminar flow or objects moving as a cohesive structured unit are rudely interrupted by a physical blockage. </p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/j66o87JB48w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p><br></p>
+
+                <video width="560" class="pagevid" autoplay muted loop><source src="/images/pileup1.mp4" type="video/mp4"></video>
+
+                <p>This kind of situation is <em>disastrous</em>, if it should occur. Hundreds of objects which, under normal circumstance, would have carried on their way to where their supposed to go, all get screwed up by a few objects out front messing up. And not only do the objects lose the ability to get where they belong, but because a machine, by default, has no means of recognizing such a thing has happened, the parts just keep on coming, and it keeps getting worse. Look at the racing pile-up, where the drivers are able to react and slow down, eventually stopping the damage. Race car drivers are smart. Then, compare to the second video. In the animated cyclist example, the bikes just keep coming and coming, and make no effort to stop or avoid the pile. Animated cyclists are dumb.</p>
+                <p>LEGO bricks are also dumb. They might be made of melted-down dinosaurs, but they definitely don&rsquo;t retain any of the brains.</p>
+                <p>Since we want this thing to be able to run unsupervised for weeks at a time, adding intelligence to the LEGOSortus, to detect and react to these kinds of situations, is going to be important. However, it&rsquo;s also likely not fully possible. The number of pathways and potential jam spots which need monitoring is likely gigantic. The sheer variety of parts mean that the exact nature of jams is fairly unpredictable. It&rsquo;s definitely going to be important to keep detection in mind, but really, the system needs to be designed to prevent jams in the first place.</p>
+                <p>Sharp corners and direction changes are a common breeding grounds for jams. This is especially true for largely rectilinear shapes like LEGO bricks, which can easily get caught in these places. Unfortunately, sharp corners are generally seen in easy shapes to manufacture. Integrating smooth contours into the physical design of any part guidance surfaces is going to be important.</p>
+                <p>But the mechanical structure most frequently responsible for a jam is any funnel-like structure, where a wide pathway for parts narrows up. I&rsquo;m sure I&rsquo;ll be investigating the exciting intricacies of funnel design soon enough, but from a high level, flow-oriented perspective, any kind of &ldquo;narrowing,&rdquo; or convergence of many paths into one, should be seen as a red flag. In fact, designing things as reverse-funnels, where passageways taper wider slightly as they progress, should be great for jam prevention. An easy, but na&iuml;ve, way to do this is, make sure that <em>every</em> part can smoothly sail through <em>every </em>passageway in the machine.</p>
+                <p>Let&rsquo;s check &ndash; I set up my program to iterate through every single part, and find the largest ones by volume, and by length.</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/massive1.png"></div>
+
+                <p>Well, those are some pretty significant hulks of parts. Still, if that&rsquo;s the goal, we&rsquo;re going to need to make every single pathway, including every final storage destination, large enough to contain these pieces. Let&rsquo;s say that we don&rsquo;t have a good way to control orientation, so they need to, at minimum, fit that 70 stud long boat hull in, in three dimensions. How much raw storage volume are we talking?</p>
+                <p>70,000* (70 studs * 8mm/stud)^3 = 12,293,120,000,000mm^3</p>
+                <p>That seems like a large number. Let&rsquo;s double check.</p>
+                <p>Yup, if we put this into a cube, that cube is 75 feet on every side. And we haven&rsquo;t even started to talk about the possibility that we have <em>more than one</em> of that boat, or about the size of what it&rsquo;s going to take to actually <em>access</em> compartments jam-packed into a cube like that. This is feeling impractical.</p>
+                <p>So the solution is, if you have a design which contains a number of pathways, with parts all starting out going down the same path then branching off into more and more specific pathways until they reach their final destination, you only have to size pathways/compartments for the parts you expect will travel down them. It would feel really silly to assume that everything is going to be this size, when so many parts are so much smaller. I&rsquo;ll talk about the limitations of this model later, but say that you have a sort structure which looks like a binary tree:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/binarytree.png"></div>
+
+                <p>Parts are added at the top, then filter down to their specific destinations at the bottom. Each node would represent a <a class="popup" onclick="popup33()">physical "gate" of some sort
+                    <span class="popuptext" id="popup33">        <iframe width="560" height="315" src="https://www.youtube.com/embed/tWCNFqoU9uI?start=20" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span></a>. As we’ve discussed, the actual order of the parts on the bottom doesn’t make any difference as long as you know where they are. So you can make this structure way more volumetrically efficient if you make each gate direct “large parts” to the right, and “small parts” to the left. The first gate has to handle anything. But since the left side of the tree is now only seeing the lower 50% of LEGO by size, the gates and passageways on the left side can be way smaller. How much smaller? Here’s a chart of the distribution of volume formed by every single LEGO part:</p>
+
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/lookatthisgraph1.png"></div>
+
+                <p>That doesn’t look so helpful, until you realize it has to be plotted on a log scale to see anything at all. Here’s that same data <a class="popup" onclick="popup34()">unscaled<span class="popuptext" id="popup34"><img class="popupimg" src="https://imgs.xkcd.com/comics/log_scale.png"></span></a>. It really is just that darn 1% at the top, ruining things for everyone else. </p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/takethelogawayitmakesmelaugh.png"></div>
+
+                <p>The data gets <em>slightly</em> less skewed when you add in an approximation of expected quantity, right now simply by multiplying the volume by instances of each part currently for sale. Plenty of those small parts come in massive quantities, and the large ones typically do not. Still, it&rsquo;s clear that tiny parts in tiny quantities represent the majority of your unique storage locations. Also, this only affects the final destinations, <em>pathways</em> for small volume, large quantity parts can still be very small.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/partsudedtobejustsmallandred.png"></div>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/nowtheytakemywholeroomexceptmybed.png"></div>
+
+                <p>So it&rsquo;s pretty clear that we have to let this distribution drive aspects of our physical system design. This is only one of several ways that statistics and probability are ultimately going to impact some very basic things about the build, both hardware and software:</p>
+                <ul>
+                    <li>If we have a situation where, say, we have 10 bins collecting 10 broad categories of parts, we need to make sure that they will fill up at roughly equal rates, both by part count, and by overall size distribution. This means that the lines between categories may be complex and non-intuitive.</li>
+                    <li>Parts will have multiple stable orientations they may fall into, but some will happen more regularly than others. Probability of seeing a part, or seeing a part in a certain way, can weight our identification process.</li>
+                    <li>Likewise, if we have a non-absolute sort, like a basic mechanical size filter where larger parts than intended may <em>sometimes</em> slip through, we can let the probability of this happening weight the identification process.</li>
+                    <li>But on the flip side there are limits to this probabilistic view of the world. If there is <em>any chance at all</em> that a large part will go down a certain path, that path needs to be large. You can&rsquo;t say &ldquo;this path will contain 1cm^3 parts 95% of the time, and 10cm^3 parts 5% of the time, so therefore it averages out to 1.45cm^3. No, you need to make the whole thing 10cm^3, if it will ever hold those parts.&rdquo; Therefore, the utility of tools like mechanical size filters that may not always work as expected is somewhat limited.</li>
+                </ul>
+                <p>That last point is in particular important. We need to let this volume distribution drive our physical system design, but we need to do it in a way where we filter out the large from the small explicitly as soon as possible. Until we are <em>absolutely certain</em> we&rsquo;re only dealing with small parts, the flow passageways have to assume things could be large.</p>
+                <p>But that shouldn&rsquo;t be hard &ndash; just make early decision-points in the flow based predominantly on size. Most of your passageways will then be small. So that early helps solve the volume problem, but it also introduces a huge potential point of jamming.</p>
+                <p><em>What if the software makes a mistake?</em></p>
+
+                <p>Identification mistakes are going to happen. I’ve talked at length about how hard a classification problem this is, and how much dramatically subtle things matter. And the technologies which can be used to solve these problems are imperfect, and still an active field of research and development. Most grand problems in machine learning don’t consider “state of the art” anywhere near 100%. Many of these mistakes are going to be subtle, the kind a person would make, like letting a cracked part slip through. But what about larger mistakes? Machine learning algorithms, unfortunately, have little to no common sense, and can do wildly unpredictable or nonsensical things on occasion, or in the face of inadequate data. What if the classification software reports it has seen <a class="popup" onclick="popup35()">this<span class="popuptext" id="popup35"><img class="popupimg" src="/images/endview.jpg"></span></a>, and sends it down the tiny passageway meant for <a class="popup" onclick="popup36()">this<span class="popuptext" id="popup36"><img class="popupimg" src="/images/wrongsmall.jpg"></span></a>, when in reality if the camera was tilted a little better, it might have seen <a class="popup" onclick="popup37()">this<span class="popuptext" id="popup37"><img class="popupimg" src="/images/rightlarge.jpg"></span></a>?</p>
+
+                <p>This means that the most likely root cause of a jam, by far, is a misclassified part, sent down a pathway never meant to handle it. So it’s really a software problem after all. All the more reason to take that software-first philosophy. </p>
+
+
+                <p>So obviously, we have to design our software to prevent this from happening, as much as possible. Aside from just, you know, making it better, what we really need to focus in on is response to uncertainty. Take a look at <a class="popup" onclick="popup38()">this example
+                    <span class="popuptext" id="popup38">        <iframe width="560" height="315" src="https://www.youtube.com/embed/IHZwWFHWa-w?start=909" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> of a fairly primitive neural network classifier, and how poorly it responds to random noise. This is very bad. We want our system to take appropriate action, maybe rejecting a part into an “unknowns” pile, or even shutting down and calling for help, rather than confidently giving wrong answers. </p>
+
+                <p>Ability to report uncertainty is actually going to end up being a better metric for an algorithm&rsquo;s quality, over and above its actual percent correct performance.</p>
+                <p>To more dramatically illustrate what I&rsquo;m talking about here, let&rsquo;s have a look at this seminal, classic video on the topic of another object identification task relevantly performed within the state of Massachusetts. It features two competing classification algorithms at work, with distinct characteristics and personalities. We&rsquo;ll call them &ldquo;Mike&rdquo; and &ldquo;Jay&rdquo;:</p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/IYUgduOeXuA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p>At the 0:43 mark, Mike’s algorithm clearly indicates that they are “seeing some shit they ain’t never seen before.” He is able to extract specific visual features of the object, such as “That thing is big, Jay,” “It looks hurt,” “That thing looks dead, man,” “It needs help, dude, whatever it is,” and even “That is still good meat on that fucking fish, man.” However, he is unable to process this data into a reliable classification of the object. This high level of uncertainty is repeatedly stated. Even when Mike makes classifications, as new frame data becomes available, he quickly reverts to declarations of uncertainty. The degree of uncertainty appears to be reported via profanity. </p>
+
+                <p>Mike&rsquo;s algorithmic response to the <a class="popup" onclick="popup39()">uncertainty<span class="popuptext" id="popup39"><img class="popupimg" src="/images/jaywhatthefuckisthat.jpg"></span></a> is to consult other algorithms for guidance. &ldquo;We got to call the aquarium or something, dude.&rdquo; This is an <em>excellent</em> response. In the face of uncertainty, calling in a subject matter expert, such as a human being who deals with sorting the objects you&rsquo;re trying to identify, is probably what you want to do. By asking a person for help in identifying the object, Mike will likely improve his own identification capabilities, and gain the capacity to identify similar objects in the future.</p>
+
+                <p>Unfortunately, Mike also consults Jay, who represents a poorly designed algorithm at best. Most of his declarations of uncertainty are not reported as final classifications, but instead as calls to the Jay algorithm for support and assistance. Even though Mike reports the overall system response by means of excessive volume, Mike is clearly hard coded to defer to Jay&rsquo;s judgement, at least in the short term, in cases of conflicting outputs. The function call syntax appears to be &ldquo;jayWhatTheFuckIs(that_thing)?&rdquo; I&rsquo;ve given methods in my software stranger names before, I&rsquo;m not one to judge.</p>
+                <p>However, Jay displays little capacity to report uncertainty. Even though Jay is clearly does not have this class of object in his training set, he instead wildly fluctuates between classes in his dataset, as meaningless fluctuations in frame data propagate noise through his neural net and return rapidly variable &ldquo;least wrong&rdquo; guesses. These range from &ldquo;Big sea turtle,&rdquo; to &ldquo;dude that&rsquo;s a big flounder,&rdquo; to &ldquo;Tuna.&rdquo; And, of course, &ldquo;Baby wheel.&rdquo; He gives little to no indication of the uncertainty surrounding these results, and passes them back to Mike.</p>
+                <p>Mike, unfortunately is displaying characteristics of overfitting, a common problem with small and noisy datasets. He responds to the datapoints from Jay, which should be thrown out, weights them heavily due to the relatively thin dataset he has to work with, and momentarily comes to decisive conclusions. Inspired by this newfound confidence, he takes action, driven also by apparent weighting of pricing data, and, somewhat nonsensical for a machine learning algorithm, a desire to be on the fucking news, man. He then quickly discovers that the tools he has decided to employ to process the object are woefully undersized for the task at hand. Physical manipulation of the object in response to the classification does not work out as planned, and they get stuck.</p>
+                <p>At the end, this error state confuses and overwhelms Mike, who does not have the tools to respond correctly to his current predicament. He produces the following statement:</p>
+
+                <div class="codeblock">
+                    <p>Exception in thread "bahston" java.lang.FishFormatException: Fish too heavy to lift</p>
+                    <p>at java.lang.FishFormatException.forInputString(FishFormatException.java:65)</p>
+                    <p>at java.lang.Fish.parseFins(fish.java:588)</p> 
+                    <p>at Mike.comeToLogicalConclusion(Mike.java:12) </p>
+                    <p>at Mike.jayWhatTheFuckIsThatThing(Mike.java:34)</p>
+                </div>
+                <p>and executes a default case, which appears to have been left in the code base by a programmer with a sense of humor, who clearly thought nobody would ever actually reach this point in the code. </p>
+
+                <div class="codeblock">
+                    <p><span class="comment">//TODO: Auto-generated method stub</span></p>
+                    <p>System.out.println(<span class="varname">“IT’S MOBY DICK”</span>);</p>
+                </div>
+
+                <p>This is what a hardware jam caused by inappropriate response to uncertainty by the software looks like.</p>
+                <p>So what this all means is, it is very, very important that my algorithm know how to call the aquarium early on, and end things there before they get worse.</p>
+                <p>(I am <em>absolutely</em> naming the &ldquo;uncertain output&rdquo; class in my software &ldquo;Baby f-ing wheel&rdquo;)</p>
+
+                <h3>Scoping and incremental utility, design for expansion, avoiding scope-limiting builds, and building upon the state of the art</h3>
+
+                <p>So far in this post, I&rsquo;ve talked about orbital rockets, the largest factory on the planet, state-of-the-art humanoid robots, and the actual LEGO factory as points of inspiration or comparison to my project. This probably makes you extremely apprehensive about the project scope. I also, for some reason, talked at length about using Massholes for machine learning. This probably makes you think I&rsquo;m extremely out of my depth here, and don&rsquo;t really know what I&rsquo;m doing. You&rsquo;re not wrong on either point.</p>
+                <p>Once they realize how over-the-top its end goals and challenges are, <em>every single person I have shown this project to</em> has asked a question along the lines of &ldquo;Isn&rsquo;t it really ambitious to sort every single type of LEGO piece? Isn&rsquo;t this just going to be another project where you&rsquo;re in way over your head and trying to do more than you&rsquo;re capable of doing? Wouldn&rsquo;t it be more reasonable to start by focusing on some of the most common ones, like just those basic bricks, then add the others once you have that working? Wouldn&rsquo;t limiting your scope for a while make things easier in the long run?&rdquo;</p>
+                <p>The answer is something along the lines of &ldquo;Yes, sort of, and I will be doing that and starting with a limited subset, sort of, but asking that question makes me think you really don&rsquo;t understand either the problem I&rsquo;m trying to solve or what&rsquo;s making this hard and doing that limited scope thing the wrong way could easily permanently screw the whole thing up, which means that I have to talk and think like I&rsquo;m not going to be doing that at all during the early phases.&rdquo; Let me explain.</p>
+
+                <p>There are actually <em>a lot</em> of LEGO sorting machines out in the world. Here are some of them:</p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/nlCSlJuD65A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/fM9qGZCc4DY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/Bet_QDWNFCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/CuW73P5PanM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p>When I show people these machines, they go “yeah, something like that! I bet even that pin sorter would be really helpful to you!”</p>
+
+                <p>From an economic, business perspective, however, each of these machines is next to useless.  </p>
+
+                <p>Well, “useless” is too strong a word. “Dead end” is better. Several of these machines would absolutely enhance my manual process as it exists right now, potentially handling certain 1st order sort categories, but would be made useless during attempts to expand to more parts. </p>
+
+                <p>To refresh: Right now, the process goes:</p>
+                <ol>
+                    <li>Pre-sort parts into ~30 high level, human-friendly categories, representing anywhere from a few dozen to several hundred molds</li>
+                    <li>Wash the stage 1 sorted parts ultrasonically, except on delicates</li>
+                    <li>Take the stage 1 sort, and sort it further by individual part type/color</li>
+                    <li>Enter the fully sorted parts into inventory</li>
+                </ol>
+
+                <p>These kinds of machines would be useful for stages 3 and 4, where you are dealing with a small subset of all possible LEGO parts to begin with. All the machines above fall into this pattern to various degrees, but its most clearly seen on the Akiyugi machines so I&rsquo;ll pick on those: the narrow sampling of parts that they are designed for allows them to utilize feed mechanics, and often sorting mechanics as well, which are directly dependent on the part&rsquo;s physical geometry. The liftarm sorter wouldn&rsquo;t work on any part that isn&rsquo;t tightly gripped by the conveyor belts used. The pin sorter won&rsquo;t sort anything that doesn&rsquo;t fit down that funnel onto the chain run. And so on.</p>
+                <p>I think it&rsquo;s somewhat telling that a lot of these are themselves constructed from LEGO. LEGO has a &ldquo;fun-ness&rdquo; factor associated with it, and, to a point, an ease of construction factor. Simple things are simpler to build with LEGO than with other more &ldquo;real&rdquo; techniques. But at a certain level of complexity, the limitations catch up with you, and it becomes a show-off endeavor. &ldquo;Look how much functionality I squeezed out of LEGO.&rdquo; These machines are complex enough that if pure functionality were the goal, they could be built <em>much</em> more efficiently from real industrial parts. But functionality isn&rsquo;t their goal. Taking on a complex, LEGO focused problem with LEGO, to show the cool things the creators can make with LEGO, is the goal. If you scale the scope of the problem to the point where solving it provides real, direct utility, using LEGO holds you back.</p>
+                <p>It would be very easy to say &ldquo;Okay, take what you&rsquo;re doing now, and add these machines to the process. Start with something really common like pins, so you get the most impact with the least effort immediately. It might not make much difference at first, but if you keep adding these machines, eventually you&rsquo;ll get to where you want to be.&rdquo;</p>
+                <p>The input to each of these machines is very&hellip;sanitized, which raises the question, how did it get that way? Well, a person probably made them that way, taking the same basic process I use right now for the 1<sup>st</sup> stage sort. This is a strike against these machines -- the whole idea of automated sorting is to eliminate humans from what&rsquo;s a tedious and repetitive process, the kind of thing that robots are best at. But then you think &ldquo;Maybe it won&rsquo;t be the same approach, but you can probably come up with another machine that will sort on a more general level.&rdquo;</p>
+                <p>This is the logical extension of this way of thinking, still with the insistence of being made 100% from LEGO.</p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/m7Gs6-6p7qw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p>This is a project with, at least, a similar stated end goal as mine: be able to sort every part LEGO has in production, so about 5,000 unique parts, not including color variations. However, it is built using a purely mechanical sortation approach, very similar to the &ldquo;incrementing trap door width&rdquo; design used on the sorters by Akiyugi. And you can quickly see how this can spiral into a disastrous mess. Here, the ways in which building and powering something far larger than what LEGO motors and such were meant for is immediately obvious. Again, the goal is showing off LEGO construction prowess, not solving the problem in the best way possible.</p>
+                <p>I really think there&rsquo;s a lot to love about this design &ndash; it&rsquo;s the only one I&rsquo;ve seen to date that seems to fully acknowledge the sheer scale required by this problem. But as much as I&rsquo;m a mechanisms nerd, and get excited over all the subtleties and little clever solutions for handling different variants of parts/am <em>utterly amazed</em> by Brickformula&rsquo;s machine performing as capably as it does, there are <em>so many</em> ways that this approach quickly becomes a nightmare, LEGO or not. For <em>every single decision point in your system</em>, you need to make sure that <em>every single part which might reach that point will pass smoothly over it.</em> Obviously you do the small things near the start, and the big things near the end, but there are a lot of <em>very similarly sized LEGO pieces out there</em>. You have to methodically plan out, and be very mentally aware, of the exact way in which all those ~10,000 physical molds vary. If you mess up and realize you missed something, and a part is dropping through sooner than it should be, <em>you likely have to re-order the entire thing</em>, making room in the middle of your sprawling contraption for another decision point. You have to monitor hundreds of physical gates for jams, which by the nature of mechanical filtering, is going to be something they&rsquo;re prone to until thoroughly debugged. If you add a little wheel to flip one part out of a pesky orientation, you need to make sure that that wheel <em>only</em> affects that specific part.</p>
+                <p>Think for a second about drawing a flowchart to identify LEGO by characteristics. Something like this, except expanded to every single part.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/badflowchart.png"></div>
+
+                <p>I&rsquo;ve purposefully made mistakes to show how fraught with peril this process is. Jumping from &ldquo;its round&rdquo; straight to &ldquo;must be a minifig head!&rdquo; is obviously a ludicrous logical leap, as it ignores the thousands of other round or round-ish parts. I&rsquo;ve accidentally ended up with two compartments for the same type of part. I&rsquo;ve also needed to build the exact same decision-maker twice. Should that decision have come earlier in the tree? Maybe. The question of &ldquo;where do you even start in building complex decision logic efficiently?&rdquo; is hard enough on four mold variants. Now add in 10,000 more. Then pull out print patterns and colors on top of that. &ldquo;What question is best to ask first?&rdquo; is a difficult question to answer.</p>
+                <p>That risk of &ldquo;one stupid mold out of 10,000 jams everything and means you have to start the entire mechanical design over right at the end&rdquo; is <em>terrifying</em>. Effectively designing for the unknown, which is really what I&rsquo;m doing here because LEGO could introduce anything at any time, and there&rsquo;s no way I&rsquo;m closely studying every single type of part enough to build mechanisms specific to them, is challenging, and requires a generalized and variance-tolerant approach. Designing a bunch of single-purpose gates and sub-sorters is the opposite of that.</p>
+                <p>Trust me, we&rsquo;ll be getting to plenty of absurdly over-the-top mechanisms in due time. For the actual sorting though, universal/software approaches are the way to go &ndash; the mechanics just need to handle whatever lump of ABS you throw in there.</p>
+                <p>Now, as an alternative, you could do a machine-friendly 1<sup>st</sup> order sort instead of a human-friendly 1<sup>st</sup> order sort. An example of this would be the approach I tried out early in the manual process: those <a class="popup" onclick="popup40()">sifting sort trays<span class="popuptext" id="popup40"><img class="popupimg" src="/images/sorttray.png"></span></a>. &ldquo;Part characteristics/descriptors&rdquo; are hard for a machine to classify, but something simple like size can be determined much more easily.</p>
+
+                <p>There are a couple of problems with relying too much this though, the same problems which lead to its abandonment in the manual process. Long/narrow parts <em>usually</em> won&rsquo;t go through small holes, but they can sometimes line up so that they do. And also, at the low end, there really isn&rsquo;t a whole lot of variation in size. Again, this is what the volume data looks like, plotted on a log scale:</p>
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/lookatthisgraph1.png"></div>
+
+
+                <p>Lots of flat regions, and remember, there are 70,000 parts plotted there – the range from just <a class="popup" onclick="popup41()">100 cubic millimeters to 1000<span class="popuptext" id="popup41"><img class="popupimg" src="/images/10to100.png"></span></a> spans over 10,000 unique parts. So any kind of rapid mass-filtering of the parts seems out of the question. It may be useful as a “zeroth order sort” of some type, to get the true outliers where the graph exponentials its way upwards, like massive baseplates or huge assembled chunks out of the machine’s mechanics, but it doesn’t seem useful for any actual reliable identification. </p>
+
+
+
+                <p>So hardware sorts of any type seem out. Even with a very limited feed subset, there are tons of parts that would just be a pain to mechanically filter out from each other. Let’s see what people have done before with software in the world of small scale project scope, shall we?</p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/uCuQsNwX1QY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/CnIWzBSVEWM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/vcNg_Wsd9z0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/tGVIsqXEDdM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/jego7nntfAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p>These aren't much better</p>
+
+                <p>These machines are nice in that they show that the CV problem is doable. But their peculiar choice of technologies and hardware constraints is completely nonsensical to me. They go to all the trouble to build a vision system, which should, in theory, provide the data required to identify <em>anything</em>. And then, they completely and totally handicap this potential, by using feed mechanisms limited to a miniscule range of parts. </p>
+
+                <p>In particular, I was struck by the first machine’s <a href="https://medium.com/@pacogarcia3/tensorflow-on-raspbery-pi-lego-sorter-ab60019dcf32" tartet="_blank">associated blog posts</a>, where the designer makes clear that the hardware side was what intimidated him, with unusual, calculated statements like “I did some research and found that the easiest way to achieve multi-bin sorting was through rotation.” Like…okay, says who? How are you quantifying “easiest?” Why are you scared of moving things in straight lines? Most of these designs come off as software passion-projects, built by people with minimal hardware design experience. They’re cool, and I’ve learned a lot from them as well, but they overwhelmingly feel like they’re almost purposefully handicapping their capabilities through hardware builds with not only extremely limited scope, but seemingly zero plan for expansion. </p>
+
+                <p><a class="popup" onclick="popup42()">This one
+                    <span class="popuptext" id="popup42">        <iframe width="560" height="315" src="https://www.youtube.com/embed/CnIWzBSVEWM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a> exemplifies this flawed approach best. It uses a vibratory bowl feeder, a <em><strong>super cool and super expensive</strong></em> industrial component, typically used to take uniform parts and regularize them from a mixed mess into a single-file feed with <a class="popup" onclick="popup43()">predictable orientation
+                    <span class="popuptext" id="popup43">        <iframe width="560" height="315" src="https://www.youtube.com/embed/QsJzSFVAnhk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </span>
+                    </a>
+                    . They have their functions – even LEGO uses them in their factories, but each feeder must be physically tuned to a specific part. You’re never going to generalize this mechanism, allowing it to feed a wider range of parts, without completely changing the details of the geometry.
+                </p>
+
+                <p>This isn’t “starting small and simple,” or anything of that sort, and it's counterproductive to think otherwise. This is, in fact, putting massive investment into something that very directly places a ceiling on your machine’s capability. To get better, you’d have to throw the bowl out. To make these machines useful, you still have to do the 1st order, broad-scale sorting we’ve just discussed as largely nonviable for machines has to be done beforehand. It seems clear that with this mentality towards the problem, whether you are doing your sorting by hardware or software, that you will need dozens, if not hundreds, of unique machines, each physically tuned to a specific sub-batch of the LEGO catalog. And you still have to figure out some way to divide your mixed bulk into those sanitized sub-batches to begin with. This is starting to sound hard. </p>
+
+                <p>We already largely wrote off hardware as a means of doing a 1st order sort, because of how unpredictable the results would be. There are a few machines out there, by far the most technically impressive, and closest to what I need to build, which do this 1st order task by software as well. And these, perhaps, drive me even crazier.  </p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/6lZ9rSZwDzE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/3IuJAFRxSjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+                <p>So, the process is clear, then, right? Build one of these machines. Use it to perform a first order sort, into small regularized categories, the kind that you can feed to the more purpose-built machines above. Yeah, there&rsquo;ll be hundreds of machines, but&hellip;what other way is there?</p>
+                <p>Except, from a classification perspective, these generalized machines have already solved the problem perfectly. Which makes any extra effort you spend re-solving the classification problem wasted. Which makes all that effort you spent thinking about how to sort specific sub-batches, and &ldquo;starting small,&rdquo; totally wasted.</p>
+                <p>Think about it. The mechanics of these machines reveals a crucial detail that&rsquo;s very easy to miss if you&rsquo;re considering a 1<sup>st</sup> order sort machine as some abstract concept you might build someday in the future, after making a bunch of progress by starting small, instead of as something at the forefront of your mind that you know you&rsquo;ll have to figure out. Specifically, these machines are prone to the same, <em>incredibly frustrating</em> dynamic of the manual 1<sup>st</sup> order sort. They don&rsquo;t identify general classes, they very explicitly classify each part by its exact part number and color. They&rsquo;re even better at this than a person, because the machine is so tied-in to the database. And then&hellip;they mostly throw this information away, because they fall victim to the same limitations the manual process does.</p>
+                <p>I&rsquo;ll talk about this a ton more in the next section, but it turns out, identifying extremely specific objects is much easier for computers, than identifying broad classes with lots of variability. Being given this set of images, you could label it in one of two ways.</p>
+
+                <div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img1.png">
+                        <img class="photogrid" src="/images/partgrid/img2.png">
+                        <img class="photogrid" src="/images/partgrid/img3.png">
+                        <img class="photogrid" src="/images/partgrid/img4.png">
+                        <img class="photogrid" src="/images/partgrid/img5.png">
+                        <img class="photogrid" src="/images/partgrid/img6.png">
+                        <img class="photogrid" src="/images/partgrid/img7.png">
+                        <img class="photogrid" src="/images/partgrid/img8.png">
+                        <img class="photogrid" src="/images/partgrid/img9.png">
+                        <img class="photogrid" src="/images/partgrid/img10.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img11.png">
+                        <img class="photogrid" src="/images/partgrid/img12.png">
+                        <img class="photogrid" src="/images/partgrid/img13.png">
+                        <img class="photogrid" src="/images/partgrid/img14.png">
+                        <img class="photogrid" src="/images/partgrid/img15.png">
+                        <img class="photogrid" src="/images/partgrid/img16.png">
+                        <img class="photogrid" src="/images/partgrid/img17.png">
+                        <img class="photogrid" src="/images/partgrid/img18.png">
+                        <img class="photogrid" src="/images/partgrid/img19.png">
+                        <img class="photogrid" src="/images/partgrid/img20.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img21.png">
+                        <img class="photogrid" src="/images/partgrid/img22.png">
+                        <img class="photogrid" src="/images/partgrid/img23.png">
+                        <img class="photogrid" src="/images/partgrid/img24.png">
+                        <img class="photogrid" src="/images/partgrid/img25.png">
+                        <img class="photogrid" src="/images/partgrid/img26.png">
+                        <img class="photogrid" src="/images/partgrid/img27.png">
+                        <img class="photogrid" src="/images/partgrid/img28.png">
+                        <img class="photogrid" src="/images/partgrid/img29.png">
+                        <img class="photogrid" src="/images/partgrid/img30.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img31.png">
+                        <img class="photogrid" src="/images/partgrid/img32.png">
+                        <img class="photogrid" src="/images/partgrid/img33.png">
+                        <img class="photogrid" src="/images/partgrid/img34.png">
+                        <img class="photogrid" src="/images/partgrid/img35.png">
+                        <img class="photogrid" src="/images/partgrid/img36.png">
+                        <img class="photogrid" src="/images/partgrid/img37.png">
+                        <img class="photogrid" src="/images/partgrid/img38.png">
+                        <img class="photogrid" src="/images/partgrid/img39.png">
+                        <img class="photogrid" src="/images/partgrid/img40.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img41.png">
+                        <img class="photogrid" src="/images/partgrid/img42.png">
+                        <img class="photogrid" src="/images/partgrid/img43.png">
+                        <img class="photogrid" src="/images/partgrid/img44.png">
+                        <img class="photogrid" src="/images/partgrid/img45.png">
+                        <img class="photogrid" src="/images/partgrid/img46.png">
+                        <img class="photogrid" src="/images/partgrid/img47.png">
+                        <img class="photogrid" src="/images/partgrid/img48.png">
+                        <img class="photogrid" src="/images/partgrid/img49.png">
+                        <img class="photogrid" src="/images/partgrid/img50.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img51.png">
+                        <img class="photogrid" src="/images/partgrid/img52.png">
+                        <img class="photogrid" src="/images/partgrid/img53.png">
+                        <img class="photogrid" src="/images/partgrid/img54.png">
+                        <img class="photogrid" src="/images/partgrid/img55.png">
+                        <img class="photogrid" src="/images/partgrid/img56.png">
+                        <img class="photogrid" src="/images/partgrid/img57.png">
+                        <img class="photogrid" src="/images/partgrid/img58.png">
+                        <img class="photogrid" src="/images/partgrid/img59.png">
+                        <img class="photogrid" src="/images/partgrid/img60.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img61.png">
+                        <img class="photogrid" src="/images/partgrid/img62.png">
+                        <img class="photogrid" src="/images/partgrid/img63.png">
+                        <img class="photogrid" src="/images/partgrid/img64.png">
+                        <img class="photogrid" src="/images/partgrid/img65.png">
+                        <img class="photogrid" src="/images/partgrid/img66.png">
+                        <img class="photogrid" src="/images/partgrid/img67.png">
+                        <img class="photogrid" src="/images/partgrid/img68.png">
+                        <img class="photogrid" src="/images/partgrid/img69.png">
+                        <img class="photogrid" src="/images/partgrid/img70.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img71.png">
+                        <img class="photogrid" src="/images/partgrid/img72.png">
+                        <img class="photogrid" src="/images/partgrid/img73.png">
+                        <img class="photogrid" src="/images/partgrid/img74.png">
+                        <img class="photogrid" src="/images/partgrid/img75.png">
+                        <img class="photogrid" src="/images/partgrid/img76.png">
+                        <img class="photogrid" src="/images/partgrid/img77.png">
+                        <img class="photogrid" src="/images/partgrid/img78.png">
+                        <img class="photogrid" src="/images/partgrid/img79.png">
+                        <img class="photogrid" src="/images/partgrid/img80.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img81.png">
+                        <img class="photogrid" src="/images/partgrid/img82.png">
+                        <img class="photogrid" src="/images/partgrid/img83.png">
+                        <img class="photogrid" src="/images/partgrid/img84.png">
+                        <img class="photogrid" src="/images/partgrid/img85.png">
+                        <img class="photogrid" src="/images/partgrid/img86.png">
+                        <img class="photogrid" src="/images/partgrid/img87.png">
+                        <img class="photogrid" src="/images/partgrid/img88.png">
+                        <img class="photogrid" src="/images/partgrid/img89.png">
+                        <img class="photogrid" src="/images/partgrid/img90.png">
+                    </div>
+                    <div>
+                        <img class="photogrid" src="/images/partgrid/img91.png">
+                        <img class="photogrid" src="/images/partgrid/img92.png">
+                        <img class="photogrid" src="/images/partgrid/img93.png">
+                        <img class="photogrid" src="/images/partgrid/img94.png">
+                        <img class="photogrid" src="/images/partgrid/img95.png">
+                        <img class="photogrid" src="/images/partgrid/img96.png">
+                        <img class="photogrid" src="/images/partgrid/img97.png">
+                        <img class="photogrid" src="/images/partgrid/img98.png">
+                        <img class="photogrid" src="/images/partgrid/img99.png">
+                        <img class="photogrid" src="/images/partgrid/img100.png">
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <p>You could divide it into 50 “bricks” and 50 “not bricks.” Or, you could divide it into 10 “2x4 Medium Azure Bricks” and 90 “not 2x4 Medium Azure Bricks.” Turns out the computer will do a much better job at the latter, because it can do things like say “if the part doesn’t have exactly these proportions, and isn’t exactly this color, it’s definitely not what I’m looking for.” Absolute statements like this, which can be quantified, are easy for computers, compared to uncertain descriptors like “A brick will be rectangular but could have any length and width, and will have regularly spaced studs which are…well they’re hard to describe, and be this tall, and really could be any color.” To give an extreme example, pulling out an image which has a pixel-by-pixel match to something it has seen before, would be a simple equals comparator. </p>
+
+                <p>So by taking on the 1<sup>st</sup> order sort problem, which you&rsquo;d have to do eventually, you&rsquo;ll have solved the 2<sup>nd</sup> order sort problem better than you could ever hope to do with techniques developed piecemeal over subsets of all the parts, and probably much faster too. This means that any effort spent on machines purpose-built to handle the kinds of subsets produced by this machine is a complete waste of time at the end of the day. Starting small in this way is chasing false simplicity. It&rsquo;s biting off chunks of the larger problem, but when it&rsquo;s a giant, daunting problem, you might as well spit those tiny chunks out and bring in a more gigantic, carnivorous animal more evolutionarily suited to swallowing the thing whole, know what I mean?</p>
+                <p>Which brings up that <em>second</em> problem.</p>
+                <p><em>Once you&rsquo;ve got a part identified as one of 70,000 classes, what on earth do you do with it??</em></p>
+                <p>As a hardware guy, these machines <em>feel</em> like lazy, cop-out solutions, where the &ldquo;hard part&rdquo; in my eyes has been solved, through software-first design, and the hardware wasn&rsquo;t built to adequately keep up. In parts 10 and 11 I&rsquo;ll talk much more about how hard this problem really is, and the scope it will take to truly solve it. So it&rsquo;s not unreasonable to view these machines as starting points from the hardware side as well as software.</p>
+                <p>So that&rsquo;s the real question, then. Looking at the state of the art, are any of these designs scaleable? If you take their design, and just add <em>more</em> of it, do you end up with a practical solution for handling the entire LEGO catalog?</p>
+                <p>I don&rsquo;t believe that you do, for any system design out there.</p>
+                <p>The approach used by both of these machines is to simply re-run the same machine on the same parts, and the same limited count of storage locations, using increasingly fine sorts.</p>
+                <p>So on the Jacques Mattheij machine, with 12 compartments, he can break 70,000 parts down into 12 batches of ~5800. Each batch of 5800 then gets run through again, breaking into batches of ~500. Each 500 part batch gets broken down into 42, and so on, until you&rsquo;ve got individually sorted parts. The problem is, you end up spending most of your time setting up the machine for each batch, rather than actually running parts. You have to run the machine in <em>tens of thousands</em> of distinct batches, because by converting the manual 1<sup>st</sup>/2<sup>nd</sup> order sort into a 1<sup>st</sup> through 5<sup>th</sup> order sort, the number of batches at each &ldquo;layer&rdquo; increases exponentially.</p>
+
+                <p>Alternatively, you could take the same designs, and just add a bunch of compartments. But…there’s no way around it, you need 70,000 compartments. At 2” cubed per average part, let’s call it 4” to account for funneling safety factors and non-zero wall thickness, you’re looking at a 4.5 mile conveyor belt on Jacques’ design, with 70,000 solenoid actuators. Or more impressively, a 1.4 mile diameter wheel on the Akiyugi design, which if you want it to maintain your part-per-second rate, needs to rotate 30rpm to enable 180 degree transitions each step. 30rpm = 3.1 rad/s, multiplied by a 0.7 mile radius…2.17 miles per second at the tip, or mach 10.26! Just under twice the <a href="https://en.wikipedia.org/wiki/North_American_X-15" target="_blank">highest speed ever achieved by an airplane</a>, and over 10 times the current <a href="https://en.wikipedia.org/wiki/ThrustSSC" target="_blank">land speed record</a>!  Go a mere 2.5 times faster, and your LEGO has now reached escape velocity! Move over <a href="http://www.spinlaunch.com/Series_A_Funding_Round.pdf" target="_blank">Spinlaunch</a>, I’ve got LEGO to put in orbit!</p>
+
+                <p>(Although I would drop everything to go work for Spinlaunch in a <strong><em>heartbeat</em></strong>. Something about the phrase &ldquo;Hypersonic orbital catapult&rdquo; &hellip;)</p>
+                <p>So&hellip;neither of these approaches, at least in terms of hardware, is really scalable either. If we want to solve this problem, we&rsquo;re going to have to do our own thing, and we&rsquo;re going to have to keep in mind this idea of scaleability from the start as a fundamental, driving constraint. We don&rsquo;t want to build something, and then discover that the shockwave generated by making it large enough to actually do what we want would kill us all.</p>
+                <p>Now, I believe <em>elements</em> of them are scalable, particularly on the software side, but also as smaller components of the hardware system. But I don&rsquo;t believe that <em>anyone</em> has put forwards a practical solution to the mechanical scalability challenges, which I&rsquo;ll be talking about in depth in parts 10 and 11.</p>
+                <p>And also, don&rsquo;t get me wrong, my designs are going to start in a somewhat similar way. For a very long time, I&rsquo;m going to be working on a testbed, feeding a limited range of parts past a camera to identify them, and probably just dropping them right back on the floor after I know what they are. I&rsquo;m probably going to start with the same, most common pieces a lot of these machines to, to get the most possible utility early in the process. I'm definitely going to be using the machine for practical purposes well before I have the resources to scale it to what it needs to be to handle all 70,000 parts. But what I need to do from day 1 is never, ever lose sight of the final objective, and never make a design or hardware choice which hard-caps the potential. This means that early designs for capturing sorted parts are going to seem inefficient in the early going, but that&rsquo;s because I need to make them infinitely scalable. That means that my feed and identification mechanics are going to be far larger than they seem to need to be, but that&rsquo;s because I plan to eventually push millions of parts a month through them, from tiny pins to massive baseplates. Any hardware that I ever need to throw out and redesign will be redone because it didn&rsquo;t work as planned, not because my ambitions grew after the hardware was built.</p>
+
+                <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/tiwVMrTLUWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <p>This <em>excellent</em> TED talk on the subject of Google&rsquo;s self-driving cars has had as big an influence on this project&rsquo;s trajectory as any previous sorting machine. The overarching point is a teardown of the approach used by many self-driving car development efforts, where incremental improvements to features built using minimalistic sensor suites and processing power, such as automated parallel parking, are iterated and improved upon, making incremental progress until self-driving is achieved. Chris argues that a radically new approach is needed. In doing so, he exposes the <em>extreme</em> scope of the problem, through subtle examples of driving challenges you&rsquo;d never think about, but which add orders of magnitude to the difficulty. Even the point about uncertainty parallels this project, if you see something you&rsquo;ve never seen before, you have to be able to react appropriately with caution.</p>
+                <p>The point being made is, if you&rsquo;re dealing with a really hard problem, you need to make sure that your solution approach is scoped such that it can realistically handle the challenges and uncertainty you&rsquo;re going to encounter. This may make it harder to develop in the early going, but ensures that you&rsquo;re capable of making steady steps towards a solution, instead of hitting a wall where your technologies and approaches just can&rsquo;t improve further without a massive paradigm shift where you have to basically start over. Actual progress will remain incremental, as is the nature of developing hardware and software. But you need to pick basic hardware and software approaches which aren&rsquo;t going to cap out and limit you before you get where you want to go.</p>
+                <p>So in the case of Google, that means using Lidar and complex software, instead of cameras and rangefinders.</p>
+                <p>In the case of LEGO, it means software-driven identification, and part storage design with a clear vision for how it can be directly scaled to 70,000 unique parts.</p>
+                <p>So the solution is going to end up physically big, and logically complex. Let&rsquo;s start looking at some details.</p>
+
+
+
+
+
+
+                <div id="footer">
+                    <div id=backbutton> 
+                        <a class="nav" href="page7.html">                       <i class="far fa-arrow-alt-circle-left"></i>
+                            <p class="arrowtext">Retreat!</p></a></div>
+                    <div id=footerspacer></div>
+                    <div id=nextbutton><a class="nav" href="page9.html">
+
+                        <i class="far fa-arrow-alt-circle-right">
+                        </i>
+                        <p class="arrowtext">Onwards!</p></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }function myFunction2() {
+                var popup = document.getElementById("myPopup2");
+                popup.classList.toggle("show");
+            }
+            function hidePopups() 
+            {
+                console.log("Clicky");
+                var popup = document.getElementsByClassName("show");
+                for(var i = 0; i < popup.length; i++){
+                    popup[i].classList.toggle("show");
+                }
+                popup = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < popup.length; i++){popup[i].classList.toggle("popupvisible");
+                                                     }
+            }
+            function popup1() {
+                var popup = document.getElementById("popup1");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+
+            }
+            function popup3() {
+                var popup = document.getElementById("popup3");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup4() {
+                var popup = document.getElementById("popup4");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup5() {
+                var popup = document.getElementById("popup5");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup6() {
+                var popup = document.getElementById("popup6");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup7() {
+                var popup = document.getElementById("popup7");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup8() {
+                var popup = document.getElementById("popup8");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup9() {
+                var popup = document.getElementById("popup9");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup10() {
+                var popup = document.getElementById("popup10");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup11() {
+                var popup = document.getElementById("popup11");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup12() {
+                var popup = document.getElementById("popup12");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup13() {
+                var popup = document.getElementById("popup13");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup14() {
+                var popup = document.getElementById("popup14");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup15() {
+                var popup = document.getElementById("popup15");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup16() {
+                var popup = document.getElementById("popup16");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup17() {
+                var popup = document.getElementById("popup17");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+
+            function popup18() {
+                var popup = document.getElementById("popup18");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+                var img = document.getElementById("dealimg").src = "/images/dealwithit.gif"
+            }
+            function popup19() {
+                var popup = document.getElementById("popup19");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup20() {
+                var popup = document.getElementById("popup20");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup21() {
+                var popup = document.getElementById("popup21");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup22() {
+                var popup = document.getElementById("popup22");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup23() {
+                var popup = document.getElementById("popup23");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup24() {
+                var popup = document.getElementById("popup24");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup25() {
+                var popup = document.getElementById("popup25");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup26() {
+                var popup = document.getElementById("popup26");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup27() {
+                var popup = document.getElementById("popup27");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup28() {
+                var popup = document.getElementById("popup28");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup29() {
+                var popup = document.getElementById("popup29");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup30() {
+                var popup = document.getElementById("popup30");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup31() {
+                var popup = document.getElementById("popup31");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup32() {
+                var popup = document.getElementById("popup32");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup33() {
+                var popup = document.getElementById("popup33");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup34() {
+                var popup = document.getElementById("popup34");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup35() {
+                var popup = document.getElementById("popup35");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup36() {
+                var popup = document.getElementById("popup36");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup37() {
+                var popup = document.getElementById("popup37");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup38() {
+                var popup = document.getElementById("popup38");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup39() {
+                var popup = document.getElementById("popup39");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup40() {
+                var popup = document.getElementById("popup40");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup41() {
+                var popup = document.getElementById("popup41");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup42() {
+                var popup = document.getElementById("popup42");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup43() {
+                var popup = document.getElementById("popup43");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup44() {
+                var popup = document.getElementById("popup44");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup45() {
+                var popup = document.getElementById("popup45");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup46() {
+                var popup = document.getElementById("popup46");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup47() {
+                var popup = document.getElementById("popup47");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup48() {
+                var popup = document.getElementById("popup48");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup49() {
+                var popup = document.getElementById("popup49");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup50() {
+                var popup = document.getElementById("popup50");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup51() {
+                var popup = document.getElementById("popup51");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup52() {
+                var popup = document.getElementById("popup52");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup53() {
+                var popup = document.getElementById("popup53");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup54() {
+                var popup = document.getElementById("popup54");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup55() {
+                var popup = document.getElementById("popup55");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup56() {
+                var popup = document.getElementById("popup56");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup57() {
+                var popup = document.getElementById("popup57");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup58() {
+                var popup = document.getElementById("popup58");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+            function popup59() {
+                var popup = document.getElementById("popup59");
+                popup.classList.toggle("show");
+                var mask = document.getElementsByClassName("popupmask");
+                for(var i = 0; i < mask.length; i++){
+                    mask[i].classList.toggle("popupvisible");
+                }
+            }
+
+
+        </script>
+    </body>
+
+</html>
