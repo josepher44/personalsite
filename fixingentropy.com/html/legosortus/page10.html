@@ -212,7 +212,7 @@
                         </a>.</p>
 <p>The only problem is, for 70,000 bins, you&rsquo;re going to need 70,000 nozzles, or 70,000 stepper motors. Which is 70,000 solenoid actuators/stepper drivers. Which is 70,000 microcontroller output ports. Which is&hellip;a very non-zero number of dollars, multiplied by 70,000.</p>
 <p>Welp.</p>
-<p>There are <em>so many designs</em> which fall victim to this issue, especially if you&rsquo;re thinking of this sort process along the lines of how you would a software sort. In the hardware world, each &ldquo;action point&rdquo; carries real, physical cost with it. It is very easy to fall into the trap of &ldquo;just add another actuator,&rdquo; but if you actuator count scales linearly with your category count, you&rsquo;re going to get yourself in trouble real quick.</p>
+<p>There are <em>so many designs</em> which fall victim to this issue, especially if you&rsquo;re thinking of this sort process along the lines of how you would a software sort. In the hardware world, each &ldquo;action point&rdquo; carries real, physical cost with it. It is very easy to fall into the trap of &ldquo;just add another actuator,&rdquo; but if you actuator count scales linearly with your category count, you&rsquo;re going to get yourself in trouble real quick. There are bunches of seemingly valid and effective mechanisms and approaches that we're not really going to talk about, or simply lump underneith other seemingly completely different approaches, because at the end of the day, they ultimately fall victim to actuator count problems.</p>
 <p>Actuator optimization design problems are super fun though! They were literally my life back in FLL, trying to squeeze 14+ tasks of functionality out of only three motors. There are all kinds of cool tricks you can do to get different functionality out of a reversed motor, basic mechanical computation to generate variable output from different combinations of actuator input, or just directly multipurpose a single actuator.</p>
 <p>Thinking in these terms leads to a design which sorts parts using a series of cascading binary &ldquo;gates.&rdquo; The most efficient thing you can possibly do with a single digital actuator, which makes a simple decision between &ldquo;path a&rdquo; or &ldquo;path b,&rdquo; is to break the number of classes up evenly by two. Putting in a single decision point like this takes one pathway with 70,000 possible destinations, and turns it into two pathways with 35,000 each. By building a tree downwards from there, now picturing instead of a conveyor belt, a large pyramid which the parts rattle their way through from top to bottom, you can comprehensively classify any given part with only 17 actuations! That sounds doable!</p>
 <p>At first glance, it appears that the number of actuations per &ldquo;layer&rdquo; would increase by a factor of two, up to an unmanageable 35,000 actuator final layer. But we can solve this problem by paying attention to the idea of part flow. If we&rsquo;re putting a part per second through this tree, we could set it up so that each second, every part in the tree drops down one layer. If the tree starts out empty, and receives a regularized part per second at the top, there will only ever be one part per layer. The vast, vast majority of the gates will be empty. Therefore, we can <a class="popup" onclick="popup11()">chain together the actuation
@@ -354,24 +354,211 @@
 <p>Repeat indefinitely, and it&rsquo;s doing it! Sorting parts continuously, as fast as the vision cells can take them, without any mechanisms that require breaking the sound barrier! I&rsquo;ll call that a success!</p>
 <p>Here&rsquo;s how it all looks, working together:</p>
 
-<div class="pageimgcontainer ultrawidebody"><div class="gm4html5_div_class" id="gm4html5_div_id">
+
+                <div class="pageimgcontainer ultrawidebody"><div class="gm4html5_div_class" id="gm4html5_div_id">
             <!-- Create the canvas element the game draws to -->
             <canvas id="canvas" width="1000" height="686">
                <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
     </div></div>
 
+<p>A couple of important points get revealed in the process: Each drawer is going to be processed by the same, very non-trivial pieces of equipment. This means that each drawer is likely going to need to have the same physical footprint of storage locations. The 1<sup>st</sup> order categories are going to need to be designed to enable this. We have some flexibility here. What one drawer uses to store a few giant parts, the next drawer down could use for a miniscule 1x1 tile that would be expected to go through the machine in quantities of tens of thousands.</p>
+<p>We also need to make sure that each of the 48 holding bins fill, on average, at the same rate. This means looking at the expected frequency of each part, as well as the volume they take up, and distributing these things evenly. While also balancing the overall storage geometry of the individual parts, as described above. These two things may sometimes be in conflict with each other. We need to ensure that the second stage sort can empty out the first order bins fast enough that they never overflow.</p>
+<p>The modeling and generation of an optimal distribution of parts across the 48-ish categories is an interesting and unsolved statistics problem. I know little to nothing about how to approach this, and will need to learn. But an optimal solution should exist. Or, this might be another rabbit hole that takes me months. Who knows?</p>
+<p>To help understand the dynamics at play here, I made an interactive version of the simulation above. Tweak some variables and learn about how it behaves! In particular, try setting everything to run at pretty absurdly high rates, to see some of the long term patterns described below, and build your intuition of the system before we dive into the math:</p>
+                
+
+               
+                              
+                <div class="pageimgcontainer ultrawidebody"><div class="gm5html5_div_class" id="gm5html5_div_id">
+            <!-- Create the canvas element the game draws to -->
+            <canvas id="canvas2" width="1000" height="686">
+               <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+    </div></div>
+                
+                <p>This simulation reveals a lot of nuance to the behavior of the system. Some immediate observations:</p>
+<ul>
+<li>If you have the first order cell and second order cell operating at the exact same pace, the first order bins will always overflow eventually. This is because the second order sort will always process a little bit slower than commanded, due to the wait time associated with the</li>
+<li>The true throughput of the second order sort increases as max bin fill increases, because the more parts per bin, the greater percent of time the second order sort is actually processing parts, instead of waiting on the transfer carriage. However, this increase in second order processing speed, in turn slows down the rate of growth in the first order bins.</li>
+<li>This means that the system appears to asymptotically approach, but never reach, an equilibrium position, where the maximum bin fill levels out and remains constant, and the input rate is equal to the output rate.</li>
+<li>Interestingly, if you force a fill to the bins far beyond this theoretical equilibrium, the system <em>still undergoes this behavior</em>. This time, the output rate will ever-so-slightly outpace the input, with the average fill percent gradually asymptotically decreasing indefinitely.</li>
+<li>At &ldquo;normal&rdquo; values (~1 part per second on input and output with ~10% split, ~10 seconds for carriage traversal), the bins really don&rsquo;t fill much at all. That&rsquo;s a good thing, it means they can be smaller.</li>
+</ul>
+<p>This tells us quite a lot about the system&rsquo;s behavior, and most importantly, gives us a level of intuition about how a mathematically derived approximation &ldquo;should&rdquo; look. But it would still be absolutely helpful to get some real formulas in front of us, to help conclusively determine things like required 1<sup>st</sup> order bin size and carriage motion rate, to ensure that our bins never overflow.</p>
+                
+                <table class="widebody">
+                    <tbody>
+                        <tr>
+                            <td class="header">
+                                <p>Variable</p>
+                            </td>
+                            <td class="header">
+                                <p>Value</p>
+                            </td>
+                            
+                            <td class="header">
+                                <p>Units</p>
+                            </td>
+                            <td class="header">
+                                <p>Further Notes</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><img src="/images/ri.png"></p>
+                            </td>
+                            <td>
+                                <p>Processing rate of the input (first order) cell</p>
+                            </td>
+                            
+                            <td>
+                                <p>Parts per second</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><img src="/images/ro.png"></p>
+                            </td>
+                            <td>
+                                <p>Processing rate of the output (second order) cell</p>
+                            </td>
+                            
+                            <td>
+                                <p>Parts per second</p>
+                            </td>
+                            <td>
+                                <p>This rate won't actually be achieved by the machine, due to the wait time during category changeover</p>
+                            </td>
+                        </tr>
+                           <tr>
+                            <td>
+                                <p><img src="/images/bins.png"></p>
+                            </td>
+                            <td>
+                                <p>Number of first order bins</p>
+                            </td>
+                            
+                            <td>
+                                <p>Unitless</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><img src="/images/qew.png"></p>
+                            </td>
+                            <td>
+                                <p>Total quantity of parts stored across all bins</p>
+                            </td>
+                            
+                            <td>
+                                <p>Parts</p>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><img src="/images/timeconstant.png"></p>
+                            </td>
+                            <td>
+                                <p>Changeover time constant</p>
+                            </td>
+                            
+                            <td>
+                                <p>Seconds</p>
+                            </td>
+                            <td>
+                                <p>In practice, this value (number of seconds required to swap categories) varies by location. But over long timescales, since each bin will be processed an equal number of times, this time averages out to a constant.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>What we&rsquo;re really interested in here is delta q, or dq/dt, the rate at which the volume in each bin changes. If this reaches zero, when q is well under capacity, we&rsquo;ll be fine.</p>
+<p>dq/dt is going to be driven by two terms, the rate of part entry, and the rate of part exit. The units are parts per secon Entry rate is simple enough, it&rsquo;s just the input cell&rsquo;s processing rate. Exit rate is more complex. It&rsquo;s going to be easiest to think of in terms of the time it takes to process a bin. If we assume all bins fill at the same rate, the number of parts in each bin can be calculated with q/b. And each bin processed is going to take a non-zero number of seconds. We&rsquo;ll call this value binsecs, and can write the equation as:</p>
+                
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/eq1.png"></div>
+                
+                <p>Already, we have a differential equation. This is starting to look like one of those flow problems from AP calculus, isn&rsquo;t it? Unfortunately, binsecs is more complex.</p>
+<p>The time will, no matter what, always include the transportation time, so we add Kt. Then, we add, not the output rate directly, but the time spent processing a bin. Which&hellip;once again depends on the number of parts, q, in the bin.</p>
+                
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/eq2.png"></div>
+                
+                <p>So we have a more complex differential equation – the size growth rate depends on the actual size, in multiple ways. Unfortunately, with the q in the denominator, it’s not a pretty solution, it’s a first order non-linear differential equation. The kind of thing your math professors kind of just told you “yeah those exist” on the first day of Diff-EQs lecture, and didn’t go further into detail. Turns out, this simple act of putting a “1” over the variable makes things a heck of a lot harrier. To Wolfram we go!</p>
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/eq3.png"></div>
+                
+                <p>Well, that’s frightening. Let’s try to get rid of that arbitrary C1 by adding an initial condition. In this case, the initial condition that makes sense is the fill at the start of the operation. We can try other things, but the machine will likely be empty to start, so what happens at q(0)=0?</p>
+                
+                
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/eq4.png"></div>
+                
+                <p>Somehow, that got even more frightening. Sigh. This is why I’m not a math major…</p>
+                
+                <p>For the moment, we’re really only interested in seeing if the graph asymptotes out like we’re expecting, not the equation as a whole, so we can just solve and plot this numerically, choosing some values for different key parameters. </p>
+                
+                
+                <div class="pageimgcontainer"><img class="pageimg" src="/images/graph1.png"></div>
+
+                <p>And we get a nice, asymptotic plot, which grows from zero up to a fixed quantity of parts per bin! Just like we wanted!</p>
+<p>However, it&rsquo;s important to note that this is roughly the 15<sup>th</sup> try at generating this equation. I made <em>numerous</em> mistakes along the way, things like parenthesis mismatches, neglecting to scale or downscale certain terms by the bin count, forgetting whether q was parts in system or parts per bin, and so on. If all I were doing was blindly plowing ahead with the math, and letting math be the source of my intuition about the system, I would have ended up with something totally nonsensical, and just accepted it as fact. But because I had the simulation, which allowed me to get a proper physical intuition for what the output <em>should</em> look like, I was able to immediately go back and fix my mistakes immediately.</p>
+<p>I really, really wish actual math classes were taught like this, with constant grounding in reality to build a sense of math&rsquo;s utility as a tool to supplement intuition, rather than something abstract to be taken on absolute faith, occasionally interrupted by extracting numbers from increasingly implausible stories about the absurdly convoluted ways that John wants to count the apples he has.</p>
+<p>But anyways, now that we have it right, let&rsquo;s learn more about how it behaves.</p>
+
+<div class="pageimgcontainer"><img class="pageimg" src="/images/divergence1.png"></div>
+
+<p>Here we can see one of the most fundamental properties in play. If the output processing rate, determined by the part-per-second capacity of the secondary vision cell, outruns the input processing rate, the graph will level off. But if input rate outpaces output, the graph becomes divergent, and parts will accumulate in the holding bins indefinitely.</p>
+<p>Even very, very small deviations about this point have incredibly dramatic impact on the system behavior.</p>
+
+<div class="pageimgcontainer"><img class="pageimg" src="/images/divergence2.png"></div>
+
+<p>Now, that blue line, with a secondary processing rate at 1.00001 times faster than the first order sort, conclusively converges. Shifted ever-so-slightly so that these values are exactly equal, the orange line will <em>never converge</em>. And if you make it slower, the picture gets <em>dramatically</em> worse <em>very</em> quickly. This doesn&rsquo;t necessarily mean that the blue line is <em>useful</em> to us. Look at the axes &ndash; this is scaled over a period of <em>millions of years</em>. At a more reasonable window of this same graph, say, 50 years, <a class="popup" onclick="popup23()">here the two graphs appear identical<span class="popuptext" id="popup23"><img class="popupimg" src="/images/divergence25.png"></span></a> , and neither is anywhere near convergence.</p>
+<p>But the important takeaway is clear. Secondary processing rate must <em>always</em> be greater than first order processing rate.</p>
+<p>How much faster does it need to be? Well, fortunately not much. Further increasing the relative second order processing rate provides quicker convergence, but gives diminishing returns in the actual part count at which convergence occurs.</p>
 
 
 
-<a class="popup" onclick="popup20()">layered large-format divided drawers<span class="popuptext" id="popup20"><img class="popupimg" src="/images/largeformatdrawers.jpg"></span></a> 
+<div class="pageimgcontainer"><img class="pageimg" src="/images/outvinrate.png"></div>
 
-<a class="popup" onclick="popup22()">universal LEGO sorting machine
-                        <span class="popuptext" id="popup22">        <iframe width="560" height="315" src="https://www.youtube.com/embed/Zsezo03GF-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </span>
-                        </a>
-                        
-                        <iframe class="pagevid" width="560" height="315" src="https://www.youtube.com/embed/jwu9SX3YPSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>So there’s not much to be gained by going much faster than about 1.05 times the first order sort. In fact, since in reality, we would likely do this by slowing down the first order instead of speeding up the second order, we don’t want to be going much faster than this. So we’ll pick an output to input sort ratio of 1.05 for the remaining exploration. </p>
+
+
+<div class="pageimgcontainer"><img class="pageimg" src="/images/fixedrate.png"></div>
+
+<p>This graph still takes a <em>long</em> time to taper off. This isn&rsquo;t necessarily a bad thing, but we should make sure that it actually <em>is</em> converging to a true asymptote. Even in that generous, nearly week-long range, it doesn&rsquo;t seem to have fully leveled off. What if we change the initial condition, and start our machine up with some parts already in the bins?</p>
+
+
+<div class="pageimgcontainer"><img class="pageimg" src="/images/twowayconvergence.png"></div>
+
+<p>This is an <em>excellent</em> graph, and reveals something I hadn&rsquo;t initially realized. <em>This whole process works in reverse as well</em>. If you start out with your bins jammed to capacity, the machine will initially be <em>really efficient</em>, because each bin will take ages to process, and all of the second order equipment&rsquo;s time will be spent on processing bins. As the bins begin to empty out, the bin changeover process will begin to take up greater and greater percentages of the cycle time, reducing the system&rsquo;s efficiency in emptying the bins further. Just like when approaching from below, the output rate will approach, but never quite reach, a steady state asymptotic value.</p>
+<p>This is really, really important, because of the approximations made in generating this model. It assumes that every single bin pulled down will be just as full as any other, and the bin changeover time will always be the same. Neither of these will actually be the case. This means that even if a system has settled well around the asymptote, it will constantly be seeing individual bins which process at a slower or faster than average rate, meaning that the actual average part-per-bin count will fluctuate above/below the asymptote pretty significantly. And it&rsquo;s good to know that, above or below, the system has an inherent stability to it, meaning that the further it deviates in either direction, the more strongly the system&rsquo;s dynamics want to bring it back to the steady state value.</p>
+<p>Let&rsquo;s change more variables and see what happens! Here&rsquo;s variation of the bin changeover time, back to an initial condition of zero:</p>
+
+
+<div class="pageimgcontainer"><img class="pageimg" src="/images/bintimegrowth.png"></div>
+
+<p>Here, it&rsquo;s a nearly, but not quite, linear relationship. Faster bin changeover means more time spent on actually processing parts, which means less parts per 1<sup>st</sup> order holding bin. No reason not to make this faster except for the large amounts of mass you&rsquo;re lugging around during bin changeover.</p>
+<p>And here&rsquo;s the impact of bin count.</p>
+
+
+<div class="pageimgcontainer"><img class="pageimg" src="/images/bincountgrowth.png"></div>
+
+<p>Nearly identical graph, but the direction of growth is counterintuitive. Adding <em>more</em> bins means that <em>more</em> parts will need to be stored per bin, if everything else is kept the same. This is because the bin size shows up in a couple of places in the equation. Yes, each individual bin will fill slower. But it will also take longer for a bin to cycle around and get emptied out a second time, meaning that it has longer to collect parts. And because there are more bins, you have to wait more times for the bin changeover operation to occur.</p>
+<p>So for optimal design, we actually want as <em>few</em> bins as possible. However, at a certain point, taking bins away is going to make the second order sort impossible to actually build. Remember, the second order sort depends on analog sort technologies, those &ldquo;super effective until you make them too big, and then they ruin everything&rdquo; designs. The fewer bins we have on the first order sort, the more locations we have to add to the second order sort. Therefore, we should make the second order handle as many part classes as possible, and add in the minimum required number of first order bins to compensate. But this graph shows that if that number ends up being kind of a lot, it&rsquo;s not a big deal. There&rsquo;s not <em>that</em> much difference between 48 and 60 bins. And by my estimation, much less than 40-ish bins isn&rsquo;t going to be viable from the perspective of the second order sort.</p>
+<p>But again, to be clear, this is all still a pretty rough approximation of the dynamics at play. It assumes that every bin will fill at the same rate every single time, that every part takes up the same amount of space, every bin takes the same amount of time to load into the secondary sort, and every part takes the same amount of time to process during the secondary sort. None of these things are true, mostly due to random statistical variance in the parts that come in. For example, a large batch purchased on Craigslist probably represents some kid&rsquo;s childhood, spanning maybe 5-10 years. It&rsquo;s not going to have parts from the 2010s and the 1970s. All of this and more makes analyzing <em>deviation</em> from this model, driven by statistical work, a complex problem I haven&rsquo;t taken on yet. I know nothing about how to do so, that&rsquo;ll be the next thing to learn.</p>
+<p>But for now, that&rsquo;s it. That&rsquo;s a high-level view, of how I see the part flow working. But unfortunatley, the realities of the physical world mean it's not going to be as straightforwards as that nice simulation. It's going to be more like this.</p>
+
+
+                <div class=pageimgcontainer><img class="pageimg" src="/images/overview.png"></div>
+<p>Now all that&rsquo;s left is figuring out how to actually build this crazy thing. At long last, onto CAD, my one true love!</p>
+
 
 
 
@@ -884,8 +1071,12 @@
         </script>
         
         <!-- Run the game code -->
-        <script type="text/javascript" src="/legosortus/sims/text1000w/html5game/Project1.js?ECRZB=1705488485"></script>
-        <script>window.onload = GameMaker_Init;</script>
+        <script type="text/javascript" src="/legosortus/sims/text1000w/html5game/Project1.js?AZTAC=1603936285"></script>
+        
+        
+        
+        <!-- Run the game code</script> -->
+        <script type="text/javascript" src="/legosortus/sims/newcanvas/html5game/unscriptedsim.js?QBWXB=1032301960"></script>
     </body>
 
 </html>
