@@ -310,60 +310,93 @@
         <div class="modal" id="legosortus-modal">
             <h2>Automated Lego Sortation Machine and Support Software</h2>
             <div class="modalhbox">
-               <div class="modalvbox">
-                   <div class="modalelement">
-                       <p>vert1</p>
-                   </div>
-                   <div class="modalelement">
-                       <p>vert2</p>
-                   </div>
-                   <div class="modalelement">
-                       <p>vert3</p>
-                   </div>
-               </div>
-               <div class="modalvbox">
-                   <div class="modalelement">
-                       <p>vert1</p>
-                   </div>
-                   <div class="modalelement">
-                       <p>vert2</p>
-                   </div>
-                   <div class="modalelement">
-                       <p>vert3</p>
-                   </div>
-               </div>
+                <div class="modalvbox">
+                    <div class="modalelement">
+                        <p>vert1</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert2</p>
+                        <p>More vert</p>
+                        <p>And yet more vert</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert3</p>
+                    </div>
+                </div>
+                <div class="modalvbox">
+                    <div class="modalelement">
+                        <p>vert1</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert2</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert3</p>
+                    </div>
+                </div>
                 <div class="modalelement">
                     <p>Test text 1</p>
                 </div>
                 <div class="modalelement">
                     <p>Test text 2</p>
                 </div>                <div class="modalelement">
-                    <p>Test text 3</p>
+                <p>Test text 3</p>
                 </div>
             </div>
         </div>
 
         <div class="modal" id="smad-modal">
-            <h2>First Order Design of a Phobos Trailing Orbiter</h2>
+            <h2>First Order Design of a Phobos Trailing Orbiter -- Aerospace Engineering Minor Capstone Project</h2>
+            <div class="modalhbox">
+                <div class="modalvbox">
+                    <div class="modalelement">
+                        <h3>Project Summary</h3>
+                        
+                        <p>In a project I had been looking forwards to since seeing the course title "Spacecraft and Mission Design" in the WPI catalog, I worked in a team of four students to generate a first order self consistent design proposal for all major subsystems of an interplanetary orbital mission, with the ultimate goal of providing imaging of Mars' moon Phobos by inserting the MRO HiRISE camera into a trailing orbit. Component choices for propulsion, power, attitude control, structure, and launch subsystems were all specified in detail, working around hard constraints imposed by other subsystems which were considered beyond project scope. Extensive mass budgetary analysis was performed to ensure a self-consistent solution which could perform all required maneuvers and functionality. Competing with five other teams within the class, our design proposal scored the highest, achieving all mission objectives with the lowest overall wet mass and highest average component TRL.</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert2</p>
+                        <p>More vert</p>
+                        <p>And yet more vert</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert3</p>
+                    </div>
+                </div>
+                <div class="modalvbox">
+                    <div class="modalelement">
+                        <p>vert1</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert2</p>
+                    </div>
+                    <div class="modalelement">
+                        <p>vert3</p>
+                    </div>
+                </div>
+                <div class="modalelement">
+                    <p>Test text 1</p>
+                </div>
+            </div>
         </div>
-        
-                <div class="modal" id="rbe2001-modal">
+
+        <div class="modal" id="rbe2001-modal">
             <h2>Rod Replacement Mobile Robot</h2>
         </div>
 
-                       <div class="modal" id="kinematics-modal">
+        <div class="modal" id="kinematics-modal">
             <h2>Boot Test Linkage</h2>
             <img src="/images/autofocusfail.jpg">
         </div>
-        
-                               <div class="modal" id="frc-modal">
+
+        <div class="modal" id="frc-modal">
             <h2>FIRST Robotics Mentorship</h2>
         </div>        
-                               <div class="modal" id="softeng-modal">
+        <div class="modal" id="softeng-modal">
             <h2>Task Management Software Module</h2>
         </div>
         <script>
-            
+
 
             //Transition listener
             function whichTransitionEvent(){
@@ -568,7 +601,7 @@
                         }
                     }
                 }
-                
+
                 var transitioned = 0
 
                 /* Listen for a transition! */
@@ -587,7 +620,7 @@
 
                         modalElement.style.visibility = "visible";
                         modalElement.style.height = "100%";
-                        
+
                         cssobj = window.getComputedStyle(modalElement).visibility;
                         cssobj = window.getComputedStyle(modalElement).opacity;
                         modalElement.style.opacity = 1;
@@ -605,7 +638,10 @@
             }
 
             function removePopup() {
-                var remove = document.getElementsByClassName("projectexpanddiscrete")[0];
+                var remove = document.getElementsByClassName("projectexpanddiscrete")[0].parentNode;
+                var modal = remove.getElementsByClassName("modal")[0];
+                modal.removeAttribute("style")
+                document.body.appendChild(modal);
                 remove.parentNode.removeChild(remove);
             }
 
