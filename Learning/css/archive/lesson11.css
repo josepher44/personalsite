@@ -1,0 +1,25 @@
+/*****************************
+ *
+ * Author: Joe Gallagher
+ * Date: 12.03.2018
+ *
+ ****************************/
+/*The entire header div tag*/
+
+/*All h1 headers in the header div tag
+ */
+body{
+    color:red;
+}
+
+div{
+    color:blue;
+}
+
+p{
+    color: green;
+}
+
+@keyframes spin{
+    
+}

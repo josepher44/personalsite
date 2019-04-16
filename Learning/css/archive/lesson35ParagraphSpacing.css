@@ -1,0 +1,17 @@
+/*****************************
+ *
+ * Author: Joe Gallagher
+ * Date: 12.05.2018
+ * CSS file in support of tutorials found here:
+ * https://www.youtube.com/watch?v=I9XRrlOOazo&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT
+ *
+ ****************************/
+
+/*Various properties to affect kerning. Can use em multipliers to multiply from font size
+line height does not alter paragraph height. 
+less than 1 em will result in overlap
+*/
+
+p{
+    margin-bottom: 32px;
+}

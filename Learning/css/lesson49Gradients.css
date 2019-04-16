@@ -1,0 +1,37 @@
+/*****************************
+*
+* Author: Joe Gallagher
+* Date: 12.05.2018
+* CSS file in support of tutorials found here:
+* https://www.youtube.com/watch?v=I9XRrlOOazo&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT
+*
+****************************/
+
+/*For gradients, always set a base background first, if browser doesn't support it*/
+
+/*specified by direction*/
+
+/*Still needs to use vendor prefix*/
+
+/*Online generator tools for much more sophistication which output css*/
+
+.button{
+    display: block;
+    width: 100px;
+    padding: 12px;
+    border: 1px solid #77aaaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+    background: #aadddd;
+    background: -webkit-linear-gradient(top, #aadddd 0%, #ddaaaa 100%);
+    
+    background: -moz-linear-gradient(top, #aadddd 0%, #ddaaaa 100%);
+}
+
+.button:hover{
+        background: -webkit-linear-gradient(bottom, #aadddd 50%, #ddaaaa 100%);
+}

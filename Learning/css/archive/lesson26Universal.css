@@ -1,0 +1,21 @@
+/*****************************
+ *
+ * Author: Joe Gallagher
+ * Date: 12.04.2018
+ * CSS file in support of tuturials found here:
+ * https://www.youtube.com/watch?v=I9XRrlOOazo&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT
+ *
+ ****************************/
+
+/* Universal selector is *, just like bash or gitignore
+
+ * Hard overrides everything in children, including browser defaults
+* shouldn't use body{} as replacement
+
+* Used for "CSS reset" to strip out certain elements of browser default or template
+
+*/
+
+*{
+    color:blue;
+}
