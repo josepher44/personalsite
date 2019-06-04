@@ -23,11 +23,22 @@
     </head>
 
     <body>
-        <div class="popupmask" onclick="hidePopups()"></div>
-
-        <div id="sidebar-container">
+    <div class="popupmask" onclick="hidePopups()"></div>
+    
+<div id="sidebar-container">
+            <div id="abouttext">
+                <h3>Joe Gallagher</h3>
+                <h4>joe@fixingentropy.com</h4>
+                <h4><a href="">Resume</a></h4>
+            </div>
             <div id="sidebar">
-
+                <p>About</p>
+                <p>Projects</p>
+                <p>Skills</p>
+                <p>Coursework</p>
+                <p>Technical Blog</p>
+                <p></p>
+                <p>Contact</p>
             </div>
 
         </div>
@@ -40,25 +51,31 @@
                 <div id="grid">
 
                     <div class="column">
-                    <img src="/images/collage/croppedauger.jpg"><img src="/images/collage/matlab1.jpg">
+
+                        <img src="/images/collage/4320gb1.jpg">
+                        <img src="/images/collage/croppedauger.jpg">
+                        <img src="/images/collage/matlab1.jpg">
                         <img src="/images/collage/Catapult1.jpg">
 
                         <img src="/images/collage/labview1.jpg">
                         <img src="/images/collage/dynamite1.jpg">
-                        <img class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
+                        <img id = "pagetoptrigger" class="bannerimg" src="/images/collage/epiphanyflight1.jpg">
 
                     </div>
                     <div class="column">
+                        <img src="/images/collage/rbe3001_2.JPG">
                         <img src="/images/collage/enables.png">
                         <img src="/images/collage/bond.png">
                         <img src="/images/collage/epiphanybuild1.jpg">
-                        
+
                         <img src="/images/collage/opencv.png">
                         <img class="bannerimg" src="/images/collage/kinematics1.jpg">
 
                     </div>
+
                     <div class="column">
 
+                        <img src="/images/collage/2013frc1.jpg">
                         <img src="/images/collage/miscmatlab.png">
                         <img src="/images/collage/savagesoccer1.jpg">
                         <img src="/images/collage/osciliscreen1.jpg">
@@ -69,17 +86,18 @@
                     </div>
                     <div class="column">
 
+                        <img src="/images/collage/wolframconvergance.png">
                         <img src="/images/collage/2015FRC4.jpg">
 
-                        <img src="/images/collage/ineviball.jpg">
+                        <img src="/images/collage/shootergearbox1.jpg">
                         <img src="/images/collage/Camgear.jpg">
                         <img src="/images/collage/2015FRC9.jpg">
                         <img class="bannerimg" src="/images/collage/ES3323-1.jpg">
 
                     </div> 
                     <div class="column">
-                        <img src="/images/collage/shootergearbox1.jpg">
-                        
+
+                        <img src="/images/collage/ineviball.jpg">
                         <img src="/images/collage/polar.png">
                         <img src="/images/collage/Savage2.jpg">
                         <img src="/images/collage/Epiphanyebay1.jpg">
@@ -89,6 +107,7 @@
                     </div>
                     <div class="column">
 
+                        <img src="/images/collage/blcrawler.png">
                         <img src="/images/collage/2012FRC1.jpg">
                         <img src="/images/collage/panel1.jpg">
                         <img src="/images/collage/link1.jpg">
@@ -100,7 +119,7 @@
 
                     </div>
                     <div class="column">
-                       
+                        <img src="/images/collage/drumsort.jpg">
                         <img src="/images/collage/softeng1.jpg">
                         <img src="/images/collage/medusa.png">
                         <img src="/images/collage/Bridgeport1.jpg">
@@ -115,12 +134,36 @@
                         <img class="bannerimg" src="/images/collage/2015FRC6.jpg">
 
                     </div>
+                    <div class="column">
+
+                        <img src="/images/collage/2015FRC4.jpg">
+
+                        <img src="/images/collage/dynacam2.png">
+                        <img src="/images/collage/smadsheet1.jpg">
+                        <img src="/images/collage/rbe3001_1.png">
+                        <img class="bannerimg" src="/images/collage/ratchetclutch.jpg">
+
+                    </div> 
+                    <div class="column">
+
+                        <img src="/images/collage/2016frc2.jpg">
+
+                        <img src="/images/collage/4320knex1.jpg">
+                        <img src="/images/collage/overview.png">
+                        <img src="/images/collage/8bar1.jpg">
+                        <img class="bannerimg" src="/images/collage/lowlevelcommandflow.png">
+
+                    </div> 
                 </div>
             </div>
         </div>
+
+
         <div id="about">
 
-
+            <div id="avatar">
+                <img id="avatarimg" src="/images/avatar.jpg">
+            </div>
         </div>
 
 
@@ -128,9 +171,10 @@
 
         <div id="content-wrapper">
 
-            <div id="content">
+            <div class="normalcontent" id="content">
+                <div class="vertspacer"></div>
 
-                <div class=pageimgcontainer><img class="pageimg" src="/images/legosortus.png"></div>
+                <div class=pageimgcontainer id="scrolltrigger"><img class="pageimg" src="/images/legosortus.png"></div>
                 <p><em><strong>LEGOsortus:</strong> /, leɡō&rsquo;sȯrtəs/   Noun: 
                     <br>A legendary device, extinct in the present day, of great fascination and utility to young children, which ends up being far too large for its own good. Somewhere, some guy is sparing no expense in probably ill-advised experiments aimed at bringing one to life. </em></p>
                 <p>
@@ -173,6 +217,9 @@
                 <div class=pageimgcontainer><img class="pageimg" src="/images/dropsim.gif" style="width: 500px; height: auto"></div>
                 
                                 <div class=pageimgcontainer><img class="pageimg" src="/images/cycloids.png" style="width: 500px; height: auto"></div>
+                                
+                                
+                <div class=pageimgcontainer><video width="500" autoplay muted loop><source src="/images/drumsortvid.mp4" type="video/mp4"></video></div>
 
                 
                 <p class="extratop">to gradually morph it all into this.
@@ -276,6 +323,50 @@
 
 
         <script>
+                        var isScrolling = false;
+            window.addEventListener("scroll", throttleScroll, false);
+            function throttleScroll(e) {
+                if (isScrolling == false ) {
+                    window.requestAnimationFrame(function() {
+                        dealWithScrolling(e);
+                        isScrolling = false;
+                    });
+                }
+                isScrolling = true;
+            }
+            function isFullyVisible(el) {
+                var elementBoundary = el.getBoundingClientRect();
+                var top = elementBoundary.top;
+                var bottom = elementBoundary.bottom;
+                return ((top >= 0));
+            }
+            function isPartiallyVisible(el) {
+                var elementBoundary = el.getBoundingClientRect();
+                var top = elementBoundary.top;
+                var bottom = elementBoundary.bottom;
+                var height = elementBoundary.height;
+                return ((top + height >= 0) && (height + window.innerHeight >= bottom));
+            }
+            var scrollTrigger = document.getElementById("scrolltrigger");
+            var banner = document.getElementById("about");
+            var avatar = document.getElementById("avatar");
+            var toptrig = document.getElementById("pagetoptrigger");
+            function dealWithScrolling(e) {
+                console.log("Is scrolling"); 
+                if (!isFullyVisible(scrollTrigger))
+                {
+                    banner.classList.add("shrunken");
+                    avatar.classList.add("shrunken");
+                    console.log("shrunk");
+                }
+                else if(isPartiallyVisible(toptrig))
+                {
+                    banner.classList.remove("shrunken");
+                    avatar.classList.remove("shrunken");
+                    console.log("grow");
+                }
+            }
+            
             // When the user clicks on div, open the popup
             function myFunction() {
                 var popup = document.getElementById("myPopup");

@@ -285,7 +285,7 @@ small{
     top: 0px;
     margin: 0px;
     width: 100%;
-    height: 8.5vh;
+    height: 9.5vh;
     background-color: #5f5f5f;
     overflow: visible!important;
     transition: width 0.5s;
@@ -301,19 +301,28 @@ small{
     display: inline-block;
     margin: auto;
     position:relative;
-    margin-top: 20px;
-    margin-left: 57.5vw;
-    width: 0vw;
-    height: 0vw;
-    padding: 2.5vw;
-    border-radius: 2.5vw;
+    margin-top: 16px;
+    margin-left: 57vw;
+    width: 6vw;
+    height: 6vw;
+    padding: 0vw;
+    border-radius: 3vw;
     background-color: red;
     transition: margin-left 0.5s;
     z-index:5;
+    overflow: hidden;
+}
+
+#avatarimg{
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    margin:0px;
+    position: relative;
 }
 
 #avatar.shrunken{
-    margin-left: 37.5%;
+    margin-left: 35%;
 }
 
 .caption{
@@ -340,9 +349,10 @@ small{
 }
 
 #abouttext{
-    margin-top: 28vh;
-    top:13vh;
+    margin-top: 30vh;
+    top:15vh;
     position: sticky;
+    text-align: center;
 }
 
 #sidebar{
@@ -659,17 +669,21 @@ td.header{
 }
 
 .fullwidthbuttontext{
+    margin: auto;
+    text-align: center;
     border: 2px;
     border-style: solid;
     border-color: #555;
     border-radius: 20px;
+    padding-top: 3px;
     height: 40px;
     overflow: visible;
+    margin-bottom: 5px;
 }
 
 .fa-chevron-down{
     font-size: 40px;
-    margin: 0px 50px 0px 50px;;
+    margin: -5px 50px 0px 50px;;
     color: #555
 }
 
@@ -808,7 +822,7 @@ h2{
 }
 
 .modalelement:nth-child(odd){
-    background: darkgreen;
+    background: antiquewhite;
 }
 
 .modalelement:nth-child(even){
@@ -850,4 +864,13 @@ h2{
     to {
         opacity: 1;
     }
+}
+
+.modalatag{
+    display: block;
+}
+
+#zlink{
+    display: block;
+    z-index: 212;
 }
